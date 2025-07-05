@@ -7,7 +7,7 @@ services:
       dockerfile: ../../Dockerfile.template
     container_name: owl-solution-lending
     ports:
-      - "8081:80"
+      - "8091:80"
     volumes:
       - ./src/owl-solution:/usr/share/nginx/html
 
@@ -17,7 +17,7 @@ services:
       dockerfile: ../../Dockerfile.template
     container_name: dynamic-ui-bridge-lending
     ports:
-      - "8082:80"
+      - "8092:80"
     volumes:
       - ./src/dynamic-ui-bridge:/usr/share/nginx/html
 
@@ -27,6 +27,6 @@ services:
       dockerfile: ../../Dockerfile.template
     container_name: real-time-speech-translator-lending
     ports:
-      - "8083:80"
+      - "8093:80"
     volumes:
       - ./src/real-time-speech-translator:/usr/share/nginx/html
