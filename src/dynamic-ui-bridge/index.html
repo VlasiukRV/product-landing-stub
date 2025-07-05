@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dynamic UI Bridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="text-white font-sans overflow-x-hidden">
+
+<!-- Fixed Centered Coming Soon Banner (Top Half) -->
+<div class="coming-soon">
+    🚧 Coming Soon something amazing.
+</div>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6
+  bg-gradient-to-b from-slate-900 via-slate-800 to-blue-800 overflow-hidden">
+
+    <!-- Background Layer -->
+    <div class="absolute inset-0 z-0">
+        <img
+                src="img/lending-hero-background-layer.webp"
+                alt="DynamicUI Hero Background"
+                class="w-full h-full object-cover opacity-20"
+        />
+    </div>
+
+    <!-- Foreground Content -->
+    <div class="relative z-10 max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            A bridge <br class="hidden sm:block"/>
+            between your backend and dynamic frontend.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">
+            DynamicUI Bridge – a meta-driven framework to generate dynamic panels and forms directly from your backend models.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#"
+               class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-md text-lg font-medium transition">
+                Request a Demo
+            </a>
+            <a href="http://192.168.4.22:3000"
+               class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-md text-lg font-medium transition">
+                Login
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-gray-400 text-center py-6 select-none text-sm">
+    &copy; 2025 Targeted Solutions For Business. All rights reserved.
+</footer>
+
+</body>
+</html>

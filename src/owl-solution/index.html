@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Owl Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="text-white font-sans">
+
+<!-- Fixed Centered Coming Soon Banner (Top Half) -->
+<div class="coming-soon">
+    🚧 Coming Soon something amazing.
+</div>
+
+<!-- Header: Logo + Brand -->
+<header class="flex items-center px-8 py-6 max-w-7xl mx-auto">
+    <img src="./img/owl-solution-logo.svg" alt="Owl Logo" class="h-12 w-12 mr-4" />
+    <h1 class="text-2xl font-bold tracking-wide select-none">Owl Solutions</h1>
+</header>
+
+<!-- Hero Section -->
+<section class="hero relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-8">
+
+    <!-- Content -->
+    <h2 class="relative text-7xl md:text-7xl font-semibold leading-tight max-w-3xl drop-shadow-lg">
+        Eyes on your devices,<br/>brains in the cloud.
+    </h2>
+    <p class="relative mt-6 mb-12 max-w-xl text-gray-300 text-2xl md:text-4xl">
+        Seamless device monitoring, proactive alerts, and smart cloud analytics — all in one place.
+    </p>
+    <a href="#" class="relative z-10 inline-block bg-indigo-600 hover:bg-indigo-500 px-10 py-4 rounded-lg text-lg font-semibold shadow-lg transition">
+        Request a Demo
+    </a>
+
+</section>
+
+<!-- Features Section -->
+<section class="py-20 px-6 md:px-8 min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">How It Works</h2>
+        <p class="text-gray-400 text-lg md:text-xl">Step-by-step visibility and intelligence.</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto space-y-10">
+        <!-- Step 1 -->
+        <div class="feature-card flex items-center gap-6 p-6"
+             data-aos="fade-up" data-aos-delay="0" data-aos-anchor-placement="top-bottom">
+            <div class="flex-shrink-0 h-14 w-14 rounded-full bg-indigo-500 text-white flex items-center justify-center text-xl font-bold">1</div>
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-1">Device Monitoring</h3>
+                <p class="text-gray-300">Real-time visibility into every sensor and endpoint in your network.</p>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="feature-card flex items-center gap-6 p-6"
+             data-aos="fade-up" data-aos-delay="150" data-aos-anchor-placement="top-bottom">
+            <div class="flex-shrink-0 h-14 w-14 rounded-full bg-indigo-500 text-white flex items-center justify-center text-xl font-bold">2</div>
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-1">Smart Alerts</h3>
+                <p class="text-gray-300">Get proactive warnings before issues arise.</p>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="feature-card flex items-center gap-6 p-6"
+             data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="top-bottom">
+            <div class="flex-shrink-0 h-14 w-14 rounded-full bg-indigo-500 text-white flex items-center justify-center text-xl font-bold">3</div>
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-1">Cloud Intelligence</h3>
+                <p class="text-gray-300">
+                    Configuration and scenario management.<br>
+                    Cloud-powered trends and data analytics.<br>
+                    <span class="text-indigo-400">Can send smart commands back to your devices and sensors.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="text-center text-gray-400 py-6 select-none bg-slate-900">
+    &copy; 2025 Targeted Solutions For Business. All rights reserved.
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: false,             // анімація тільки при першому появленні
+        duration: 700,          // тривалість анімації (мс)
+        easing: 'ease-out-cubic',
+        offset: 100             // відстань до елементу, коли почнеться анімація
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+.coming-soon {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(252, 211, 77, 0.6);
+    color: black;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    z-index: 50;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+
+    /* Поворот + зсув для видимості */
+    transform: rotate(45deg) translate(50%, 300%);
+    transform-origin: top right;
+}

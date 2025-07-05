@@ -1,0 +1,20 @@
+/* Темний фон з напівпрозорим накриттям */
+.hero-section {
+    position: relative;
+    /*background-image: url('/img/background-image.png');*/
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}

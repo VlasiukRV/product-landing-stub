@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  owl-solution:
+    build:
+      context: ./src/owl-solution
+      dockerfile: ../../Dockerfile.template
+    container_name: owl-solution-lending
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src/owl-solution:/usr/share/nginx/html
+
+  dynamic-ui-bridge:
+    build:
+      context: ./src/dynamic-ui-bridge
+      dockerfile: ../../Dockerfile.template
+    container_name: dynamic-ui-bridge-lending
+    ports:
+      - "8082:80"
+    volumes:
+      - ./src/dynamic-ui-bridge:/usr/share/nginx/html
+
+  real-time-speech-translator:
+    build:
+      context: ./src/real-time-speech-translator
+      dockerfile: ../../Dockerfile.template
+    container_name: real-time-speech-translator-lending
+    ports:
+      - "8083:80"
+    volumes:
+      - ./src/real-time-speech-translator:/usr/share/nginx/html
