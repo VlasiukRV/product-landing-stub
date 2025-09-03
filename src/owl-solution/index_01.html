@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>OWL: Device Orchestrator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .feature-card {
+            background: rgba(45, 55, 72, 0.5);
+            border-left: 4px solid #4f46e5;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            background: rgba(45, 55, 72, 0.8);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .icon {
+            filter: invert(100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+<header class="flex items-center px-8 py-6 max-w-7xl mx-auto z-50 relative">
+    <h1 class="text-2xl font-bold tracking-wide select-none">
+        <img src="https://cdn.prod.website-files.com/65fc3b24a566f4b48f09dc49/6882b7d8afa4b388e188dbad_Logo-OWLs.svg" alt="Owl Logo" class="h-10 md:h-12"/>
+    </h1>
+    <div class="ml-4 md:ml-6 text-xl md:text-2xl font-semibold text-white">OWL</div>
+</header>
+
+<section class="hero relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-8">
+    <div class="hero-content">
+        <h2 class="relative text-5xl md:text-7xl font-semibold leading-tight max-w-4xl drop-shadow-lg">
+            Eyes on your devices,<br class="hidden md:block">brains in the cloud.
+        </h2>
+        <p class="relative mt-4 md:mt-6 mb-8 md:mb-12 max-w-xl text-gray-300 text-lg md:text-xl">
+            A powerful IoT platform for seamless remote control, smart analytics, and dynamic orchestration of your connected devices.
+        </p>
+        <a href="#contact"
+           class="relative z-10 inline-block bg-indigo-600 hover:bg-indigo-500 px-8 py-3 md:px-10 md:py-4 rounded-lg text-lg font-semibold shadow-lg transition transform hover:scale-105">
+            Request a Demo
+        </a>
+    </div>
+</section>
+
+<section id="why-owl" class="py-20 px-6 md:px-8 min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-up">About OWL</h2>
+            <p class="text-gray-400 text-lg md:text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                <strong class="text-white">OWL: Device Orchestrator</strong> is a comprehensive cloud platform designed for **remote management of microcontrollers and connected devices**. It empowers you to dynamically adjust operational logic, update firmware, and monitor sensor status in real time—wherever you are.
+            </p>
+
+            <div class="mt-8 space-y-6 text-gray-300 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="200">
+                <p>
+                    <strong class="text-white">Flexible:</strong> Easily adapt to new requirements and expand your system without needing to reprogram hardware.
+                </p>
+                <p>
+                    <strong class="text-white">Scalable:</strong> Build systems of any size, from just a few devices to thousands, all managed from a single dashboard.
+                </p>
+                <p>
+                    <strong class="text-white">Fully Controllable:</strong> Gain complete visibility and authority over your IoT infrastructure with our intuitive tools.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.prod.website-files.com/65fc3b24a566f4b48f09dc49/663d289ae65f49e4871e8c0e_hero-image-p-500.png" alt="Owl Platform Dashboard" class="rounded-lg shadow-2xl" data-aos="fade-left" data-aos-delay="300"/>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 px-6 md:px-8 bg-gray-950">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">Core Capabilities</h2>
+            <p class="text-gray-400 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
+                OWL goes beyond simple monitoring, providing a complete toolset for intelligent device management.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="feature-card p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="0">
+                <div class="mb-4 h-12 w-12 flex items-center justify-center">
+                    <img src="https://www.svgrepo.com/show/532392/chip-circuit-board-microchip-computer.svg" alt="Chip Icon" class="h-full w-full icon" />
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">Dynamic Drivers & Firmware</h3>
+                <p class="text-gray-300">
+                    OWL provides a large library of drivers for various sensors and devices. Update and load firmware remotely without physical access.
+                </p>
+            </div>
+
+            <div class="feature-card p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                <div class="mb-4 h-12 w-12 flex items-center justify-center">
+                    <img src="https://www.svgrepo.com/show/521404/settings-gear.svg" alt="Settings Icon" class="h-full w-full icon" />
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">Cloud-Based Logic & State Machines</h3>
+                <p class="text-gray-300">
+                    Control device behavior by configuring state machines on the server, allowing you to dynamically change operational logic without reprogramming.
+                </p>
+            </div>
+
+            <div class="feature-card p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                <div class="mb-4 h-12 w-12 flex items-center justify-center">
+                    <img src="https://www.svgrepo.com/show/523412/automation-system-robot-device.svg" alt="Automation Icon" class="h-full w-full icon" />
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">Event-Based Automation</h3>
+                <p class="text-gray-300">
+                    Set up rules and triggers on the server to enable devices to react automatically to sensor changes or external events, creating truly autonomous systems.
+                </p>
+            </div>
+
+            <div class="feature-card p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="450">
+                <div class="mb-4 h-12 w-12 flex items-center justify-center">
+                    <img src="https://www.svgrepo.com/show/529711/analytics-graph.svg" alt="Analytics Icon" class="h-full w-full icon" />
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">Data Collection & Analytics</h3>
+                <p class="text-gray-300">
+                    Automatically collect and store data from all connected sensors for in-depth analysis, trend visualization, and data-driven decisions.
+                </p>
+            </div>
+
+            <div class="feature-card p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="600">
+                <div class="mb-4 h-12 w-12 flex items-center justify-center">
+                    <img src="https://www.svgrepo.com/show/520188/notification-alert.svg" alt="Notification Icon" class="h-full w-full icon" />
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">Real-time Monitoring & Alerts</h3>
+                <p class="text-gray-300">
+                    Gain real-time visibility into your devices and receive instant, personalized notifications about critical events via email, SMS, or other channels.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="use-cases" class="py-20 px-6 md:px-8 bg-gray-800">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">Who is OWL For?</h2>
+        <p class="text-gray-400 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
+            OWL is the perfect tool for a wide range of industries and professionals.
+        </p>
+    </div>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="feature-card p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="0">
+            <h3 class="text-2xl font-semibold text-white mb-2">IoT Engineers & Developers</h3>
+            <p class="text-gray-300">
+                Simplify microcontroller management. Gain maximum flexibility and full control with zero hassle.
+            </p>
+        </div>
+        <div class="feature-card p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="150">
+            <h3 class="text-2xl font-semibold text-white mb-2">Automation & Robotics Engineers</h3>
+            <p class="text-gray-300">
+                Control industrial processes and machinery, predict failures, and optimize energy consumption from anywhere.
+            </p>
+        </div>
+        <div class="feature-card p-6 rounded-lg shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-semibold text-white mb-2">IoT Companies & System Integrators</h3>
+            <p class="text-gray-300">
+                Scale, optimize, and control large-scale IoT solutions for your clients with a single, powerful platform.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-16 text-center">
+        <h3 class="text-3xl font-bold text-white mb-4" data-aos="fade-up">Example Applications</h3>
+        <ul class="text-gray-400 text-lg md:text-xl leading-relaxed list-disc list-inside space-y-2" data-aos="fade-up" data-aos-delay="100">
+            <li>**Smart Agriculture:** Monitor greenhouses, manage irrigation systems, and control animal feeders based on real-time data.</li>
+            <li>**Smart Cities:** Manage street lighting, monitor air quality, and control traffic systems remotely.</li>
+            <li>**Industrial Automation:** Oversee production lines, manage equipment, and perform remote diagnostics.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="technology" class="py-20 px-6 md:px-8 bg-gray-950">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">Technology Stack</h2>
+        <p class="text-gray-400 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
+            Built on a robust foundation for reliability and scalability.
+        </p>
+    </div>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div data-aos="fade-right" data-aos-delay="200">
+            <h3 class="text-2xl font-semibold text-white mb-2">Supported Hardware</h3>
+            <p class="text-gray-300">
+                OWL firmware is compatible with popular microcontrollers, including **ESP32, ESP8266, and Arduino**.
+            </p>
+        </div>
+        <div data-aos="fade-left" data-aos-delay="200">
+            <h3 class="text-2xl font-semibold text-white mb-2">Communication Protocols</h3>
+            <p class="text-gray-300">
+                Data is exchanged securely between devices and the server using standardized protocols like **MQTT, HTTP, and WebSocket**. LoRa radio communication is used for secure interaction between controllers.
+            </p>
+        </div>
+        <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-2xl font-semibold text-white mb-2">Security</h3>
+            <p class="text-gray-300">
+                All data is encrypted with SSL/TLS. The system features multi-level authentication and authorization to ensure only authorized personnel can access configurations and data.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="py-20 px-6 md:px-8 text-center bg-gray-950">
+    <div class="max-w-3xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">Ready to Orchestrate Your Devices?</h2>
+        <p class="text-gray-400 text-lg md:text-xl mb-8" data-aos="fade-up" data-aos-delay="100">
+            Let's discuss how OWL can help you build and manage intelligent, scalable IoT solutions for your business.
+        </p>
+        <a href="#"
+           class="inline-block bg-indigo-600 hover:bg-indigo-500 px-8 py-3 md:px-10 md:py-4 rounded-lg text-lg font-semibold shadow-lg transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+            Contact Us
+        </a>
+    </div>
+</section>
+
+<footer class="text-center text-gray-400 py-6 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+        <p class="mb-2">&copy; 2025 Targeted Solutions For Business. All rights reserved.</p>
+        <p>
+            <a href="#" class="hover:text-white transition">Privacy Policy</a> |
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({
+        once: true,
+        duration: 800,
+        easing: 'ease-out-cubic',
+        offset: 100
+    });
+</script>
+
+</body>
+</html>

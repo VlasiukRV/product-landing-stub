@@ -1,38 +1,21 @@
-
+/* Основні стилі для всього сайту */
 body {
     margin: 0;
     height: 100%;
+    /* Градієнт для фону */
     background: linear-gradient(180deg,
-    #0b1a34 20%,      /*!* більш темний синій *!*/
-    #12305c 40%,     /* яскравіший синій */
-    #16487f 60%,     /* насичений синій */
-    #1d5db0 80%,     /* яскравий синій */
-    #2181e0 100%     /* світло-блакитний */
+    #0b1a34 20%,
+    #12305c 40%,
+    #16487f 60%,
+    #1d5db0 80%,
+    #2181e0 100%
     );
-    color: white; /* Текст будет читабельным */
+    color: white;
     font-family: sans-serif;
 }
 
-.coming-soon {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: rgba(252, 211, 77, 0.6);
-    color: black;
-    padding: 1rem 1.5rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 50%;
-    z-index: 50;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-
-    /* Поворот + зсув для видимості */
-    transform: rotate(45deg) translate(50%, 300%);
-    transform-origin: top right;
-}
-
-section.hero {
+/* Контент Hero-секції */
+.hero-content {
     position: relative;
     min-height: 80vh;
     max-width: 64rem;
@@ -48,6 +31,7 @@ section.hero {
     z-index: 0;
 }
 
+/* Фон з сіткою для Hero-секції */
 section.hero::before {
     content: "";
     position: absolute;
@@ -63,17 +47,33 @@ section.hero::before {
     z-index: -1;
 }
 
+/* Стилі для секцій з кольоровим фоном */
+.section-colored {
+    background: rgba(18, 48, 92, 0.5); /* Напівпрозорий темно-синій */
+    backdrop-filter: blur(5px);
+}
+
+.bg-gray-950 {
+    background: rgba(18, 48, 92, 0.8) !important; /* Напівпрозорий темно-синій */
+}
+
+/* Стилі для карток з функціями */
 .feature-card {
-    background: rgba(18, 48, 92, 0.85);
+    background: rgba(18, 48, 92, 0.7); /* Напівпрозорий темно-синій */
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 0.75rem; /* екв. rounded-xl */
-    padding: 2rem;          /* екв. p-8 */
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 25px -5px rgba(99, 102, 241, 0.6); /* схоже на hover:shadow-indigo-600 */
+    background: rgba(22, 72, 127, 0.9); /* Колір при наведенні, теж напівпрозорий */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Стиль для білих іконок */
+.icon {
+    filter: invert(100%);
 }
