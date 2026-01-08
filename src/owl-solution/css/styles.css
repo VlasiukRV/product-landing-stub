@@ -109,3 +109,63 @@ section.hero::before {
 .icon {
     filter: invert(100%);
 }
+
+@media print {
+    /* 1. ПРИНУДИТЕЛЬНОЕ ОТОБРАЖЕНИЕ КОНТЕНТА (AOS FIX) */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        transition: none !important;
+    }
+
+    /* 2. Настройки страницы */
+    @page {
+        margin: 1.5cm;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    /* 3. Очистка от лишних элементов */
+    .coming-soon,
+    #contact a,
+    .hero a,
+    header {
+        display: none !important;
+    }
+
+    /* 4. Адаптация секций */
+    section {
+        background: transparent !important;
+        color: black !important;
+        min-height: auto !important;
+        padding: 20px 0 !important;
+        display: block !important;
+    }
+
+    /* 5. Исправление сетки (чтобы колонки не слипались) */
+    .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .feature-card {
+        border: 1px solid #eee !important;
+        page-break-inside: avoid;
+        background: white !important;
+        color: black !important;
+    }
+
+    /* 6. Логотип (инверсия для печати) */
+    .invert {
+        filter: brightness(0) !important; /* Делает логотип полностью черным */
+    }
+
+    p, h1, h2, h3, strong {
+        color: black !important;
+    }
+}
