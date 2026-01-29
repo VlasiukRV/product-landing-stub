@@ -3,67 +3,197 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Real-Time Speech Translation Tool</title>
+    <title>AI Signal Processor | Translation Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #94a3b8;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 2px solid rgba(59, 130, 246, 0.4);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 40%, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+        }
+
+        /* Текст заголовка */
+        .text-header {
+            color: #f1f5f9;
+        }
+
+        /* ФІКС: Повертаємо видимість синього слова */
+        .text-blue-fix {
+            color: #3b82f6 !important;
+            -webkit-text-fill-color: #3b82f6 !important;
+            opacity: 1 !important;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="overflow-x-hidden">
 
-<!-- Hero -->
-<section class="hero-section flex flex-col justify-center items-center text-center px-6">
-    <div class="hero-content max-w-3xl">
-        <h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">Real-Time Speech Translation</h1>
-        <p class="text-xl mb-8 drop-shadow-md">
-            Instantly translate spoken language during live conversations. Break down language barriers effortlessly.
-        </p>
-        <a href="https://your-live-demo-link.com" target="_blank" class="inline-block bg-white text-black font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-gray-200 transition">
-            Try the Demo
-        </a>
+<div class="fixed inset-0 hero-gradient pointer-events-none"></div>
+
+<nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-panel border-t-0">
+    <div class="flex items-center space-x-2">
+        <div class="w-2.5 h-2.5 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_#3b82f6]"></div>
+        <span class="mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">TSB-Enterprise // Core v2.0</span>
     </div>
-</section>
-
-<!-- Features -->
-<section class="py-20 bg-white text-center max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-12">What It Does</h2>
-    <p class="text-lg text-gray-700 mb-16 max-w-3xl mx-auto">
-        Our tool listens to your speech and translates it into another language in real time. Perfect for international meetings, live events, and one-on-one interpretation. Powered by AI and optimized for natural flow.
-    </p>
-    <div class="grid md:grid-cols-3 gap-10">
-        <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md h-full">
-            <h3 class="text-xl font-semibold mb-4">Real-Time</h3>
-            <p class="text-gray-600">Immediate translations as you speak.</p>
-        </div>
-        <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md h-full">
-            <h3 class="text-xl font-semibold mb-4">Accurate</h3>
-            <p class="text-gray-600">High-quality AI-powered speech recognition and translation.</p>
-        </div>
-        <div class="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-md h-full">
-            <h3 class="text-xl font-semibold mb-4">Easy to Use</h3>
-            <p class="text-gray-600">Simple interface ready to go on any device.</p>
-        </div>
-    </div>
-</section>
-
-<!-- Live Status -->
-<section class="py-20 bg-white text-center max-w-5xl mx-auto px-6">
-    <h2 class="text-2xl font-semibold text-green-600 mb-4">✅ Now Live</h2>
-    <p class="text-gray-700 text-lg">
-        The tool is currently running in production and already helping people overcome language barriers every day.
-    </p>
-</section>
-
-<!-- Call to Action -->
-<section class="py-16 bg-gray-100 text-center max-w-3xl mx-auto px-6">
-    <h2 class="text-2xl font-semibold mb-4">Ready to try it?</h2>
-    <p class="text-gray-600 mb-6">Experience real-time speech translation in action.</p>
-    <a href="https://your-live-demo-link.com" target="_blank" class="inline-block bg-black text-white px-8 py-3 rounded hover:bg-gray-800 transition font-semibold">
-        Start Now
+    <a href="http://192.168.4.25:5173/" class="mono text-[10px] bg-blue-600/90 hover:bg-blue-500 text-slate-100 px-5 py-2.5 rounded-xl transition-all uppercase font-black tracking-widest shadow-lg shadow-blue-500/20">
+        Launch Console
     </a>
+</nav>
+
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+    <div class="w-full max-w-[90vw] mx-auto">
+        <span class="mono text-blue-500/80 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block">Neural Translation Link</span>
+
+        <h1 class="text-5xl
+           xl:text-8xl
+           min-[1900px]:text-[10rem]
+           font-black mb-8 italic uppercase tracking-tighter
+           leading-[1.1] xl:leading-[0.85] text-header text-center
+           transition-[font-size] duration-500">
+            <span class="inline-block xl:whitespace-nowrap">Break the <span class="text-blue-fix drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]">Language</span></span><br><span class="inline-block mt-2 xl:mt-0">Barrier</span>
+        </h1>
+
+        <p class="text-slate-400 text-lg md:text-xl min-[1900px]:text-2xl mb-12 max-w-2xl min-[1900px]:max-w-4xl mx-auto font-medium leading-relaxed">
+            Real-time language bridging infrastructure for live, broadcast, and
+            multilingual environments with
+            <span class="text-slate-200 font-bold">millisecond latency</span>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="http://192.168.4.25:5173/"
+               class="px-10 py-4 bg-slate-100 text-slate-900 font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-white hover:scale-105 active:scale-95 transition-all">
+                Try Live Demo
+            </a>
+
+            <div class="flex items-center space-x-3 px-6 py-4 glass-panel rounded-2xl">
+                <div class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500/50 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </div>
+                <span class="mono text-[10px] uppercase font-bold text-slate-400">System Online</span>
+            </div>
+        </div>
+
+        <p class="mono text-[10px] tracking-[0.3em] uppercase text-slate-500 mt-12 opacity-60">
+            Live events // Broadcast // Multilingual sessions
+        </p>
+    </div>
 </section>
 
-<!-- Footer -->
-<footer class="text-center text-sm text-gray-400 py-10">
-    &copy; 2025 Targeted Solutions For Business. All rights reserved.
+<section class="relative py-12 px-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-panel p-8 rounded-[2.5rem] group hover:border-blue-500/50 transition-all duration-500">
+            <div class="mono text-blue-500/70 text-[10px] mb-4 font-bold uppercase tracking-widest">01 // Latency</div>
+            <h3 class="text-2xl font-black uppercase italic mb-4 text-slate-100">Real-Time</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Proprietary stream-processing technology ensures immediate translation as words are spoken.</p>
+        </div>
+
+        <div class="glass-panel p-8 rounded-[2.5rem] group hover:border-blue-500/50 transition-all duration-500">
+            <div class="mono text-blue-500/70 text-[10px] mb-4 font-bold uppercase tracking-widest">02 // Precision</div>
+            <h3 class="text-2xl font-black uppercase italic mb-4 text-slate-100">AI-Powered</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Large-scale transformer-based language models for unmatched linguistic accuracy.</p>
+        </div>
+
+        <div class="glass-panel p-8 rounded-[2.5rem] group hover:border-blue-500/50 transition-all duration-500">
+            <div class="mono text-blue-500/70 text-[10px] mb-4 font-bold uppercase tracking-widest">03 // Adaptive</div>
+            <h3 class="text-2xl font-black uppercase italic mb-4 text-slate-100">Zero Install</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">Universal web architecture allows instant access from mobile, desktop, or tablet.</p>
+        </div>
+    </div>
+</section>
+
+<section id="architecture" class="relative py-28 px-6 max-w-5xl mx-auto">
+    <div class="glass-panel rounded-[3rem] p-8 md:p-16 space-y-12 bg-slate-900/40">
+
+        <div class="text-center space-y-4">
+            <span class="mono text-blue-500/70 text-[10px] uppercase tracking-[0.4em] font-bold">Technical Appendix</span>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic text-slate-100 leading-none">System Architecture</h2>
+        </div>
+
+
+
+        <div class="max-w-3xl mx-auto text-slate-400 text-sm md:text-base leading-relaxed space-y-6">
+            <p>The system is built around a real-time audio ingestion pipeline designed for <span class="text-slate-100">low-latency, fault-tolerant speech processing</span>.</p>
+
+            <div class="mono text-center text-xs md:text-sm tracking-wide text-slate-300 opacity-80">
+                AudioShipper
+                <span class="mx-2 opacity-40">→</span>
+                WebSocketAudioStream
+                <span class="mx-2 opacity-40">→</span>
+                Dispatcher
+                <span class="mx-2 opacity-40">→</span>
+                Output Clients
+            </div>
+
+            <div class="grid gap-6 mt-8">
+                <div class="flex items-start space-x-4">
+                    <div class="mono text-blue-500 font-bold mt-1">/01</div>
+                    <div>
+                        <h4 class="text-slate-100 font-bold uppercase text-sm mb-1">AudioShipper</h4>
+                        <p class="text-xs md:text-sm">Asynchronous client captures PCM frames and streams them via WebSocket with minimal jitter.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 border-t border-white/5 pt-6">
+                    <div class="mono text-blue-500 font-bold mt-1">/02</div>
+                    <div>
+                        <h4 class="text-slate-100 font-bold uppercase text-sm mb-1">WebSocketAudioStream</h4>
+                        <p class="text-xs md:text-sm">A channel-bound buffer that normalizes incoming signals for the transcription engine.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4 border-t border-white/5 pt-6">
+                    <div class="mono text-blue-500 font-bold mt-1">/03</div>
+                    <div>
+                        <h4 class="text-slate-100 font-bold uppercase text-sm mb-1">Dispatcher Layer</h4>
+                        <p class="text-xs md:text-sm">Guarantees strict channel isolation, routing audio to independent processing contexts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 px-6">
+    <div class="glass-panel max-w-4xl mx-auto p-12 rounded-[3rem] text-center relative overflow-hidden bg-slate-800/30">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+        <h2 class="text-3xl font-black uppercase italic mb-6 text-slate-200">Engineered for Performance</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto mb-10 font-medium">
+            Our infrastructure is designed for high-concurrency environments, supporting multiple simultaneous channels with independent language engines.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6 opacity-40">
+            <span class="mono text-[10px] font-black uppercase tracking-widest text-slate-300">Asynchronous stream pipeline</span>
+            <span class="mono text-[10px] font-black uppercase tracking-widest text-slate-300">Transformer-based models</span>
+            <span class="mono text-[10px] font-black uppercase tracking-widest text-slate-300">Websocket API</span>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 text-center border-t border-white/5 bg-slate-950/20">
+    <p class="mono text-[9px] text-slate-600 uppercase tracking-[0.4em] font-bold">
+        &copy; 2026 Targeted Solutions For Business. Operational Deployment.
+    </p>
 </footer>
 
 </body>

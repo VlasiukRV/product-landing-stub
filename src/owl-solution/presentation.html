@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWL Solutions - Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { scroll-behavior: smooth; }
+        body { background-color: #0f172a; color: white; }
+
+        /* Стили для навигационных точек */
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 15px 0;
+            display: block;
+            transition: all 0.3s;
+        }
+        .dot:hover { background: #6366f1; transform: scale(1.3); }
+
+        /* Специальные стили для печати (Presentation Mode) */
+        @media print {
+            .nav-dots, .no-print { display: none !important; }
+            section {
+                page-break-after: always !important;
+                min-height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                background: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+            [data-aos] { opacity: 1 !important; transform: none !important; }
+            .bg-gray-900, .bg-gray-950, .bg-gray-800 { background: white !important; color: black !important; border: 1px solid #eee; }
+            .text-gray-400, .text-gray-300 { color: #444 !important; }
+            .text-indigo-400 { color: #4338ca !important; }
+        }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+
+<div class="nav-dots hidden md:block">
+    <a href="#slide1" class="dot" title="Title"></a>
+    <a href="#slide2" class="dot" title="Problem"></a>
+<!--    <a href="#slide3" class="dot" title="Solution"></a>-->
+    <a href="#slide4" class="dot" title="Capabilities"></a>
+    <a href="#slide6" class="dot" title="Architecture"></a>
+    <a href="#slide7" class="dot" title="Innovations"></a>
+    <a href="#slide10" class="dot" title="Roadmap"></a>
+</div>
+
+<section id="slide1" class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+    <div data-aos="fade-down">
+        <img src="https://cdn.prod.website-files.com/65fc3b24a566f4b48f09dc49/6882b7d8afa4b388e188dbad_Logo-OWLs.svg" alt="Logo" class="h-16 mb-8 mx-auto invert">
+        <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-4 text-white">OWL Solutions</h1>
+        <p class="text-xl md:text-2xl text-indigo-400 font-medium">Cloud-Orchestrated Platform for Resilient IoT Automation</p>
+        <div class="mt-10 max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed">
+            Vendor-Agnostic Cloud Orchestration for IoT Devices enabling secure, remote management across industrial and agricultural environments in the United States.
+        </div>
+    </div>
+    <div class="absolute bottom-10 animate-bounce no-print">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 14l-7 7-7-7m14-8l-7 7-7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+</section>
+
+<section id="slide2" class="min-h-screen bg-gray-950 flex items-center px-6 py-20 border-y border-gray-800">
+    <div class="max-w-6xl mx-auto w-full">
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 flex items-center gap-4" data-aos="fade-right">
+            <span class="bg-red-500 w-2 h-12 block"></span> Structural Limitations
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-6" data-aos="fade-up">
+                <div class="p-6 bg-gray-900 rounded-lg border-l-4 border-red-500">
+                    <p class="text-gray-300">Strong dependency on proprietary hardware and firmware.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg border-l-4 border-red-500">
+                    <p class="text-gray-300">Manual reprogramming required for logic or configuration changes.</p>
+                </div>
+                <div class="p-6 bg-gray-900 rounded-lg border-l-4 border-red-500">
+                    <p class="text-gray-300">Poor interoperability between heterogeneous devices.</p>
+                </div>
+            </div>
+            <div class="flex items-center" data-aos="fade-left">
+                <p class="text-2xl text-gray-400 italic border-l border-gray-700 pl-8">
+                    "These challenges disproportionately affect U.S. SMEs operating in agriculture and manufacturing."
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="slide4" class="min-h-screen flex items-center px-6 py-20">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">Core Platform Capabilities</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-indigo-500 transition-colors" data-aos="zoom-in" data-aos-delay="100">
+                <div class="text-indigo-500 mb-4 text-3xl">UDL</div>
+                <h3 class="font-bold text-xl mb-2 text-white">Universal Driver Library</h3>
+                <p class="text-gray-400 text-sm">Modular sensor drivers deployed from the cloud.</p>
+            </div>
+            <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-indigo-500 transition-colors" data-aos="zoom-in" data-aos-delay="200">
+                <div class="text-indigo-500 mb-4 text-3xl">OTA</div>
+                <h3 class="font-bold text-xl mb-2 text-white">Over-the-Air Updates</h3>
+                <p class="text-gray-400 text-sm">Remote updates without physical intervention.</p>
+            </div>
+            <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-indigo-500 transition-colors" data-aos="zoom-in" data-aos-delay="300">
+                <div class="text-indigo-500 mb-4 text-3xl">Config</div>
+                <h3 class="font-bold text-xl mb-2 text-white">Cloud Configuration</h3>
+                <p class="text-gray-400 text-sm">Centralized delivery of device settings.</p>
+            </div>
+            <div class="p-8 bg-gray-800/50 rounded-2xl border border-gray-700 hover:border-indigo-500 transition-colors" data-aos="zoom-in" data-aos-delay="400">
+                <div class="text-indigo-500 mb-4 text-3xl">Live</div>
+                <h3 class="font-bold text-xl mb-2 text-white">Real-Time Monitoring</h3>
+                <p class="text-gray-400 text-sm">Continuous visibility into system status.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="slide6" class="min-h-screen bg-indigo-950/20 flex flex-col justify-center items-center px-6 py-20">
+    <h2 class="text-4xl font-bold mb-16" data-aos="fade-up">System Architecture</h2>
+    <div class="max-w-6xl w-full grid md:grid-cols-3 gap-0 text-center items-stretch">
+        <div class="p-10 bg-gray-900 border border-indigo-500/30 rounded-l-2xl" data-aos="fade-right">
+            <h3 class="text-indigo-400 font-bold mb-4 uppercase tracking-wider">Edge Layer</h3>
+            <p class="text-sm text-gray-300">ESP32 / Arduino / LoRa<br>Low-power operation in constrained environments.</p>
+        </div>
+
+        <div class="p-10 bg-indigo-600 shadow-2xl scale-110 z-10 rounded-xl" data-aos="zoom-in">
+            <h3 class="text-white font-bold mb-4 uppercase tracking-wider">Orchestration</h3>
+            <p class="text-sm text-indigo-100">Cloud Logic Engine<br>State machines & automated rule sets.</p>
+        </div>
+        <div class="p-10 bg-gray-900 border border-indigo-500/30 rounded-r-2xl" data-aos="fade-left">
+            <h3 class="text-indigo-400 font-bold mb-4 uppercase tracking-wider">Presentation</h3>
+            <p class="text-sm text-gray-300">Secure REST APIs<br>Real-time analytics and dashboards.</p>
+        </div>
+    </div>
+</section>
+
+<section id="slide7" class="min-h-screen flex items-center px-6 py-20">
+    <div class="max-w-5xl mx-auto bg-gray-800/30 p-12 rounded-3xl border border-indigo-500/20">
+        <h2 class="text-4xl font-bold mb-10" data-aos="fade-up">Key Technical Innovations</h2>
+        <div class="space-y-8">
+            <div class="flex gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-indigo-500 font-bold text-2xl">01</div>
+                <div>
+                    <h4 class="text-xl font-bold">Dynamic State-Machine Orchestration</h4>
+                    <p class="text-gray-400">Real-time behavioral control without firmware flashing.</p>
+                </div>
+            </div>
+            <div class="flex gap-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-indigo-500 font-bold text-2xl">02</div>
+                <div>
+                    <h4 class="text-xl font-bold">Resilient Communication (“Vlasiuk Method”)</h4>
+                    <p class="text-gray-400 italic">Interference-resistant LoRa transmission derived from doctoral research, optimized for noisy industrial environments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="slide10" class="min-h-screen bg-gray-950 flex flex-col justify-center px-6 py-20">
+    <h2 class="text-4xl font-bold mb-20 text-center" data-aos="fade-up">Strategic Roadmap (2026–2027)</h2>
+    <div class="max-w-4xl mx-auto w-full relative border-l-2 border-indigo-500 pl-8 space-y-12">
+        <div class="relative" data-aos="fade-left">
+            <div class="absolute -left-[41px] top-0 w-4 h-4 bg-indigo-500 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.8)]"></div>
+            <h4 class="text-indigo-400 font-bold">Phase 1 (Q1–Q2 2026)</h4>
+            <p class="text-xl text-white">Completion of Cloud Logic Engine and core driver library.</p>
+        </div>
+        <div class="relative" data-aos="fade-left" data-aos-delay="200">
+            <div class="absolute -left-[41px] top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
+            <h4 class="text-indigo-400 font-bold">Phase 2 (Q3–Q4 2026)</h4>
+            <p class="text-xl text-white">U.S.-based pilot deployments and field validation.</p>
+        </div>
+        <div class="relative" data-aos="fade-left" data-aos-delay="400">
+            <div class="absolute -left-[41px] top-0 w-4 h-4 bg-indigo-500 rounded-full"></div>
+            <h4 class="text-indigo-400 font-bold">Phase 3 (Q1–Q2 2027)</h4>
+            <p class="text-xl text-white">U.S. patent filings and client integrations.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="py-10 text-center text-gray-500 border-t border-gray-900 no-print">
+    <p>© 2026 Targeted Solutions For Business | Built for National Impact</p>
+    <button onclick="window.print()" class="mt-4 px-6 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full transition text-sm">
+        Download as PDF (Print)
+    </button>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+</script>
+</body>
+</html>
