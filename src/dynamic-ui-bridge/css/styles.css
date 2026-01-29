@@ -1,18 +1,46 @@
-.coming-soon {
+/* Custom styles for the Coming Soon Ribbon */
+.fixed-coming-soon-ribbon {
     position: fixed;
     top: 0;
     right: 0;
-    background: rgba(252, 211, 77, 0.6);
-    color: black;
-    padding: 1rem 1.5rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
-    z-index: 50;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 100; /* Убедитесь, что он поверх всего */
+    overflow: hidden; /* Обрезаем лишнее */
+    width: 200px; /* Ширина ленты */
+    height: 200px; /* Высота ленты */
+}
 
-    /* Поворот + зсув для видимості */
-    transform: rotate(45deg) translate(50%, 300%);
-    transform-origin: top right;
+.fixed-coming-soon-ribbon .ribbon-text {
+    display: block;
+    position: absolute;
+    padding: 0.5rem 2rem; /* Внутренние отступы текста */
+    background: rgba(252, 211, 77, 0.7); /* Желтый фон с прозрачностью */
+    color: #333; /* Темный текст для контраста */
+    font-weight: 700;
+    font-size: 1.125rem; /* Размер шрифта */
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Небольшая тень */
+    line-height: 1.2;
+
+    /* Позиционирование и поворот */
+    top: 45px; /* Смещаем вниз для лучшего положения на ленте */
+    right: -45px; /* Смещаем вправо, чтобы он начинался за пределами */
+    transform: rotate(45deg); /* Поворачиваем на 45 градусов */
+    width: 280px; /* Ширина текста после поворота, чтобы покрыть угол */
+    transform-origin: 50% 50%; /* Центр вращения */
+}
+
+/* Optional: Adjust for smaller screens if text is too large */
+@media (max-width: 640px) {
+    .fixed-coming-soon-ribbon {
+        width: 150px;
+        height: 150px;
+    }
+    .fixed-coming-soon-ribbon .ribbon-text {
+        font-size: 0.9rem;
+        padding: 0.4rem 1.5rem;
+        top: 35px;
+        right: -35px;
+        width: 210px;
+    }
 }

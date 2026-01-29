@@ -7,52 +7,50 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="text-white font-sans overflow-x-hidden">
+<body class="text-white font-sans overflow-x-hidden bg-slate-900">
 
-<!-- Fixed Centered Coming Soon Banner (Top Half) -->
-<div class="coming-soon">
-    🚧 Coming Soon something amazing.
+<div class="fixed-coming-soon-ribbon">
+    <span class="ribbon-text">🚧 COMING SOON!</span>
 </div>
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6
-  bg-gradient-to-b from-slate-900 via-slate-800 to-blue-800 overflow-hidden">
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-20
+  bg-gradient-to-br from-indigo-800 via-purple-900 to-slate-900 overflow-hidden">
 
-    <!-- Background Layer -->
     <div class="absolute inset-0 z-0">
         <img
                 src="img/lending-hero-background-layer.webp"
                 alt="DynamicUI Hero Background"
-                class="w-full h-full object-cover opacity-20"
+                class="w-full h-full object-cover opacity-10"
         />
-    </div>
+        <div class="absolute inset-0 bg-black opacity-30"></div> </div>
 
-    <!-- Foreground Content -->
-    <div class="relative z-10 max-w-3xl">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-            A bridge <br class="hidden sm:block"/>
-            between your backend and dynamic frontend.
+    <div class="relative z-10 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg">
+            A Bridge <br class="hidden sm:block"/>
+            Between Your Backend <br class="hidden sm:block"/>
+            and Dynamic Frontend.
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 mb-8">
-            DynamicUI Bridge – a meta-driven framework to generate dynamic panels and forms directly from your backend models.
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-2xl mx-auto">
+            DynamicUI Bridge – a meta-driven framework to generate dynamic admin interfaces
+            and forms directly from your backend models.
         </p>
 
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-5 justify-center">
             <a href="#"
-               class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-md text-lg font-medium transition">
+               class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg text-xl font-semibold shadow-lg
+                      transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50">
                 Request a Demo
             </a>
             <a href="http://192.168.4.22:3000"
-               class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-md text-lg font-medium transition">
+               class="bg-white text-indigo-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-xl font-semibold shadow-lg
+                      transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-white focus:ring-opacity-50">
                 Login
             </a>
         </div>
     </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-slate-900 text-gray-400 text-center py-6 select-none text-sm">
+<footer class="bg-gray-900 text-gray-400 text-center py-6 select-none text-sm border-t border-gray-800">
     &copy; 2025 Targeted Solutions For Business. All rights reserved.
 </footer>
 
