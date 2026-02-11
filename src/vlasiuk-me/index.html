@@ -27,15 +27,29 @@
             overflow-x: hidden;
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(0, 112, 243, 0.08) 0%, rgba(0,0,0,0) 70%);
+            bottom: -10vw;
+            left: -10vw;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
         .spotlight {
             position: fixed;
-            width: 60vw;
-            height: 60vw;
-            /* Более выраженный синий градиент на фоне */
-            background: radial-gradient(circle, rgba(0, 112, 243, 0.12) 0%, rgba(0,0,0,0) 70%);
-            top: -20vw;
-            right: -10vw;
+            width: 80vw;
+            height: 80vw;
+            /* Увеличили яркость с 0.07 до 0.15 и расширили диапазон */
+            background: radial-gradient(circle, rgba(0, 112, 243, 0.15) 0%, rgba(0, 112, 243, 0.05) 30%, rgba(0,0,0,0) 70%);
+            top: -30vw;
+            right: -15vw;
             z-index: -1;
+            filter: blur(50px);
+            animation: pulse 10s infinite alternate;
         }
 
         .container {
@@ -160,6 +174,12 @@
         @media (max-width: 768px) {
             .grid { grid-template-columns: 1fr; }
         }
+
+        @keyframes pulse {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-5%, 5%) scale(1.1); }
+        }
+
     </style>
 </head>
 <body>
@@ -173,12 +193,12 @@
     <div class="grid">
         <a href="https://olena.vlasiuk.me/" class="card">
             <img src="/img/olena_vlasiuk.webp" alt="Olena Vlasiuk" class="card-image">
-            <h2>Olena Vlasiuk</h2>
+            <h2>Dr Olena Vlasiuk</h2>
             <p>Expert insights into digital transformation and business strategy.</p>
             <div class="card-link">View Portfolio →</div>
         </a>
 
-        <a href="#" class="card">
+        <a href="https://www.linkedin.com/in/romavlasuk" class="card">
             <img src="/img/roman_vlasiuk.webp" alt="Roman Vlasiuk" class="card-image">
             <h2>Roman Vlasiuk</h2>
             <p>Founder & Technology Strategist. Shaping future digital ecosystems.</p>
@@ -187,15 +207,15 @@
 
         <a href="https://tsb-enterprise.com/" class="card">
             <img src="/img/tsb-Logo.svg" alt="TSB Enterprise" class="card-image">
-            <h2>TSB Enterprise</h2>
-            <p>Innovative software development and R&D hub.</p>
+            <h2>Targeted Solutions for Business</h2>
+            <p></p>
             <div class="card-link">Launch Site →</div>
         </a>
 
         <a href="https://uptarget.co/" class="card">
             <img src="/img/uptarget_Logo.svg" alt="UpTarget" class="card-image">
             <h2>UpTarget</h2>
-            <p>Strategic growth and market expansion services.</p>
+            <p>Your Dedicated Team.</p>
             <div class="card-link">Launch Site →</div>
         </a>
     </div>
