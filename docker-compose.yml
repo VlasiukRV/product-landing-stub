@@ -30,3 +30,13 @@ services:
       - "8093:80"
     volumes:
       - ./src/real-time-speech-translator:/usr/share/nginx/html
+
+  vlasiuk-me:
+    build:
+      context: ./src/vlasiuk-me
+      dockerfile: ../../Dockerfile.template
+    container_name: vlasiuk-me-lending
+    ports:
+      - "8094:80"
+    volumes:
+      - ./src/vlasiuk-me:/usr/share/nginx/html

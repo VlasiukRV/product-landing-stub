@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vlasiuk Family & Ventures</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #0f0f0f;
+            --accent: #0070f3;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --border: #222222;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Эффект свечения на фоне */
+        .glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 112, 243, 0.15) 0%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header { margin-bottom: 60px; }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .full { grid-column: span 2; }
+
+        .products-mini {
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+        }
+
+        .product-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .product-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .product-links a:hover { color: var(--text-main); }
+
+        @media (max-width: 650px) {
+            .grid { grid-template-columns: 1fr; }
+            .full { grid-column: span 1; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="container">
+    <header>
+        <h1>VLASIUK</h1>
+        <div class="tagline">The Family Office & Digital Venture Studio</div>
+    </header>
+
+    <div class="grid">
+        <a href="https://tsb-enterprise.com/" class="card">
+            <h2>TSB Enterprise</h2>
+            <p>Innovative software development and R&D for global markets.</p>
+            <div class="card-link">Visit Website →</div>
+        </a>
+
+        <a href="https://uptarget.co/" class="card">
+            <h2>UpTarget</h2>
+            <p>Strategic service brand focused on market expansion and targeting.</p>
+            <div class="card-link">Visit Website →</div>
+        </a>
+
+        <a href="https://olena.vlasiuk.me/" class="card full">
+            <h2>Olena Vlasiuk</h2>
+            <p>Personal brand and consultancy. Expert insights into business strategy and digital transformation.</p>
+            <div class="card-link">Explore Site →</div>
+        </a>
+    </div>
+
+    <div class="products-mini">
+        <div style="color: var(--text-dim); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">Proprietary Solutions</div>
+        <div class="product-links">
+            <a href="https://owl-solution.tsb-enterprise.com/">Owl Solution</a>
+            <a href="https://dynamic-ui.tsb-enterprise.com/">Dynamic UI</a>
+            <a href="https://speech-translator.tsb-enterprise.com/">Speech Translator</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
