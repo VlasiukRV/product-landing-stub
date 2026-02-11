@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Logo-Menu</title>
+    <defs>
+        <path d="M0,0 L549,0 L549,100 L0,100 L0,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About" transform="translate(-58, -1946)">
+            <g id="Menu" transform="translate(0, 1908)" xlink:href="#path-1">
+                <path stroke="#6725FF" stroke-width="4" d="M551,-2 L551,102 L-2,102 L-2,-2 L551,-2 Z"></path>
+                <g id="Logo-Menu" transform="translate(58, 38)" fill="#6725FF" fill-rule="evenodd">
+                    <path d="M24,0 L24,24 L17.6084687,24 L17.6084687,6.3916879 L0,6.3916879 L0,0 L24,0 Z M6.90877012,17.0919428 L6.90877012,24 L0.000294052783,24 L0.000294052783,17.0919428 L6.90877012,17.0919428 Z M15.7001838,8.29990198 L15.7001838,23.9997648 L8.81640815,23.9997648 L8.81640815,15.1838463 L0.000117621113,15.1838463 L0.000117621113,8.29990198 L15.7001838,8.29990198 Z" id="Icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
