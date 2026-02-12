@@ -1,42 +1,18 @@
 version: '3'
 
 services:
-  owl-solution:
-    build:
-      context: ./src/owl-solution
-      dockerfile: ../../Dockerfile.template
-    container_name: owl-solution-lending
+  all-lendings:
+    image: nginx:alpine
+    container_name: all-lendings-combined
     ports:
-      - "8091:80"
+      - "8091:8091"
+      - "8092:8092"
+      - "8093:8093"
+      - "8094:8094"
     volumes:
-      - ./src/owl-solution:/usr/share/nginx/html
+      - ./combined.conf:/etc/nginx/conf.d/default.conf:ro
 
-  dynamic-ui-bridge:
-    build:
-      context: ./src/dynamic-ui-bridge
-      dockerfile: ../../Dockerfile.template
-    container_name: dynamic-ui-bridge-lending
-    ports:
-      - "8092:80"
-    volumes:
-      - ./src/dynamic-ui-bridge:/usr/share/nginx/html
-
-  real-time-speech-translator:
-    build:
-      context: ./src/real-time-speech-translator
-      dockerfile: ../../Dockerfile.template
-    container_name: real-time-speech-translator-lending
-    ports:
-      - "8093:80"
-    volumes:
-      - ./src/real-time-speech-translator:/usr/share/nginx/html
-
-  vlasiuk-me:
-    build:
-      context: ./src/vlasiuk-me
-      dockerfile: ../../Dockerfile.template
-    container_name: vlasiuk-me-lending
-    ports:
-      - "8094:80"
-    volumes:
-      - ./src/vlasiuk-me:/usr/share/nginx/html
+      - ./src/owl-solution:/usr/share/nginx/html/owl-solution:ro
+      - ./src/dynamic-ui-bridge:/usr/share/nginx/html/dynamic-ui-bridge:ro
+      - ./src/real-time-speech-translator:/usr/share/nginx/html/real-time-speech-translator:ro
+      - ./src/vlasiuk-me:/usr/share/nginx/html/vlasiuk-me:ro
