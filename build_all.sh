@@ -3,30 +3,24 @@
 xattr -d com.apple.quarantine ./tailwindcss 2>/dev/null
 chmod +x ./tailwindcss
 
-echo "Starting Build Tailwind for all landings..."
+VERSION=$(date +%s)
 
-echo "vlasiuk-mevlasiuk-me"
-./tailwindcss -i ./src/vlasiuk-me/css/src-styles.css \
-              -o ./src/vlasiuk-me/css/styles.css \
-              --content "./src/vlasiuk-me/**/*.html" \
-              --minify
+echo "🚀 Starting Tailwind Build for all landings..."
 
-echo "Build real-time-speech-translator"
-./tailwindcss -i ./src/real-time-speech-translator/css/src-styles.css \
-              -o ./src/real-time-speech-translator/css/styles.css \
-              --content "./src/real-time-speech-translator/**/*.html" \
-              --minify
+for dir in ./src/*/; do
+    folder=$(basename "$dir")
+    input_css="${dir}css/src-styles.css"
+    output_css="${dir}css/styles.css"
+    html_file="${dir}index.html"
 
-echo "owl-solution"
-./tailwindcss -i ./src/owl-solution/css/src-styles.css \
-              -o ./src/owl-solution/css/styles.css \
-              --content "./src/owl-solution/**/*.html" \
-              --minify
+    if [ -f "$input_css" ]; then
+        echo "📦 Building: $folder"
+        ./tailwindcss -i "$input_css" -o "$output_css" --content "${dir}**/*.html" --minify
 
-echo "dynamic-ui-bridge"
-./tailwindcss -i ./src/dynamic-ui-bridge/css/src-styles.css \
-              -o ./src/dynamic-ui-bridge/css/styles.css \
-              --content "./src/dynamic-ui-bridge/**/*.html" \
-              --minify
+        if [ -f "$html_file" ]; then
+                    sed -i '' "s/styles.css?v=[0-9]*/styles.css?v=$VERSION/g" "$html_file"
+                fi
+    fi
+done
 
-echo "✅ Build complete!"
+echo "✅ All builds complete!"
