@@ -1,0 +1,184 @@
+/* 1. Сначала импорты */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* 2. Директивы Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Кастомные базовые стили (теги body, html) */
+@layer base {
+    :root {
+        --bg: #030303;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --accent: #0070f3;
+        --text-main: #ffffff;
+        --text-dim: #a1a1a1;
+    }
+
+    body {
+        background-color: var(--bg);
+        color: var(--text-main);
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        width: 50vw;
+        height: 50vw;
+        background: radial-gradient(circle, rgba(0, 112, 243, 0.08) 0%, rgba(0,0,0,0) 70%);
+        bottom: -10vw;
+        left: -10vw;
+        z-index: -1;
+        filter: blur(40px);
+    }
+
+    .spotlight {
+        position: fixed;
+        width: 80vw;
+        height: 80vw;
+        /* Увеличили яркость с 0.07 до 0.15 и расширили диапазон */
+        background: radial-gradient(circle, rgba(0, 112, 243, 0.15) 0%, rgba(0, 112, 243, 0.05) 30%, rgba(0,0,0,0) 70%);
+        top: -30vw;
+        right: -15vw;
+        z-index: -1;
+        filter: blur(50px);
+        animation: pulse 10s infinite alternate;
+    }
+
+    .container {
+        max-width: 1000px;
+        width: 100%;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    header { margin-bottom: 60px; }
+
+    /* Эффект серебряных букв с градиентом */
+    h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        margin: 0;
+        text-transform: uppercase;
+        background: linear-gradient(to bottom, #ffffff 0%, #888888 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+
+    .tagline {
+        color: var(--text-dim);
+        font-size: 1.1rem;
+        margin-top: 15px;
+        letter-spacing: 0.1em;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .card {
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--card-border);
+        border-radius: 24px;
+        padding: 40px 32px;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: var(--accent);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 24px;
+        border: 2px solid var(--card-border);
+        padding: 4px;
+        background: rgba(255, 255, 255, 0.02);
+        transition: 0.4s;
+    }
+
+    .card:hover .card-image {
+        border-color: var(--accent);
+        transform: scale(1.05);
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+        margin: 0 0 10px 0;
+        font-weight: 700;
+        color: var(--text-main);
+    }
+
+    .card p {
+        color: var(--text-dim);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+        min-height: 3em;
+    }
+
+    .card-link {
+        margin-top: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--accent);
+    }
+
+    .products-mini {
+        margin-top: 80px;
+        border-top: 1px solid var(--card-border);
+        padding-top: 40px;
+    }
+
+    .product-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    }
+
+    .product-links a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: 0.3s;
+    }
+
+    .product-links a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+        .grid { grid-template-columns: 1fr; }
+    }
+
+    @keyframes pulse {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(-5%, 5%) scale(1.1); }
+    }
+}

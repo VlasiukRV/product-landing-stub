@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* Контейнер: фиксируем в самом углу вьюпорта */
+    .fixed-coming-soon-ribbon {
+        /* Используем fixed, чтобы лента не уезжала при скролле */
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        z-index: 9999 !important; /* Поднимаем максимально высоко */
+
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        pointer-events: none; /* Пропускает клики сквозь пустые области */
+    }
+
+    /* Сама полоска с текстом */
+    .fixed-coming-soon-ribbon .ribbon-text {
+        display: block;
+        position: absolute;
+
+        background-color: rgba(252, 211, 77, 0.95);
+        @apply text-gray-900 font-bold uppercase text-center py-1.5 shadow-md;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+
+        width: 225px;
+        top: 35px;
+        right: -55px;
+
+        transform: rotate(45deg) !important;
+        transform-origin: center center;
+
+        pointer-events: auto;
+        user-select: none;
+    }
+
+    @media (max-width: 640px) {
+        .fixed-coming-soon-ribbon {
+            width: 100px;
+            height: 100px;
+        }
+        .fixed-coming-soon-ribbon .ribbon-text {
+            width: 150px;
+            top: 22px;
+            right: -40px;
+            font-size: 0.7rem;
+            @apply py-1;
+        }
+    }
+}
