@@ -28,20 +28,24 @@ const isActive = (path: string) => currentPath === path ? "text-[#c1eb70] border
 <div class="flex flex-col lg:flex-row min-h-screen relative">
 
     <aside class="lg:sticky lg:top-0 lg:h-screen w-full lg:w-[700px] flex flex-col z-50">
-        <div class="relative flex-1 min-h-[400px]">
-            <img src="/images/ollena-vlasiuk.jpg" alt="Olena Vlasiuk" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="relative w-full h-[450px] md:h-[650px] lg:h-full lg:flex-1 overflow-hidden">
+            <img
+                    src="/images/ollena-vlasiuk.jpg"
+                    alt="Olena Vlasiuk"
+                    class="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+            />
         </div>
 
-        <div class="bg-[#7d9c9fb3] backdrop-blur-[15px] p-10 flex flex-col items-center justify-center gap-5 text-center">
-            <h1 class="text-3xl md:text-4xl font-medium">Olena Vlasiuk, Ph. D.</h1>
+        <div class="bg-[#7d9c9fb3] backdrop-blur-[15px] p-8 md:p-12 flex flex-col items-center justify-center gap-5 text-center">
+            <h1 class="text-3xl md:text-4xl font-medium text-white">Olena Vlasiuk, Ph. D.</h1>
             <div class="flex gap-3">
-                <a href="tel:217-254-7159" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-[#3e5153] transition-colors border border-white/20">
+                <a href="tel:217-254-7159" class="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 hover:bg-[#3e5153] transition-colors border border-white/20">
                     <img src="/images/phone.svg" class="w-5 h-5" alt="Phone" />
                 </a>
-                <a href="mailto:alyona.lisitsyna@gmail.com" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-[#3e5153] transition-colors border border-white/20">
+                <a href="mailto:alyona.lisitsyna@gmail.com" class="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 hover:bg-[#3e5153] transition-colors border border-white/20">
                     <img src="/images/email.svg" class="w-5 h-5" alt="Email" />
                 </a>
-                <a href="https://linkedin.com/in/olenavlasiuk/" target="_blank" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-[#3e5153] transition-colors border border-white/20">
+                <a href="https://linkedin.com/in/olenavlasiuk/" target="_blank" class="w-11 h-11 flex items-center justify-center rounded-full bg-white/5 hover:bg-[#3e5153] transition-colors border border-white/20">
                     <img src="/images/linkedIn.svg" class="w-5 h-5" alt="LinkedIn" />
                 </a>
             </div>
