@@ -1,0 +1,110 @@
+---
+interface Props {
+    company_name: string;
+    hero_title: string;
+    hero_subtitle?: string;
+}
+
+const { company_name, hero_title, hero_subtitle } = Astro.props
+---
+
+<section id="Start" class="relative min-h-screen flex flex-col md:flex-row bg-brand-purple overflow-hidden font-poppins isolate">
+
+    <div
+            id="bg-block-1"
+            class="hidden md:block absolute bottom-0 left-0 w-[75%] h-[65%] z-[-2] pointer-events-none origin-bottom-left will-change-transform"
+            style="background-color: rgba(255, 255, 255, 0.08); transform: scale(1);"
+    ></div>
+
+    <div
+            id="bg-block-2"
+            class="hidden md:block absolute bottom-0 left-0 w-[56.25%] h-[35%] z-[-1] pointer-events-none border-t border-r border-white/5 origin-bottom-left will-change-transform"
+            style="background-color: rgba(255, 255, 255, 0.1); transform: scale(1);"
+    ></div>
+
+    <div class="absolute top-[60px] right-[60px] z-20">
+        <img
+                src="/img/logo-wite.svg"
+                alt="Logo"
+                class="w-[151px] h-[44px] object-contain brightness-0 invert"
+        />
+    </div>
+
+    <div class="relative z-10 flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 mt-0 md:mt-20 lg:-mt-45 lg:-mt-60">
+
+        <div class="max-w-3xl ">
+            <h1 class="text-4xl md:text-6xl lg:text-8xl font-medium mb-8 tracking-tight text-white leading-[1.05]">
+                {hero_title}
+            </h1>
+            <p class="text-lg md:text-xl font-light text-white leading-relaxed max-w-xl">
+                {hero_subtitle}
+            </p>
+        </div>
+    </div>
+
+    <div class="herocompany relative z-10 hidden md:flex w-[280px] flex-shrink-0 items-center justify-end pr-[60px]">
+        <div class="companytitle max-w-[200px] text-right">
+            <span class="text-2xl md:text-3xl text-white/80 font-light tracking-widest leading-[1.2] break-words block">
+                {company_name}
+            </span>
+        </div>
+    </div>
+
+</section>
+
+<style>
+
+    #bg-block-1, #bg-block-2 {
+        transition: background-color 0.1s linear;
+    }
+
+    @media (max-width: 767px) {
+        .herocompany {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    const b1 = document.getElementById('bg-block-1');
+    const b2 = document.getElementById('bg-block-2');
+
+    // Цвета для интерполяции
+    const startPurple = "123, 44, 191"; // #7b2cbf в RGB
+    const aboutGray = "249, 250, 251";  // bg-gray-50 в RGB
+
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth < 768) return;
+
+        const scrolled = window.scrollY;
+        const vh = window.innerHeight;
+        const progress = Math.min(scrolled / vh, 1);
+
+        if (b1 && b2) {
+            const s1 = 1 + (progress * 0.5);
+            const s2 = 1 + (progress * 1.2); // Растет быстрее, чтобы закрыть собой всё
+
+            requestAnimationFrame(() => {
+                b1.style.transform = `scale(${s1})`;
+                b2.style.transform = `scale(${s2})`;
+
+                // Блок 1: От белого (0.08) к фиолетовому фона (полностью сливается)
+                // Интерполяция: от rgba(255,255,255, 0.08) к rgba(123,44,191, 1)
+                const r1 = Math.round(255 - (255 - 123) * progress);
+                const g1 = Math.round(255 - (255 - 44) * progress);
+                const b1_val = Math.round(255 - (255 - 191) * progress);
+                const a1 = 0.08 + (0.92 * progress);
+                b1.style.backgroundColor = `rgba(${r1}, ${g1}, ${b1_val}, ${a1})`;
+
+                // Блок 2: От прозрачно-белого к сплошному серому (как About)
+                // Интерполяция: от rgba(255,255,255, 0.1) к rgba(249,250,251, 1)
+                const r2 = Math.round(255 - (255 - 249) * progress);
+                const g2 = Math.round(255 - (255 - 250) * progress);
+                const b2_val = Math.round(255 - (255 - 251) * progress);
+                const a2 = 0.1 + (0.9 * progress);
+                b2.style.backgroundColor = `rgba(${r2}, ${g2}, ${b2_val}, ${a2})`;
+            });
+        }
+    }, { passive: true });
+
+</script>

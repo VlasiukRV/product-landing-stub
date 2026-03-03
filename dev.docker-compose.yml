@@ -1,6 +1,19 @@
 version: '3'
 
 services:
+  astro-builder-tsb-enterprise:
+    build:
+      context: .
+      dockerfile: ${ASTRO_DOCKERFILE}
+      args:
+        PROJECT_DIR: src/tsb-enterprise
+    container_name: astro-tsb-${MODE}
+    volumes:
+      - ./src/tsb-enterprise:/app
+      - /app/node_modules
+    ports:
+      - "4321:4321"
+
   all-lendings:
     image: nginx:alpine
     container_name: all-lendings-combined
@@ -11,10 +24,12 @@ services:
       - "8094:8094"
       - "8095:8095"
     volumes:
-      - ./combined.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${NGINX_CONF}:/etc/nginx/conf.d/default.conf:ro
 
       - ./src/owl-solution:/usr/share/nginx/html/owl-solution:ro
       - ./src/dynamic-ui-bridge:/usr/share/nginx/html/dynamic-ui-bridge:ro
       - ./src/real-time-speech-translator:/usr/share/nginx/html/real-time-speech-translator:ro
       - ./src/vlasiuk-me:/usr/share/nginx/html/vlasiuk-me:ro
       - ./src/tsb-enterprise/dist:/usr/share/nginx/html/tsb-enterprise:ro
+    depends_on:
+      - astro-builder-tsb-enterprise

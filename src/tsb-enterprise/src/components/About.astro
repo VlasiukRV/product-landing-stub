@@ -1,0 +1,60 @@
+---
+interface Props {
+    about_content: string;
+}
+
+const {about_content} = Astro.props
+const team = [
+    {
+        name: "Dr. Olena Vlasiuk",
+        role: "CEO",
+        image: "/img/team/team-olena.webp",
+        link: "https://olena.vlasiuk.me/",
+    },
+    {
+        name: "Roman Vlasiuk",
+        role: "CTO",
+        image: "/img/team/team-roman.webp",
+        link: "https://www.linkedin.com/in/romavlasuk/",
+    }
+];
+---
+
+<section id="About" class="py-24 bg-gray-50">
+
+    <div class="sm:max-w-7xl md:max-w-3xl lg:max-w-7xl mx-auto px-4 grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start mb-10">
+
+        <div class="grid lg:grid-cols-1 gap-16 mb-20">
+            <h2 class="text-4xl md:text-6xl font-medium text-brand-purple pl-6 h-fit">About</h2>
+            <div class="space-y-6 text-gray-700 text-sm md:text-lg ">
+                <Fragment set:html={about_content}/>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-10 w-full">
+            {team.map((member) => (
+                    <div class="group text-center">
+                        <a href={member.link} target="_blank" rel="noopener noreferrer" class="block">
+                            <div class="overflow-hidden rounded-1xl mb-4 grayscale group-hover:grayscale-0 transition-all duration-700 shadow-sm hover:shadow-xl">
+                                <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        class="w-full aspect-square object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
+                        </a>
+
+                        <a href={member.link} target="_blank" rel="noopener noreferrer"
+                           class="inline-block hover:text-brand-purple transition-colors duration-300">
+                            <h3 class="text-2xl font-medium text-gray-900">{member.name}</h3>
+                        </a>
+
+                        <p class="text-brand-purple font-semibold uppercase tracking-wider text-sm mt-1">
+                            {member.role}
+                        </p>
+                    </div>
+            ))}
+        </div>
+
+    </div>
+</section>

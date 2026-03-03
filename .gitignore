@@ -1,3 +1,7 @@
 /.idea/
 
 ./tailwindcss
+
+/src/tsb-enterprise/.astro/
+/src/tsb-enterprise/node_modules/
+/.env

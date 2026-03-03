@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+}
+
+const {
+    title = "Targeted Solutions for Business",
+    description = "We empower your digital journey with remote software development teams and automation.",
+    image = "/img/og-image.jpg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+---
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+</head>
+<body class="text-[#333] font-sans antialiased m-0 selection:bg-purple-100 selection:text-purple-900">
+
+<slot name="header" />
+
+<main class="relative z-10">
+    <slot />
+</main>
+
+<slot name="footer" />
+
+<style is:global>
+
+    :root {
+        --brand-dark: #333333;
+        --brand-purple: #7b2cbf;
+    }
+
+    .w-inline-block {
+        display: inline-block;
+        max-width: 100%;
+    }
+</style>
+</body>
+</html>

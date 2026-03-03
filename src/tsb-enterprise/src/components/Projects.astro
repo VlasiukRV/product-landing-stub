@@ -1,0 +1,98 @@
+---
+const projects = [
+    {
+        title: "Uptarget.co",
+        subtitle: "Remote software development teams.",
+        desc: "A profitable service business with 30+ engineers supporting startups in the U.S., Israel, and Europe.",
+        logo: "/img/projects/logo-uptarget-co.svg",
+        link: "https://uptarget.co/",
+        status: null,
+    },
+    {
+        title: "Owl Solutions",
+        subtitle: "Automation for greenhouses, energy, and industrial sensors.",
+        desc: "A powerful platform for automating your assets, from a single device to a global network.",
+        logo: "/img/projects/logo-OWL.svg",
+        link: "https://owl-solution.tsb-enterprise.com/",
+        status: "coming soon"
+    },
+    {
+        title: "Dynamic UI Bridge",
+        subtitle: "Visual dashboard builder powered by API-driven metadata.",
+        desc: "Helps SMBs and civic orgs build forms and reports without code.",
+        logo: "/img/projects/logo-placeholder.svg",
+        link: "https://dynamic-ui.tsb-enterprise.com/",
+        status: "pilot phase"
+    },
+    {
+        title: "Real-Time Speech Translation Tool",
+        subtitle: "Break the Language Barrier",
+        desc: "Real-time language bridging infrastructure for live, broadcast, and multilingual environments with millisecond latency.",
+        logo: "/img/projects/logo-tts.svg",
+        link: "https://speech-translator.tsb-enterprise.com/",
+        status: null
+    },
+];
+---
+
+<section id="Projects" class="py-24 bg-white">
+    <div class="max-w-7xl md:max-w-3xl lg:max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl md:text-6xl font-medium text-brand-purple pl-6 mb-16">
+            Projects
+        </h2>
+
+        <div class="flex flex-col gap-6">
+            {projects.map(project => (
+                    <a
+                            href={project.link}
+                            target="_blank"
+                            class="group block p-10 md:p-12 bg-[rgb(244,244,244)] hover:bg-brand-purple/10 border border-transparent hover:border-purple-100 hover:shadow-2xl transition-all duration-500 rounded-1xl relative overflow-hidden"
+                    >
+                        <div class="grid md:grid-cols-[200px_1px_1fr] gap-8 md:gap-12 items-center">
+
+                            <div class="w-full flex justify-center items-center transform group-hover:-translate-y-1 transition-transform duration-500">
+                                <div class="h-16 w-full flex items-center justify-center"> <img
+                                        src={project.logo}
+                                        alt={project.title}
+                                        class="max-h-full max-w-full object-contain mx-auto"
+                                />
+                                </div>
+                            </div>
+
+                            <div class="hidden md:block w-[1px] h-24 bg-gray-300 group-hover:bg-brand-purple/30 transition-colors duration-500"></div>
+                            <div class="md:hidden w-full h-[1px] bg-gray-300"></div>
+
+                            <div class="relative z-10 pr-10">
+                                <h3 class="text-lg md:text-3xl font-semibold text-gray-900 mb-2 group-hover:text-brand-purple transition-colors">
+                                    {project.title}
+                                </h3>
+                                <p class="text-sm md:text-lg font-medium text-brand-purple/80 mb-4">
+                                    {project.subtitle}
+                                </p>
+                                <p class="text-sm md:text-lg font-normal text-gray-900 leading-relaxed max-w-2xl">
+                                    {project.desc}
+                                </p>
+                            </div>
+                        </div>
+
+                        {project.status && (
+                                <div class="absolute bottom-0 right-0 z-20">
+                                    <div class="bg-brand-purple/10 text-brand-purple border border-brand-purple/20 text-[10px] uppercase tracking-[0.15em] px-3 py-1.5 font-bold backdrop-blur-sm">
+                                        {project.status}
+                                    </div>
+                                </div>
+                        )}
+                        <div class="absolute top-2 right-2 opacity-20 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500 md:block">
+                            <img
+                                    src="https://cdn.prod.website-files.com/65fc3b24a566f4b48f09dc49/68829bf2d311756df91c466f_Open.svg"
+                                    class="w-6 h-6"
+                                    alt="Open"
+                            />
+                        </div>
+
+                        <div class="absolute -bottom-16 -right-16 w-32 h-32 bg-brand-purple/5 rounded-full blur-3xl group-hover:bg-brand-purple/10 transition-colors"></div>
+                    </a>
+            ))}
+        </div>
+    </div>
+</section>

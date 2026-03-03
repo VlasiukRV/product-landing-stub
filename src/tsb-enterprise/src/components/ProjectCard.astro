@@ -1,0 +1,21 @@
+---
+// src/components/ProjectCard.astro
+const { project } = Astro.props;
+const { title, description, subtitle, image } = project.data;
+---
+
+<a href={`/projects/${project.slug}`} class="reveal group relative bg-brand-blue/30 border border-white/10 p-8 rounded-2xl transition-all hover:border-brand-accent/50">
+    <div class="flex flex-col h-full">
+        <div class="mb-6 h-12 flex items-center">
+            <img src={image} alt={title} class="max-h-full" />
+        </div>
+        <div class="flex-grow">
+            <h3 class="text-2xl font-bold mb-1">{title}</h3>
+            <div class="text-brand-accent text-sm mb-4">{subtitle}</div>
+            <p class="text-gray-400 text-sm leading-relaxed">{description}</p>
+        </div>
+        <div class="mt-8 flex justify-end">
+            <img src="/img/open-icon.svg" class="w-6 h-6 opacity-50 group-hover:opacity-100 transition-opacity" />
+        </div>
+    </div>
+</a>
