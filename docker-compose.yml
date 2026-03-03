@@ -10,6 +10,7 @@ services:
       - "8093:8093"
       - "8094:8094"
       - "8095:8095"
+      - "8096:8096"
     volumes:
       - ./combined.conf:/etc/nginx/conf.d/default.conf:ro
 
@@ -18,3 +19,4 @@ services:
       - ./src/real-time-speech-translator:/usr/share/nginx/html/real-time-speech-translator:ro
       - ./src/vlasiuk-me:/usr/share/nginx/html/vlasiuk-me:ro
       - ./src/tsb-enterprise/dist:/usr/share/nginx/html/tsb-enterprise:ro
+      - ./src/olena-vlasiuk-me/dist:/usr/share/nginx/html/olena-vlasiuk-me:ro

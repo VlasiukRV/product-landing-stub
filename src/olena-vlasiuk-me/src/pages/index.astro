@@ -1,0 +1,38 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import InfoTile from '../components/InfoTile.astro';
+import { projects, aboutContent } from '../data/about';
+---
+
+<MainLayout title="Olena Vlasiuk, Ph. D. — About Me">
+    <div class="flex flex-col xl:flex-row gap-10 items-start">
+
+        <section class="flex-1 min-w-[300px] lg:min-w-[530px]">
+            <h2 class="text-2xl font-semibold mb-4">{aboutContent.title}</h2>
+            <div class="h-[1px] bg-[#a4f1f680] w-full mb-6"></div>
+
+            <div class="space-y-6 text-lg leading-relaxed opacity-90">
+                {aboutContent.paragraphs.map(paragraph => (
+                        <p set:html={paragraph}></p>
+                ))}
+            </div>
+        </section>
+
+        <aside class="flex flex-col gap-8 w-full xl:w-auto">
+            {projects.map((project) => (
+                    <InfoTile
+                            type={project.type as any}
+                            title={project.title}
+                            link={project.link}
+                            description={project.description}
+                            role={project.role}
+                            roleLink={project.roleLink}
+                            status={project.status}
+                    >
+                        <img slot="icon" src={project.icon} class="w-6 h-6" alt="" />
+                    </InfoTile>
+            ))}
+        </aside>
+
+    </div>
+</MainLayout>

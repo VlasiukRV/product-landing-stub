@@ -1,0 +1,51 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import InfoTile from '../../components/InfoTile.astro';
+import { projects } from '../../data/about';
+
+export async function getStaticPaths() {
+    return projects.map((project) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+---
+
+<MainLayout title={`${project.title} — Olena Vlasiuk`}>
+    <div class="flex flex-col xl:flex-row gap-10 items-start">
+
+        <section class="flex-1 min-w-[300px] lg:min-w-[530px]">
+            <h2 class="text-3xl font-bold mb-4 text-white">{project.title}</h2>
+            <div class="h-[2px] bg-[#a4f1f6] w-24 mb-8"></div>
+
+            <div class="space-y-6 text-lg leading-relaxed text-white/80">
+                {project.content.split('\n').map(p => p && <p>{p}</p>)}
+
+                <p class="pt-10 text-xs opacity-60 border-t border-white/10 italic">
+                    All products are developed under the umbrella of
+                    <a href="https://tsb-enterprise.com/" target="_blank" class="text-[#a4f1f6] underline">
+                        Targeted Solutions for Business LLC
+                    </a>
+                    — my holding company for tech innovation and applied R&D.
+                </p>
+            </div>
+        </section>
+
+        <aside class="w-full xl:w-[380px]">
+            <InfoTile
+                    type={project.type as any}
+                    title={project.title}
+                    link={project.link}
+                    description={project.description}
+                    role={project.role}
+                    roleLink={project.roleLink}
+                    status={project.status}
+            >
+                <img slot="icon" src={project.icon} class="w-6 h-6" alt="" />
+            </InfoTile>
+        </aside>
+
+    </div>
+</MainLayout>

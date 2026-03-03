@@ -1,0 +1,83 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { educationData } from '../data/education';
+---
+
+<MainLayout title="Education — Olena Vlasiuk">
+    <div class="max-w-4xl mx-auto space-y-12"> {educationData.map((item) => (
+            <section class="relative group">
+                <div class=" border border-white/10 rounded-2xl p-8 md:p-10 transition-all ">
+
+                    <div class="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-8">
+
+                        <div class="flex flex-col">
+                            <span class="text-[#c1eb70] font-mono text-sm tracking-widest uppercase mb-2">Period</span>
+                            <div class="text-2xl font-bold text-white/40 tabular-nums leading-none">
+                                {item.period.replace(' — ', '–')}
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
+                                    {item.institution}
+                                </h3>
+
+                                {item.institution_department && (
+                                        <p class="text-white/90 font-medium italic mb-2">“{item.institution_department}”</p>
+                                )}
+
+                                <div class="inline-flex items-center px-3 py-1 rounded-full bg-[#a4f1f6]/10 ">
+                                    <span class="text-[#a4f1f6] text-xs font-semibold tracking-wide uppercase">
+                                        {item.location}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {(item.thesis || item.details) && (
+                                    <div class="p-5">
+                                        {item.thesis && (
+                                                <p class="text-white/90 font-medium italic mb-2" set:html={item.thesis}> </p>
+                                        )}
+                                        {item.details && (
+                                                <p class="text-white/50 text-sm leading-relaxed" set:html={item.details}></p>
+                                        )}
+                                    </div>
+                            )}
+
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                {item.specialty && (
+                                        <div class="flex-1 min-w-[240px] rounded-xl p-4 transition-colors">
+                                            <span class="text-[#c1eb70] font-mono text-[9px] uppercase tracking-[0.2em] block mb-2">Field of Study</span>
+                                            <p class="text-white text-sm font-medium leading-relaxed">{item.specialty}</p>
+                                        </div>
+                                )}
+
+                                {item.degree && (
+                                        <div class="flex-1 min-w-[240px] rounded-xl p-4 transition-colors">
+                                            <span class="text-[#eeb5d3] font-mono text-[9px] uppercase tracking-[0.2em] block mb-2">Academic Degree</span>
+                                            <p class="text-white text-sm font-bold italic leading-relaxed">{item.degree}</p>
+                                        </div>
+                                )}
+                            </div>
+
+                            {item.achievements && (
+                                    <div class="space-y-3">
+                                        <span class="text-white/30 font-mono text-[10px] uppercase tracking-widest">Key Achievements</span>
+                                        <ul class="grid grid-cols-1 gap-2">
+                                            {item.achievements.map(achievement => (
+                                                    <li class="flex items-start gap-3 text-sm text-white/70 py-1">
+                                                        <span class="text-[#c1eb70] font-bold">→</span>
+                                                        <span class="leading-relaxed">{achievement}</span>
+                                                    </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </section>
+    ))}
+    </div>
+</MainLayout>

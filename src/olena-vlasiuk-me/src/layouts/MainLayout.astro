@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname === '/' ? '/' : pathname.replace(/\/$/, "");
+
+const isActive = (path: string) => currentPath === path ? "text-[#c1eb70] border-b-2 border-[#c1eb70]" : "text-white/60 hover:text-white transition-colors";
+---
+
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <style is:global>
+        @font-face {
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        body { font-family: 'Golos Text', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#3e5153] text-white antialiased">
+<div class="flex flex-col lg:flex-row min-h-screen relative">
+
+    <aside class="lg:sticky lg:top-0 lg:h-screen w-full lg:w-[700px] flex flex-col z-50">
+        <div class="relative flex-1 min-h-[400px]">
+            <img src="/images/ollena-vlasiuk.jpg" alt="Olena Vlasiuk" class="absolute inset-0 w-full h-full object-cover" />
+        </div>
+
+        <div class="bg-[#7d9c9fb3] backdrop-blur-[15px] p-10 flex flex-col items-center justify-center gap-5 text-center">
+            <h1 class="text-3xl md:text-4xl font-medium">Olena Vlasiuk, Ph. D.</h1>
+            <div class="flex gap-3">
+                <a href="tel:217-254-7159" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-[#3e5153] transition-colors border border-white/20">
+                    <img src="/images/phone.svg" class="w-5 h-5" alt="Phone" />
+                </a>
+                <a href="mailto:alyona.lisitsyna@gmail.com" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-[#3e5153] transition-colors border border-white/20">
+                    <img src="/images/email.svg" class="w-5 h-5" alt="Email" />
+                </a>
+                <a href="https://linkedin.com/in/olenavlasiuk/" target="_blank" class="w-11 h-11 flex items-center justify-center rounded-full hover:bg-[#3e5153] transition-colors border border-white/20">
+                    <img src="/images/linkedIn.svg" class="w-5 h-5" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col relative">
+        <nav class="sticky top-0 z-[100] bg-[#3e515380] backdrop-blur-[15px] w-full py-6 px-4">
+            <div class="max-w-[590px] mx-auto flex justify-center gap-6 md:gap-10 text-sm md:text-base">
+                <a href="/" class={isActive("/")}>About Me</a>
+                <a href="/experience" class={isActive("/experience")}>Experience</a>
+                <a href="/expertise" class={isActive("/expertise")}>Expertise</a>
+                <a href="/education" class={isActive("/education")}>Education</a>
+            </div>
+        </nav>
+
+        <div class="px-6 py-10 md:px-20 lg:py-24 max-w-5xl mx-auto">
+            <slot />
+        </div>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+---
+interface Props {
+    title: string;
+    link: string;
+    description: string;
+    role: string;
+    roleLink: string;
+    type: 'bluish' | 'purplish' | 'pinkish';
+    status?: string;
+}
+
+const { title, link, description, role, roleLink, type, status } = Astro.props;
+
+const variants = {
+    bluish: "bg-[#a4f1f633] hover:bg-[#a4f1f640]",
+    purplish: "bg-[#cfb7ff33] hover:bg-[#cfb7ff40]",
+    pinkish: "bg-[#eeb5d333] hover:bg-[#eeb5d340]"
+};
+---
+
+<div class={`rounded-[20px] w-full md:w-[380px] transition-all duration-300 ${variants[type]}`}>
+    <div class="p-5 flex items-center gap-4">
+        <slot name="icon" />
+        <div class="text-lg leading-tight">
+            <a href={link} target="_blank" class="text-[#a4f1f6] hover:text-[#64e6ee] no-underline font-semibold">
+                {title}
+            </a>
+            {status && <span class="text-[#eeb5d3] text-xs ml-2 uppercase tracking-wider italic">{status}</span>}
+        </div>
+    </div>
+
+    <div class="h-[1px] bg-white/20 w-full"></div>
+
+    <div class="p-5 text-base leading-relaxed opacity-90">
+        {description}
+    </div>
+
+    <div class="h-[1px] bg-white/20 w-full"></div>
+
+    <div class="p-5 flex items-center gap-4">
+        <img src="/images/link_blue.svg" class="w-5 h-5" alt="" />
+        <a href={roleLink} class="text-[#a4f1f6] hover:text-[#64e6ee] text-sm no-underline">
+            {role}
+        </a>
+    </div>
+</div>

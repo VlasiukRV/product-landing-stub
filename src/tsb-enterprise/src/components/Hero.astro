@@ -66,12 +66,12 @@ const { company_name, hero_title, hero_subtitle } = Astro.props
 </style>
 
 <script>
+
     const b1 = document.getElementById('bg-block-1');
     const b2 = document.getElementById('bg-block-2');
 
-    // Цвета для интерполяции
-    const startPurple = "123, 44, 191"; // #7b2cbf в RGB
-    const aboutGray = "249, 250, 251";  // bg-gray-50 в RGB
+    // Предварительно задаем значения, чтобы не дергать DOM лишний раз
+    let lastProgress = -1;
 
     window.addEventListener('scroll', () => {
         if (window.innerWidth < 768) return;
@@ -80,31 +80,36 @@ const { company_name, hero_title, hero_subtitle } = Astro.props
         const vh = window.innerHeight;
         const progress = Math.min(scrolled / vh, 1);
 
-        if (b1 && b2) {
-            const s1 = 1 + (progress * 0.5);
-            const s2 = 1 + (progress * 1.2); // Растет быстрее, чтобы закрыть собой всё
+        // Оптимизация: если прогресс не изменился существенно, пропускаем кадр
+        if (Math.abs(lastProgress - progress) < 0.001) return;
+        lastProgress = progress;
 
-            requestAnimationFrame(() => {
-                b1.style.transform = `scale(${s1})`;
-                b2.style.transform = `scale(${s2})`;
+        // Расчеты делаем ДО анимационного кадра
+        const s1 = 1 + (progress * 0.5);
+        const s2 = 1 + (progress * 1.2);
 
-                // Блок 1: От белого (0.08) к фиолетовому фона (полностью сливается)
-                // Интерполяция: от rgba(255,255,255, 0.08) к rgba(123,44,191, 1)
-                const r1 = Math.round(255 - (255 - 123) * progress);
-                const g1 = Math.round(255 - (255 - 44) * progress);
-                const b1_val = Math.round(255 - (255 - 191) * progress);
-                const a1 = 0.08 + (0.92 * progress);
-                b1.style.backgroundColor = `rgba(${r1}, ${g1}, ${b1_val}, ${a1})`;
+        // Цвета для B1
+        const r1 = Math.round(255 - 132 * progress);
+        const g1 = Math.round(255 - 211 * progress);
+        const b1_v = Math.round(255 - 64 * progress);
+        const a1 = (0.08 + 0.92 * progress).toFixed(2);
 
-                // Блок 2: От прозрачно-белого к сплошному серому (как About)
-                // Интерполяция: от rgba(255,255,255, 0.1) к rgba(249,250,251, 1)
-                const r2 = Math.round(255 - (255 - 249) * progress);
-                const g2 = Math.round(255 - (255 - 250) * progress);
-                const b2_val = Math.round(255 - (255 - 251) * progress);
-                const a2 = 0.1 + (0.9 * progress);
-                b2.style.backgroundColor = `rgba(${r2}, ${g2}, ${b2_val}, ${a2})`;
-            });
-        }
+        // Цвета для B2
+        const r2 = Math.round(255 - 6 * progress);
+        const g2 = Math.round(255 - 5 * progress);
+        const b2_v = Math.round(255 - 4 * progress);
+        const a2 = (0.1 + 0.9 * progress).toFixed(2);
+
+        requestAnimationFrame(() => {
+            if (b1 && b2) {
+                // Добавляем translateZ(0) для принудительного GPU ускорения
+                b1.style.transform = `scale(${s1}) translateZ(0)`;
+                b2.style.transform = `scale(${s2}) translateZ(0)`;
+
+                b1.style.backgroundColor = `rgba(${r1},${g1},${b1_v},${a1})`;
+                b2.style.backgroundColor = `rgba(${r2},${g2},${b2_v},${a2})`;
+            }
+        });
     }, { passive: true });
 
 </script>
