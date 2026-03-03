@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
     base: '/',
-    site: 'https://olena.vlasiuk.me/',
+    site: 'https://olena.vlasiuk.me',
     integrations: [tailwind()],
     output: 'static',
     markdown: {
