@@ -14,5 +14,8 @@ export default defineConfig({
     output: 'static',
     markdown: {
         shikiConfig: { theme: 'dracula' },
+    },
+    build: {
+        inlineStylesheets: 'always'
     }
 });

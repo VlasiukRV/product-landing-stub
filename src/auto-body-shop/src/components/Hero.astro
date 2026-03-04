@@ -1,8 +1,16 @@
-<section class="relative h-screen bg-cover bg-center" style="background-image:url('/img/hero-2.jpeg')">
-    <div class="absolute inset-0 bg-black/60"></div>
+<section class="relative h-screen overflow-hidden">
+    <img
+            src="/img/hero-2.jpeg"
+            alt="Auto Body Shop Workshop"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+    />
 
-    <div class="relative max-w-6xl mx-auto h-full flex flex-col justify-center px-6 text-center text-white">
-        <h1 class="font-heading text-3xl md:text-6xl xl:text-7xl tracking-wider mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary/80">
+    <div class="absolute inset-0 bg-black/65"></div>
+
+    <div class="relative max-w-6xl mx-auto h-full flex flex-col justify-center px-6 text-center text-white pb-20">
+        <h1 class="font-heading text-4xl md:text-6xl xl:text-7xl tracking-wider mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary/80">
             We Restore Your Car to <br class="hidden md:block"/> Factory Perfection
         </h1>
 
@@ -11,38 +19,36 @@
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="/book-call" class="border border-white/30 px-10 py-4 uppercase tracking-widest hover:bg-primary hover:border-primary hover:text-black transition duration-300">
+            <a href="/book-call" class="border border-white/30 px-10 py-4 uppercase tracking-widest hover:bg-primary hover:border-primary hover:text-black transition duration-300 bg-black/20 backdrop-blur-sm">
                 Schedule video call
             </a>
-            <a href="/book-now" class="border border-white/30 px-10 py-4 uppercase tracking-widest hover:bg-primary hover:border-primary hover:text-black transition duration-300">
+            <a href="/book-now" class="border border-white/30 px-10 py-4 uppercase tracking-widest hover:bg-primary hover:border-primary hover:text-black transition duration-300 bg-black/20 backdrop-blur-sm">
                 Schedule Appointment
             </a>
         </div>
     </div>
 
-    <div class="bg-black border-b border-white/10 backdrop-blur-sm py-8 relative z-20 ">
-        <div class="max-w-[1440px] mx-auto px-6">
-            <div class="flex flex-wrap justify-center md:justify-between items-center gap-y-6 gap-x-8 text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+    <div class="absolute bottom-0 left-0 w-full bg-black/80 border-t border-white/10 backdrop-blur-md py-6 z-30">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-y-4 gap-x-8 text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
 
-                <div class="flex items-center gap-3 group md:border-l md:border-white/10 md:pl-8">
-                    <span class="text-primary text-xl group-hover:scale-110 transition-transform">⚙️</span>
+                <div class="flex items-center gap-3 group">
+                    <span class="text-primary text-lg group-hover:scale-110 transition-transform">⚙️</span>
                     <span class="group-hover:text-white transition-colors">OEM Parts</span>
                 </div>
 
-                <div class="flex items-center gap-3 group md:border-l md:border-white/10 md:pl-8 ">
-                    <span class="text-primary text-xl group-hover:scale-110 transition-transform">🏆</span>
+                <div class="flex items-center gap-3 group md:border-l md:border-white/10 md:pl-8">
+                    <span class="text-primary text-lg group-hover:scale-110 transition-transform">🏆</span>
                     <span class="group-hover:text-white transition-colors">15+ Years Experience</span>
                 </div>
 
-                <div class="flex items-center gap-3 group">
-                    <span class="text-primary text-xl group-hover:scale-110 transition-transform hidden lg:flex">🛡️</span>
+                <div class="flex items-center gap-3 group md:border-l md:border-white/10 md:pl-8">
+                    <span class="text-primary text-lg group-hover:scale-110 transition-transform">🛡️</span>
                     <span class="group-hover:text-white transition-colors">Insurance Approved</span>
                 </div>
 
             </div>
         </div>
     </div>
-
-    <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-surface pointer-events-none"></div>
 
 </section>
