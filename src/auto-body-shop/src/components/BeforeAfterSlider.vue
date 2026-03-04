@@ -31,15 +31,17 @@
         <div class="absolute inset-y-0 w-full flex justify-between items-center px-4 pointer-events-none">
             <button
                     @click="prev"
+                    aria-label="Previous image"
                     class="pointer-events-auto w-10 h-10 rounded-full bg-black/40 hover:bg-orange-600 border border-white/20 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
             >
-                ←
+              <span aria-hidden="true">←</span>
             </button>
             <button
                     @click="next"
+                    aria-label="Next image"
                     class="pointer-events-auto w-10 h-10 rounded-full bg-black/40 hover:bg-orange-600 border border-white/20 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
             >
-                →
+              <span aria-hidden="true">→</span>
             </button>
         </div>
 
@@ -47,6 +49,8 @@
             <p class="text-center text-sm font-medium mb-3 text-gray-300">
                 <span class="group-hover:hidden italic">Hover to see "After" results</span>
                 <span class="hidden group-hover:inline text-orange-500 font-bold uppercase tracking-widest italic">Result of our master work</span>
+
+                <span class="sr-only">Image comparison slider: showing before and after restoration results.</span>
             </p>
 
             <div class="flex justify-center gap-2">
@@ -55,6 +59,8 @@
                         :key="idx"
                         @click="currentIndex = idx"
                         :class="['w-8 h-1 transition-all rounded-full', currentIndex === idx ? 'bg-orange-500' : 'bg-white/20 hover:bg-white/40']"
+                        :aria-label="'Go to slide ' + (idx + 1)"
+                        :aria-current="currentIndex === idx ? 'true' : 'false'"
                 ></button>
             </div>
         </div>

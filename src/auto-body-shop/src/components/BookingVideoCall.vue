@@ -35,8 +35,12 @@
             placeholder="e.g. 03/05 10:00-11:00"
             class="flex-1 p-3 bg-black/40 rounded-xl border border-white/10 outline-none focus:border-primary/50 focus:bg-black/60 transition-all duration-300 placeholder:text-gray-700 font-mono text-sm"
         />
-        <button @click="removeSlot(index)" type="button"
-                class="bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white w-12 rounded-xl border border-red-500/20 transition-all flex items-center justify-center">
+        <button
+            @click="removeSlot(index)"
+            type="button"
+            aria-label="Remove time slot"
+            class="bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white w-12 rounded-xl border border-red-500/20 transition-all flex items-center justify-center"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>

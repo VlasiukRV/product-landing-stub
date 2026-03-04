@@ -50,14 +50,27 @@
     <div class="mb-4">
       <label class="block mb-2 font-semibold text-sm">Upload Damage Photos:</label>
       <div class="relative border-2 border-dashed border-slate-700 rounded-lg p-4 text-center hover:border-orange-500 transition">
-        <input type="file" multiple accept="image/*" @change="handleFileUpload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+        <input
+            type="file"
+            multiple
+            accept="image/*" @change="handleFileUpload"
+            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+            aria-labelledby="upload-label"
+        />
         <div v-if="previews.length === 0" class="text-slate-400">
           <span class="text-orange-500">Click to upload</span> or drag and drop
         </div>
         <div v-else class="grid grid-cols-4 gap-2">
           <div v-for="(src, index) in previews" :key="index" class="relative">
             <img :src="src" class="h-16 w-16 object-cover rounded-md border border-slate-600" />
-            <button @click.stop="removeImage(index)" class="absolute -top-2 -right-2 bg-red-500 rounded-full w-5 h-5 text-[10px] flex items-center justify-center">×</button>
+            <button
+                @click.stop="removeImage(index)"
+                class="absolute -top-2 -right-2 bg-red-500 rounded-full w-5 h-5 text-[10px] flex items-center justify-center"
+                aria-label="Remove this image"
+                title="Remove image"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
           </div>
         </div>
       </div>
@@ -66,12 +79,18 @@
     <!-- Слот времени -->
     <div class="mb-6">
       <label class="block mb-2 font-semibold text-sm">Select Arrival Time:</label>
-      <div class="grid grid-cols-3 gap-2">
+      <div
+          class="grid grid-cols-3 gap-2"
+          role="radiogroup"
+          aria-labelledby="time-label"
+        >
         <button
             v-for="time in availableSlots"
             :key="time"
             @click="selectTime(time)"
             type="button"
+            :aria-pressed="slot === time"
+            :aria-label="'Select arrival time ' + time"
             :class="['p-2 text-[12px] font-bold rounded transition border',
                   slot === time ? 'bg-orange-600 border-orange-400 shadow-[0_0_10px_rgba(234,88,12,0.4)]' : 'bg-slate-800 border-slate-700 hover:border-slate-500']"
         >
@@ -84,9 +103,12 @@
     <button
         @click="confirmBooking"
         :disabled="!slot || isUploading || !fullName || !phone || !email"
+        :aria-label="isUploading ? 'Processing your booking' : 'Confirm your booking'"
         class="w-full bg-orange-600 hover:bg-orange-700 disabled:opacity-50 py-3 rounded-lg font-bold uppercase tracking-wider transition-all active:scale-95 mb-2"
     >
-      {{ isUploading ? 'Processing...' : 'Confirm Booking' }}
+      <span aria-hidden="true">
+        {{ isUploading ? 'Processing...' : 'Confirm Booking' }}
+      </span>
     </button>
 
     <!-- Calendly Integration -->
