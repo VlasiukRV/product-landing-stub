@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import bgImage from '../assets/img/before-after-background.jpeg';
 import BeforeAfterSlider from '../components/BeforeAfterSlider.vue';
 
 interface Props {
@@ -11,10 +13,13 @@ const { bodyRepairCases, paintJobs } = Astro.props;
 
 <section id="gallery" class="relative py-28 bg-[#050505] overflow-hidden">
     <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <img
-                src="/img/before-after-background.jpeg"
+        <Image
+                src={bgImage}
                 alt="Technical schematic"
+                width={1920}
+                height={1080}
                 class="w-full h-full object-cover scale-125 rotate-6 grayscale"
+                loading="lazy"
         />
         <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
     </div>

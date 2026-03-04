@@ -17,5 +17,11 @@ export default defineConfig({
     },
     build: {
         inlineStylesheets: 'always'
-    }
+    },
+    image: {
+        domains: [],
+        service: {
+            entrypoint: 'astro/assets/services/sharp',
+        },
+    },
 });

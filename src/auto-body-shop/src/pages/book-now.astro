@@ -1,6 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import BookingCalendar from '../components/BookingCalendar.vue';
+
+import { Image } from 'astro:assets';
+import carHoodImg from '../assets/img/car-open-hood.jpg';
 ---
 
 <MainLayout title="Schedule an Appointment | Auto Body Atelier">
@@ -8,10 +11,18 @@ import BookingCalendar from '../components/BookingCalendar.vue';
 
         <!-- Background -->
         <div class="absolute inset-0 z-0">
-            <img
-                    src="/img/car-open-hood.jpg"
+            <Image
+                    src={carHoodImg}
                     alt="Car engine bay"
+                    width={1920}
+                    height={1080}
+                    widths={[240, 540, 720, 1020, 1600, carHoodImg.width]}
+                    sizes={`100vw`}
+                    format="webp"
+                    quality="mid"
                     class="w-full h-full object-cover opacity-40 grayscale"
+                    loading="eager"
+                    fetchpriority="high"
             />
             <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-black/80 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/60"></div>

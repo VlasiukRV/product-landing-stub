@@ -1,9 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import carBg from '../assets/img/car.jpg';
+import { Image } from 'astro:assets';
+import carHoodImg from '../assets/img/car-open-hood.jpg';
+---
+
 <section id="services" class="pt-40 py-24 bg-surface relative overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <img
-                src="/img/car.jpg"
-                alt="Car engine detailing"
+        <Image
+                src={carHoodImg}
+                alt="Car engine bay"
+                width={1920}
+                height={1080}
+                widths={[640, 1024, 1920]}
+                sizes="(max-width: 1024px) 100vw, 1920px"
+                format="webp"
+                quality="mid"
                 class="w-full h-full object-cover opacity-40 grayscale-[0.2]"
+                loading="eager"
+                fetchpriority="high"
         />
         <div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/40 to-surface"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-surface via-transparent to-surface"></div>

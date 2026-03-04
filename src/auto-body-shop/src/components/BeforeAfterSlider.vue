@@ -14,12 +14,20 @@
                         :src="pair.after"
                         class="w-full h-full object-cover"
                         alt="After repair"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        decoding="async"
                 />
 
                 <img
                         :src="pair.before"
                         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out group-hover/slide:opacity-0"
                         alt="Before repair"
+                        width="800"
+                        height="600"
+                        :loading="index === 0 ? 'eager' : 'lazy'"
+                        decoding="async"
                 />
 
                 <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase">

@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import logoImage from '../assets/img/logo.svg';
+---
+
 <header class="fixed top-0 w-full z-50 bg-dark/70 backdrop-blur-xl border-b border-white/5">
     <div class=" mx-auto px-6">
 
@@ -5,12 +10,14 @@
 
             <!-- Logo -->
             <a href="/" class="flex items-center group transition-transform hover:scale-[1.02]">
-                <img
-                        src="/img/logo.svg"
+                <Image
+                        src={logoImage}
                         alt="Logo"
                         width="240"
                         height="60"
                         class="h-10 w-auto"
+                        loading="eager"
+                        fetchpriority="high"
                 />
             </a>
 

@@ -1,7 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/img/hero-2.jpeg';
+---
+
 <section class="relative h-screen overflow-hidden">
-    <img
-            src="/img/hero-2.jpeg"
-            alt="Auto Body Shop Workshop"
+    <Image
+            src={heroImage}
+            alt="High-end auto body shop workshop"
+            width={1920}
+            height={1080}
+            widths={[240, 540, 720, 1080, 1600, heroImage.width]}
+            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, 1080px`}
+            format="webp"
+            quality="high"
             class="absolute inset-0 w-full h-full object-cover"
             loading="eager"
             fetchpriority="high"
