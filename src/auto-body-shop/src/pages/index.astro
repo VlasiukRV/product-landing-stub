@@ -1,0 +1,41 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import Hero from '../components/Hero.astro'
+import Services from '../components/Services.astro'
+import BeforeAfter from '../components/BeforeAfter.astro'
+import Testimonials from '../components/Testimonials.astro'
+import CTA from '../components/CTA.astro'
+
+const bodyRepairCases = [
+    {before: '/img/before-11.jpeg', after: '/img/after-11.jpeg'},
+    {before: '/img/before-12.jpeg', after: '/img/after-12.jpeg'},
+    {before: '/img/before-13.jpeg', after: '/img/after-13.jpg'}
+];
+
+const paintJobs = [
+    {before: '/img/before-21.jpeg', after: '/img/after-21.jpeg'},
+    {before: '/img/before-22.jpeg', after: '/img/after-22.jpeg'}
+];
+
+const description = "Trusted auto body shop in Tuscola, IL. Collision repair, dent removal, paint restoration. Call today for a free estimate."
+---
+
+<MainLayout
+        title="Collision Repair in Tuscola, IL | Auto Body Atelier"
+        description=description
+        image="/img/og-home.jpg"
+>
+
+    <Hero/>
+
+    <Services/>
+
+    <BeforeAfter
+            bodyRepairCases={bodyRepairCases}
+            paintJobs={paintJobs}/>
+
+    <Testimonials/>
+
+    <CTA/>
+
+</MainLayout>

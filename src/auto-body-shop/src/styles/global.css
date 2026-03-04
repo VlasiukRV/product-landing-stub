@@ -1,0 +1,25 @@
+@import url('https://api.fontshare.com/v2/css?f[]=golos-text@400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    :target::before {
+        content: "";
+        display: block;
+        height: 6rem; /* высота header */
+        margin-top: -6rem;
+    }
+
+}
+
+@layer components {
+
+
+}

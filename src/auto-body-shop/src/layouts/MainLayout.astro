@@ -1,0 +1,57 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+    title?: string
+    description?: string
+    image?: string
+}
+
+const {
+    title = 'Auto Body Atelier | Collision Repair in WA',
+    description = 'Professional collision repair, dent removal and auto painting in WA',
+    image = '/img/og-image.svg'
+} = Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url)
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="apple-touch-icon" type="image/svg+xml" href="/img/apple-touch-icon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+</head>
+
+<body class="bg-dark text-white font-sans">
+<Header />
+<main>
+    <slot />
+</main>
+<Footer />
+</body>
+</html>

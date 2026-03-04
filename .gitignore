@@ -2,6 +2,14 @@
 
 ./tailwindcss
 
+/.env
+
 /src/tsb-enterprise/.astro/
 /src/tsb-enterprise/node_modules/
-/.env
+
+/src/olena-vlasiuk-me/.astro/
+/src/olena-vlasiuk-me/node_modules/
+
+/src/auto-body-shop/.astro/
+/src/auto-body-shop/node_modules/
+/src/auto-body-shop/package-lock.json

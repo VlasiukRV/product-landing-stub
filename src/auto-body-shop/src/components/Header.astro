@@ -1,0 +1,100 @@
+<header class="fixed top-0 w-full z-50 bg-dark/70 backdrop-blur-xl border-b border-white/5">
+    <div class=" mx-auto px-6">
+
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center group transition-transform hover:scale-[1.02]">
+                <img
+                        src="/img/logo.svg"
+                        alt="Logo"
+                />
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-10 text-sm">
+                <a href="/#services" class="hover:text-primary transition scroll-link">Services</a>
+                <a href="/#gallery" class="hover:text-primary transition scroll-link">Before/After</a>
+                <a href="/#reviews" class="hover:text-primary transition scroll-link">Reviews</a>
+                <a href="/book-now" class="hover:text-primary transition scroll-link">Book Now</a>
+            </nav>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-6">
+                <a href="tel:+13607687948"
+                   class="hidden md:flex items-center gap-2 text-sm font-medium hover:text-primary transition">
+                    <span class="text-primary text-lg">☎</span>
+                    +1(360) 768 7948
+                </a>
+
+                <a href="/book-call"
+                   class="hidden md:flex bg-primary text-black px-6 py-3 rounded-md font-semibold hover:scale-105 transition scroll-link">
+                    Book video call
+                </a>
+
+                <button id="menuBtn" class="lg:hidden text-white text-2xl">☰</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-surface border-t border-white/5">
+        <div class="flex flex-col p-6 gap-4 text-lg">
+            <a href="/#services" class="scroll-link">Services</a>
+            <a href="/#gallery" class="scroll-link">Before / After</a>
+            <a href="/#reviews" class="scroll-link">Reviews</a>
+            <a href="/book-now" class="scroll-link">Schedule Appointment</a>
+            <a href="/book-call" class="text-primary font-semibold">Schedule video call</a>
+            <a href="tel:+13607687948" class="text-primary font-semibold">Call Now</a>
+        </div>
+    </div>
+</header>
+
+<script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+
+    btn?.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+    const OFFSET = 80;
+
+    document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+
+            if (!href.includes('#')) return;
+
+            const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+
+            if (isHomePage) {
+
+                const targetId = href.split('#')[1];
+                const targetEl = document.getElementById(targetId);
+
+                if (targetEl) {
+                    e.preventDefault();
+
+                    const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - OFFSET;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    menu?.classList.add('hidden');
+                }
+            }
+
+        });
+    });
+</script>
+
+<style>
+    html {
+        scroll-behavior: smooth; /* fallback для браузеров */
+    }
+</style>

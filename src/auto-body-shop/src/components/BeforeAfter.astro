@@ -1,0 +1,49 @@
+---
+import BeforeAfterSlider from '../components/BeforeAfterSlider.vue';
+
+interface Props {
+    bodyRepairCases: Array<{ before: string; after: string }>;
+    paintJobs: Array<{ before: string; after: string }>;
+}
+
+const { bodyRepairCases, paintJobs } = Astro.props;
+---
+
+<section id="gallery" class="relative py-28 bg-[#050505] overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <img
+                src="/img/before-after-background.jpeg"
+                alt="Technical schematic"
+                class="w-full h-full object-cover scale-125 rotate-6 grayscale"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10 mb-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <span class="text-primary uppercase tracking-widest text-sm font-bold">Witness the Transformation</span>
+                <h2 class="text-5xl font-heading mt-2 text-white">Our Master Work</h2>
+            </div>
+            <p class="text-gray-400 max-w-md">
+                Quality that speaks for itself.
+            </p>
+        </div>
+    </div>
+
+    <div class="relative z-10 grid md:grid-cols-2 gap-12 px-6 md:px-12 xl:px-20 2xl:px-32">
+        <div>
+            <h3 class="text-xl mb-6 text-orange-500 font-bold tracking-widest uppercase">
+                Structural Repair
+            </h3>
+            <BeforeAfterSlider slides={bodyRepairCases} client:load />
+        </div>
+
+        <div>
+            <h3 class="text-xl mb-6 text-orange-500 font-bold tracking-widest uppercase">
+                Premium Painting
+            </h3>
+            <BeforeAfterSlider slides={paintJobs} client:load />
+        </div>
+    </div>
+</section>

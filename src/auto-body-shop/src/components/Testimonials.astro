@@ -1,0 +1,45 @@
+---
+const testimonials = [
+    {
+        name: "John M.",
+        text: "Best auto body shop in the area. Honest pricing and incredible attention to detail.",
+    },
+    {
+        name: "Sarah T.",
+        text: "They fixed my bumper after an accident — looks like new. Highly recommend!",
+    },
+    {
+        name: "Michael R.",
+        text: "Fast turnaround and professional team. Will definitely come back.",
+    },
+]
+---
+
+<section id="reviews" class="py-24 bg-dark relative overflow-hidden">
+    <div class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/5 blur-[130px] rounded-full z-0"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+                <span class="text-primary uppercase tracking-widest text-sm font-bold">Client Trust</span>
+                <h2 class="text-5xl font-heading mt-2 text-white">What Our Clients Say</h2>
+            </div>
+            <p class="text-gray-400 max-w-md">
+                Real stories from car enthusiasts who trusted us with their prized possessions.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            {testimonials.map(t => (
+                    <div class="bg-[#0A0A0A] p-10 rounded-lg border-l-4 border-primary/70 shadow-[0_0_40px_rgba(255,140,0,0.05)] hover:bg-[#111] transition-colors duration-300">
+                        <p class="text-gray-300 italic leading-relaxed">
+                            "{t.text}"
+                        </p>
+                        <div class="mt-6 font-semibold text-white tracking-wide">
+                            — {t.name}
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>
