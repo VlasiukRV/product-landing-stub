@@ -4,7 +4,7 @@ import vue from '@astrojs/vue';
 
 export default defineConfig({
     base: '/',
-    site: 'https://olena.vlasiuk.me',
+    site: 'https://auto-body-shop.tsb-enterprise.com/',
     integrations: [
         vue(),
         tailwind({
