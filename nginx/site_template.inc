@@ -15,4 +15,7 @@ location ~* \.(?:jpg|jpeg|gif|png|ico|svg|webp|woff2?)$ {
 location / {
     try_files $uri $uri/ /index.html;
     add_header Cache-Control "no-cache";
+    proxy_set_header X-Forwarded-Port 80;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Proto $scheme;
 }
