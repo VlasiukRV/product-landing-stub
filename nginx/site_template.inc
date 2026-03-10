@@ -18,4 +18,6 @@ location / {
     proxy_set_header X-Forwarded-Port 80;
     proxy_set_header X-Forwarded-Host $host;
     proxy_set_header X-Forwarded-Proto $scheme;
+    port_in_redirect off;
+    absolute_redirect off;
 }
