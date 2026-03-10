@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWL — Device Logic Control Plane</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta name="description" content="OWL is a cloud-driven logic control plane for microcontroller fleets. Devices execute cloud-defined state machines instead of hard-coded firmware logic.">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background:#0B0F14; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .grid-bg {
+            background-image:
+                    linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .glow {
+            box-shadow: 0 0 20px rgba(0,255,255,0.15);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow:0 0 0 rgba(0,255,255,0.4); }
+            50% { box-shadow:0 0 20px rgba(0,255,255,0.6); }
+            100% { box-shadow:0 0 0 rgba(0,255,255,0.4); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .text-gradient-cyan {
+            background: linear-gradient(90deg, #00ffff, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Додаткове згладжування для секцій */
+        section { position: relative; z-index: 10; }
+    </style>
+</head>
+
+<body class="text-slate-200">
+
+<nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center glass-panel">
+    <div class="flex items-center space-x-3">
+        <div class="w-2.5 h-2.5 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_#3b82f6]"></div>
+        <span class="mono text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">
+            Targeted Solutions for Business // Core v 0.0.1
+        </span>
+    </div>
+</nav>
+
+<div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-[#0B0F14]"></div>
+
+    <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-cyan-500/10 blur-[120px]"></div>
+
+    <div class="absolute top-[20%] -right-[5%] w-[30%] h-[50%] rounded-full bg-indigo-500/5 blur-[100px]"></div>
+
+    <div class="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_at_center,white,transparent_75%)] opacity-50"></div>
+</div>
+
+<section class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <div class="mono text-cyan-400 tracking-widest text-xs mb-8 uppercase">
+        CLOUD-DEFINED DEVICE BEHAVIOR
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-gradient-cyan">
+        Hardware used to decide.
+    </h1>
+
+    <h2 class="text-4xl md:text-6xl font-bold mt-6 text-cyan-400">
+        Now logic does.
+    </h2>
+
+    <p class="mt-8 max-w-2xl text-slate-400 text-lg leading-relaxed">
+        OWL is a logic control plane for distributed microcontrollers.
+        Devices run a generic runtime. The decisions they execute live in the cloud
+        as finite state machines and rules — not in firmware.
+    </p>
+
+    <div class="mt-16 mono text-xs text-slate-500 uppercase tracking-widest">
+        Welcome to OWL
+    </div>
+</section>
+
+<section class="py-32 border-t border-cyan-500/10 px-6" id="problem">
+    <div class="max-w-5xl mx-auto text-center">
+
+        <h2 class="text-4xl font-bold mb-10">
+            The real problem was never OTA.
+        </h2>
+
+        <p class="text-slate-400 text-lg leading-relaxed max-w-3xl mx-auto">
+            The real problem is coupling.
+            Logic welded to silicon.
+            Decisions compiled into binaries.
+        </p>
+
+        <div class="mt-20 grid md:grid-cols-2 gap-12">
+
+            <div class="border border-red-500/20 p-10 bg-black/20 backdrop-blur-sm">
+                <div class="mono text-red-400 text-xs mb-4 uppercase tracking-widest">FIRMWARE WORLD</div>
+                <div class="mono text-sm text-slate-400 space-y-2">
+                    <div>Recompile</div>
+                    <div>Flash</div>
+                    <div>Reboot</div>
+                    <div>Pray</div>
+                </div>
+                <ul class="mt-8 text-left text-slate-400 text-sm space-y-2">
+                    <li>• Logic tied to binaries and hardware.</li>
+                    <li>• Every small change becomes a firmware release.</li>
+                    <li>• Risk multiplied across every device in the field.</li>
+                    <li>• Heterogeneous hardware, duplicated effort.</li>
+                </ul>
+            </div>
+
+            <div class="border border-cyan-400/30 p-10 glow bg-black/20 backdrop-blur-sm">
+                <div class="mono text-cyan-400 text-xs mb-4 uppercase tracking-widest">OWL WORLD</div>
+                <div class="mono text-sm text-cyan-200 space-y-2">
+                    <div>Modify model</div>
+                    <div>Push</div>
+                    <div>Sync</div>
+                    <div>Continue</div>
+                </div>
+
+                <ul class="mt-8 text-left text-cyan-200 text-sm space-y-2">
+                    <li>• Logic becomes structured data (FSM models).</li>
+                    <li>• Devices run a generic runtime, not business rules.</li>
+                    <li>• Fleet-wide behavior changes without reflashing.</li>
+                    <li>• Hardware variety hidden behind cloud-managed drivers.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="mt-20 text-3xl font-bold text-cyan-400 text-center">
+            Behavior is now data.
+        </div>
+
+    </div>
+</section>
+
+<section class="py-32 border-t border-cyan-500/10 px-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="border border-red-900/30 rounded-xl overflow-hidden bg-red-950/10 backdrop-blur-md">
+                <div class="px-6 py-3 border-b border-red-900/20 bg-red-900/10 flex justify-between items-center">
+                    <span class="mono text-[10px] text-red-400 uppercase tracking-widest font-bold">Legacy: Hardcoded Logic</span>
+                    <span class="text-[9px] text-red-500/50 mono uppercase">Requires OTA + Reboot</span>
+                </div>
+                <div class="p-6 mono text-[13px] leading-relaxed text-slate-500">
+                    <span class="text-indigo-400">void</span> <span class="text-yellow-400">handle_temp</span>() {<br>
+                    &nbsp;&nbsp;<span class="text-indigo-400">if</span> (sensor_val > <span class="text-orange-400">50.0f</span>) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">activate_cooling</span>();<br>
+                    &nbsp;&nbsp;} <span class="text-slate-600">// Change to 55.0f?</span><br>
+                    &nbsp;&nbsp;<span class="text-slate-600">// Wait 5 mins for OTA flash...</span><br>
+                    }
+                </div>
+            </div>
+
+            <div class="border border-cyan-400/30 rounded-xl overflow-hidden bg-cyan-400/5 glow backdrop-blur-md">
+                <div class="px-6 py-3 border-b border-cyan-400/20 bg-cyan-400/10 flex justify-between items-center">
+                    <span class="mono text-[10px] text-cyan-400 uppercase tracking-widest font-bold">OWL: Behavioral Model</span>
+                    <span class="text-[9px] text-cyan-400 mono uppercase tracking-tighter">Hot Reload: 150ms</span>
+                </div>
+                <div class="p-6 mono text-[13px] leading-relaxed text-cyan-100/70 italic">
+                    {<br>
+                    &nbsp;&nbsp;<span class="text-cyan-400">"trigger"</span>: <span class="text-emerald-400">"TEMP_CHECK"</span>,<br>
+                    &nbsp;&nbsp;<span class="text-cyan-400">"guard"</span>: <span class="text-orange-400">"value > 55.0"</span>,<br>
+                    &nbsp;&nbsp;<span class="text-cyan-400">"action"</span>: <span class="text-emerald-400">"COOLING_ON"</span><br>
+                    }<br>
+                    <span class="text-slate-500 leading-none text-[11px] font-normal">// Instantly pushed via MQTT. No reboot.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 border-t border-cyan-500/10 px-6" id="solution">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-24">
+            <div class="mono text-xs tracking-widest text-cyan-400 mb-6 uppercase">THE SOLUTION</div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 italic">Logic OTA architecture.</h2>
+            <p class="text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed">
+                OWL introduces an abstraction layer between hardware
+                and business logic. Devices no longer contain decisions.
+                They execute models defined and versioned in the cloud.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-12 items-stretch">
+            <div class="border border-slate-700 p-10 rounded-xl bg-black/40 backdrop-blur-sm">
+                <div class="mono text-xs text-slate-500 mb-6 uppercase tracking-widest text-center">EDGE LAYER</div>
+                <h3 class="text-2xl font-semibold mb-6">Device Runtime</h3>
+                <p class="text-slate-400 leading-relaxed mb-6">A lightweight executor running on FreeRTOS. It waits for a model.</p>
+                <div class="mono text-xs text-slate-500">Deterministic execution<br>Event queues<br>Guard evaluation<br>Transition actions</div>
+            </div>
+
+            <div class="border border-cyan-400/30 p-10 rounded-xl glow bg-black/40 backdrop-blur-sm">
+                <div class="mono text-xs text-cyan-400 mb-6 uppercase tracking-widest text-center">CONTROL PLANE</div>
+                <h3 class="text-2xl font-semibold mb-6 text-cyan-100">Logic Engine</h3>
+                <p class="text-cyan-200/70 leading-relaxed mb-6">Cloud-based state machine designer. Define states, events, and guards once.</p>
+                <div class="mono text-xs text-cyan-300">Versioned models<br>Fleet targeting<br>Rollback ready<br>RBAC controlled</div>
+            </div>
+
+            <div class="border border-slate-700 p-10 rounded-xl bg-black/40 backdrop-blur-sm">
+                <div class="mono text-xs text-slate-500 mb-6 uppercase tracking-widest text-center">SYNCHRONIZATION</div>
+                <h3 class="text-2xl font-semibold mb-6">Dynamic Sync</h3>
+                <p class="text-slate-400 leading-relaxed mb-6">Changes become commands in milliseconds. No binary replacement. No reboot.</p>
+                <div class="mono text-xs text-slate-500">Secure transport (TLS)<br>Incremental updates<br>Atomic model switch<br>Live validation</div>
+            </div>
+        </div>
+
+        <div class="mt-24 text-center mono text-cyan-400 text-sm tracking-widest opacity-60">
+            LOGIC → MODEL → SYNC → EXECUTION
+        </div>
+    </div>
+</section>
+
+<section class="py-32 border-t border-cyan-500/10 px-6" id="fsm">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+            <h2 class="text-4xl font-bold mb-8 underline decoration-cyan-500/20">Experience the model.</h2>
+            <p class="text-slate-400 leading-relaxed">
+                Every device executes a cloud-defined state machine. Transitions are synchronized in milliseconds.
+                No firmware replacement required.
+            </p>
+            <ul class="mt-8 text-slate-400 text-sm space-y-4">
+                <li class="flex gap-3"><span class="text-cyan-400">01</span> States mapped to FreeRTOS tasks.</li>
+                <li class="flex gap-3"><span class="text-cyan-400">02</span> Events mapped to queues and interrupts.</li>
+                <li class="flex gap-3"><span class="text-cyan-400">03</span> Guards via shared variables.</li>
+            </ul>
+        </div>
+
+        <div class="border border-cyan-400/30 p-10 rounded-xl glow bg-black/40 backdrop-blur-md">
+            <div class="mono text-xs text-slate-500 mb-6">ACTIVE DEVICE FSM</div>
+            <div class="mono text-sm space-y-6">
+                <div class="flex items-center gap-4 text-slate-400">
+                    <div class="px-4 py-2 border border-slate-600 rounded">BOOT</div>
+                    <div class="text-cyan-900">→</div>
+                    <div class="px-4 py-2 border border-slate-600 rounded">INIT_NET</div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="px-4 py-2 border border-slate-600 rounded text-slate-400">INIT_NET</div>
+                    <div class="text-cyan-500">→</div>
+                    <div class="px-4 py-2 border border-cyan-400 pulse rounded text-cyan-100">OPERATIONAL</div>
+                </div>
+                <div class="flex items-center gap-4 text-red-900/40">
+                    <div class="px-4 py-2 border border-slate-800 rounded">ANY</div>
+                    <div>→</div>
+                    <div class="px-4 py-2 border border-red-950 rounded">EMERGENCY</div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/5 mono text-xs text-slate-500">
+                Guard updated: temp &gt; 55<br>
+                Sync status: <span class="text-emerald-400">SUCCESS</span><br>
+                Uptime: 14d 02h 11m
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-32 border-t border-cyan-500/10 px-6 bg-slate-950/30 backdrop-blur-sm" id="security">
+    <div class="max-w-6xl mx-auto">
+        <div class="mono text-xs tracking-widest text-cyan-400 mb-16 text-center uppercase tracking-[0.4em]">Engineering reality check</div>
+
+        <div class="grid md:grid-cols-2 gap-16">
+            <div class="border-l-2 border-cyan-500/30 pl-8 py-4">
+                <h3 class="text-xl font-bold mb-4 text-slate-100 italic">"What if the connection is lost?"</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                    OWL is not a "dumb" terminal. The device downloads the logic model and executes it
+                    <span class="text-cyan-400 uppercase mono text-[11px] font-bold">autonomously at the Edge</span>.
+                    If the cloud goes dark, your device continues to operate using the last valid logic set.
+                </p>
+            </div>
+
+            <div class="border-l-2 border-cyan-500/30 pl-8 py-4">
+                <h3 class="text-xl font-bold mb-4 text-slate-100 italic">"Is it too heavy for an ESP32?"</h3>
+                <p class="text-slate-400 leading-relaxed text-sm">
+                    No. Written in <span class="mono text-cyan-300">pure C</span> and optimized for <span class="mono text-cyan-300">FreeRTOS</span>.
+                    It uses a compact <span class="italic underline decoration-cyan-500/40 text-cyan-100">transition matrix</span>.
+                </p>
+                <div class="mt-4 flex gap-4 opacity-60">
+                    <div class="mono text-[10px] border border-slate-700 px-2 py-1 italic">RAM: &lt; 8KB</div>
+                    <div class="mono text-[10px] border border-slate-700 px-2 py-1 italic">Flash: &lt; 32KB</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 p-8 border border-emerald-500/20 bg-emerald-500/5 rounded-xl flex items-start gap-6 backdrop-blur-sm">
+            <div class="h-10 w-10 border border-emerald-500/60 rounded-full flex items-center justify-center mono text-[10px] text-emerald-300">SAFE</div>
+            <div>
+                <h4 class="font-bold text-emerald-400 mb-2 uppercase mono text-xs tracking-widest">System integrity</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">Every model update passes through a Logic Validation Gate. If a model is unsafe, the Runtime rejects the sync and fails-safe.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-40 border-t border-cyan-500/10 text-center px-6" id="cta">
+    <h2 class="text-5xl font-extrabold leading-tight">
+        Firmware is static.<br>
+        <span class="text-cyan-400">Logic must evolve.</span>
+    </h2>
+
+    <p class="mt-8 max-w-2xl mx-auto text-slate-400 text-lg leading-relaxed">
+        OWL turns microcontrollers into adaptive nodes. The real control surface is now the logic model — not the binary.
+    </p>
+
+    <div class="mt-16 flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <a href="#contact" class="mono text-xs uppercase tracking-widest bg-cyan-500 text-black px-10 py-5 hover:bg-cyan-400 transition font-bold">
+            Enter the control plane
+        </a>
+        <a href="#contact" class="mono text-xs uppercase tracking-widest border border-cyan-500/40 text-cyan-300 px-8 py-4 hover:bg-cyan-500/10 transition">
+            Talk to an engineer
+        </a>
+    </div>
+</section>
+
+<section class="py-24 border-t border-cyan-500/10 px-6 bg-black/40 backdrop-blur-sm" id="contact">
+    <div class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6">Bring OWL into your architecture.</h3>
+        <form class="grid md:grid-cols-2 gap-6 text-sm">
+            <div class="md:col-span-1">
+                <input type="email" placeholder="Work email" class="w-full bg-black/60 border border-slate-800 px-4 py-3 rounded focus:border-cyan-500 focus:outline-none transition">
+            </div>
+            <div class="md:col-span-1">
+                <input type="text" placeholder="Role" class="w-full bg-black/60 border border-slate-800 px-4 py-3 rounded focus:border-cyan-500 focus:outline-none transition">
+            </div>
+            <div class="md:col-span-2">
+                <textarea rows="3" placeholder="Describe your fleet (e.g. 500x STM32 over LoRa)" class="w-full bg-black/60 border border-slate-800 px-4 py-3 rounded focus:border-cyan-500 focus:outline-none transition"></textarea>
+            </div>
+            <div class="md:col-span-2">
+                <button class="w-full bg-cyan-500 text-black py-4 rounded mono text-xs uppercase tracking-widest hover:bg-cyan-400 transition font-bold">Request technical session</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<footer class="py-16 text-center mono text-[10px] text-slate-600 border-t border-white/5 uppercase tracking-[0.2em]">
+    © 2026 OWL SOLUTION — DEVICE INTELLIGENCE ORCHESTRATION
+</footer>
+
+</body>
+</html>

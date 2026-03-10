@@ -1,0 +1,20 @@
+---
+// src/components/Section.astro
+interface Props {
+    title: string;
+    subtitle?: string;
+    id?: string;
+    colored?: boolean;
+    class?: string;
+}
+const { title, subtitle, id, colored = false, class: className } = Astro.props;
+---
+<section id={id} class={`py-20 px-6 md:px-8 ${colored ? 'section-colored' : ''} ${className || ''}`}>
+    <div class="max-w-7xl mx-auto text-center">
+        <div class="mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">{title}</h2>
+            {subtitle && <p class="text-gray-400 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">{subtitle}</p>}
+        </div>
+        <slot />
+    </div>
+</section>

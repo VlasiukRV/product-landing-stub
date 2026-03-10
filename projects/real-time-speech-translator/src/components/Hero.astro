@@ -1,0 +1,76 @@
+---
+// src/components/Hero.astro
+---
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
+
+    <div class="w-full max-w-[90vw] mx-auto relative">
+
+        <h1 class="text-5xl xl:text-8xl min-[1900px]:text-[10rem] font-black mb-8 italic uppercase tracking-tighter leading-[1.1] xl:leading-[0.85] text-header text-center transition-[font-size] duration-500">
+            <span class="inline-block xl:whitespace-nowrap">Break the <span
+                    class="text-blue-fix drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]">Language</span></span><br><span
+                class="inline-block mt-2 xl:mt-0">Barrier</span>
+        </h1>
+
+        <p class="text-slate-400 text-lg md:text-xl min-[1900px]:text-2xl mb-12 max-w-2xl min-[1900px]:max-w-4xl mx-auto font-medium leading-relaxed">
+            Real-time language bridging infrastructure for live, broadcast, and multilingual environments with
+            <span class="text-slate-200 font-bold">millisecond latency</span>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-5 lg:mb-20">
+            <a href="/app"
+               class="px-10 py-4 bg-slate-100 text-slate-900 font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-white hover:scale-105 active:scale-95 transition-all">
+                Try Live Demo
+            </a>
+            <div class="flex items-center space-x-3 px-6 py-4 glass-panel rounded-2xl">
+                <div class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500/50 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </div>
+                <span class="mono text-[10px] uppercase font-bold text-slate-400">System Online</span>
+            </div>
+        </div>
+
+        <p class="mono text-[10px] tracking-[0.3em] uppercase text-slate-500 mt-5 lg:mt-20 opacity-60 block w-full">
+            Live events // Broadcast // Multilingual sessions
+        </p>
+    </div>
+
+    <div class="pt-0 md:pt-40 xl:pt-20 w-full relative lg:flex lg:justify-end lg:px-20">
+
+        <div class="relative w-full lg:max-w-2xl mt-10 lg:mt-0 z-30">
+            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+            <div class="flex flex-col items-end px-6 text-right group">
+
+                <div class="relative mb-6">
+                    <span class="absolute -top-12 -right-4 text-8xl text-blue-500/10 serif italic pointer-events-none select-none">“</span>
+
+                    <p class="text-slate-300 text-xl md:text-2xl leading-snug relative z-10 drop-shadow-xl"
+                       style="font-family: 'Dancing Script', cursive; letter-spacing: 0;">
+                        We built this tool to make live translation as simple as
+                        <span class="text-blue-400/90 underline decoration-blue-500/30 underline-offset-8">sharing a link</span>
+                    </p>
+
+                    <p class="text-slate-300 text-xl md:text-2xl leading-snug relative z-10 drop-shadow-xl mt-2"
+                       style="font-family: 'Dancing Script', cursive; letter-spacing: 0;">
+                        — so churches, schools, and small events can include everyone, regardless of language.
+                    </p>
+                </div>
+
+                <a href="https://tsb-enterprise.com/" target="_blank">
+                    <div class="flex flex-col items-end border-t border-blue-500/20 pt-4 w-64">
+                        <p class="text-blue-500 font-black text-xl mb-0.5 tracking-tighter"
+                           style="font-family: 'Dancing Script', cursive;">
+                            Dr. Olena Vlasiuk
+                        </p>
+                        <p class="mono text-[9px] uppercase tracking-[0.3em] text-slate-500 font-bold opacity-80">
+                            CEO & Founder // Targeted Solutions for Business
+                        </p>
+                    </div>
+                </a>
+
+                <div class="absolute -bottom-10 right-0 w-48 h-48 bg-blue-600/5 blur-[80px] rounded-full -z-10 animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+</section>

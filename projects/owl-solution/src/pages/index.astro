@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import StepCard from "../components/StepCard.astro";
+
+// Данные для карточек возможностей
+const capabilities = [
+    { title: 'Remote Device Management', text: 'Remotely update firmware, upload new device drivers, and dynamically change operational logic, <b>reducing maintenance costs and downtime</b>.', icon: '/img/dollar-circle-list-svgrepo-com.svg' },
+    { title: 'Adaptive Automation', text: 'Use a <b>cloud-based state machine</b> to create complex behavioral logic and automate actions based on sensor data, <b>increasing operational efficiency</b>.', icon: '/img/automation-4p-svgrepo-com.svg' },
+    { title: 'Data-Driven Insights', text: 'Collect and analyze data from all devices in real-time. Gain valuable insights to <b>optimize performance and make smarter business decisions</b>.', icon: '/img/analytics-svgrepo-com.svg' },
+    { title: 'Real-time Monitoring & Alerts', text: 'Get <b>instant notifications</b> about critical events via email, SMS, or other channels to <b>enhance reliability and uptime</b>.', icon: '/img/bell-alt-svgrepo-com.svg' },
+    { title: 'Seamless Communication', text: 'Devices can exchange messages for synchronization and complex collaboration, enabling <b>advanced IoT scenarios</b>.', icon: '/img/link-svgrepo-com.svg' },
+    { title: 'Robust Security', text: 'All data is encrypted with <b>SSL/TLS</b>. The system provides <b>multi-level authentication</b> and access control for complete security.', icon: '/img/shield-exclamation-svgrepo-com.svg' }
+];
+
+// Данные для отраслей
+const industries = [
+    { title: 'Manufacturing & Logistics', text: 'Streamline production lines, track assets, and optimize supply chains with smart automation.' },
+    { title: 'Commercial Real Estate', text: 'Automate lighting, HVAC, and security systems to improve energy efficiency and occupant comfort.' },
+    { title: 'Agriculture & Farming', text: 'Monitor crops, manage irrigation, and automate climate control to increase yield and reduce waste.' }
+];
+
+const caseStudies = [
+    {
+        title: 'Smart Greenhouse Automation',
+        text: 'A large-scale farm needed to optimize climate control. OWL was implemented to remotely manage lighting, ventilation, and irrigation based on real-time sensor data, resulting in a <b>30% reduction in energy costs</b> and <b>15% higher crop yield</b>.',
+        aosAnimation: 'fade-right'
+    },
+    {
+        title: 'Industrial Equipment Diagnostics',
+        text: 'A manufacturing plant struggled with machine downtime. We used OWL to connect their industrial sensors, enabling <b>predictive maintenance</b> and <b>remote diagnostics</b>, which reduced unexpected shutdowns by <b>40%</b>.',
+        aosAnimation: 'fade-left'
+    }
+];
+
+const steps = [
+    { step: '1', title: 'Assessment', description: 'We analyze your infrastructure, devices, and business goals to define the optimal integration strategy.' },
+    { step: '2', title: 'Deployment', description: 'OWL is installed on your devices, with configuration and firmware updates applied via cloud.' },
+    { step: '3', title: 'Optimization', description: 'We fine-tune logic, automate processes, and provide training to ensure long-term efficiency.' }
+];
+
+---
+
+<Layout title="OWL: The Platform for Business Automation">
+    <div class="coming-soon">🚧 Coming Soon something amazing.</div>
+
+    <Header />
+
+    <Hero
+            title="Eyes on your devices,<br class='hidden md:block'>brains in the cloud."
+            description="A powerful platform for automating your assets, from a single device to a global network."
+    />
+
+    <Section id="about-owl" title="About OWL">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            <div class="text-left">
+                <p class="text-gray-400 text-lg md:text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    <b>OWL</b> is a comprehensive cloud platform for transforming your business operations. It’s a complete solution for automating and controlling your assets, providing <b>dynamic configuration, real-time monitoring, and proactive alerts</b> for your entire network.
+                </p>
+
+                <div class="mt-8 space-y-6 text-gray-300 text-lg md:text-xl" data-aos="fade-up" data-aos-delay="200">
+                    <p>
+                        <strong class="text-white">Adaptable:</strong> Our platform easily integrates with your existing infrastructure and business processes.
+                    </p>
+                    <p>
+                        <strong class="text-white">Scalable:</strong> Grow your business without limits. We build solutions that scale seamlessly from a few devices to thousands.
+                    </p>
+                    <p>
+                        <strong class="text-white">Fully Optimized:</strong> Gain full visibility and control to reduce costs, improve efficiency, and make data-driven decisions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center">
+                <img src="/img/owl_architecture.png" alt="Owl Platform Architecture" class="rounded-lg shadow-2xl" data-aos="fade-left" data-aos-delay="300"/>
+            </div>
+
+        </div>
+    </Section>
+
+    <Section id="capabilities" title="Core Capabilities" subtitle="OWL combines powerful technology with tangible business benefits.">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {capabilities.map((cap, i) => (
+                    <FeatureCard {...cap} delay={i * 150} />
+            ))}
+        </div>
+    </Section>
+
+    <Section id="use-cases" title="Solutions for Your Industry">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            {industries.map((ind, i) => (
+                    <FeatureCard title={ind.title} text={ind.text} delay={i * 150} icon="" />
+            ))}
+        </div>
+    </Section>
+
+    <Section
+            id="case-studies"
+            title="Real-World Case Studies"
+            subtitle="See how OWL provides tangible results for our clients."
+            colored={true}
+    >
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            {caseStudies.map((study, i) => (
+                    <FeatureCard
+                            title={study.title}
+                            text={study.text}
+                            aosAnimation={study.aosAnimation}
+                            delay={i * 150}
+                    />
+            ))}
+        </div>
+    </Section>
+
+    <Section id="integration-flow" title="Integration Flow" subtitle="A step-by-step process to seamlessly deploy OWL into your business.">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            {steps.map((s, i) => (
+                    <StepCard
+                            step={s.step}
+                            title={s.title}
+                            description={s.description}
+                            delay={i * 150}
+                    />
+            ))}
+        </div>
+    </Section>
+
+    <section class="py-20 bg-gray-950 text-center">
+        <img src="/img/owl_platform_dashboard.png" alt="Dashboard" class="mx-auto rounded-lg shadow-2xl" />
+    </section>
+
+    <Section
+            id="contact"
+            title="Ready to Transform Your Business?"
+            class="bg-gray-950"
+    >
+        <div class="max-w-3xl mx-auto">
+            <p class="text-gray-400 text-lg md:text-xl mb-8" data-aos="fade-up" data-aos-delay="100">
+                Contact us today to learn how OWL can help you build and manage intelligent, scalable IoT solutions.
+            </p>
+            <a href="#"
+               class="inline-block bg-indigo-600 hover:bg-indigo-500 px-8 py-3 md:px-10 md:py-4 rounded-lg text-lg font-semibold shadow-lg transition transform hover:scale-105"
+               data-aos="fade-up"
+               data-aos-delay="200"
+            >
+                Contact Us
+            </a>
+        </div>
+    </Section>
+
+    <footer class="text-center text-gray-400 py-6 bg-gray-950">
+        &copy; 2025 Targeted Solutions For Business. All rights reserved.
+    </footer>
+</Layout>

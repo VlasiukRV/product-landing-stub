@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Ribbon from '../components/Ribbon.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Dynamic UI Bridge">
+    <Ribbon />
+
+    <Hero>
+        <Fragment slot="title">
+            A Bridge <br class="hidden sm:block"/>
+            Between Your Backend <br class="hidden sm:block"/>
+            and Dynamic Frontend.
+        </Fragment>
+        <Fragment slot="description">
+            DynamicUI Bridge – a meta-driven framework to generate dynamic admin interfaces
+            and forms directly from your backend models.
+        </Fragment>
+        <Fragment slot="actions">
+            <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg text-xl font-semibold shadow-lg transition-all">
+                Request a Demo
+            </a>
+            <a href="http://192.168.4.22:3000" class="bg-white text-indigo-700 hover:bg-gray-100 px-8 py-4 rounded-lg text-xl font-semibold shadow-lg transition-all">
+                Login
+            </a>
+        </Fragment>
+    </Hero>
+
+    <Footer />
+</Layout>

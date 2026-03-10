@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ru" class="bg-gray-900 text-white font-sans scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <title>{title}</title>
+</head>
+<body>
+<slot />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" is:inline></script>
+<script is:inline>
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+</script>
+</body>
+</html>

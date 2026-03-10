@@ -1,0 +1,37 @@
+---
+// Определяем данные для каждой карточки
+const features = [
+    {
+        id: "01",
+        title: "Latency",
+        subtitle: "Real-Time",
+        description: "Proprietary stream-processing technology ensures immediate translation as words are spoken."
+    },
+    {
+        id: "02",
+        title: "Precision",
+        subtitle: "AI-Powered",
+        description: "Large-scale transformer-based language models for unmatched linguistic accuracy."
+    },
+    {
+        id: "03",
+        title: "Adaptive",
+        subtitle: "Zero Install",
+        description: "Universal web architecture allows instant access from mobile, desktop, or tablet."
+    }
+];
+---
+
+<section class="relative py-12 px-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-6">
+        {features.map((item) => (
+                <div class="glass-panel p-8 rounded-[2.5rem] group hover:border-blue-500/50 transition-all duration-500">
+                    <div class="mono text-blue-500/70 text-[10px] mb-4 font-bold uppercase tracking-widest">
+                        {item.id} // {item.title}
+                    </div>
+                    <h3 class="text-2xl font-black uppercase italic mb-4 text-slate-100">{item.subtitle}</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                </div>
+        ))}
+    </div>
+</section>

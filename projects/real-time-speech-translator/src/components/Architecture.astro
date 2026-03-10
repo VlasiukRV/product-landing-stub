@@ -1,0 +1,41 @@
+---
+const layers = [
+    { id: "01", title: "AudioShipper", desc: "Asynchronous client captures PCM frames and streams them via WebSocket with minimal jitter." },
+    { id: "02", title: "WebSocketAudioStream", desc: "A channel-bound buffer that normalizes incoming signals for the transcription engine." },
+    { id: "03", title: "Dispatcher Layer", desc: "Guarantees strict channel isolation, routing audio to independent processing contexts." },
+    { id: "04", title: "Client Layer", desc: "Real-Time live text & audio output" }
+];
+---
+
+<section id="architecture" class="relative py-28 px-6 max-w-5xl mx-auto">
+    <div class="glass-panel rounded-[3rem] p-8 md:p-16 space-y-12 bg-slate-900/40">
+
+        <div class="text-center space-y-4">
+            <span class="mono text-blue-500/70 text-[10px] uppercase tracking-[0.4em] font-bold">Technical Appendix</span>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic text-slate-100 leading-none">System Architecture</h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-slate-400 text-sm md:text-base leading-relaxed space-y-6">
+            <p>The system is built around a real-time audio ingestion pipeline designed for <span class="text-slate-100">low-latency, fault-tolerant speech processing</span>.</p>
+
+            <div class="mono text-center text-xs md:text-sm tracking-wide text-slate-300 opacity-80">
+                AudioShipper <span class="mx-2 opacity-40">→</span>
+                WebSocketAudioStream <span class="mx-2 opacity-40">→</span>
+                Dispatcher <span class="mx-2 opacity-40">→</span>
+                Output Clients
+            </div>
+
+            <div class="grid gap-6 mt-8">
+                {layers.map((layer, index) => (
+                        <div class={`flex items-start space-x-4 ${index !== 0 ? 'border-t border-white/5 pt-6' : ''}`}>
+                            <div class="mono text-blue-500 font-bold mt-1">/{layer.id}</div>
+                            <div>
+                                <h4 class="text-slate-100 font-bold uppercase text-sm mb-1">{layer.title}</h4>
+                                <p class="text-xs md:text-sm">{layer.desc}</p>
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</section>

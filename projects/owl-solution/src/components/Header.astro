@@ -1,0 +1,15 @@
+---
+const navLinks = [
+    { name: 'About', href: '#about-owl' },
+    { name: 'Capabilities', href: '#capabilities' },
+    { name: 'Case Studies', href: '#case-studies' },
+];
+---
+<header class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto z-50 relative">
+    <img src="https://cdn.prod.website-files.com/65fc3b24a566f4b48f09dc49/6882b7d8afa4b388e188dbad_Logo-OWLs.svg" alt="Logo" class="h-10 invert"/>
+    <nav class="hidden md:flex gap-6">
+        {navLinks.map(link => (
+                <a href={link.href} class="text-gray-300 hover:text-white transition">{link.name}</a>
+        ))}
+    </nav>
+</header>

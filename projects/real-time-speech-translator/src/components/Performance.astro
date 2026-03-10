@@ -1,0 +1,28 @@
+---
+const technologies = [
+    "Asynchronous stream pipeline",
+    "Transformer-based models",
+    "Websocket API"
+];
+---
+
+<section class="py-20 px-6">
+    <div class="glass-panel max-w-4xl mx-auto p-12 rounded-[3rem] text-center relative overflow-hidden bg-slate-800/30">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+
+        <h2 class="text-3xl font-black uppercase italic mb-6 text-slate-200">Engineered for Performance</h2>
+
+        <p class="text-slate-400 max-w-2xl mx-auto mb-10 font-medium">
+            Our infrastructure is designed for high-concurrency environments, supporting multiple simultaneous channels
+            with independent language engines.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6 opacity-40">
+            {technologies.map((tech) => (
+                    <span class="mono text-[10px] font-black uppercase tracking-widest text-slate-300">
+                    {tech}
+                </span>
+            ))}
+        </div>
+    </div>
+</section>

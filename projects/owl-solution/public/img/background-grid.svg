@@ -1,0 +1,37 @@
+<svg class="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 800 600" >
+    <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0 L0 0 0 40" stroke="#94a3b8" stroke-width="0.5"/>
+        </pattern>
+    </defs>
+    <rect width="800" height="600" fill="url(#grid)"/>
+    <!-- Додаткові точки або лінії -->
+    <circle cx="100" cy="100" r="6" fill="#6366f1"/>
+    <circle cx="300" cy="200" r="4" fill="#a5b4fc"/>
+    <circle cx="600" cy="400" r="5" fill="#6366f1"/>
+    <line x1="100" y1="100" x2="300" y2="200" stroke="#a5b4fc" stroke-width="1"/>
+    <line x1="300" y1="200" x2="600" y2="400" stroke="#6366f1" stroke-width="1"/>
+
+    <!-- Тонкі похилі лінії -->
+    <line x1="0" y1="100" x2="800" y2="0" stroke="#60a5fa" stroke-width="0.8" opacity="0.2" />
+    <line x1="0" y1="200" x2="800" y2="100" stroke="#60a5fa" stroke-width="0.8" opacity="0.2" />
+    <line x1="0" y1="300" x2="800" y2="200" stroke="#60a5fa" stroke-width="0.8" opacity="0.2" />
+    <line x1="0" y1="400" x2="800" y2="300" stroke="#60a5fa" stroke-width="0.8" opacity="0.2" />
+
+    <!-- Горизонтальні -->
+    <line x1="0" y1="150" x2="800" y2="150" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    <line x1="0" y1="450" x2="800" y2="450" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+
+    <!-- Вертикальні -->
+    <line x1="100" y1="0" x2="100" y2="600" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    <line x1="500" y1="0" x2="500" y2="600" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+    <line x1="700" y1="0" x2="700" y2="600" stroke="#38bdf8" stroke-width="0.5" opacity="0.1"/>
+
+    <!-- Декоративна крива -->
+
+    <path d="M 0 100 C 200 400, 100 600, 400 200" stroke="#0ea5e9" stroke-width="2" fill="none"/>
+    <path d="M 0 500 C 200 400, 600 600, 800 500" stroke="#a5b4fc" stroke-width="2" fill="none"/>
+
+</svg>

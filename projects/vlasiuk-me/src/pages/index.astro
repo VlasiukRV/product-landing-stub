@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Vlasiuk Family & Ventures">
+    <header>
+        <h1>Vlasiuk</h1>
+        <div class="tagline">FAMILY OFFICE & VENTURE STUDIO</div>
+    </header>
+
+    <div class="grid">
+        <Card
+                href="https://olena.vlasiuk.me/"
+                imgSrc="/img/olena_vlasiuk.webp"
+                title="Dr Olena Vlasiuk"
+                description="Expert insights into digital transformation and business strategy."
+                linkText="View Portfolio"
+        />
+        <Card
+                href="https://www.linkedin.com/in/romavlasuk"
+                imgSrc="/img/roman_vlasiuk.webp"
+                title="Roman Vlasiuk"
+                description="Founder & Technology Strategist. Shaping future digital ecosystems."
+                linkText="Get in Touch"
+        />
+        <Card
+                href="https://tsb-enterprise.com/"
+                imgSrc="/img/tsb-Logo.svg"
+                title="Targeted Solutions for Business"
+                linkText="Launch Site"
+        />
+        <Card
+                href="https://uptarget.co/"
+                imgSrc="/img/uptarget_Logo.svg"
+                title="UpTarget"
+                description="Your Dedicated Team."
+                linkText="Launch Site"
+        />
+    </div>
+
+    <div class="products-mini">
+        <div class="label">Proprietary Ecosystem</div>
+        <div class="product-links">
+            <a href="https://owl-solution.tsb-enterprise.com/">Owl Solution</a>
+            <a href="https://dynamic-ui.tsb-enterprise.com/">Dynamic UI</a>
+            <a href="https://speech-translator.tsb-enterprise.com/">Speech Translator</a>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .label {
+        color: var(--text-dim);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+    }
+</style>
