@@ -2,9 +2,7 @@ version: '3.3'
 
 services:
   dev-server:
-    build:
-      context: .
-      target: dev
+    image: astro-dev:local
     container_name: astro-dev
     environment:
       - SITE_NAME=${SITE_NAME}
@@ -16,9 +14,7 @@ services:
     command: npm run dev
 
   nginx-prod:
-    build:
-      context: .
-      target: prod
+    image: astro-prod:local
     container_name: astro-prod
     ports:
       - "8091-8097:8091-8097"
