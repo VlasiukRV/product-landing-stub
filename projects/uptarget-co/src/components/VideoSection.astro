@@ -1,0 +1,28 @@
+---
+// src/components/VideoSection.astro
+const content = `Uptarget helps you find the right people who hold themselves accountable and adapt to the needs and requirements of your project development.
+                    From the initial idea to its implementation, we help you at every step and bring in persistent, highly adaptable people to work on the task.`
+const video_link = `https://www.youtube.com/embed/pcTNDu_7_Po?enablejsapi=1&rel=0&controls=1`
+---
+<section class="video-section py-0 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="video-container relative overflow-hidden ">
+
+            <div class="relative w-full pt-[56.25%]">
+                <iframe
+                        class="absolute inset-0 w-full h-full"
+                        src={video_link}
+                        title="Uptarget Birthday"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-msg p-8 md:p-12 bg-black w-[826px]w-full md:w-[826px]">
+                <p class="video-text text-sm md:text-xl text-white leading-relaxed" set:html={content}>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

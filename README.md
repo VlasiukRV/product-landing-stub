@@ -18,11 +18,13 @@ Set the `SITE_NAME` environment variable to the folder name of your project (loc
 
 # Example for a specific site
 export SITE_NAME=auto-body-shop
-docker-compose up dev-server
+
+docker build --target dev -t astro-dev:local .
+docker-compose up -d dev-server
 ```
 The site will be available at: `http://localhost:4321`
 
-## 1. Production Mode
+## 2. Production Mode
 
 In this mode, all projects are built via `npm run build:all`. Files are copied into the Nginx container, which serves them over ports `8091–8097`.
 
@@ -31,10 +33,10 @@ In this mode, all projects are built via `npm run build:all`. Files are copied i
 ````bash
 
 # 1. Build the production image (no cache ensures a fresh build)
-docker-compose build nginx-prod --no-cache
+docker build --target prod -t astro-prod:local .
 
 # 2. Start the production containers
-docker-compose up nginx-prod -d
+docker-compose up -d nginx-prod
 ````
 
 | Port  | Site Name          | Source Path                     |

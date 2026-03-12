@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="252px" height="206px" viewBox="0 0 252 206" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Check</title>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-1152, -2607)" stroke="#1A1A1C" stroke-width="2">
+            <g id="Benefits" transform="translate(130, 1987)">
+                <g id="Group-3" transform="translate(639, 0)">
+                    <g id="Check" transform="translate(384, 621)">
+                        <polyline id="Stroke-1" points="249.867659 39.012189 80.2018537 203.334189 0 125.658378"></polyline>
+                        <polyline id="Stroke-3" points="239.797356 29.2591417 80.2013561 183.828496 10.0701366 115.905331"></polyline>
+                        <polyline id="Stroke-4" points="229.727137 19.5060945 80.2017707 164.322 20.1403561 106.152283"></polyline>
+                        <polyline id="Stroke-5" points="219.657249 9.75304724 80.2016878 144.816307 30.2109073 96.3992362"></polyline>
+                        <polyline id="Stroke-6" points="209.587029 0 80.2021024 125.309811 40.2811268 86.646189"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

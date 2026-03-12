@@ -1,0 +1,101 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import testimonials from '../data/testimonials.json';
+
+const title = `Testimonials`
+---
+
+<section class="testimonials py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-semibold md:text-5xl font-bold mb-12" set:html={title}></h2>
+
+        <div class="swiper mySwiper relative pb-16">
+            <div class="swiper-wrapper">
+                {testimonials.map((t) => (
+                        <div class="swiper-slide">
+                            <div class="flex flex-col md:flex-row gap-8 p-8 shadow-sm">
+                                <div class="flex-1">
+                                    <img src="/img/Quotes-1.svg" class="mb-6 w-10" alt="quotes"/>
+                                    <p class="text-lg leading-relaxed mb-6 text-gray-700" set:html={t.quote}/>
+                                    <div class="font-bold text-xl">{t.name}</div>
+                                    <div class="text-gray-500">{t.position}</div>
+                                </div>
+                                <a href={t.link} target="_blank" class="tst-graphics block relative w-[420px] h-[373px] min-w-[420px] min-h-[373px] cursor-pointer">
+
+                                    <div class="client-bg absolute top-[33px] left-0 w-[340px] h-[340px] z-10 rounded-full bg-[#4a7bf7]"></div>
+
+                                    <img
+                                            src={t.person_photo}
+                                            alt={t.name}
+                                            class="client-pic absolute top-[-8px] left-0 w-[340px] h-[381px] object-cover z-20"
+                                    />
+
+                                    <img
+                                            src={t.logo}
+                                            alt="logo"
+                                            class="client-logo absolute top-[123px] left-[260px] w-[160px] h-[160px] z-30 object-contain"
+                                    />
+                                </a>
+                            </div>
+                        </div>
+                ))}
+            </div>
+
+
+            <div class="flex items-center justify-center gap-6 mt-10">
+                <div class="swiper-button-prev !static !m-0 !w-10 !h-10 !text-[#1a1a1c]"></div>
+                <div class="swiper-pagination !static !w-auto"></div>
+                <div class="swiper-button-next !static !m-0 !w-10 !h-10 !text-[#1a1a1c]"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    import Swiper from 'swiper';
+    import { Navigation, Pagination } from 'swiper/modules';
+
+    // Инициализация
+    const swiper = new Swiper(".mySwiper", {
+        modules: [Navigation, Pagination], // Обязательно подключаем модули
+        loop: true,
+        spaceBetween: 30,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        }
+    });
+</script>
+
+<style is:global>
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        background-color: #d1d5db;
+        opacity: 1;
+        margin: 0 8px !important;
+        transition: all 0.3s ease;
+        border-radius: 50%;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #1a1a1c;
+        transform: scale(1.2);
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 20px !important;
+        font-weight: bold;
+    }
+</style>

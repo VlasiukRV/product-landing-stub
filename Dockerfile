@@ -20,4 +20,4 @@ FROM nginx:alpine AS prod
 COPY --from=builder /app/public_html /usr/share/nginx/html
 COPY nginx/ /etc/nginx/conf.d/
 
-EXPOSE 8091-8097
+EXPOSE 8091-8098

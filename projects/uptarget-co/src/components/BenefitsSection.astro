@@ -1,0 +1,77 @@
+---
+import benefits from '../data/benefits.json';
+const title = `6 Key Benefits of Working with Dedicated Teams`
+---
+
+<section class="benefits w-full py-24 bg-white">
+
+    <div class="mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        <div class="flex lg:justify-center w-full lg:sticky lg:top-[140px]">
+            <div class="lg:mt-[140px] lg:mb-[32px] max-w-[450px]">
+                <h2 class="text-4xl font-semibold md:text-5xl font-bold" set:html={title}>
+                </h2>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            {benefits.map((item, index) => (
+
+                    <div class="b-item relative p-8 border-b border-gray-200 group transition-all duration-500 bg-white isolate"
+                         data-scroll-card>
+
+                        <div class={index % 2 === 0
+                            ? "absolute -inset-4 bg-gradient-to-r from-[#fd0] to-orange-400 rounded-3xl blur-3xl opacity-30 z-[-1] pointer-events-none"
+                            : "hidden"
+                        }></div>
+
+                        <div class="absolute inset-0 overflow-hidden z-[-1] pointer-events-none">
+                            <div class={`absolute inset-0 w-[5%] transition-all duration-[1500ms] ease-out bg-scroll-layer ${index % 2 === 0 ? 'bg-[rgb(255,221,0)]' : 'bg-[rgba(255,221,0,0.5)]'}`}></div>
+                        </div>
+
+                        <div class="relative z-10 flex justify-between items-start">
+                            <div class="mr-8">
+                                <h3 class="text-xl font-bold text-[#1a1a1c] mb-4">{item.title}</h3>
+                                <p class="text-[#1a1a1c]/80 leading-relaxed">{item.text}</p>
+                            </div>
+
+                            <img
+                                    src="/img/Check.svg"
+                                    alt="Check"
+                                    class="benefit-check hidden lg:block w-full max-w-[128px] h-auto opacity-0 transition-opacity duration-500 flex-shrink-0"
+                            />
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const layer = entry.target.querySelector('.bg-scroll-layer');
+            const icon = entry.target.querySelector('.benefit-check');
+
+            if (entry.isIntersecting) {
+
+                layer.classList.add('!w-full');
+                setTimeout(() => {
+                    if (entry.isIntersecting) icon.classList.add('!opacity-100');
+                }, 1200);
+            } else {
+                if (entry.boundingClientRect.top > 0) {
+                    icon.classList.remove('!opacity-100');
+                    layer.classList.remove('!w-full');
+                }
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '-50px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('[data-scroll-card]').forEach(card => {
+        observer.observe(card);
+    });
+</script>

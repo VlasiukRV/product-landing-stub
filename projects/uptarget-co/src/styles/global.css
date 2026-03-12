@@ -1,0 +1,21 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    .button-cta {
+        @apply bg-[#fd0] text-[#1a1a1c] font-bold uppercase py-4 px-8 rounded-full transition-all;
+    }
+
+}
+
+@layer components {
+
+
+}
