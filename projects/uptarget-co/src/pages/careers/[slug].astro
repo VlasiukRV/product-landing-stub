@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+    const vacancies = await getCollection('careers');
+    return vacancies.map(entry => ({
+        params: { slug: entry.slug }, props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+    <div class="content-job max-w-4xl mx-auto p-6 md:p-12">
+        <div class="job-info-container mb-10">
+            <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
+            {entry.data.isHot && (
+                    <img src="/img/Icon-Hot.svg" alt="Hot" class="w-10 h-10" />
+            )}
+        </div>
+
+        <article class="prose lg:prose-xl">
+            <Content />
+        </article>
+
+        <div class="form-area mt-12 bg-gray-50 p-8 rounded-lg">
+        </div>
+    </div>
+</Layout>

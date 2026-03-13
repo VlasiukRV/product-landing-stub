@@ -1,0 +1,40 @@
+---
+import perks from '../data/perks.json';
+---
+
+<section class="perks flex flex-col items-center py-0 px-4">
+    <h2 class="perks-title font-['Unbounded'] font-semibold text-center mb-10
+               text-2xl md:text-[46px] lg:text-[56px] 2xl:text-[66px]
+               leading-tight max-w-[830px] 2xl:max-w-[910px]">
+        Perks & Benefits
+    </h2>
+
+    <div class="perks-grid flex flex-wrap justify-center items-start gap-3 md:gap-[30px] 2xl:gap-[50px]
+                max-w-[1120px] w-full mt-5 md:mt-[40px] 2xl:mt-[70px] mb-20 md:mb-[140px] 2xl:mb-[180px]">
+
+        {perks.map((perk) => (
+                <div class="perk group flex items-center justify-start md:justify-center md:flex-col
+            bg-[#1a1a1c0f] hover:bg-black hover:text-white
+            w-full md:w-[200px] 2xl:w-[240px]
+            h-[110px] md:h-[200px] 2xl:h-[240px]
+            rounded-[110px] md:rounded-[160px]
+            px-5 md:px-0 transition-colors duration-300 cursor-default">
+
+                    <img src={perk.icon} alt={perk.title}
+                         class="perk-icon w-[74px] md:w-[90px] 2xl:w-[100px]
+                h-[74px] md:h-auto
+                md:mt-[-20px] 2xl:mt-[-16px]
+                mb-0 md:mb-[6px] mr-4 md:mr-0" />
+
+                    <div class="perk-title font-['Golos_Text'] font-semibold
+                text-[18px] md:text-[18px] 2xl:text-[20px]
+                leading-[22px] md:leading-[20px] 2xl:leading-[24px]
+                text-left md:text-center
+                ml-[16px] md:ml-[30px] 2xl:ml-[50px]
+                mr-[16px] md:mr-[30px] 2xl:mr-[50px]">
+                        {perk.title}
+                    </div>
+                </div>
+        ))}
+    </div>
+</section>

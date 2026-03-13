@@ -1,0 +1,14 @@
+[
+  { "title": "Competitive compensation", "icon": "/img/perks/Perk-12.svg" },
+  { "title": "Paid & Unpaid Vacation", "icon": "/img/perks/Perk-2.svg" },
+  { "title": "Work-Life Balance", "icon": "/img/perks/Perk-1.svg" },
+  { "title": "Flexible Schedule", "icon": "/img/perks/Perk-11.svg" },
+  { "title": "Office in Cherkasy", "icon": "/img/perks/Perk-10.svg" },
+  { "title": "Sick Leaves", "icon": "/img/perks/Perk-9.svg" },
+  { "title": "Dedicated Team", "icon": "/img/perks/Perk-6.svg" },
+  { "title": "Work From Anywhere", "icon": "/img/perks/Perk-7.svg" },
+  { "title": "Internal Events", "icon": "/img/perks/Perk-8.svg" },
+  { "title": "Learning Bonus", "icon": "/img/perks/Perk-5.svg" },
+  { "title": "Charity Projects", "icon": "/img/perks/Perk-4.svg" },
+  { "title": "Great People to Work With", "icon": "/img/perks/Perk-3.svg" }
+]
