@@ -1,0 +1,47 @@
+---
+// src/components/RecruitSection.astro
+
+import team from '../data/team.json';
+
+const title = `Meet the People Behind Uptarget`;
+const content = `At Uptarget, we believe great software comes from great teams. We’re a diverse group of professionals — developers, recruiters, project leads — all working together to help our clients succeed.`;
+---
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mb-16">
+            <h2 class="text-4xl font-semibold md:text-5xl font-bold mb-12">{title}</h2>
+            <p class="hero-text text-base md:text-lg xl:text-lg text-[#1a1a1c]/80 leading-relaxed max-w-xl">{content}</p>
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+            {team.map((member) => (
+
+                        <a href={member.link} target="_blank"
+                           class="relative group flex items-center p-4 bg-neutral-100 transition-all duration-300 w-full">
+
+                            <div class="absolute top-4 right-4 w-3.5">
+
+                                <svg width="10" height="10" viewBox="0 0 20 20" class="fill-current">
+                                    <path d="M20,0 L20,19 L18,19 L17.9993009,3.263 L2.17157288,19.0918831 L0.757359313,17.6776695 L16.4343009,2 L1,2 L1,0 L20,0 Z">
+
+                                    </path>
+                                </svg>
+
+                            </div>
+
+                            <img src={member.photo}
+                                 alt={member.name}
+                                 class="team-avatar object-cover rounded-xl" />
+
+                            <div class="ml-5 flex flex-col">
+                                <div class="text-lg font-bold text-[#1a1a1c]">{member.name}</div>
+                                <div class="text-sm font-medium text-[#1a1a1c]">{member.title}</div>
+                                <div class="text-xs text-gray-500 mt-1">{member.desc}</div>
+                            </div>
+                        </a>
+
+            ))}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Olena Vlasiuk",
+    "title": "CEO & Co-founder",
+    "desc": "Business strategy, client relations",
+    "photo": "/img/team/Olena.webp",
+    "link": "https://www.linkedin.com/in/olenavlasiuk/"
+  },
+  {
+    "name": "Roman Vlasiuk",
+    "title": "CFO",
+    "desc": "Finance, operations",
+    "photo": "/img/team/Roman.webp",
+    "link": "https://www.linkedin.com/in/romavlasuk/"
+  },
+  {
+    "name": "Yuliia Kaliuzhna",
+    "title": "Lead Recruiter",
+    "desc": "Sourcing, candidate screening",
+    "photo": "/img/team/Julia.webp",
+    "link": "https://www.linkedin.com/in/yuliia-kaliuzhna-164957218/"
+  },
+  {
+    "name": "Andrii Nuzhnyi",
+    "title": "Tech Lead",
+    "desc": "Mobile solutions",
+    "photo": "/img/team/Andrii.webp",
+    "link": "#"
+  },
+  {
+    "name": "Pavlo Nadolynskyi",
+    "title": "Tech Lead",
+    "desc": "Backend systems, architecture",
+    "photo": "/img/team/Pavlo.webp",
+    "link": "#"
+  }
+]

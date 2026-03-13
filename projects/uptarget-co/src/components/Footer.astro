@@ -1,7 +1,9 @@
 ---
 // src/components/Footer.astro
+
+const currentYear = new Date().getFullYear();
 ---
-<footer class="footer bg-black border-t border-gray-100 py-12 px-6 md:px-10">
+<footer class="footer bg-black py-12 px-6 md:px-10">
     <div class="footer-box max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-8">
 
         <nav class="footer-menu flex flex-col md:flex-row items-center gap-6 md:gap-10">
@@ -20,11 +22,22 @@
         </nav>
 
 
-        <a href="/" class="footer-logo flex flex-col md:flex-row items-center gap-4 text-center text-xs xl:text-sm text-white hover:text-[#fd0] transition">
-            <img src="/img/Logo-Icon.svg" alt="Logo Icon" width="41" height="41" />
-            <div class="copyright ">
-                ©2025 Uptarget.co™ All rights reserved.
+        <a href="/" class="group footer-logo flex flex-col md:flex-row items-center gap-4 text-center text-xs xl:text-sm text-white transition">
+
+            <div class="flex flex-row items-center justify-center gap-4">
+                <div class="w-[41px] h-[41px] text-white transition group-hover:text-[#fd0]">
+                    <svg viewBox="0 0 100 89" xmlns="http://www.w3.org/2000/svg" class="w-full h-full fill-current">
+                        <g transform="translate(-10, -15)">
+                            <polygon points="66.7015807 15.838607 53.2993803 15.838607 10.87687 92.0921425 19.5389999 103.161172 54.2254683 94.0167492 54.2254683 78.2365211 32.9842535 83.8362206 60.0005914 35.2753668 87.0160417 83.8362206 65.7746049 78.2363002 65.7746049 94.0165282 100.461295 103.161172 109.123203 92.0921425"></polygon>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="copyright text-white text-sm transition group-hover:text-[#fd0]">
+                    © {currentYear} Uptarget.co™ All rights reserved.
+                </div>
             </div>
+
         </a>
 
     </div>

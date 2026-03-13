@@ -1,0 +1,25 @@
+---
+// src/pages/team.astro
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import TeamSection from "../components/TeamSection.astro";
+import RecruitSection from "../components/RecruitSection.astro";
+import TeamHeroSection from "../components/TeamHeroSection.astro";
+
+---
+
+<Layout title="Uptarget - Dedicated Team">
+
+    <Navbar slot="header" />
+
+    <TeamSection />
+
+    <RecruitSection />
+
+    <TeamHeroSection />
+
+    <Footer slot="footer" />
+
+</Layout>

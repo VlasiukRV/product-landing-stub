@@ -1,0 +1,62 @@
+---
+// src/components/CareersHeroSection.astro
+const title = `Now Hiring in Ukraine, Poland and Globally`
+const content = `We are looking for team members who don’t only define themselves based on their skills and experience. We want to know what really motivates and drives you in life. And how does Uptarget fit into that journey? We want to get to know you!`
+---
+
+<section class="hero-careers relative w-full flex flex-col items-center overflow-hidden bg-white pt-[50px] md:pt-[100px] xl:pt-[156px]">
+
+    <div class="careers-box relative
+                w-[320px] h-[631px]
+                sm:w-[430px] sm:h-[640px]
+                md:w-[660px] md:h-[770px]
+                2xl:w-[1024px] 2xl:h-[1220px]
+                mx-auto">
+
+        <div class="career-text-box relative w-full h-full bg-[#fd0]
+             p-8 sm:pt-[22px]
+             sm:pl-[34px]
+             md:pt-[38px]
+
+             md:pl-[60px]
+             md:pr-[200px]
+             xl:pt-[60px]
+             xl:pl-[100px]
+             xl:pr-[218px]
+
+             z-20">
+            <h1 class="text-[28px] leading-[34px] md:text-[40px] md:leading-[48px] xl:text-[60px] xl:leading-[70px] font-bold text-[#1a1a1c] mb-6" set:html={title} />
+            <p class="text-[16px] md:text-[18px] xl:text-[26px] leading-relaxed text-gray-800" set:html={content} />
+        </div>
+
+        <img src="/img/Rays-L.svg" alt=""
+             class="absolute z-10 pointer-events-none
+                    w-[366px] h-[366px] top-[-547px] right-[159px]
+                    md:w-[742px] md:h-[742px] md:top-[-275px] md:right-[329px]
+                    xl:w-[800px] xl:h-[800px] xl:top-[-273px] xl:right-[510px]" />
+
+        <div class="globe-box absolute z-30 bg-white/30 backdrop-blur-md rounded-full pointer-events-none
+                    w-[200px] h-[200px] mt-[-691px] left-[250px]
+                    sm:w-[300px] sm:h-[300px] sm:mt-[-690px] sm:left-[233px]
+                    md:w-[414px] md:h-[414px] md:mt-[-890px] md:left-[450px]
+                    xl:w-[625px] xl:h-[625px] xl:mt-[-805px] xl:left-[503px]
+                    2xl:w-[625px] 2xl:h-[625px] 2xl:mt-[-1405px] 2xl:left-[790px]">
+            <img src="/img/GlobeWire.png" alt="Globe" class="w-full h-full opacity-70 object-contain" />
+        </div>
+    </div>
+
+    <img src="/img/Careers-Hero.webp" alt="Team"
+         class="career-girls relative z-[35] pointer-events-none
+                w-[160%] max-w-[160%] mt-[-266px]
+                sm:mt-[-306px]
+                md:w-[130%] md:max-w-[130%] md:mt-[-387px]
+                xl:w-full xl:max-w-none xl:mt-[-705px]
+                object-cover" />
+
+</section>
+
+<style>
+    .hero-careers {
+        font-family: "Golos Text", sans-serif;
+    }
+</style>

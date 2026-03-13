@@ -19,3 +19,12 @@
 
 
 }
+
+@layer utilities {
+    .team-avatar {
+        max-width: none !important;
+        width: 240px !important;
+        height: 200px !important;
+        flex: none !important;
+    }
+}
