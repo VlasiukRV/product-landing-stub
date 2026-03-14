@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 const project_dir = 'uptarget-co'
 
 export default defineConfig({
-    site: 'https://uptarget.co/',
+    site: 'https://uptarget-co.tsb-enterprise.com/',
 
     base: '/',
     srcDir: './src',

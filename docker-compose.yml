@@ -17,4 +17,4 @@ services:
     image: astro-prod:local
     container_name: astro-prod
     ports:
-      - "8091-8097:8091-8097"
+      - "8091-8098:8091-8098"
