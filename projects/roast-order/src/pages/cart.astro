@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CoffeeShop from '../components/vue/CoffeeShop.vue';
+import { getCollection } from 'astro:content';
+
+const productsEntries = await getCollection('products');
+const allProducts = productsEntries.map(entry => ({
+    slug: entry.slug,
+    ...entry.data // тут будут name, price, category и т.д.
+}));
+
+---
+
+<Layout title="Your Cart | Freshly Roasted Coffee">
+    <main class="min-h-screen p-4 md:p-20">
+
+
+            <CoffeeShop client:only="vue" initialProducts={allProducts} />
+
+
+    </main>
+</Layout>

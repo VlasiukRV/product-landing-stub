@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import ProductCard from "../../components/ProductCard.astro";
+
+const allProducts = await getCollection('products');
+const formattedProducts = allProducts.map(p => ({ id: p.slug, ...p.data }));
+
+const groups = formattedProducts.reduce((acc, p) => {
+    const key = p.category || 'Other';
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(p);
+    return acc;
+}, {});
+
+const categories = Object.keys(groups).map(name => ({ name, products: groups[name] }));
+---
+
+<Layout title="Our Coffee | Freshly Roasted">
+    <main class="min-h-screen py-[100px] px-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-5xl font-display text-coffee-cream text-center mb-12">Our Selection</h1>
+
+            {categories.map(cat => (
+                    <section class="mb-12">
+                        <h2 class="text-3xl font-display text-orange-200 mb-8 border-l-4 border-orange-700 pl-4">
+                            {cat.name}
+                        </h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {cat.products.map(p =>
+                                    <ProductCard product={p} />
+                            )}
+                        </div>
+                    </section>
+            ))}
+        </div>
+    </main>
+</Layout>

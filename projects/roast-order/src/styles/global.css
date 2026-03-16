@@ -1,0 +1,55 @@
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora&family=Montserrat:wght@600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    body {
+        @apply font-serif text-[#fefefe];
+        background: theme('backgroundImage.coffee-gradient');
+        background-size: cover;
+    }
+
+    .bg-home {
+        background: url('/img/Hero_img_00.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    h1, h2, h3 { @apply font-display; }
+    .btn { @apply font-sans font-semibold uppercase tracking-wider; }
+}
+
+@layer components {
+
+    .catalog-img-container img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .StripeElement {
+        @apply w-full px-3 py-4 bg-stone-900/50 rounded-lg border border-white/10;
+    }
+
+    .StripeElement--focus {
+        @apply border-orange-700 ring-1 ring-orange-700;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        @apply bg-stone-950;
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-orange-700/50 rounded-full hover:bg-orange-700;
+    }
+
+}
+
+@layer utilities {
+
+}

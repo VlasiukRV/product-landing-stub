@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import CartIcon from '../components/vue/CartIcon.vue';
+
+interface Props {
+    title: string;
+    pageType?: 'home' | 'default'; }
+const { title, pageType = 'default'} = Astro.props;
+
+const bodyClass = pageType === 'home' ? 'bg-home' : 'bg-default';
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{title}</title>
+</head>
+<body class={`${bodyClass} min-h-screen`}>
+
+<header class="fixed top-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md transition-all duration-300">
+    <a href="/" class="text-2xl font-display text-orange-200">FreshRoast</a>
+
+    <nav class="flex items-center gap-8">
+        <a href="/shop" class="text-coffee-cream hover:text-white transition uppercase tracking-widest text-sm font-bold">
+            Shop
+        </a>
+
+        <CartIcon client:load />
+
+    </nav>
+
+</header>
+
+<slot />
+
+</body>
+<script src="https://js.stripe.com/v3/"></script>
+</html>
