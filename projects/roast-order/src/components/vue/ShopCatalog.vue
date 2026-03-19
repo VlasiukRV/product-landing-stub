@@ -1,24 +1,66 @@
 <script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination, Navigation } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import CatalogCard from "./CatalogCard.vue";
-defineProps({
-  categories: Array,
-  showCartButton: { type: Boolean, default: true }
-});
-defineEmits(['add', 'goToCart']);
+
+const props = defineProps(['categories']);
+
+const modules = [Pagination, Navigation];
 </script>
 
 <template>
-  <div class="space-y-12 animate-in fade-in">
-    <div v-for="cat in categories" :key="cat.name">
-      <h2 class="text-3xl font-display text-orange-200 mb-8 border-l-4 border-orange-700 pl-4">
+  <div class="space-y-12 animate-in fade-in pb-24">
+    <div v-for="cat in categories" :key="cat.name" class="category-section">
+
+      <h2 class="text-3xl font-display text-orange-200 mb-6 border-l-4 border-orange-700 pl-4">
         {{ cat.name }}
       </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <CatalogCard v-for="p in cat.products" :key="p.id" :product="p" @add="$emit('add', p)" />
+
+      <div class="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-8">
+        <CatalogCard
+            v-for="p in cat.products"
+            :key="p.id"
+            :product="p"
+            @add="$emit('add', p)"
+        />
+      </div>
+
+      <div class="sm:hidden -mx-4 overflow-x-hidden">
+        <swiper
+            :modules="modules"
+            :space-between="16"
+            :slides-per-view="1.3"
+            :centered-slides="false"
+            :slides-offset-before="16"
+            :slides-offset-after="16"
+            :pagination="{ clickable: true }"
+            class="pb-10"
+        >
+          <swiper-slide v-for="p in cat.products" :key="'swipe-' + p.id">
+            <CatalogCard
+                :product="p"
+                @add="$emit('add', p)"
+            />
+          </swiper-slide>
+        </swiper>
       </div>
     </div>
-    <div v-if="showCartButton" class="flex gap-4 mt-8">
-        <button @click="$emit('goToCart')" class="flex-1 py-3 bg-orange-700 rounded-xl font-bold uppercase">View Cart</button>
-    </div>
+
   </div>
 </template>
+
+<style>
+
+.swiper-pagination-bullet {
+  @apply bg-orange-200 opacity-50;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-orange-700 opacity-100;
+}
+
+</style>

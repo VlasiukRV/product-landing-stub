@@ -4,11 +4,11 @@ import CartIcon from '../components/vue/CartIcon.vue';
 
 interface Props {
     title: string;
-    pageType?: 'home' | 'default'; }
-const { title, pageType = 'default'} = Astro.props;
+    pageType?: 'home' | 'default';
+}
+const {title, pageType = 'default'} = Astro.props;
 
 const bodyClass = pageType === 'home' ? 'bg-home' : 'bg-default';
-
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,20 +20,28 @@ const bodyClass = pageType === 'home' ? 'bg-home' : 'bg-default';
 <body class={`${bodyClass} min-h-screen`}>
 
 <header class="fixed top-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md transition-all duration-300">
-    <a href="/" class="text-2xl font-display text-orange-200">FreshRoast</a>
+
+    <div>
+        {pageType !== 'home' && (
+                <a href="/" class="">
+                    <img
+                            src="/img/Wax-seal.png"
+                            alt="Wax Seal"
+                            class="p-0 m-0 w-[32px] md:w-[48px] lg:w-[50pax] opacity-90 transition-transform duration-500 hover:scale-110 ease-in-out z-0"
+                    />
+                </a>
+        )}
+    </div>
 
     <nav class="flex items-center gap-8">
-        <a href="/shop" class="text-coffee-cream hover:text-white transition uppercase tracking-widest text-sm font-bold">
-            Shop
-        </a>
 
-        <CartIcon client:load />
+        <CartIcon client:load/>
 
     </nav>
 
 </header>
 
-<slot />
+<slot/>
 
 </body>
 <script src="https://js.stripe.com/v3/"></script>

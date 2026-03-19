@@ -2,7 +2,7 @@
 name: "Sumatra Mandheling"
 price: 19.50
 description: "Full-bodied, earthy with a spicy, dark chocolate finish."
-image: "https://www.coffeebeancorral.com/images/IMG_9967.jpg"
+image: '/img/roast-coffee-beans-01.webp'
 category: "Roasted Coffee"
 isBestSeller: true
 ---

@@ -1,9 +1,12 @@
 ---
-name: "Colombia Huila"
-price: 17.50
-description: "Balanced body, notes of caramel, cocoa, and a hint of citrus."
-image: "https://www.coffeebeancorral.com/images/IMG_9967.jpg"
-category: "Roasted Coffee"
+details:
+  price: 20.5
+  category: Roasted Coffee
+name: Colombia Huila
+price: 20.5
+description: 'Balanced body, notes of caramel, cocoa, and a hint of citrus.'
+image: '/img/roast-coffee-beans.jpg'
+category: Roasted Coffee
 isBestSeller: true
 ---
 

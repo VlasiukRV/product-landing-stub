@@ -4,7 +4,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <button
-          v-for="roast in roastDetails" :key="roast.level"
+          v-for="roast in roasts" :key="roast.level"
           @click="$emit('select', roast.level)"
           :class="['p-6 rounded-2xl border-2 transition-all duration-300 flex flex-col items-center gap-2',
           selected === roast.level
@@ -16,21 +16,11 @@
       </button>
     </div>
 
-    <div class="flex gap-4 mt-8">
-      <button @click.stop="$emit('back')" type="button" class="flex-1 py-3 border border-stone-700 rounded-xl">Back</button>
-      <button @click="$emit('next')" class="flex-1 py-3 bg-orange-700 rounded-xl font-bold uppercase">Continue</button>
-    </div>
-
   </div>
 </template>
 
 <script setup>
-defineProps(['selected']);
-defineEmits(['select', 'next', 'back']);
+defineProps(['selected', 'roasts']);
+defineEmits(['select']);
 
-const roastDetails = [
-  { level: 'Light', desc: 'Bright, acidic, floral notes' },
-  { level: 'Medium', desc: 'Balanced, sweet, rounded' },
-  { level: 'Dark', desc: 'Bold, smoky, chocolatey' }
-];
 </script>

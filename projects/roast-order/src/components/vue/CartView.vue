@@ -1,7 +1,7 @@
 <script setup>
 import CartItem from './CartItem.vue';
 defineProps(['cart', 'total']);
-defineEmits(['back', 'checkout', 'increase', 'decrease', 'remove']);
+defineEmits(['increase', 'decrease', 'remove']);
 </script>
 
 <template>
@@ -13,10 +13,6 @@ defineEmits(['back', 'checkout', 'increase', 'decrease', 'remove']);
                 @decrease="$emit('decrease', idx)"
                 @remove="$emit('remove', idx)" />
       <div class="text-right mt-6 text-2xl font-bold">Total: <span class="text-orange-400">${{ total }}</span></div>
-    </div>
-    <div class="flex gap-4 mt-8">
-      <button @click="$emit('back')" class="flex-1 py-3 border border-stone-700 rounded-xl">Back</button>
-      <button @click="$emit('checkout')" class="flex-1 py-3 bg-orange-700 rounded-xl font-bold uppercase">Checkout</button>
     </div>
   </div>
 </template>

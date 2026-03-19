@@ -5,7 +5,7 @@
 
       <div :class="['w-8 h-8 rounded-full flex items-center justify-center font-bold mb-2 transition-colors',
              s.id <= currentStep ? 'bg-orange-700 text-white' : 'bg-stone-800 text-stone-500']">
-        {{ s.id }}
+        {{ s.name }}
       </div>
 
       <span :class="['text-xs uppercase', s.id <= currentStep ? 'text-orange-200' : 'text-stone-600']">

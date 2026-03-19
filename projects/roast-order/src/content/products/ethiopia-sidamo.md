@@ -2,7 +2,7 @@
 name: "Ethiopia Sidamo"
 price: 18.00
 description: "Berry notes, light roast with a floral aroma."
-image: "https://www.coffeebeancorral.com/images/IMG_9967.jpg"
+image: '/img/roast-coffee-beans-light.jpg'
 category: "Roasted Coffee"
 isBestSeller: true
 ---
