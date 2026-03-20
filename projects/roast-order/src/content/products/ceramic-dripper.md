@@ -1,6 +1,6 @@
 ---
 name: "Signature Ceramic Dripper"
-price: 24.50
+price: 27.50
 description: "Handcrafted ceramic pour-over for precise heat retention and elegant brewing."
 image: "/img/v60_dripper.webp"
 category: "Equipment"

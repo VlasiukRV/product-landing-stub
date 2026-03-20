@@ -7,13 +7,17 @@ defineEmits(['increase', 'decrease', 'remove']);
   <div class="flex justify-between items-center py-4 border-b border-white/5">
     <div>
       <p class="font-bold text-[#fff4dc]">{{ item.name }}</p>
-      <div class="flex items-center gap-2 text-xs font-medium py-1">
-        <span class="text-stone-300">{{ item.packag.weight || item.packag }}</span>
+
+      <div v-if="item.packag || item.roast" class="flex items-center gap-2 text-xs font-medium py-1">
+        <span class="text-stone-300">
+          {{ typeof item.packag === 'object' ? item.packag.weight : item.packag }}
+        </span>
         <span class="text-stone-600">•</span>
         <span class="text-orange-500 uppercase tracking-widest text-[10px]">
           {{ item.roast }}
         </span>
       </div>
+
       <p class="text-sm text-stone-400">${{ item.price }} / unit</p>
     </div>
     <div class="flex items-center gap-4">

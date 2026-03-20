@@ -10,6 +10,18 @@ const updateCart = () => {
   count.value = data.reduce((sum, item) => sum + item.quantity, 0);
 };
 
+const navigateToCart = () => {
+  const url = '/cart?step=cart';
+
+  if (window.location.pathname !== '/cart') {
+    window.location.href = url;
+  } else {
+    window.history.pushState({}, '', url);
+    window.dispatchEvent(new Event('popstate'));
+    window.dispatchEvent(new Event('open-cart-step'));
+  }
+};
+
 onMounted(() => {
   updateCart();
   window.addEventListener('storage', updateCart);
@@ -18,7 +30,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <a href="/cart" class="group relative p-2 hover:bg-white/10 rounded-full transition">
+  <a href="/cart"
+     class="group relative p-2 hover:bg-white/10 rounded-full transition"
+     @click.prevent="navigateToCart">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-coffee-cream" fill="none" viewBox="0 0 24 24"
          stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -38,9 +52,14 @@ onMounted(() => {
           <span>{{ item.roast }}</span>
         </li>
       </ul>
-      <a href="/cart" class="block text-center text-[10px] uppercase tracking-widest bg-orange-700 py-1 rounded">
+
+      <button
+          @click.stop.prevent="navigateToCart"
+          class="w-full block text-center text-[10px] uppercase tracking-widest bg-orange-700 py-1 rounded text-white"
+      >
         View cart
-      </a>
+      </button>
+
     </div>
 
   </a>
