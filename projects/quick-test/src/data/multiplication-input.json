@@ -1,0 +1,42 @@
+{
+  "id": "multiplication-hard",
+  "title": "Multiplication: Write the Answer",
+  "questions": [
+    {
+      "id": 1,
+      "type": "input",
+      "text": "7 × 3 = ?",
+      "correct": "21"
+    },
+    {
+      "id": 2,
+      "type": "input",
+      "text": "6 × 8 = ?",
+      "correct": "48"
+    },
+    {
+      "id": 3,
+      "type": "input",
+      "text": "9 × 4 = ?",
+      "correct": "36"
+    },
+    {
+      "id": 4,
+      "type": "input",
+      "text": "12 × 5 = ?",
+      "correct": "60"
+    },
+    {
+      "id": 5,
+      "type": "input",
+      "text": "15 × 3 = ?",
+      "correct": "45"
+    },
+    {
+      "id": 6,
+      "type": "input",
+      "text": "11 × 11 = ?",
+      "correct": "121"
+    }
+  ]
+}

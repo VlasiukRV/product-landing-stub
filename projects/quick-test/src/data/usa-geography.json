@@ -1,0 +1,66 @@
+{
+  "id": "usa-states-shapes",
+  "title": "USA Geography: Shape Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "text": "Which state is shown in the image?",
+      "image": "/img/test/states/USA_Texas_location_map.svg",
+      "answers": [
+        { "id": "a", "text": "California" },
+        { "id": "b", "text": "Texas" },
+        { "id": "c", "text": "Florida" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "text": "Identify this coastal state:",
+      "image": "/img/test/states/USA_Florida_location_map.svg",
+      "answers": [
+        { "id": "a", "text": "Georgia" },
+        { "id": "b", "text": "Florida" },
+        { "id": "c", "text": "Louisiana" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "text": "Which state has this long Pacific coastline?",
+      "image": "/img/test/states/USA_California_location_map.svg",
+      "answers": [
+        { "id": "a", "text": "Washington" },
+        { "id": "b", "text": "Oregon" },
+        { "id": "c", "text": "California" }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "text": "This state is located in the Midwest:",
+      "image": "/img/test/states/USA_Illinois_location_map.svg",
+      "answers": [
+        { "id": "a", "text": "Illinois" },
+        { "id": "b", "text": "Ohio" },
+        { "id": "c", "text": "Michigan" }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "text": "Which state has this distinctive 'boot' shape in the South?",
+      "image": "/img/test/states/USA_Louisiana_location_map.svg",
+      "answers": [
+        { "id": "a", "text": "Mississippi" },
+        { "id": "b", "text": "Alabama" },
+        { "id": "c", "text": "Louisiana" }
+      ],
+      "correct": "c"
+    }
+  ]
+}

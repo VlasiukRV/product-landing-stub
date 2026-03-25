@@ -1,0 +1,61 @@
+{
+  "id": "division-basic",
+  "title": "Basic Division (1–50)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "text": "12 ÷ 3 = ?",
+      "answers": [
+        { "id": "a", "text": "3" },
+        { "id": "b", "text": "4" },
+        { "id": "c", "text": "6" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "text": "25 ÷ 5 = ?",
+      "answers": [
+        { "id": "a", "text": "5" },
+        { "id": "b", "text": "10" },
+        { "id": "c", "text": "15" }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "text": "18 ÷ 2 = ?",
+      "answers": [
+        { "id": "a", "text": "8" },
+        { "id": "b", "text": "9" },
+        { "id": "c", "text": "10" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "text": "48 ÷ 6 = ?",
+      "answers": [
+        { "id": "a", "text": "7" },
+        { "id": "b", "text": "8" },
+        { "id": "c", "text": "9" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "text": "36 ÷ 4 = ?",
+      "answers": [
+        { "id": "a", "text": "8" },
+        { "id": "b", "text": "9" },
+        { "id": "c", "text": "12" }
+      ],
+      "correct": "b"
+    }
+  ]
+}

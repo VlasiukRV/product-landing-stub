@@ -1,0 +1,61 @@
+{
+  "id": "multiplication-advanced",
+  "title": "Multiplication Mastery (6–9)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "text": "6 × 7 = ?",
+      "answers": [
+        { "id": "a", "text": "42" },
+        { "id": "b", "text": "36" },
+        { "id": "c", "text": "48" }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "text": "8 × 4 = ?",
+      "answers": [
+        { "id": "a", "text": "28" },
+        { "id": "b", "text": "32" },
+        { "id": "c", "text": "36" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "text": "9 × 3 = ?",
+      "answers": [
+        { "id": "a", "text": "24" },
+        { "id": "b", "text": "27" },
+        { "id": "c", "text": "30" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "text": "7 × 8 = ?",
+      "answers": [
+        { "id": "a", "text": "54" },
+        { "id": "b", "text": "56" },
+        { "id": "c", "text": "64" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "text": "9 × 6 = ?",
+      "answers": [
+        { "id": "a", "text": "45" },
+        { "id": "b", "text": "54" },
+        { "id": "c", "text": "63" }
+      ],
+      "correct": "b"
+    }
+  ]
+}

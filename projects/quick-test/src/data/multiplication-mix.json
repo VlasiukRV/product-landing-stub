@@ -1,0 +1,22 @@
+{
+  "id": "multiplication-mix",
+  "title": "Math: Mixed Mode",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "text": "2 × 2 = ?",
+      "answers": [
+        { "id": "a", "text": "2" },
+        { "id": "b", "text": "4" }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 2,
+      "type": "input",
+      "text": "5 × 5 = ?",
+      "correct": "25"
+    }
+  ]
+}

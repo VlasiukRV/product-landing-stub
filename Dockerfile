@@ -11,7 +11,7 @@ ENV NODE_ENV=development
 
 # --- PROD BUILDER  ---
 FROM base AS builder
-RUN mkdir -p /app/public_html
+RUN rm -rf public_html && mkdir -p public_html
 RUN npm run build:all
 
 # --- PRODUCTION (Nginx) ---
@@ -20,4 +20,4 @@ FROM nginx:alpine AS prod
 COPY --from=builder /app/public_html /usr/share/nginx/html
 COPY nginx/ /etc/nginx/conf.d/
 
-EXPOSE 8091-8099
+EXPOSE 8091-8100

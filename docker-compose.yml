@@ -1,20 +1,33 @@
 version: '3.3'
 
 services:
+
+  tina-server:
+    image: astro-dev:local
+    environment:
+      - SITE_NAME=${SITE_NAME}
+      - HOST=0.0.0.0
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npx tinacms dev --port 4001
+    ports:
+      - "4001:4001"
+
   dev-server:
     image: astro-dev:local
-    container_name: astro-dev
     environment:
       - SITE_NAME=${SITE_NAME}
     volumes:
       - .:/app
       - /app/node_modules
+    command: sh -c "cd projects/$SITE_NAME && npx astro dev --host 0.0.0.0"
     ports:
+      - "4001:4001"
       - "4321:4321"
-    command: npm run dev
 
   nginx-prod:
     image: astro-prod:local
     container_name: astro-prod
     ports:
-      - "8091-8099:8091-8099"
+      - "8091-8100:8091-8100"

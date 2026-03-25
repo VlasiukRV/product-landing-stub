@@ -1,0 +1,846 @@
+{
+  "id": "europe-map-quiz",
+  "title": "Europe: Map & Shapes Master",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_France_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Italy"
+        },
+        {
+          "id": "b",
+          "text": "Spain"
+        },
+        {
+          "id": "c",
+          "text": "France"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Germany_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Germany"
+        },
+        {
+          "id": "b",
+          "text": "Netherlands"
+        },
+        {
+          "id": "c",
+          "text": "Austria"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Italy_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Italy"
+        },
+        {
+          "id": "b",
+          "text": "Switzerland"
+        },
+        {
+          "id": "c",
+          "text": "France"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Spain_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Portugal"
+        },
+        {
+          "id": "b",
+          "text": "Spain"
+        },
+        {
+          "id": "c",
+          "text": "France"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_United_Kingdom_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Ireland"
+        },
+        {
+          "id": "b",
+          "text": "France"
+        },
+        {
+          "id": "c",
+          "text": "United Kingdom"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Ukraine_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Poland"
+        },
+        {
+          "id": "b",
+          "text": "Romania"
+        },
+        {
+          "id": "c",
+          "text": "Ukraine"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Poland_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Poland"
+        },
+        {
+          "id": "b",
+          "text": "Lithuania"
+        },
+        {
+          "id": "c",
+          "text": "Belarus"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Norway_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Sweden"
+        },
+        {
+          "id": "b",
+          "text": "Finland"
+        },
+        {
+          "id": "c",
+          "text": "Norway"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Sweden_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Sweden"
+        },
+        {
+          "id": "b",
+          "text": "Finland"
+        },
+        {
+          "id": "c",
+          "text": "Denmark"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Finland_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Sweden"
+        },
+        {
+          "id": "b",
+          "text": "Norway"
+        },
+        {
+          "id": "c",
+          "text": "Finland"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Austria_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Slovakia"
+        },
+        {
+          "id": "b",
+          "text": "Slovenia"
+        },
+        {
+          "id": "c",
+          "text": "Austria"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Switzerland_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Switzerland"
+        },
+        {
+          "id": "b",
+          "text": "Italy"
+        },
+        {
+          "id": "c",
+          "text": "France"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Portugal_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Portugal"
+        },
+        {
+          "id": "b",
+          "text": "Spain"
+        },
+        {
+          "id": "c",
+          "text": "Luxembourg"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Greece_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Greece"
+        },
+        {
+          "id": "b",
+          "text": "Turkey"
+        },
+        {
+          "id": "c",
+          "text": "North Macedonia"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Belgium_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Luxembourg"
+        },
+        {
+          "id": "b",
+          "text": "Belgium"
+        },
+        {
+          "id": "c",
+          "text": "France"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Netherlands_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Germany"
+        },
+        {
+          "id": "b",
+          "text": "Netherlands"
+        },
+        {
+          "id": "c",
+          "text": "Belgium"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Czech_Republic_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Czech Republic"
+        },
+        {
+          "id": "b",
+          "text": "Slovakia"
+        },
+        {
+          "id": "c",
+          "text": "Austria"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Slovakia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Slovakia"
+        },
+        {
+          "id": "b",
+          "text": "Czech Republic"
+        },
+        {
+          "id": "c",
+          "text": "Poland"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Hungary_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Ukraine"
+        },
+        {
+          "id": "b",
+          "text": "Romania"
+        },
+        {
+          "id": "c",
+          "text": "Hungary"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Romania_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Romania"
+        },
+        {
+          "id": "b",
+          "text": "Hungary"
+        },
+        {
+          "id": "c",
+          "text": "Moldova"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 21,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Bulgaria_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Bulgaria"
+        },
+        {
+          "id": "b",
+          "text": "North Macedonia"
+        },
+        {
+          "id": "c",
+          "text": "Turkey"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Serbia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Serbia"
+        },
+        {
+          "id": "b",
+          "text": "Montenegro"
+        },
+        {
+          "id": "c",
+          "text": "Croatia"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Croatia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Hungary"
+        },
+        {
+          "id": "b",
+          "text": "Slovenia"
+        },
+        {
+          "id": "c",
+          "text": "Croatia"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Ireland_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Austria"
+        },
+        {
+          "id": "b",
+          "text": "Ireland"
+        },
+        {
+          "id": "c",
+          "text": "United Kingdom"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Denmark_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Denmark"
+        },
+        {
+          "id": "b",
+          "text": "Norway"
+        },
+        {
+          "id": "c",
+          "text": "Sweden"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Belarus_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Lithuania"
+        },
+        {
+          "id": "b",
+          "text": "Ukraine"
+        },
+        {
+          "id": "c",
+          "text": "Belarus"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Lithuania_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Belarus"
+        },
+        {
+          "id": "b",
+          "text": "Lithuania"
+        },
+        {
+          "id": "c",
+          "text": "Latvia"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Latvia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Belarus"
+        },
+        {
+          "id": "b",
+          "text": "Latvia"
+        },
+        {
+          "id": "c",
+          "text": "Lithuania"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Estonia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Estonia"
+        },
+        {
+          "id": "b",
+          "text": "Finland"
+        },
+        {
+          "id": "c",
+          "text": "Latvia"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Slovenia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Slovenia"
+        },
+        {
+          "id": "b",
+          "text": "Croatia"
+        },
+        {
+          "id": "c",
+          "text": "Hungary"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 31,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Bosnia_and_Herzegovina_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Serbia"
+        },
+        {
+          "id": "b",
+          "text": "Croatia"
+        },
+        {
+          "id": "c",
+          "text": "Bosnia and Herzegovina"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Albania_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "North Macedonia"
+        },
+        {
+          "id": "b",
+          "text": "Kosovo"
+        },
+        {
+          "id": "c",
+          "text": "Albania"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_North_Macedonia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Bulgaria"
+        },
+        {
+          "id": "b",
+          "text": "Serbia"
+        },
+        {
+          "id": "c",
+          "text": "North Macedonia"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Moldova_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Moldova"
+        },
+        {
+          "id": "b",
+          "text": "Romania"
+        },
+        {
+          "id": "c",
+          "text": "Ukraine"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Iceland_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "United Kingdom"
+        },
+        {
+          "id": "b",
+          "text": "Greenland"
+        },
+        {
+          "id": "c",
+          "text": "Iceland"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Montenegro_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Montenegro"
+        },
+        {
+          "id": "b",
+          "text": "Croatia"
+        },
+        {
+          "id": "c",
+          "text": "Albania"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Luxembourg_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Luxembourg"
+        },
+        {
+          "id": "b",
+          "text": "Belgium"
+        },
+        {
+          "id": "c",
+          "text": "France"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Andorra_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Spain"
+        },
+        {
+          "id": "b",
+          "text": "France"
+        },
+        {
+          "id": "c",
+          "text": "Andorra"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Malta_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Tunisia"
+        },
+        {
+          "id": "b",
+          "text": "Italy"
+        },
+        {
+          "id": "c",
+          "text": "Malta"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "text": "Identify the European country by its shape:",
+      "image": "/img/test/europe/Europe_Monaco_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Monaco"
+        },
+        {
+          "id": "b",
+          "text": "France"
+        },
+        {
+          "id": "c",
+          "text": "Italy"
+        }
+      ],
+      "correct": "a"
+    }
+  ]
+}

@@ -1,0 +1,1056 @@
+{
+  "id": "usa-50-states-pro",
+  "title": "USA Geography: Pro Level (Neighbors Mode)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Alabama_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Alabama"
+        },
+        {
+          "id": "b",
+          "text": "Mississippi"
+        },
+        {
+          "id": "c",
+          "text": "Georgia"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 2,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Alaska_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Washington"
+        },
+        {
+          "id": "b",
+          "text": "Alaska"
+        },
+        {
+          "id": "c",
+          "text": "Oregon"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Arizona_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Nevada"
+        },
+        {
+          "id": "b",
+          "text": "California"
+        },
+        {
+          "id": "c",
+          "text": "Arizona"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 4,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Arkansas_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Missouri"
+        },
+        {
+          "id": "b",
+          "text": "Tennessee"
+        },
+        {
+          "id": "c",
+          "text": "Arkansas"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_California_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Arizona"
+        },
+        {
+          "id": "b",
+          "text": "California"
+        },
+        {
+          "id": "c",
+          "text": "Oregon"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 6,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Colorado_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Colorado"
+        },
+        {
+          "id": "b",
+          "text": "Oklahoma"
+        },
+        {
+          "id": "c",
+          "text": "New Mexico"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Connecticut_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Connecticut"
+        },
+        {
+          "id": "b",
+          "text": "Rhode Island"
+        },
+        {
+          "id": "c",
+          "text": "Massachusetts"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Delaware_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Maryland"
+        },
+        {
+          "id": "b",
+          "text": "Pennsylvania"
+        },
+        {
+          "id": "c",
+          "text": "Delaware"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Florida_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Georgia"
+        },
+        {
+          "id": "b",
+          "text": "Alabama"
+        },
+        {
+          "id": "c",
+          "text": "Florida"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 10,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Georgia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Georgia"
+        },
+        {
+          "id": "b",
+          "text": "Alabama"
+        },
+        {
+          "id": "c",
+          "text": "Florida"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Hawaii_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Oregon"
+        },
+        {
+          "id": "b",
+          "text": "Washington"
+        },
+        {
+          "id": "c",
+          "text": "Hawaii"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Idaho_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Idaho"
+        },
+        {
+          "id": "b",
+          "text": "Montana"
+        },
+        {
+          "id": "c",
+          "text": "Washington"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 13,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Illinois_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Missouri"
+        },
+        {
+          "id": "b",
+          "text": "Kentucky"
+        },
+        {
+          "id": "c",
+          "text": "Illinois"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Indiana_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Illinois"
+        },
+        {
+          "id": "b",
+          "text": "Indiana"
+        },
+        {
+          "id": "c",
+          "text": "Kentucky"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 15,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Iowa_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Minnesota"
+        },
+        {
+          "id": "b",
+          "text": "Iowa"
+        },
+        {
+          "id": "c",
+          "text": "South Dakota"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 16,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Kansas_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Oklahoma"
+        },
+        {
+          "id": "b",
+          "text": "Colorado"
+        },
+        {
+          "id": "c",
+          "text": "Kansas"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 17,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Kentucky_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Kentucky"
+        },
+        {
+          "id": "b",
+          "text": "Illinois"
+        },
+        {
+          "id": "c",
+          "text": "Virginia"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 18,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Louisiana_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Louisiana"
+        },
+        {
+          "id": "b",
+          "text": "Mississippi"
+        },
+        {
+          "id": "c",
+          "text": "Arkansas"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 19,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Maine_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Maine"
+        },
+        {
+          "id": "b",
+          "text": "New Hampshire"
+        },
+        {
+          "id": "c",
+          "text": "North Carolina"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 20,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Maryland_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Maryland"
+        },
+        {
+          "id": "b",
+          "text": "West Virginia"
+        },
+        {
+          "id": "c",
+          "text": "Pennsylvania"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 21,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Massachusetts_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "New Hampshire"
+        },
+        {
+          "id": "b",
+          "text": "Vermont"
+        },
+        {
+          "id": "c",
+          "text": "Massachusetts"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 22,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Michigan_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Michigan"
+        },
+        {
+          "id": "b",
+          "text": "Ohio"
+        },
+        {
+          "id": "c",
+          "text": "Indiana"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 23,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Minnesota_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Wisconsin"
+        },
+        {
+          "id": "b",
+          "text": "Iowa"
+        },
+        {
+          "id": "c",
+          "text": "Minnesota"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 24,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Mississippi_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Arkansas"
+        },
+        {
+          "id": "b",
+          "text": "Louisiana"
+        },
+        {
+          "id": "c",
+          "text": "Mississippi"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 25,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Missouri_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Missouri"
+        },
+        {
+          "id": "b",
+          "text": "Oklahoma"
+        },
+        {
+          "id": "c",
+          "text": "Iowa"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 26,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Montana_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "North Dakota"
+        },
+        {
+          "id": "b",
+          "text": "South Dakota"
+        },
+        {
+          "id": "c",
+          "text": "Montana"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 27,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Nebraska_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Nebraska"
+        },
+        {
+          "id": "b",
+          "text": "Iowa"
+        },
+        {
+          "id": "c",
+          "text": "Missouri"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 28,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Nevada_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Nevada"
+        },
+        {
+          "id": "b",
+          "text": "Utah"
+        },
+        {
+          "id": "c",
+          "text": "Arizona"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 29,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_New_Hampshire_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "New Hampshire"
+        },
+        {
+          "id": "b",
+          "text": "Maine"
+        },
+        {
+          "id": "c",
+          "text": "Vermont"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 30,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_New_Jersey_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "New York"
+        },
+        {
+          "id": "b",
+          "text": "New Jersey"
+        },
+        {
+          "id": "c",
+          "text": "Pennsylvania"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 31,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_New_Mexico_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "New Mexico"
+        },
+        {
+          "id": "b",
+          "text": "Utah"
+        },
+        {
+          "id": "c",
+          "text": "Arizona"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 32,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_New_York_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Pennsylvania"
+        },
+        {
+          "id": "b",
+          "text": "Vermont"
+        },
+        {
+          "id": "c",
+          "text": "New York"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 33,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_North_Carolina_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "North Carolina"
+        },
+        {
+          "id": "b",
+          "text": "Virginia"
+        },
+        {
+          "id": "c",
+          "text": "South Carolina"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 34,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_North_Dakota_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Minnesota"
+        },
+        {
+          "id": "b",
+          "text": "North Dakota"
+        },
+        {
+          "id": "c",
+          "text": "South Dakota"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 35,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Ohio_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Michigan"
+        },
+        {
+          "id": "b",
+          "text": "Ohio"
+        },
+        {
+          "id": "c",
+          "text": "Pennsylvania"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 36,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Oklahoma_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Kansas"
+        },
+        {
+          "id": "b",
+          "text": "Missouri"
+        },
+        {
+          "id": "c",
+          "text": "Oklahoma"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 37,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Oregon_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Oregon"
+        },
+        {
+          "id": "b",
+          "text": "Washington"
+        },
+        {
+          "id": "c",
+          "text": "California"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 38,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Pennsylvania_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "New York"
+        },
+        {
+          "id": "b",
+          "text": "Ohio"
+        },
+        {
+          "id": "c",
+          "text": "Pennsylvania"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 39,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Rhode_Island_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Connecticut"
+        },
+        {
+          "id": "b",
+          "text": "Rhode Island"
+        },
+        {
+          "id": "c",
+          "text": "Massachusetts"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 40,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_South_Carolina_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "South Carolina"
+        },
+        {
+          "id": "b",
+          "text": "Georgia"
+        },
+        {
+          "id": "c",
+          "text": "North Carolina"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 41,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_South_Dakota_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "South Dakota"
+        },
+        {
+          "id": "b",
+          "text": "Minnesota"
+        },
+        {
+          "id": "c",
+          "text": "Nebraska"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 42,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Tennessee_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Missouri"
+        },
+        {
+          "id": "b",
+          "text": "Tennessee"
+        },
+        {
+          "id": "c",
+          "text": "Arkansas"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 43,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Texas_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Texas"
+        },
+        {
+          "id": "b",
+          "text": "Louisiana"
+        },
+        {
+          "id": "c",
+          "text": "Arkansas"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 44,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Utah_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Utah"
+        },
+        {
+          "id": "b",
+          "text": "New Mexico"
+        },
+        {
+          "id": "c",
+          "text": "Wyoming"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 45,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Vermont_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "New Hampshire"
+        },
+        {
+          "id": "b",
+          "text": "Vermont"
+        },
+        {
+          "id": "c",
+          "text": "Massachusetts"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 46,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Virginia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Maryland"
+        },
+        {
+          "id": "b",
+          "text": "Tennessee"
+        },
+        {
+          "id": "c",
+          "text": "Virginia"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 47,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Washington_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Oregon"
+        },
+        {
+          "id": "b",
+          "text": "Idaho"
+        },
+        {
+          "id": "c",
+          "text": "Washington"
+        }
+      ],
+      "correct": "c"
+    },
+    {
+      "id": 48,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_West_Virginia_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "West Virginia"
+        },
+        {
+          "id": "b",
+          "text": "Virginia"
+        },
+        {
+          "id": "c",
+          "text": "Kentucky"
+        }
+      ],
+      "correct": "a"
+    },
+    {
+      "id": 49,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Wisconsin_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "Minnesota"
+        },
+        {
+          "id": "b",
+          "text": "Wisconsin"
+        },
+        {
+          "id": "c",
+          "text": "Illinois"
+        }
+      ],
+      "correct": "b"
+    },
+    {
+      "id": 50,
+      "type": "single",
+      "text": "Identify the state by its shape:",
+      "image": "/img/test/states/USA_Wyoming_location_map.svg",
+      "answers": [
+        {
+          "id": "a",
+          "text": "South Dakota"
+        },
+        {
+          "id": "b",
+          "text": "Nebraska"
+        },
+        {
+          "id": "c",
+          "text": "Wyoming"
+        }
+      ],
+      "correct": "c"
+    }
+  ]
+}
