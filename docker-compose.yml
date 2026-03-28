@@ -29,5 +29,7 @@ services:
   nginx-prod:
     image: astro-prod:local
     container_name: astro-prod
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
       - "8091-8100:8091-8100"
