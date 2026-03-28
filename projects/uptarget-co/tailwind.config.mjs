@@ -20,10 +20,23 @@ export default {
                 'container': '1200px',
             },
             fontFamily: {
-                sans: ['Montserrat', 'sans-serif'],
-                unbounded: ['Unbounded', 'sans-serif'],
-                golos: ['Golos Text', 'sans-serif'],
-            }
+                sans: ['Golos Text', ...defaultTheme.fontFamily.sans],
+                unbounded: ['Unbounded', ...defaultTheme.fontFamily.sans],
+                montserrat: ['Montserrat', 'sans-serif'],
+                golos: ['Golos Text', ...defaultTheme.fontFamily.sans],
+            },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        'h1, h2, h3, h4, h5, h6': {
+                            fontFamily: 'Unbounded, sans-serif',
+                        },
+                        'p, li, blockquote': {
+                            fontFamily: 'Golos Text, sans-serif',
+                        }
+                    },
+                },
+            },
         },
     },
     plugins: [

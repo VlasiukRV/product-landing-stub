@@ -10,7 +10,7 @@
 @layer base {
 
     .button-cta {
-        @apply bg-[#fd0] text-[#1a1a1c] font-bold uppercase py-4 px-8 rounded-full transition-all;
+        @apply bg-yellow text-black font-bold uppercase py-4 px-8 rounded-full transition-all;
     }
 
 }
