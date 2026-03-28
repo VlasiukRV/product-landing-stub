@@ -1,5 +1,7 @@
 ---
 // src/layouts/Layout.astro
+import ContactModal from '../components/ContactModal.vue';
+
 interface Props {
     title: string;
 }
@@ -22,6 +24,30 @@ import '../styles/global.css';
     <slot />
 </main>
 
+<div id="modal-root" class="hidden">
+    <ContactModal
+            client:only="vue"
+            formName="contact_form"
+    />
+</div>
+
 <slot name="footer" />
+
+<script>
+
+    const modalRoot = document.getElementById('modal-root');
+
+    window.addEventListener('open-contact', () => {
+        modalRoot?.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+
+    window.addEventListener('close-contact', () => {
+        modalRoot?.classList.add('hidden');
+        document.body.style.overflow = '';
+    });
+
+</script>
+
 </body>
 </html>

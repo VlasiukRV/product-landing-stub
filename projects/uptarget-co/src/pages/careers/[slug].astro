@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
 import ShareLink from "../../components/ShareLink.astro";
+import ContactForm from '../../components/ContactForm.vue';
 
 export async function getStaticPaths() {
     const vacancies = await getCollection('careers');
@@ -17,30 +18,63 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-
     <Navbar slot="header" />
 
-    <div class="content-job max-w-4xl mt-20 mx-auto p-6 md:p-12">
-        <div class="job-info-container mb-10">
+    <main class="bg-white pt-32 pb-24">
+        <div class="max-w-6xl mx-auto px-6">
 
-            <ShareLink title={entry.data.title} />
+            <a href="/careers" class="text-orange font-medium flex items-center gap-2 mb-8 group">
+                <span class="transition-transform group-hover:-translate-x-1">←</span> Back to Careers
+            </a>
 
-            <div>
-                <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
-                {entry.data.isHot && (
-                        <img src="/img/Icon-Hot.svg" alt="Hot" class="w-10 h-10" />
-                )}
+            <div class="flex flex-col lg:flex-row gap-16 items-start">
+
+                <div class="flex-1 w-full">
+                    <div class="mb-10">
+                        <div class="flex items-center gap-4 mb-4">
+                            <h1 class="font-unbounded text-3xl md:text-5xl leading-tight text-black">
+                                {entry.data.title}
+                            </h1>
+                            {entry.data.isHot && (
+                                    <img src="/img/Icon-Hot.svg" alt="Hot Job" class="w-12 h-12 shrink-0 animate-pulse" />
+                            )}
+                        </div>
+
+                    </div>
+
+                    <article class="prose prose-orange max-w-none
+                        prose-headings:font-unbounded prose-headings:font-medium
+                        prose-p:text-gray-700 prose-p:leading-relaxed
+                        prose-li:text-gray-700">
+                        <Content />
+                    </article>
+                </div>
+
+                <aside class="w-full lg:w-[450px] sticky top-32">
+                    <div class="bg-gray-50 p-8 md:p-10 border border-gray-100">
+                        <div class="font-unbounded text-xl mb-6 text-black">
+                            Apply for this position
+                        </div>
+
+                        <ContactForm
+                                client:only="vue"
+                                apiUrl="/api/v1/synapse"
+                                formName="careers_contact_form"
+                                initialData={{ vacancy_title: entry.data.title }}
+                        />
+
+                    </div>
+                </aside>
+
             </div>
-
-
         </div>
 
-        <article class="prose lg:prose-xl">
-            <Content />
-        </article>
-
-    </div>
+    </main>
 
     <Footer slot="footer" />
-
 </Layout>
+
+<style is:global>
+    .prose h2 { @apply text-2xl mt-12 mb-6; }
+    .prose ul { @apply list-disc pl-5 space-y-2; }
+</style>
