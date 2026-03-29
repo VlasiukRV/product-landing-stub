@@ -9,7 +9,7 @@ import VacanciesSection from "../components/VacanciesSection.astro";
 import PerksSection from "../components/PerksSection.astro";
 import CultureSection from "../components/CultureSection.astro";
 import TeamTestimonialsSection from "../components/TeamTestimonialsSection.astro";
-
+import ContactModal from "../components/ContactModal.vue";
 
 ---
 
@@ -30,5 +30,12 @@ import TeamTestimonialsSection from "../components/TeamTestimonialsSection.astro
     <TeamTestimonialsSection />
 
     <Footer slot="footer" />
+
+    <ContactModal
+            slot="modal_form"
+            client:only="vue"
+            formName="careers_contact_form"
+
+    />
 
 </Layout>

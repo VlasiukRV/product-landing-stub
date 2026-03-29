@@ -1,12 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import HeroSection from '../components/HeroSection.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Footer from "../components/Footer.astro";
 import VideoSection from "../components/VideoSection.astro";
 import BenefitsSection from "../components/BenefitsSection.astro";
 import CareersSection from "../components/CareersSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
+import ContactModal from "../components/ContactModal.vue";
 ---
 
 <Layout title="Uptarget - Dedicated Team">
@@ -24,5 +25,11 @@ import TestimonialsSection from "../components/TestimonialsSection.astro";
     <CareersSection />
 
     <Footer slot="footer" />
+
+    <ContactModal
+            slot="modal_form"
+            client:only="vue"
+            formName="contact_form"
+    />
 
 </Layout>
