@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
 const project_dir = 'uptarget-co'
 
 export default defineConfig({
-    site: 'https://uptarget-co.tsb-enterprise.com/',
+    site: 'https://uptarget.co',
 
     base: '/',
     srcDir: './src',
@@ -18,6 +19,7 @@ export default defineConfig({
             applyBaseStyles: true,
             configFile: './tailwind.config.mjs',
         }),
+        sitemap(),
     ],
     markdown: {
         shikiConfig: { theme: 'dracula' },

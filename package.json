@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@astrojs/node": "^8.0.0",
+    "@astrojs/sitemap": "^3.0.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.5.0",
     "@nanostores/vue": "^0.11.0",
