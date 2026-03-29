@@ -19,29 +19,42 @@ import cultureItems from '../data/culture.json';
             const isReverse = index % 2 !== 0;
 
             return (
-                    <div class={`relative flex flex-col xl:flex-row w-full h-auto xl:h-[400px] 2xl:h-[500px] bg-[#f4f4f4] ${isReverse ? 'xl:flex-row-reverse' : ''}`}>
+                    <div class={`relative flex flex-col xl:flex-row w-full h-auto xl:h-[350px] 2xl:h-[450px] bg-[#f4f4f4] ${isReverse ? 'xl:flex-row-reverse' : ''}`}>
 
-                        <div class="relative w-full xl:w-1/2 flex items-center justify-end bg-[#ffdd00cc] overflow-hidden min-h-[280px] xl:min-h-0">
+                        <div class="relative w-full xlw-1/2 flex items-center justify-end bg-[#ffdd00cc] overflow-hidden min-h-[280px] xl:min-h-0">
                             <img src={item.image} class="absolute inset-0 w-full h-full object-cover opacity-20 z-[1]" alt="" />
 
                             <h3 class="culture-item-title relative z-[5] w-full text-center xl:text-right font-semibold text-[28px] xl:text-[50px] leading-[32px] xl:leading-[72px] xl:px-[80px]">
                                 {item.title}
                             </h3>
+
+                            <img src="/img/Rays-Culture.svg"
+                                 class={`absolute z-[2] w-[456px] h-[456px] xl:w-[456px] xl:h-[456px]
+                                         left-1/2 -translate-x-1/2
+                                         top-full -translate-y-1/2 xl:top-1/2 xl:-translate-y-1/2
+                                         opacity-90
+                                            ${isReverse 
+                                                ? 'xl:left-[-228px] xl:translate-x-0' 
+                                                : 'xl:left-auto xl:right-[-228px] xl:translate-x-0'}`}
+                                 alt="" />
+
+                            <div class={`rounded-full bg-[rgb(255,87,0)]
+                                         absolute z-[3]  w-[34px] h-[34px] xl:w-[56px] xl:h-[56px]
+                                         left-1/2 -translate-x-1/2 
+                                         top-full -translate-y-1/2 xl:top-1/2 xl:-translate-y-1/2
+                                            ${isReverse 
+                                                ? 'xl:left-[-28px] xl:translate-x-0'
+                                                : 'xl:left-auto xl:right-[-28px] xl:translate-x-0'}`}>
+                            </div>
+
                         </div>
 
                         <div class="w-full xlw-1/2 flex items-center justify-center relative py-10 xlpy-0">
-                            <p class="culture-description opacity-80 font-normal leading-[22px] xl:leading-[28px] text-[16px] xl:text-[22px] text-left xl:text-center w-full m-[24px_28px] xl:m-[0_100px]">
+                            <p class="culture-description opacity-80 font-normal leading-[22px] xl:leading-[28px] text-[16px] xl:text-[22px] text-left w-full m-[24px_28px] xl:m-[0_100px]">
                                 {item.text}
                             </p>
                         </div>
 
-                        <img src="/img/Rays-Culture.svg"
-                             class={`absolute z-[2] w-[254px] h-[254px] xl:w-[456px] xl:h-[456px] top-1/2 -translate-y-1/2 
-                         ${isReverse ? 'left-[-127px] xl:left-[-228px]' : 'right-[-127px] xl:right-[-228px]'}`}
-                             alt="" />
-
-                        <div class={`absolute z-[3] rounded-full bg-[rgb(255,87,0)] w-[34px] h-[34px] xl:w-[56px] xl:h-[56px] top-1/2 -translate-y-1/2
-                         ${isReverse ? 'xl:right-[-28px]' : 'xl:left-[-28px]'}`}></div>
                     </div>
             );
         })}
