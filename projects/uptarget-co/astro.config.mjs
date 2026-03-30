@@ -19,7 +19,9 @@ export default defineConfig({
             applyBaseStyles: true,
             configFile: './tailwind.config.mjs',
         }),
-        sitemap(),
+        sitemap({
+            site: 'https://uptarget.co',
+        }),
     ],
     markdown: {
         shikiConfig: { theme: 'dracula' },

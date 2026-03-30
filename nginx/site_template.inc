@@ -2,6 +2,12 @@
 
 index index.html;
 
+location ~* \.(?:xml|txt)$ {
+    try_files $uri =404;
+    add_header Content-Type $content_type;
+    add_header Cache-Control "public, max-age=3600";
+}
+
 location /_astro/ {
     expires 1y;
     add_header Cache-Control "public, immutable";
