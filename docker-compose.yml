@@ -2,18 +2,6 @@ version: '3.3'
 
 services:
 
-  tina-server:
-    image: astro-dev:local
-    environment:
-      - SITE_NAME=${SITE_NAME}
-      - HOST=0.0.0.0
-    volumes:
-      - .:/app
-      - /app/node_modules
-    command: npx tinacms dev --port 4001
-    ports:
-      - "4001:4001"
-
   dev-server:
     image: astro-dev:local
     environment:
