@@ -15,6 +15,10 @@ export default {
                 voiceitt: '#4a7bf7',
                 strategiclear: '#c7d7ef',
                 smartrike: '#203847',
+                green: {
+                    DEFAULT: '#71c15c',
+                    light: '#71c15c33',
+                }
             },
             maxWidth: {
                 'container': '1200px',

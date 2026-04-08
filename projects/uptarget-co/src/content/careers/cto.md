@@ -1,7 +1,7 @@
 ---
 title: "Chief Technology Officer (CTO)"
 isHot: true
-publish: true
+publish: false
 ---
 
 📍 Remote | 🕒 Full-time | 🌍 International Team

@@ -1,7 +1,7 @@
 ---
 title: "Full-Stack Developer with a backend focus"
 isHot: false
-publish: true
+publish: false
 ---
 
 📍 Remote | 🕒 Full-time | 🌍 International Team

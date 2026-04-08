@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import AuthGuard from '../components/AuthGuard.vue';
+import WelcomeContent from '../components/WelcomeContent.vue';
+
+const token = Astro.url.searchParams.get('t');
+// if (!token) return Astro.redirect('/404');
+
+const title = "Welcome to Uptarget!";
+
+---
+
+<Layout title={title}>
+
+    <AuthGuard client:only="vue" apiUrl="/api/v1/synapse">
+        <WelcomeContent />
+    </AuthGuard>
+
+</Layout>

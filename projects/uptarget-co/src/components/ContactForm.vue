@@ -13,7 +13,7 @@
           :value="formData[fieldName]"
       />
 
-      <div v-else-if="fieldName !== 'confirm_email'" class="w-full">
+      <div v-else class="w-full">
         <textarea
             v-if="field.type === 'text' || fieldName === 'message'"
             v-model="formData[fieldName]"
@@ -32,8 +32,6 @@
         />
       </div>
     </template>
-
-    <input v-model="formData.confirm_email" type="text" class="hidden" tabindex="-1">
 
     <button
         v-if="Object.keys(fields).length > 0"
@@ -113,17 +111,20 @@ const handleSubmit = async () => {
       body: JSON.stringify(formData.value)
     });
 
+    const result = await response.json();
+
     if (response.ok) {
       isSuccess.value = true;
       statusMessage.value = 'Thank you! Your submission has been received!';
       formData.value = Object.fromEntries(Object.keys(fields.value).map(k => [k, '']));
-      emit('success');
+      emit('success', result.actions_executed);
     } else {
-      throw new Error('Something went wrong');
+      const errorMessage = result.detail || 'Oops! Something went wrong while submitting.';
+      throw new Error(errorMessage);
     }
   } catch (err) {
     isSuccess.value = false;
-    statusMessage.value = 'Oops! Something went wrong while submitting.';
+    statusMessage.value = err.message;
   } finally {
     submitting.value = false;
   }
