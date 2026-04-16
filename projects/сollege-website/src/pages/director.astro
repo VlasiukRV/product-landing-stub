@@ -1,0 +1,168 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import FileList from "../components/ui/FileList.astro";
+
+const directorInfo = {
+    name: "Плутар Сергій Васильович",
+    position: "Директор ДНЗ «Благовіщенський професійний ліцей»",
+    rank: "Викладач вищої категорії, старший викладач",
+    experience: "Понад 20 років у галузі професійно-технічної освіти",
+    email: "director.bpl@example.com",
+    receptionHours: "Вівторок: 10:00 – 12:00, Четвер: 14:00 – 16:00",
+    image: "http://bpl.kr.ua/images/pedpracivnuku/admin/durektor.jpg"
+};
+
+const priorities = [
+    { title: "Якість освіти", desc: "Впровадження сучасних виробничих технологій у навчальний процес.", icon: "🎓" },
+    { title: "Діджиталізація", desc: "Цифрова трансформація ліцею та використання AI-інструментів.", icon: "💻" },
+    { title: "Працевлаштування", desc: "Пряма співпраця з провідними агрохолдингами та підприємствами.", icon: "🤝" }
+];
+
+const workPlans = [
+    { name: "План роботи на 2025-2026 н.р.", url: "https://drive.google.com/file/d/1ml33HlhQgoo3_T7jF9rRRUx2uFrUEi55/view", type: "link" },
+    { name: "План роботи на 2024-2025 н.р.", url: "https://drive.google.com/file/d/1OXCZpjTswoTt_VdNgTx6ICjVRCr46BeT/view", type: "link" },
+    { name: "План роботи на 2023-2024 н.р.", url: "https://drive.google.com/file/d/1UKrqPzzqWEzMGCex3tsmEarZcvHcen4E/view", type: "link" },
+    { name: "План роботи на 2022-2023 н.р.", url: "https://drive.google.com/file/d/11MCycmnghUb2sbKupcU7IsiVLS04dub9/view", type: "link" },
+    { name: "План роботи на 2021-2022 н.р.", url: "https://docs.google.com/document/d/1dfZIh3L6mSNMw6dVY76FluRwOtUvo76y/edit", type: "link" },
+    { name: "План роботи на 2020-2021 н.р.", url: "/images/storinka_durektora/plan_roboty/2020-2021.pdf", type: "link" }
+].sort((a, b) => b.name.localeCompare(a.name));
+
+const directorReports = [
+    { name: "Звіт директора за 2024-2025 н.р.", url: "https://drive.google.com/file/d/1U54bRT33MwRCY1iyPnFNwKzL8058kUq_/view", type: "pdf" },
+    { name: "Звіт директора за 2023-2024 н.р.", url: "https://drive.google.com/file/d/1A8GUOBB0ZbvBAGsR8Pyda--nwJCBlqme/view", type: "pdf" },
+    { name: "Звіт директора за 2022-2023 н.р.", url: "https://drive.google.com/file/d/1cabtOYFyVVBgZpJPVOxlvGS978XzDlEU/view", type: "pdf" },
+    { name: "Звіт директора за 2021-2022 н.р.", url: "https://drive.google.com/file/d/1vQilQ_Ezz3IDO_eSN4ju8B0lD4r0mjV-/view", type: "pdf" },
+    { name: "Звіт директора за 2020-2021 н.р.", url: "https://drive.google.com/file/d/1ZQCUEB_hJmRcjf2rlzvN9B8v-egtmzaj/view", type: "pdf" },
+    { name: "Звіт директора за 2019-2020 н.р.", url: "https://drive.google.com/file/d/1jF20Gq_bCTgbzpu57Sy9ho4me6GWqL5h/view", type: "pdf" }
+].sort((a, b) => b.name.localeCompare(a.name));
+---
+
+<PageLayout
+        title="Сторінка директора"
+        breadcrumbs={[{ label: "Педагогічний колектив", href: "/staff" }, { label: "Директор" }]}
+>
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="bg-white rounded-[3rem] border border-slate-100 shadow-card overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12">
+
+                <div class="lg:col-span-5 bg-slate-50 relative min-h-[400px]">
+                    <img
+                            src={directorInfo.image}
+                            alt={directorInfo.name}
+                            class="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent lg:hidden"></div>
+                </div>
+
+                <div class="lg:col-span-7 p-8 md:p-16 flex flex-col justify-center">
+                    <span class="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-widest mb-6 w-fit">
+                        Керівництво ліцею
+                    </span>
+                    <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight italic uppercase tracking-tighter">
+                        {directorInfo.name}
+                    </h1>
+                    <p class="text-xl text-blue-600 font-bold mb-8 italic">{directorInfo.position}</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                        <div class="space-y-1">
+                            <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">Прийом громадян</span>
+                            <p class="text-slate-700 font-medium">{directorInfo.receptionHours}</p>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-xs text-slate-400 uppercase font-bold tracking-wider">Контактний Email</span>
+                            <p class="text-slate-700 font-medium">{directorInfo.email}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#message" class="px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 transition-all shadow-lg">
+                            Надіслати звернення
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="relative">
+            <span class="absolute -top-10 -left-10 text-[10rem] text-slate-100 font-serif -z-10 leading-none">“</span>
+            <h2 class="text-3xl font-black text-slate-900 mb-8 uppercase italic">Вітання директора</h2>
+            <div class="prose prose-lg text-slate-600 leading-relaxed max-w-none">
+                <p>
+                    Вітаю вас на офіційному сайті нашого закладу! Сьогодні професійно-технічна освіта переживає свій ренесанс. Ми не просто готуємо робітників — ми виховуємо майстрів, які здатні працювати з високотехнологічним обладнанням, керувати сучасними агрокомплексами та будувати інноваційну Україну.
+                </p>
+                <p>
+                    Наша мета — створити для кожного студента умови, де теоретичні знання миттєво переходять у практичні навички. Ми відкриті до нових ідей, співпраці та постійно вдосконалюємо матеріально-технічну базу ліцею, щоб бути на крок попереду запитів ринку праці.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="bg-blue-600 rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 blur-[120px] rounded-full -mr-20 -mt-20"></div>
+
+            <h2 class="text-3xl font-black mb-12 uppercase italic text-center">Пріоритети розвитку ліцею</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                {priorities.map(item => (
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl hover:bg-white/20 transition-all">
+                            <div class="text-4xl mb-6">{item.icon}</div>
+                            <h3 class="text-xl font-bold mb-4 uppercase">{item.title}</h3>
+                            <p class="text-blue-50 leading-relaxed">{item.desc}</p>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 py-12">
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-600 text-2xl font-bold">📅</div>
+                <h2 class="text-2xl font-black text-slate-900 uppercase italic">Плани роботи</h2>
+            </div>
+            <div class="bg-white rounded-[2.5rem] border border-slate-100 p-2 shadow-soft">
+                <FileList files={workPlans} />
+            </div>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 text-2xl font-bold">📄</div>
+                <h2 class="text-2xl font-black text-slate-900 uppercase italic">Звіти директора</h2>
+            </div>
+            <div class="bg-white rounded-[2.5rem] border border-emerald-50 p-2 shadow-soft">
+                <FileList files={directorReports} />
+            </div>
+        </section>
+    </div>
+
+    <section id="message" class="max-w-3xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-black text-slate-900 uppercase italic mb-4">Пряма лінія</h2>
+            <p class="text-slate-500">Ви можете поставити запитання директору або висловити свої пропозиції щодо роботи ліцею</p>
+        </div>
+
+        <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400 ml-2">Ваше ім'я</label>
+                    <input type="text" class="w-full px-6 py-4 bg-slate-50 border-transparent rounded-2xl focus:bg-white focus:border-blue-500 transition-all outline-none" placeholder="Олександр">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400 ml-2">Email</label>
+                    <input type="email" class="w-full px-6 py-4 bg-slate-50 border-transparent rounded-2xl focus:bg-white focus:border-blue-500 transition-all outline-none" placeholder="example@mail.com">
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-400 ml-2">Повідомлення</label>
+                <textarea rows="5" class="w-full px-6 py-4 bg-slate-50 border-transparent rounded-2xl focus:bg-white focus:border-blue-500 transition-all outline-none resize-none" placeholder="Ваше звернення..."></textarea>
+            </div>
+            <button class="w-full py-5 bg-blue-600 text-white font-black uppercase italic tracking-widest rounded-2xl hover:bg-blue-700 shadow-xl transition-all">
+                Надіслати листа
+            </button>
+        </form>
+    </section>
+</PageLayout>

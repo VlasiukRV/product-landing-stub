@@ -1,0 +1,306 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+// Структуровані дані для "Методичної скарбниці"
+const treasureChest = [
+    {
+        category: "Методист",
+        items: [
+            { title: "Методичні рекомендації 'Мотивація до навчання в умовах воєнного стану'", href: "#" },
+            { title: "Інноваційні форми роботи голів методичних комісій", href: "#" },
+            { title: "Методичні поради: Створення умов для всебічного розвитку учнів", href: "#" },
+            { title: "Методичні рекомендації: Питання підвищення кваліфікації", href: "#" },
+            { title: "Методичний кейс педагогу-початківцю", href: "#" },
+            { title: "Досвід успішної організації методичної роботи. Лайфхаки", href: "#" },
+            { title: "Конструктор уроків (Методичне консультування)", href: "#" },
+            { title: "Інноваційні форми методичної роботи", href: "#" }
+        ]
+    },
+    {
+        category: "Викладач загальноосвітньої підготовки",
+        items: [
+            { title: "Фізика: Механічна робота та потужність (Ханаєва Я.М.)", href: "#" },
+            { title: "Англійська мова: Конфлікт поколінь (Білоконь М.Р.)", href: "#" },
+            { title: "Історія: Проголошення ЗУНР (Богачук О.О.)", href: "#" },
+            { title: "Інформатика: Автоматизоване створення веб-сайту (Безносюк В.І.)", href: "#" },
+            { title: "Фізика: Пароутворення і конденсація (Ханаєва Я.М.)", href: "#" },
+            { title: "Математика: Циліндр, конус та їх елементи (Завадська Є.І.)", href: "#" },
+            { title: "Виступ: Використання онлайн-технологій при підготовці до ЗНО", href: "#" }
+        ]
+    },
+    {
+        category: "Викладач професійної підготовки",
+        items: [
+            { title: "Водій категорії 'С': Сигнали регулювальника (Верба А.Ф.)", href: "#" },
+            { title: "Кравець: Моделі фартухів (Продан Я.Б.)", href: "#" },
+            { title: "Штукатур: Класифікація в’яжучих (Середенко О.В.)", href: "#" },
+            { title: "Кухар: ТП напівфабрикатів з м'яса (Ровінська Л.А.)", href: "#" },
+            { title: "Електрогазозварник: Ацетиленові генератори (Бурлака Ю.П.)", href: "#" },
+            { title: "Особливості змішаного навчання (Продан Я.Б.)", href: "#" },
+            { title: "Творча діяльність МК 'Кухар-кондитер'", href: "#" }
+        ]
+    },
+    {
+        category: "Майстри в/н",
+        items: [
+            { title: "Виробничі інновації в автотранспорті (Драганець А.А.)", href: "#" },
+            { title: "Молекулярна кулінарія на уроках в/н (Черноводська А.Д.)", href: "#" },
+            { title: "Інноваційне обладнання для ресторанів (Денисенко І.А.)", href: "#" },
+            { title: "Фудпейрінг на уроках в/н (Чупрун Н.Ф.)", href: "#" },
+            { title: "Віртуальна подорож до лабораторії кухарів (Головко Л.Б.)", href: "#" },
+            { title: "Змішане навчання в будівельному профілі (Черноводський С.М.)", href: "#" }
+        ]
+    }
+];
+
+const atestationYears = [
+    {
+        year: "2025/2026 н.р.",
+        items: [
+            "Положення про атестацію (наказ №805/№1277)",
+            "Персональний склад атестаційної комісії",
+            "Список педагогів на чергову атестацію",
+            "Графік засідань комісії",
+            "План роботи атестаційної комісії",
+            "Інформація для педагогів, які атестуються"
+        ]
+    },
+    { year: "2024/2025 н.р.", items: ["Склад комісії", "Список педагогів", "Графік засідань", "План роботи"] },
+    { year: "2023/2024 н.р.", items: ["Положення №805", "Список педагогів", "Графік засідань", "План роботи"] },
+    { year: "2022/2023 н.р.", items: ["Список педагогів", "Графік засідань", "План роботи"] }
+];
+---
+
+<PageLayout title="Методичний кабінет" breadcrumbs={[{label: "Методична робота", href: "/methodical-work"}, {label: "Методичний кабінет"}]}>
+
+    <section class="bg-slate-900 pt-16 pb-32 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full translate-y-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 uppercase italic tracking-tight">
+                Методичний <span class="text-blue-500 text-shadow-glow">кабінет</span>
+            </h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
+                Централізований хаб документів, планів та методичних розробок для педагогічних працівників ліцею.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#treasure" class="px-8 py-3 bg-blue-600 rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-blue-500 transition-all">Скарбниця</a>
+                <a href="#plans" class="px-8 py-3 bg-white/10 rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-white/20 transition-all">Плани роботи</a>
+                <a href="#atestation" class="px-8 py-3 bg-white/10 rounded-xl font-bold uppercase text-xs tracking-widest hover:bg-white/20 transition-all">Атестація</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-24">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-24 bg-white p-6 rounded-[2rem] shadow-xl border border-slate-100">
+                    <nav class="space-y-2">
+                        <a href="#digest" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">🗞️ Дайджест</a>
+                        <a href="#treasure" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">💎 Скарбниця</a>
+                        <a href="#plans" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">📅 Плани роботи</a>
+                        <a href="#atestation" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">🎖️ Атестація</a>
+                        <a href="#qualification" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">📈 Кваліфікація</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="lg:col-span-9 space-y-12">
+
+                <section id="digest" class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-soft border border-slate-100">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl">🗞️</div>
+                        <h2 class="text-3xl font-black text-slate-900 uppercase italic">Методичний дайджест</h2>
+                    </div>
+
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="text-blue-600 font-black uppercase text-sm tracking-widest mb-4">Менеджмент та рекомендації</h3>
+                            <ul class="grid grid-cols-1 gap-4">
+                                {[
+                                    "Про інструктивно-методичні рекомендації 2025/2026 н.р.",
+                                    "Захист України: нові підходи до викладання",
+                                    "Лист МОН № 1/17526-25 (Організація 2025/2026 н.р.)",
+                                    "Постанова № 841 (Початку н.р. під час воєнного стану)",
+                                    "Методичні рекомендації STEM-освіта",
+                                    "Положення про методичну роботу в ПТНЗ (Наказ № 582)",
+                                    "Концепція розвитку STEM-освіти"
+                                ].map(text => (
+                                        <li><a href="#" class="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl hover:bg-blue-50 transition-colors group">
+                                            <span class="text-slate-400 group-hover:text-blue-500">📄</span>
+                                            <span class="text-slate-700 font-medium group-hover:text-blue-700">{text}</span>
+                                        </a></li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-red-600 font-black uppercase text-sm tracking-widest mb-4">Освіта в умовах війни</h3>
+                            <ul class="grid grid-cols-1 gap-4">
+                                {[
+                                    "Наказ МОН № 1162 (Зміни щодо здобуття освіти в умовах війни)",
+                                    "Порадник для вчителів: як розпочати н.р.",
+                                    "Безпечне середовище: дії під час Повітряної тривоги",
+                                    "Посібник: Як розповідати школярам про мінну безпеку",
+                                    "Інструкція з безпечної реєстрації на онлайн платформах"
+                                ].map(text => (
+                                        <li><a href="#" class="flex items-center gap-3 p-4 border border-red-50 rounded-2xl hover:bg-red-50 transition-colors group">
+                                            <span class="text-red-400">🛡️</span>
+                                            <span class="text-slate-700 font-medium group-hover:text-red-700">{text}</span>
+                                        </a></li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="treasure" class="bg-slate-900 p-8 md:p-12 rounded-[2.5rem] text-white overflow-hidden relative">
+                    <div class="absolute top-0 right-0 p-12 text-white/5 text-9xl font-black italic">TOP</div>
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-2xl">💎</div>
+                        <h2 class="text-3xl font-black uppercase italic">Методична скарбниця</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                        {treasureChest.map(section => (
+                                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-white/20 transition-all group">
+                                    <h3 class="text-blue-400 font-black uppercase text-xs tracking-widest mb-6 flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                        {section.category}
+                                    </h3>
+                                    <ul class="space-y-4">
+                                        {section.items.map(item => (
+                                                <li>
+                                                    <a href={item.href} class="text-sm text-slate-300 hover:text-white transition-colors flex items-start gap-2 group-hover:translate-x-1 transition-transform">
+                                                        <span class="mt-1">▸</span>
+                                                        {item.title}
+                                                    </a>
+                                                </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                        ))}
+                    </div>
+                </section>
+
+                <section id="plans" class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-soft border border-slate-100">
+                    <div class="flex items-center gap-4 mb-10 text-slate-900">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-2xl">📅</div>
+                        <h2 class="text-3xl font-black uppercase italic">Плани роботи</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        {[
+                            { title: "План методичної роботи", years: ["2025-2026", "2024-2025", "2023-2024"], meta: "Структура методичної роботи" },
+                            { title: "Засідання методичної ради", years: ["2025-2026", "2024-2025", "2023-2024"], meta: "Склад та Положення МР" },
+                            { title: "Робота методичного кабінету", years: ["2025-2026", "2024-2025", "2023-2024", "2022-2023"], meta: "Положення про кабінет" },
+                            { title: "Аналітичні звіти", years: ["2024/2025", "2023/2024", "2022/2023"], meta: "Результати роботи" }
+                        ].map(section => (
+                                <details class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 open:bg-white open:shadow-lg transition-all">
+                                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                                        <div>
+                                            <h4 class="font-black text-slate-900 uppercase italic">{section.title}</h4>
+                                            <p class="text-xs text-slate-500 font-bold uppercase">{section.meta}</p>
+                                        </div>
+                                        <span class="w-8 h-8 rounded-full bg-white flex items-center justify-center border group-open:rotate-180 transition-transform">↓</span>
+                                    </summary>
+                                    <div class="p-6 pt-0 border-t border-slate-50">
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            {section.years.map(y => (
+                                                    <a href="#" class="p-4 bg-white rounded-xl border border-slate-100 flex items-center gap-3 hover:border-emerald-300 hover:bg-emerald-50 transition-all">
+                                                        <span class="text-emerald-500 font-bold">PDF</span>
+                                                        <span class="text-sm font-medium">{y} н.р.</span>
+                                                    </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </details>
+                        ))}
+                    </div>
+                </section>
+
+                <section id="atestation" class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-soft border border-slate-100">
+                    <div class="flex items-center gap-4 mb-10 text-slate-900">
+                        <div class="w-12 h-12 bg-purple-100 rounded-2xl flex items-center justify-center text-2xl">🎖️</div>
+                        <h2 class="text-3xl font-black uppercase italic text-shadow-purple">Атестація</h2>
+                    </div>
+
+                    <div class="p-6 bg-purple-50 rounded-2xl border border-purple-100 mb-8 flex items-center gap-4">
+                        <div class="text-3xl">📧</div>
+                        <div>
+                            <p class="text-purple-900 font-bold text-sm">Електронна пошта для подання документів:</p>
+                            <a href="mailto:dnzbpl11@gmail.com" class="text-purple-600 font-black hover:underline tracking-wide">dnzbpl11@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-12">
+                        {atestationYears.map(yearGroup => (
+                                <div class="relative">
+                                    <h3 class="text-xl font-black text-slate-900 uppercase italic mb-6 flex items-center gap-3">
+                                        <span class="w-2 h-6 bg-purple-500 rounded-full"></span>
+                                        {yearGroup.year}
+                                    </h3>
+                                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {yearGroup.items.map(item => (
+                                                <li class="p-4 bg-slate-50 border-l-4 border-purple-500 rounded-r-2xl hover:bg-purple-50 transition-colors">
+                                                    <a href="#" class="text-sm font-bold text-slate-700 leading-snug block">{item}</a>
+                                                </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                        ))}
+                    </div>
+                </section>
+
+                <section id="qualification" class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-soft border border-slate-100 overflow-hidden">
+                    <div class="flex items-center gap-4 mb-10 text-slate-900">
+                        <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl">📈</div>
+                        <h2 class="text-3xl font-black uppercase italic">Підвищення кваліфікації</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                        <div class="space-y-4">
+                            <h3 class="font-black text-amber-600 uppercase text-xs tracking-widest">Нормативна база</h3>
+                            {[
+                                "Що потрібно знати про підвищення кваліфікації",
+                                "Порядок підвищення кваліфікації №1343",
+                                "Постанова КМУ № 800 (Базовий документ)",
+                                "Лист МОН № 1/9-141",
+                                "Порядок визнання результатів у БПЛ"
+                            ].map(txt => (
+                                    <a href="#" class="block text-sm font-bold text-slate-700 hover:text-amber-600 border-b border-slate-100 pb-3">{txt}</a>
+                            ))}
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-black text-emerald-600 uppercase text-xs tracking-widest">Річні та орієнтовні плани</h3>
+                            {[2026, 2025, 2024, 2023, 2022].map(year => (
+                                    <div class="flex gap-2">
+                                        <a href="#" class="flex-1 px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold border hover:border-emerald-300 transition-all">Річний {year}</a>
+                                        <a href="#" class="flex-1 px-4 py-2 bg-slate-50 rounded-xl text-xs font-bold border hover:border-emerald-300 transition-all">Орієнтовний {year}</a>
+                                    </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+</PageLayout>
+
+<style>
+    .shadow-soft {
+        box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05);
+    }
+    .text-shadow-glow {
+        text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+    }
+    .text-shadow-purple {
+        text-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+    }
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+</style>

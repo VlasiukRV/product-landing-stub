@@ -1,0 +1,247 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const sportsSections = [
+    { title: "Волейбол", schedule: "Пн, Ср, Пт — 16:30", coach: "Черноводський С.М.", icon: "🏐" },
+    { title: "Настільний теніс", schedule: "Вт, Чт — 15:00", coach: "Драганець А.А.", icon: "🏓" },
+    { title: "Футбол, фут зал", schedule: "Сб — 10:00 (стадіон)", coach: "Броварчук Д.А.", icon: "⚽" },
+    { title: "Баскетбол", schedule: "", coach: "Бурлака Ю.П.", icon: "" },
+    { title: "Шахи, шашки", schedule: "", coach: "Барановська О.О.", icon: "" },
+    { title: "Легка атлетика", schedule: "", coach: "БроварчукА.Г.", icon: "" }
+];
+
+const achievements = [
+    { year: "2025", title: "I місце", event: "Обласна спартакіада з волейболу" },
+    { year: "2024", title: "II місце", event: "Міський турнір з настільного тенісу" },
+    { year: "2024", title: "Кубок", event: "Кращий спортивний заклад району" }
+];
+
+// Дані з вашої HTML таблиці
+const calendarEvents = [
+    { category: "I Футбол", items: [
+            { id: 1, name: "Першість ліцею (в залік спартакіади)", date: "жовтень", participants: "збірна групи", type: "К" },
+            { id: 2, name: "Першість ліцею (кубок)", date: "квітень", participants: "збірна групи", type: "К" },
+            { id: 3, name: "Матчеві зустрічі", date: "по домовленості", participants: "збірна ліцею", type: "К" }
+        ]},
+    { category: "II Футзал", items: [
+            { id: 1, name: "Першість ліцею", date: "січень", participants: "збірна групи", type: "К" },
+            { id: 2, name: "Обласна Спартакіада", date: "згідно календаря", participants: "збірна ліцею", type: "К" }
+        ]},
+    { category: "III Волейбол", items: [
+            { id: 1, name: "Першість ліцею (в залік спартакіади)", date: "лютий", participants: "збірна групи", type: "К" },
+            { id: 2, name: "Зимова першість району", date: "згідно календаря", participants: "збірна ліцею", type: "К" },
+            { id: 3, name: "Обласна Спартакіада", date: "згідно календаря", participants: "збірна ліцею", type: "К" },
+            { id: 4, name: "Матчеві зустрічі", date: "по домовленості", participants: "збірна ліцею", type: "К" }
+        ]},
+    { category: "IV Легка атлетика", items: [
+            { id: 1, name: "Першість ліцею серед навчальних груп (в залік спартакіади)", date: "вересень", participants: "збірна групи", type: "З/К" },
+            { id: 2, name: "Обласна Спартакіада", date: "згідно календаря", participants: "збірна ліцею", type: "З/К" }
+        ]},
+    { category: "V Настільний теніс", items: [
+            { id: 1, name: "Першість ліцею серед навчальних груп", date: "жовтень", participants: "збірна групи", type: "К" },
+            { id: 2, name: "Першість району серед КФК", date: "згідно календаря", participants: "збірна ліцею", type: "З/К" },
+            { id: 3, name: "Обласна Спартакіада", date: "згідно календаря", participants: "збірна ліцею", type: "З/К" }
+        ]},
+    { category: "VI БАСКЕТБОЛ", items: [
+            { id: 1, name: "Першість ліцею серед навчальних груп", date: "березень", participants: "збірна групи", type: "К" },
+            { id: 2, name: "Першість району", date: "згідно календаря", participants: "збірна ліцею", type: "К" },
+            { id: 3, name: "Обласна Спартакіада", date: "згідно календаря", participants: "збірна ліцею", type: "К" },
+            { id: 4, name: "Товариські зустрічі", date: "згідно календаря", participants: "збірна ліцею", type: "К" }
+        ]},
+    { category: "VІІ Шахи, шашки", items: [
+            { id: 1, name: "Першість ліцею по шашкам", date: "грудень", participants: "збірна групи", type: "З/К" },
+            { id: 2, name: "Першість району по шашкам", date: "згідно календаря", participants: "збірна ліцею", type: "З/К" },
+            { id: 3, name: "Першість ліцею по шахам", date: "грудень", participants: "збірна ліцею", type: "З/К" },
+            { id: 4, name: "Першість району по шахам", date: "згідно календаря", participants: "збірна ліцею", type: "З/К" },
+            { id: 5, name: "Обласна Спартакіада", date: "згідно календаря", participants: "збірна ліцею", type: "З/К" }
+        ]},
+    { category: "VІІІ Туризм", items: [
+            { id: 1, name: "Походи по місцям бойової і трудової слави Голованіськог іБлаговіщенського районів", date: "вересень-червень", participants: "групи", type: "" }
+        ]},
+];
+
+const orgCommittee = [
+    { name: "Плутар С.В.", role: "Директор БПЛ, голова" },
+    { name: "Барановська О.О.", role: "Секретар" },
+    { name: "Броварчук Д.А.", role: "Член оргкомітету" },
+    { name: "Броварчук А.Г.", role: "Член оргкомітету" },
+    { name: "Бурлака Ю.П.", role: "Член оргкомітету" },
+    { name: "Драганець А.А.", role: "Член оргкомітету" },
+    { name: "Черноводський С.М.", role: "Член оргкомітету" },
+    { name: "Васюта Л.В.", role: "Член оргкомітету" }
+];
+
+---
+
+<PageLayout
+        title="Спорт та здоров'я"
+        breadcrumbs={[{ label: "Студенту", href: "/students" }, { label: "Спорт" }]}
+>
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="relative bg-blue-600 rounded-[3rem] p-8 md:p-16 overflow-hidden text-white shadow-card">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/4"></div>
+            <div class="relative z-10 max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight uppercase italic tracking-tighter">
+                    Швидше. Вище. <br/><span class="text-secondary-500">Сильніше.</span>
+                </h1>
+                <p class="text-blue-100 text-lg mb-8 font-medium">
+                    ДНЗ "Благовіщенський професійний ліцей" — це територія спорту, де кожен має можливість гартувати характер та здобувати перемоги.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <div class="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl">
+                        <span class="block text-2xl font-black">2025-2026</span>
+                        <span class="text-xs uppercase font-bold text-blue-200">Навчальний рік</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-3xl font-black text-slate-900 uppercase italic">Календарний план заходів</h2>
+            <div class="h-1 flex-1 bg-slate-100 mx-6 hidden sm:block"></div>
+        </div>
+
+        <div class="overflow-x-auto bg-white rounded-3xl border border-slate-100 shadow-soft">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                <tr class="bg-slate-900 text-white">
+                    <th class="p-4 font-bold uppercase text-sm">№</th>
+                    <th class="p-4 font-bold uppercase text-sm">Назва заходу</th>
+                    <th class="p-4 font-bold uppercase text-sm text-center">Термін і місце</th>
+                    <th class="p-4 font-bold uppercase text-sm text-center">Учасники</th>
+                    <th class="p-4 font-bold uppercase text-sm text-center">Вид</th>
+                </tr>
+                </thead>
+                <tbody>
+                {calendarEvents.map((section) => (
+                        <>
+                            <tr class="bg-blue-50">
+                                <td colspan="5" class="p-4 text-center font-black text-blue-700 uppercase tracking-wider italic">
+                                    {section.category}
+                                </td>
+                            </tr>
+                            {section.items.map((item) => (
+                                    <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                                        <td class="p-4 text-slate-500 font-medium">{item.id}.</td>
+                                        <td class="p-4 text-slate-900 font-semibold">{item.name}</td>
+                                        <td class="p-4 text-slate-600 text-center">{item.date}</td>
+                                        <td class="p-4 text-slate-600 text-center">{item.participants}</td>
+                                        <td class="p-4 text-center"><span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-bold text-slate-600">{item.type}</span></td>
+                                    </tr>
+                            ))}
+                        </>
+                ))}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+            <h2 class="text-2xl font-black text-slate-900 mb-8 uppercase italic flex items-center gap-3">
+                <span class="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center text-sm">🏆</span>
+                Суддівські бригади
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {sportsSections.map(sport => (
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-blue-500 transition-all">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-3xl">{sport.icon}</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">Головний суддя</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900">{sport.title}</h3>
+                            <p class="text-blue-600 font-medium text-sm">{sport.coach}</p>
+                            <p class="text-xs text-slate-400 mt-2">судді громадські інструктори</p>
+                        </div>
+                ))}
+            </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-[2.5rem] p-8 text-white h-fit shadow-2xl">
+            <h2 class="text-xl font-black mb-6 uppercase italic text-secondary-500">Оргкомітет спартакіади</h2>
+            <ul class="space-y-4">
+                {orgCommittee.map(person => (
+                        <li class="flex items-center gap-4 border-b border-white/5 pb-3 last:border-0">
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <div>
+                                <div class="font-bold text-sm">{person.name}</div>
+                                <div class="text-[10px] uppercase text-slate-500 font-bold tracking-wider">{person.role}</div>
+                            </div>
+                        </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-3xl font-black text-slate-900 uppercase italic">Постійні секції</h2>
+            <div class="h-1 flex-1 bg-slate-100 mx-6 hidden sm:block"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sportsSections.map(sport => (
+                    <div class="group p-8 bg-white border border-slate-100 rounded-3xl hover:border-blue-500 transition-all shadow-soft">
+                        <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">{sport.icon}</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">{sport.title}</h3>
+                        <div class="space-y-2 text-sm">
+                            <p class="text-slate-500 flex items-center gap-2">
+                                <span class="text-blue-500 italic font-bold">⏱</span> {sport.schedule}
+                            </p>
+                            <p class="text-slate-500 flex items-center gap-2">
+                                <span class="text-blue-500 italic font-bold">👤</span> {sport.coach}
+                            </p>
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="bg-slate-900 rounded-[3rem] p-8 md:p-12 text-white">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-black mb-6 uppercase italic">Зал слави</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Ми пишаємося нашими студентами, які захищають честь закладу на обласних спартакіадах. Кожен кубок — це результат дисципліни та наполегливої праці.
+                    </p>
+                    <div class="space-y-4">
+                        {achievements.map(item => (
+                                <div class="flex items-center gap-6 p-4 bg-white/5 rounded-2xl border border-white/10">
+                                    <span class="text-blue-500 font-black text-xl italic">{item.year}</span>
+                                    <div>
+                                        <div class="font-bold text-white">{item.title}</div>
+                                        <div class="text-sm text-slate-500">{item.event}</div>
+                                    </div>
+                                </div>
+                        ))}
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="absolute inset-0 bg-blue-600 blur-[80px] opacity-20"></div>
+                    <div class="relative z-10 text-[10rem] animate-pulse">🏆</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
+        <h2 class="text-3xl font-black text-slate-900 mb-12 uppercase italic">Наша база</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="space-y-3">
+                <div class="h-24 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl">🏀</div>
+                <p class="font-bold text-slate-700">Спортивна зала</p>
+            </div>
+            <div class="space-y-3">
+                <div class="h-24 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl">🏋️</div>
+                <p class="font-bold text-slate-700">Тренажерна зала</p>
+            </div>
+            <div class="space-y-3">
+                <div class="h-24 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl">⚽</div>
+                <p class="font-bold text-slate-700">Футбольне поле</p>
+            </div>
+        </div>
+    </section>
+</PageLayout>

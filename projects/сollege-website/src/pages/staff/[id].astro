@@ -1,0 +1,115 @@
+---
+// src/pages/staff/[id].astro
+import PageLayout from "../../layouts/PageLayout.astro";
+import { staff } from "../../data/staff";
+
+export async function getStaticPaths() {
+    return staff.map((person) => ({
+        params: { id: person.id },
+        props: { person },
+    }));
+}
+
+const { person } = Astro.props;
+---
+
+<PageLayout
+        title={person.name}
+        breadcrumbs={[
+            { label: "Педагогічний колектив", href: "/staff" },
+            { label: person.name }
+        ]}
+>
+    <div class="max-w-4xl mx-auto px-4 py-10">
+        <div class="bg-white border border-slate-100 rounded-[32px] shadow-xl shadow-slate-200/50 overflow-hidden">
+
+            <div class="h-32 bg-gradient-to-r from-blue-600 to-indigo-700 relative">
+                <div class="absolute -bottom-12 left-8 md:left-12">
+                    <div class="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white p-1.5 shadow-lg">
+                        <div class="w-full h-full rounded-[22px] bg-slate-100 flex items-center justify-center text-3xl md:text-4xl font-black text-blue-600 border border-slate-50">
+                            {person.image ? (
+                                    <img src={person.image} alt={person.name} class="w-full h-full object-cover rounded-[22px]" />
+                            ) : (
+                                person.name.charAt(0)
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-16 pb-12 px-8 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
+                            {person.name}
+                        </h1>
+                        <p class="text-blue-600 font-bold uppercase tracking-wider text-sm mt-2">
+                            {person.position}
+                        </p>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <a href={`mailto:${person.email}`} class="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all shadow-lg shadow-blue-500/20 active:scale-95">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Написати
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="md:col-span-2 space-y-8">
+                        {person.bio && (
+                                <div class="space-y-4">
+                                    <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                        <span class="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                                        Про викладача
+                                    </h3>
+                                    <p class="text-slate-600 leading-relaxed text-lg italic font-medium">
+                                        "{person.bio}"
+                                    </p>
+                                </div>
+                        )}
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                            <div>
+                                <p class="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Відділ</p>
+                                <p class="text-slate-700 font-bold">{person.department || "Загальноосвітній"}</p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-1">Спеціалізація</p>
+                                <p class="text-slate-700 font-bold">{person.specialty || "Педагогіка"}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-6 border border-slate-100 rounded-2xl space-y-4">
+                            <h4 class="font-bold text-slate-900 text-sm">Контактна інформація</h4>
+
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 text-sm">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 text-xs">✉️</div>
+                                    <span class="text-slate-600 break-all">{person.email}</span>
+                                </div>
+                                {person.phone && (
+                                        <div class="flex items-center gap-3 text-sm">
+                                            <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 text-xs">📞</div>
+                                            <span class="text-slate-600">{person.phone}</span>
+                                        </div>
+                                )}
+                            </div>
+                        </div>
+
+                        <div class="p-6 bg-slate-900 rounded-2xl text-white">
+                            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-3">Статус</p>
+                            <div class="flex items-center gap-2 text-sm font-bold">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                                Активний викладач
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</PageLayout>

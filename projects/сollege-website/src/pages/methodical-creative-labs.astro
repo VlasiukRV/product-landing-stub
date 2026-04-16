@@ -1,0 +1,204 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const labs = [
+    {
+        id: "culinary-design",
+        title: "Школа кулінарного дизайну",
+        icon: "🎨",
+        color: "amber",
+        goal: "Вивчення та оволодіння теоретичними знаннями та практичними навиками з оформлення кулінарної та кондитерської продукції, сучасного дизайну та естетики страв.",
+        tasks: [
+            "Отримання знань з основ оформлення харчових продуктів",
+            "Розроблення нових технологій оздоблення кулінарних виробів",
+            "Вивчення дії окремих компонентів та їх поєднання",
+            "Оволодіння методами поєднання кольорових гам",
+            "Створення нових дизайнерських рішень для оформлення страв"
+        ],
+        docs: [
+            { label: "Програма школи", href: "#" },
+            { label: "План роботи 2024/2025 н.р.", href: "#" },
+            { label: "План роботи 2023/2024 н.р.", href: "#" }
+        ]
+    },
+    {
+        id: "pro-growth",
+        title: "Школа професійного зростання",
+        icon: "📈",
+        color: "blue",
+        goal: "Підвищення цифрової компетентності викладачів професійно-теоретичної підготовки та підготовка їх до роботи із застосуванням сучасних цифрових освітніх ресурсів.",
+        tasks: [
+            "Удосконалення розуміння особливостей цифрового навчання",
+            "Поглиблення знань із застосування цифрових сервісів",
+            "Розвиток навичок створення власних навчальних матеріалів",
+            "Мотивація до навчання впродовж життя за допомогою ІКТ"
+        ],
+        docs: [
+            { label: "Положення про школу", href: "#" },
+            { label: "План роботи 2024/2025 н.р.", href: "#" },
+            { label: "План роботи 2023/2024 н.р.", href: "#" }
+        ]
+    },
+    {
+        id: "ppd",
+        title: "Школа передового досвіду (ППД)",
+        icon: "🌟",
+        color: "emerald",
+        goal: "Прискорення трансформації передового педагогічного досвіду в широку практику та сприяння розвитку професійної майстерності педагогів.",
+        tasks: [
+            "Пропаганда перспективних моделей досвіду",
+            "Інформаційно-методичний супровід проблем ліцею",
+            "Створення умов для практичного засвоєння нових технологій",
+            "Моделювання навчальних занять та позакласних заходів"
+        ],
+        docs: [
+            { label: "Положення про школу ППД", href: "#" },
+            { label: "План роботи 2023/2024 н.р.", href: "#" },
+            { label: "План роботи 2022/2023 н.р.", href: "#" }
+        ]
+    }
+];
+
+const projects = [
+    {
+        title: "Автентичні кулінарні страви",
+        meta: "Пошуковий проєкт",
+        desc: "Проєкт спрямований на творчу взаємодію учасників щодо вивчення кулінарної спадщини різних регіонів України.",
+        goal: "Виховання творчого креативного кухаря-кондитера, що вміє відтворювати етнічну кулінарію та пишається національним спадком.",
+        features: ["Збірка рецептів", "Апробація під час ДКА", "Патріотичне виховання"]
+    },
+    {
+        title: "Українська традиційна випічка",
+        meta: "Дослідницький проєкт",
+        desc: "Вивчення традицій борошняних виробів нашого народу та впровадження їх у сучасний освітній процес.",
+        goal: "Розширювати знання учнів про борошняні вироби та розвивати навички роботи в команді над створенням автентичних страв.",
+        features: ["Пошук рецептур", "Цифрова фіксація", "Майстер-класи"]
+    }
+];
+---
+
+<PageLayout title="Творчі лабораторії" breadcrumbs={[{label: "Методична робота", href: "/methodical-work"}, {label: "Творчі лабораторії"}]}>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/20 blur-[100px] -mr-48 -mt-48"></div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-block px-4 py-1.5 bg-blue-500 text-white rounded-xl text-xs font-black uppercase tracking-widest mb-6">Innovation Hub</span>
+                <h1 class="text-4xl md:text-6xl font-black italic uppercase tracking-tight mb-6 leading-tight">
+                    Творчі <span class="text-blue-400">лабораторії</span>
+                </h1>
+                <p class="text-slate-400 text-lg md:text-xl leading-relaxed">
+                    Простір для експериментів, де традиції поєднуються з цифровими технологіями, а досвід перетворюється на інновації.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24 space-y-20">
+        {labs.map((lab) => (
+            <div id={lab.id} class="bg-white border border-slate-100 rounded-[3rem] shadow-soft overflow-hidden group">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-8 p-8 md:p-12">
+                        <div class="flex items-center gap-4 mb-8">
+                            <span class="text-5xl">{lab.icon}</span>
+                            <h2 class="text-3xl font-black text-slate-900 uppercase italic leading-tight">{lab.title}</h2>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-3">Мета діяльності</h3>
+                                <p class="text-slate-600 font-medium leading-relaxed italic text-lg">
+                                    «{lab.goal}»
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Основні завдання:</h3>
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    {lab.tasks.map(task => (
+                                        <li class="flex gap-3 text-sm text-slate-500">
+                                            <span class="text-blue-500 font-black">/</span> {task}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 bg-slate-50 p-8 md:p-12 border-l border-slate-100">
+                        <h3 class="font-black text-slate-900 uppercase italic mb-6">Документація</h3>
+                        <div class="space-y-3">
+                            {lab.docs.map(doc => (
+                                <a href={doc.href} class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all group/link">
+                                    <span class="text-sm font-bold text-slate-700 group-hover/link:text-blue-600">{doc.label}</span>
+                                    <span class="text-slate-300 group-hover/link:text-blue-500">→</span>
+                                </a>
+                            ))}
+                        </div>
+                        <div class="mt-8 p-6 bg-blue-600 rounded-3xl text-white text-center">
+                            <p class="text-[10px] uppercase font-black tracking-widest opacity-80 mb-1">Статус</p>
+                            <p class="font-black italic uppercase">Активна фаза</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </section>
+
+    <section class="bg-slate-50 py-24 border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase italic mb-4 text-shadow-glow">Дослідницькі проєкти</h2>
+                <div class="w-24 h-2 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {projects.map(project => (
+                    <div class="bg-white p-10 rounded-[3rem] border border-slate-200 shadow-sm hover:shadow-2xl transition-all group">
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="px-4 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-[10px] font-black uppercase tracking-tighter">
+                                {project.meta}
+                            </span>
+                            <span class="text-3xl group-hover:rotate-12 transition-transform">🥘</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 italic uppercase">{project.title}</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">{project.desc}</p>
+
+                        <div class="bg-slate-50 p-6 rounded-2xl mb-8">
+                            <p class="text-xs font-black text-slate-400 uppercase mb-2">Мета проєкту:</p>
+                            <p class="text-sm font-bold text-slate-700 italic leading-snug">{project.goal}</p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            {project.features.map(f => (
+                                <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-[10px] font-bold text-slate-400">
+                                    #{f}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <div class="p-12 bg-white border-2 border-dashed border-slate-200 rounded-[3rem]">
+            <h3 class="text-2xl font-black text-slate-900 mb-4">Бажаєте долучитися до творчої групи?</h3>
+            <p class="text-slate-500 mb-8">Зверніться до методичного кабінету для подання заявки на участь у дослідницьких проєктах.</p>
+            <a href="/methodical-cabinet" class="inline-block px-10 py-4 bg-slate-900 text-white rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-blue-600 transition-all shadow-xl">
+                Зв'язатися з методистом
+            </a>
+        </div>
+    </section>
+
+</PageLayout>
+
+<style>
+    .shadow-soft {
+        box-shadow: 0 20px 50px -20px rgba(0,0,0,0.05);
+    }
+    .text-shadow-glow {
+        text-shadow: 0 0 30px rgba(37, 99, 235, 0.1);
+    }
+</style>

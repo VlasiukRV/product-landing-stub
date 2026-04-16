@@ -1,0 +1,62 @@
+[
+  {
+    "id": "news-001",
+    "title": "Розпочато новий навчальний семестр",
+    "slug": "start-new-semester",
+    "date": "01 Лютого 2026",
+    "rawDate": "2026-02-01",
+    "category": "academic",
+    "excerpt": "У коледжі стартував новий навчальний семестр для всіх груп.",
+    "image": "/img/base_news_img.png"
+  },
+  {
+    "id": "news-002",
+    "title": "Оновлено розклад занять для груп першого курсу",
+    "slug": "updated-schedule-first-year",
+    "date": "05 Лютого 2026",
+    "rawDate": "2026-02-05",
+    "category": "schedule",
+    "excerpt": "Внесено зміни до розкладу занять для першокурсників.",
+    "image": "/img/base_news_img.png"
+  },
+  {
+    "id": "news-003",
+    "title": "День відкритих дверей у коледжі",
+    "slug": "open-day-college",
+    "date": "10 Лютого 2026",
+    "rawDate": "2026-02-10",
+    "category": "events",
+    "excerpt": "Запрошуємо абітурієнтів та батьків на день відкритих дверей.",
+    "image": "/img/base_news_img.png"
+  },
+  {
+    "id": "news-004",
+    "title": "Студенти перемогли в обласному конкурсі",
+    "slug": "students-win-regional-competition",
+    "date": "15 Лютого 2026",
+    "rawDate": "2026-02-15",
+    "category": "achievements",
+    "excerpt": "Команда коледжу здобула перше місце у технічному конкурсі.",
+    "image": "/img/base_news_img.png"
+  },
+  {
+    "id": "news-005",
+    "title": "Оновлення матеріально-технічної бази",
+    "slug": "equipment-upgrade",
+    "date": "20 Лютого 2026",
+    "rawDate": "2026-02-20",
+    "category": "college",
+    "excerpt": "Коледж отримав нове обладнання для лабораторій.",
+    "image": "/img/base_news_img.png"
+  },
+  {
+    "id": "news-006",
+    "title": "Запуск студентського медіа-центру",
+    "slug": "student-media-center",
+    "date": "25 Лютого 2026",
+    "rawDate": "2026-02-25",
+    "category": "projects",
+    "excerpt": "Створено новий медіа-центр для студентів.",
+    "image": "/img/base_news_img.png"
+  }
+]

@@ -1,0 +1,13 @@
+/* Google Fonts Import */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-surface text-text;
+}
+
+a {
+    @apply transition;
+}

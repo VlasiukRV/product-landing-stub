@@ -1,0 +1,55 @@
+{
+  "id": "group-b",
+  "name": "Group B",
+  "schedule": {
+    "monday": [
+      {
+        "time": "08:30 - 09:50",
+        "subject": "Математика",
+        "teacher": "Іваненко О.О.",
+        "room": "201"
+      },
+      {
+        "time": "10:00 - 11:20",
+        "subject": "Фізика",
+        "teacher": "Петренко В.В.",
+        "room": "105"
+      }
+    ],
+    "tuesday": [
+      {
+        "time": "08:30 - 09:50",
+        "subject": "Програмування",
+        "teacher": "Сергій Мельник",
+        "room": "Lab-1"
+      }
+    ],
+    "wednesday": [
+      {
+        "day": "wednesday",
+        "time": "10:00 - 11:20",
+        "subject": "Англійська мова",
+        "teacher": "Олена Коваль",
+        "room": "103"
+      }
+    ],
+    "thursday": [
+      {
+        "day": "thursday",
+        "time": "08:30 - 09:50",
+        "subject": "Бази даних",
+        "teacher": "Сергій Мельник",
+        "room": "Lab-3"
+      }
+    ],
+    "friday": [
+      {
+        "day": "friday",
+        "time": "10:00 - 11:20",
+        "subject": "Фізкультура",
+        "teacher": "Іваненко О.О.",
+        "room": "Gym"
+      }
+    ]
+  }
+}

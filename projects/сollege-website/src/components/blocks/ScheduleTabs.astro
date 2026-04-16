@@ -1,0 +1,112 @@
+---
+// src/components/blocks/ScheduleTabs.astro
+import ScheduleTable from "./ScheduleTable.astro";
+const { days, schedule } = Astro.props;
+---
+
+<div class="w-full" id="schedule-container">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div id="tabs-nav" class="flex flex-wrap gap-2 p-1 bg-slate-100/80 rounded-2xl w-fit">
+            {days.map((day, index) => (
+                    <button
+                            class="px-6 py-2.5 text-sm font-bold rounded-xl transition-all duration-200 data-[active=true]:bg-white data-[active=true]:text-blue-600 data-[active=true]:shadow-sm text-slate-500 hover:text-slate-800"
+                            data-tab-btn={day.key}
+                            data-active={index === 0 ? "true" : "false"}
+                    >
+                        {day.label}
+                    </button>
+            ))}
+        </div>
+
+        <button
+                id="toggle-view"
+                class="flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50 hover:border-blue-200 transition-all shadow-sm"
+        >
+            <span id="toggle-icon">📋</span>
+            <span id="toggle-text">Показати весь тиждень</span>
+        </button>
+    </div>
+
+    <div id="view-tabs" class="block">
+        <div class="relative">
+            {days.map((day, index) => (
+                    <div
+                            data-tab={day.key}
+                            class:list={["transition-all duration-300", index === 0 ? "block opacity-100" : "hidden opacity-0"]}
+                    >
+                        <ScheduleTable
+                                schedule={schedule?.[day.key] || []}
+                                showTeacher={true}
+                                title={day.label}
+                        />
+                    </div>
+            ))}
+        </div>
+    </div>
+
+    <div id="view-full" class="hidden space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        {days.map((day) => (
+                <ScheduleTable
+                        schedule={schedule?.[day.key] || []}
+                        showTeacher={true}
+                        title={day.label}
+                />
+        ))}
+    </div>
+</div>
+
+<script is:inline>
+    const container = document.getElementById('schedule-container');
+    const toggleBtn = document.getElementById('toggle-view');
+    const toggleText = document.getElementById('toggle-text');
+    const tabsNav = document.getElementById('tabs-nav');
+    const viewTabs = document.getElementById('view-tabs');
+    const viewFull = document.getElementById('view-full');
+
+    const buttons = document.querySelectorAll("[data-tab-btn]");
+    const tabs = document.querySelectorAll("[data-tab]");
+
+    // 1. Логіка перемикання табів
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const key = btn.dataset.tabBtn;
+
+            tabs.forEach((t) => {
+                t.classList.add("hidden", "opacity-0");
+                t.classList.remove("block", "opacity-100");
+            });
+
+            buttons.forEach((b) => b.setAttribute("data-active", "false"));
+            btn.setAttribute("data-active", "true");
+
+            const activeTab = document.querySelector(`[data-tab='${key}']`);
+            if (activeTab) {
+                activeTab.classList.remove("hidden");
+                setTimeout(() => {
+                    activeTab.classList.add("opacity-100", "block");
+                }, 10);
+            }
+        });
+    });
+
+    // 2. Логіка перемикання режимів (Таби / Весь список)
+    let isFullView = false;
+
+    toggleBtn.addEventListener("click", () => {
+        isFullView = !isFullView;
+
+        if (isFullView) {
+            viewTabs.classList.replace("block", "hidden");
+            viewFull.classList.replace("hidden", "block");
+            tabsNav.classList.add("pointer-events-none", "opacity-30", "grayscale");
+            toggleText.textContent = "Показати окремо по днях";
+            toggleBtn.classList.add("bg-blue-50", "border-blue-200", "text-blue-600");
+        } else {
+            viewTabs.classList.replace("hidden", "block");
+            viewFull.classList.replace("block", "hidden");
+            tabsNav.classList.remove("pointer-events-none", "opacity-30", "grayscale");
+            toggleText.textContent = "Показати весь тиждень";
+            toggleBtn.classList.remove("bg-blue-50", "border-blue-200", "text-blue-600");
+        }
+    });
+</script>

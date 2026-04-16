@@ -1,0 +1,61 @@
+---
+// layouts/BaseLayout.astro
+
+import Header from "../components/navigation/Header.astro";
+import Footer from "../components/navigation/Footer.astro";
+
+export interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Технікум",
+    description = "Освітній портал технікуму"
+} = Astro.props;
+
+const siteName = "Технікум";
+---
+
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title} | {siteName}</title>
+    <meta name="description" content={description} />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={siteName} />
+
+    <!-- Favicon (future-ready) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Slot for page-specific head content -->
+    <slot name="head" />
+</head>
+
+<body class="min-h-screen flex flex-col bg-gray-50 text-gray-900">
+
+<!-- Header -->
+<Header />
+
+<!-- Page content -->
+<main class="flex-1">
+    <slot />
+</main>
+
+<!-- Footer -->
+<Footer />
+
+</body>
+</html>

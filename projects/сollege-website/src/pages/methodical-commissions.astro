@@ -1,0 +1,211 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const commissions = [
+    {
+        id: "cook",
+        title: "Кухар-кондитер",
+        type: "Професійна підготовка",
+        head: "Ровінська Лариса Аркадіївна",
+        problem: "Формування професійної компетентності здобувачів освіти з професії 'Кухар-кондитер' шляхом впровадження цифрових технологій на уроках (3-й рік)",
+        directions: [
+            "впровадження цифрових технологій в практичну діяльність педпрацівників",
+            "розвиток пізнавальних і творчих здібностей здобувачів освіти",
+            "удосконалення якості підготовки кваліфікованих робітничих кадрів",
+            "удосконалення комплексно-методичного забезпечення предметів і професії",
+            "підвищення інтересу здобувачів освіти до професії"
+        ],
+        members: [
+            { name: "Ровінська Лариса Аркадіївна", task: "Цифрові джерела інформації як засіб активізації пізнавальної діяльності" },
+            { name: "Швець Олена Миколаївна", task: "Цифрові технології як сучасний засіб навчання у професійній освіті" },
+            { name: "Чупрун Надія Федорівна", task: "Формування проф. компетентності через цифрові технології на інструктажах" },
+            { name: "Пісецька Марина Віталіївна", task: "Формування проф. компетентності через цифрові технології на інструктажах" },
+            { name: "Чорноводська Анна Дмитрівна", task: "Цифрова компетентність майстра в/н як модель формування компетентності учня" },
+            { name: "Батрак Оксана Миколаївна", task: "Формування проф. компетентності через цифрові технології на інструктажах" }
+        ],
+        journals: ["2025-2026 н.р.", "2024-2025 н.р.", "2023-2024 н.р."]
+    },
+    {
+        id: "construction",
+        title: "Штукатур; лицювальник-плиточник",
+        type: "Професійна підготовка",
+        head: "Середенко Оксана Вікторівна",
+        problem: "Створення цифрових дидактичних матеріалів, як один із важливих етапів покращення якості освітнього процесу з професії",
+        directions: [
+            "впровадження цифрових технологій в діяльність педпрацівників",
+            "підвищення рівня навчально-виробничого процесу",
+            "удосконалення майстерності майстрів в/н через стажування",
+            "впровадження інноваційних виробничих технологій"
+        ],
+        members: [
+            { name: "Середенко Оксана Вікторівна", task: "Створення цифрових дидактичних матеріалів з теорет. підготовки" },
+            { name: "Ковальчук Віталій Олексійович", task: "Створення цифрових матеріалів з практ. підготовки (штукатур)" },
+            { name: "Чорноводський Сергій Михайлович", task: "Створення цифрових матеріалів з практ. підготовки (штукатур)" },
+            { name: "Логойда Олександр Іванович", task: "Створення цифрових матеріалів з практ. підготовки (плиточник)" }
+        ],
+        journals: ["2025-2026 н.р."]
+    },
+    {
+        id: "math",
+        title: "Природничо-математична підготовка",
+        type: "Загальноосвітня підготовка",
+        head: "Ханаєва Яна Миколаївна",
+        problem: "Використання цифрових компетенцій як етап покращення якості освітнього процесу МК",
+        directions: ["розвивальне навчання", "творчі здібності учнів", "якість підготовки кадрів", "комплексно-методичне забезпечення"],
+        members: [
+            { name: "Ханаєва Яна Миколаївна", task: "Цифрові компетенції на уроках фізики та астрономії" },
+            { name: "Барановська Оксана Олександрівна", task: "Цифрові компетенції на уроках географії та біології" },
+            { name: "Собчук Катерина Іванівна", task: "Розвиток критичного мислення на уроках хімії та біології" },
+            { name: "Васюта Лариса Василівна", task: "Цифрові компетенції на уроках математики" }
+        ],
+        journals: ["2025-2026 н.р.", "2024-2025 н.р.", "2023-2024 н.р."]
+    },
+    {
+        id: "humanities",
+        title: "Суспільно-гуманітарна підготовка",
+        type: "Загальноосвітня підготовка",
+        head: "Мокружицька Ірина Валеріївна",
+        problem: "Практичне застосування цифрових компетенцій засобами ІКТ під час освітнього процесу",
+        directions: ["високий рівень викладання", "інноваційні технології", "мотивація навчання", "позакласна робота"],
+        members: [
+            { name: "Мокружицька І.В.", task: "Цифрові компетентності на уроках мови та літератури" },
+            { name: "Плутар С.В.", task: "Компетентнісний підхід у викладанні громадянської освіти" },
+            { name: "Міхальчук В.М.", task: "Використання ІКТ на уроках мови та літератури" },
+            { name: "Гончарук В.В.", task: "Інтеграція ІКТ на уроках іноземної мови" },
+            { name: "Кондратюк А.В.", task: "Застосування ІКТ на уроках історії" },
+            { name: "Бурлака Ю.П.", task: "Компетентнісний підхід у викладанні 'Захисту України'" },
+            { name: "Броварчук Д.А.", task: "Цифрова компетентність на уроках фізкультури" }
+        ],
+        journals: ["2025-2026 н.р.", "2024-2025 н.р."]
+    },
+    {
+        id: "curators",
+        title: "Класні керівники",
+        type: "Виховна робота",
+        head: "Барановська Оксана Олександрівна",
+        problem: "Формування національно-патріотичного виховання, громадянської позиції та моральних цінностей",
+        directions: ["сучасні методи виховання", "ІКТ у роботі класних керівників", "виховні заходи", "вивчення педдосвіду"],
+        members: [
+            { name: "Барановська О.О.", task: "Формування громадянської позиції та патріотизму" },
+            { name: "Безносюк В.І.", task: "Національна свідомість та соціалізація в умовах сьогодення" },
+            { name: "Васюта Л.В.", task: "Виховання свідомого громадянина та носія культури" },
+            { name: "Верба А.Ф.", task: "Розвиток почуття колективізму та поваги до символів" },
+            { name: "Гончарук В.В.", task: "Система роботи з національно-патріотичного виховання" },
+            { name: "Середенко О.В.", task: "Виховання особистості як національно-свідомого громадянина" },
+            { name: "Мокружицька І.В.", task: "Ціннісне ставлення до держави засобами виховання" }
+        ],
+        journals: ["2025-2026 н.р.", "2023-2024 н.р.", "2022-2023 н.р."]
+    }
+];
+---
+
+<PageLayout breadcrumbs={[{label: "Методична робота", href: "/methodical-work"}, {label: "Склад МК"}]}>
+
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight uppercase italic mb-6">
+                Методичні <span class="text-blue-600">комісії</span>
+            </h1>
+            <p class="text-xl text-slate-600 max-w-3xl">
+                Структурні підрозділи ліцею, що забезпечують професійний розвиток педагогів та впровадження інноваційних технологій у навчання.
+            </p>
+        </div>
+
+        <div class="space-y-24">
+            {commissions.map((comm) => (
+                    <section id={comm.id} class="scroll-mt-24 group">
+                        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b-4 border-slate-100 pb-8">
+                            <div class="max-w-3xl">
+              <span class="inline-block px-4 py-1 bg-blue-50 text-blue-600 rounded-lg text-xs font-black uppercase tracking-widest mb-4">
+                {comm.type}
+              </span>
+                                <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase italic leading-tight">
+                                    Методична комісія "{comm.title}"
+                                </h2>
+                            </div>
+                            <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl md:min-w-[300px]">
+                                <p class="text-[10px] uppercase text-slate-400 font-bold mb-1">Голова комісії</p>
+                                <p class="text-lg font-black leading-tight italic">{comm.head}</p>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
+                            <div class="lg:col-span-1 space-y-8">
+                                <div class="p-8 bg-blue-600 rounded-[2rem] text-white shadow-lg shadow-blue-200">
+                                    <h3 class="text-xs uppercase font-black tracking-widest mb-4 opacity-80">Методична проблема</h3>
+                                    <p class="text-lg font-bold leading-snug italic">
+                                        «{comm.problem}»
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3 class="font-black text-slate-900 uppercase italic mb-4">Напрями роботи:</h3>
+                                    <ul class="space-y-3">
+                                        {comm.directions.map(dir => (
+                                                <li class="flex gap-3 text-sm text-slate-600 leading-relaxed italic">
+                                                    <span class="text-blue-600 font-black">/</span> {dir}
+                                                </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+                                    <h3 class="text-xs uppercase font-black text-slate-400 mb-4">Журнали планування:</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        {comm.journals.map(year => (
+                                                <a href="#" class="px-4 py-2 bg-white rounded-xl text-xs font-bold border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition-all">
+                                                    {year}
+                                                </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-2">
+                                <h3 class="font-black text-slate-900 uppercase italic mb-6 flex items-center gap-3">
+                                    <span class="w-8 h-1 bg-slate-900 rounded-full"></span>
+                                    Персональний склад та теми
+                                </h3>
+
+                                <div class="overflow-hidden bg-white border border-slate-100 rounded-[2rem] shadow-sm">
+                                    <table class="w-full text-left border-collapse">
+                                        <thead class="bg-slate-50 border-b border-slate-100">
+                                        <tr>
+                                            <th class="p-5 text-[10px] uppercase font-black text-slate-400 w-12 text-center">№</th>
+                                            <th class="p-5 text-[10px] uppercase font-black text-slate-400">Педагог</th>
+                                            <th class="p-5 text-[10px] uppercase font-black text-slate-400">Індивідуальна проблема</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-50">
+                                        {comm.members.map((member, idx) => (
+                                                <tr class="hover:bg-blue-50/30 transition-colors">
+                                                    <td class="p-5 text-sm font-black text-slate-300 text-center">{idx + 1}</td>
+                                                    <td class="p-5">
+                                                        <p class="font-black text-slate-900 text-sm leading-tight italic">{member.name}</p>
+                                                    </td>
+                                                    <td class="p-5">
+                                                        <p class="text-xs text-slate-500 italic leading-relaxed">{member.task}</p>
+                                                    </td>
+                                                </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="mt-4 text-[10px] text-slate-400 uppercase font-bold text-right italic">
+                                    Всього в комісії: {comm.members.length} чол.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+            ))}
+        </div>
+    </section>
+
+</PageLayout>
+
+<style>
+    /* Плавний скрол для навігації по id */
+    html {
+        scroll-behavior: smooth;
+    }
+</style>

@@ -1,0 +1,88 @@
+---
+const { item, isMobile = false } = Astro.props;
+const hasChildren = item.children && item.children.length > 0;
+---
+
+<div class="relative nav-item-container">
+    <a
+            href={item.href || "#"}
+            class:list={[
+                "transition flex items-center justify-between gap-2 w-full text-sm",
+                isMobile ? "py-2 font-medium text-gray-900" : "text-gray-600 hover:text-gray-900 px-4 py-2 hover:bg-gray-50 md:hover:bg-transparent md:px-0 cursor-pointer"
+            ]}
+    >
+        <span>{item.label}</span>
+        {hasChildren && (
+                <span class="nav-arrow text-[10px] transition-transform duration-200">
+                {isMobile ? '▾' : '▶'}
+            </span>
+        )}
+    </a>
+
+    {hasChildren && (
+            <div class="nav-dropdown">
+                <div class:list={[
+                    "z-50 bg-white border shadow-xl py-2",
+                    isMobile ? "ml-4 border-l pl-4 flex flex-col gap-1" : "absolute top-full left-0 rounded-lg min-w-[220px]"
+                ]}>
+                    {item.children.map((child) => (
+                            <Astro.self item={child} isMobile={isMobile} />
+                    ))}
+                </div>
+            </div>
+    )}
+</div>
+
+<style>
+    .nav-dropdown {
+        display: none;
+    }
+
+    /* Показуємо при ховері на контейнер */
+    .nav-item-container:hover > .nav-dropdown {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        /* Перший рівень */
+        .nav-item-container > .nav-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            /* Створюємо "міст" між хедером і меню через padding */
+            padding-top: 10px;
+            margin-top: -5px; /* Трохи насуваємо на хедер, щоб не було розриву */
+        }
+
+        /* Контейнер зі списком */
+        .nav-dropdown > div {
+            position: relative;
+        }
+
+        .nav-dropdown a {
+            padding: 0.6rem 1.25rem;
+            white-space: nowrap;
+            display: flex; /* Щоб padding працював коректно */
+            width: 100%;
+        }
+
+        /* Другий рівень (вбік) */
+        .nav-dropdown .nav-dropdown {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            padding-left: 5px; /* Місток вправо */
+            margin-left: -2px;
+        }
+
+        /* Щоб підменю другого рівня не закривалося */
+        .nav-dropdown .nav-item-container {
+            position: relative;
+        }
+    }
+
+    /* Анімація стрілочки - тільки якщо є діти */
+    .nav-item-container:hover > a .nav-arrow {
+        transform: rotate(90deg);
+    }
+</style>

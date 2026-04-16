@@ -1,0 +1,7 @@
+---
+const { content } = Astro.props;
+---
+
+<section class="prose max-w-none prose-lg">
+    <div set:html={content} />
+</section>

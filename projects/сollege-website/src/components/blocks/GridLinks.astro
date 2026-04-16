@@ -1,0 +1,81 @@
+---
+// src/components/blocks/GridLinks.astro
+
+interface Item {
+    title: string;
+    href?: string;
+    description?: string;
+    icon?: string;
+    disabled?: boolean;
+}
+
+const {
+    items = [],
+    columns = 2,
+    title
+} = Astro.props;
+
+// Використовуємо ваші класи сітки, але з трохи більшим gap для "повітря"
+const gridCols = {
+    1: "grid-cols-1",
+    2: "grid-cols-1 sm:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-3",
+    4: "grid-cols-2 lg:grid-cols-4"
+};
+---
+
+<section class="py-6">
+    {title && (
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="text-2xl font-bold text-slate-800">{title}</h2>
+                <div class="flex-1 h-[1px] bg-slate-100"></div>
+            </div>
+    )}
+
+    <div class={`grid ${gridCols[columns] || gridCols[2]} gap-6`}>
+        {items.map((item) => {
+            const isLink = !!item.href && !item.disabled;
+            const Tag = isLink ? 'a' : 'div';
+
+            return (
+                    <Tag
+                            href={isLink ? item.href : undefined}
+                            class={`
+                        group relative p-6 rounded-2xl border transition-all duration-300
+                        ${isLink
+                                ? "bg-white border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+                                : "bg-slate-50 border-slate-200 opacity-60 cursor-not-allowed"}
+                    `}
+                    >
+                        {/* ICON з ефектом збільшення як у QuickLinks */}
+                        {item.icon && (
+                                <div class="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300 block origin-left">
+                                    {item.icon}
+                                </div>
+                        )}
+
+                        {/* CONTENT */}
+                        <div class="space-y-2">
+                            <div class={`font-bold text-lg leading-tight transition-colors ${isLink ? "text-slate-700 group-hover:text-blue-600" : "text-slate-500"}`}>
+                                {item.title}
+                            </div>
+
+                            {item.description && (
+                                    <p class="text-sm text-slate-500 leading-relaxed line-clamp-2">
+                                        {item.description}
+                                    </p>
+                            )}
+                        </div>
+
+                        {isLink && (
+                                <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                    </svg>
+                                </div>
+                        )}
+                    </Tag>
+            );
+        })}
+    </div>
+</section>

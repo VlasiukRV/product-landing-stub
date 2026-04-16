@@ -1,0 +1,83 @@
+---
+// src/components/blocks/ScheduleTable.astro
+
+const {
+    schedule = [],
+    title,
+    showTeacher = true,
+    showGroup = false
+} = Astro.props;
+---
+
+<section class="py-4">
+    {title && (
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold text-slate-800">{title}</h2>
+                <div class="flex-1 h-[1px] bg-slate-100"></div>
+            </div>
+    )}
+
+    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div class="overflow-x-auto">
+            <table class="min-w-full text-sm border-collapse">
+                <thead>
+                <tr class="bg-slate-50/50 border-b border-slate-200">
+                    <th class="text-left p-4 font-bold text-slate-500 uppercase tracking-wider text-[11px]">Час</th>
+                    <th class="text-left p-4 font-bold text-slate-500 uppercase tracking-wider text-[11px]">Предмет</th>
+                    {showTeacher && (
+                            <th class="text-left p-4 font-bold text-slate-500 uppercase tracking-wider text-[11px]">Викладач</th>
+                    )}
+                    {showGroup && (
+                            <th class="text-left p-4 font-bold text-slate-500 uppercase tracking-wider text-[11px]">Група</th>
+                    )}
+                </tr>
+                </thead>
+
+                <tbody class="divide-y divide-slate-100">
+                {schedule.map((row, index) => (
+                        <tr class="hover:bg-blue-50/30 transition-colors group">
+                            {/* TIME */}
+                            <td class="p-4 whitespace-nowrap">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-medium group-hover:bg-blue-100 group-hover:text-blue-700 transition-colors">
+                                {row.time}
+                            </span>
+                            </td>
+
+                            {/* SUBJECT */}
+                            <td class="p-4">
+                                <div class="font-bold text-slate-800 text-base">
+                                    {row.subject}
+                                </div>
+                                {row.room && (
+                                        <div class="flex items-center gap-1.5 text-xs text-slate-500 mt-1">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                            Кабінет: <span class="font-medium text-slate-700">{row.room}</span>
+                                        </div>
+                                )}
+                            </td>
+
+                            {/* TEACHER */}
+                            {showTeacher && (
+                                    <td class="p-4 text-slate-600 font-medium">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center text-[10px] text-slate-400 border border-slate-200">
+                                                👤
+                                            </div>
+                                            {row.teacher}
+                                        </div>
+                                    </td>
+                            )}
+
+                            {/* GROUP */}
+                            {showGroup && (
+                                    <td class="p-4">
+                                        <span class="text-slate-600 font-medium">{row.group}</span>
+                                    </td>
+                            )}
+                        </tr>
+                ))}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

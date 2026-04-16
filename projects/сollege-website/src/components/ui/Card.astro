@@ -1,0 +1,55 @@
+---
+// components/ui/Card.astro
+export interface Props {
+    title?: string;
+    icon?: string;
+    links?: { label: string; href: string }[];
+    class?: string;
+    hover?: boolean;
+}
+
+const {
+    title,
+    icon,
+    links = [],
+    class: className = "",
+    hover = true
+} = Astro.props;
+
+const base = "bg-white border border-slate-200 rounded-2xl p-6 h-full flex flex-col";
+const hoverClass = hover ? "transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 hover:border-blue-200" : "";
+---
+
+<div class={`${base} ${hoverClass} ${className}`}>
+    {icon && (
+            <div class="mb-4">
+                <img src={icon} alt={title} class="w-12 h-12 object-contain" />
+            </div>
+    )}
+
+    {title && (
+            <h2 class="text-xl font-bold text-slate-800 mb-4 tracking-tight">
+                {title}
+            </h2>
+    )}
+
+    <ul class="space-y-2 flex-grow">
+        {links.map((link) => (
+                <li>
+                    <a
+                            href={link.href}
+                            class="group flex items-center text-slate-600 hover:text-blue-600 transition-colors py-1"
+                    >
+                    <span class="mr-2 opacity-0 group-hover:opacity-100 transition-opacity text-blue-500">
+                        →
+                    </span>
+                        <span class="border-b border-transparent group-hover:border-blue-100">
+                        {link.label}
+                    </span>
+                    </a>
+                </li>
+        ))}
+    </ul>
+
+    <slot />
+</div>

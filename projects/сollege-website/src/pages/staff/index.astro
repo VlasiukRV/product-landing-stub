@@ -1,0 +1,22 @@
+---
+import PageLayout from "../../layouts/PageLayout.astro";
+import StaffGrid from "../../components/blocks/StaffGrid.astro";
+import { staff } from "../../data/staff";
+---
+
+<PageLayout
+        breadcrumbs={[
+            { label: "Педагогічний колектив" }
+        ]}
+>
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <header class="mb-12">
+            <h1 class="text-4xl font-black text-slate-900 tracking-tight">Наші викладачі</h1>
+            <p class="text-slate-500 mt-4 text-lg max-w-2xl">
+                Команда професіоналів, які передають досвід та знання новому поколінню фахівців.
+            </p>
+        </header>
+
+        <StaffGrid staff={staff} showFilters={true} />
+    </div>
+</PageLayout>

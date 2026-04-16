@@ -1,0 +1,77 @@
+---
+interface FileItem {
+    name: string;
+    url: string;
+    size?: string;
+    type?: 'pdf' | 'doc' | 'xls' | 'zip' | 'link';
+}
+
+const { files = [], title } = Astro.props;
+
+// Функція для автоматичного визначення іконки та кольору
+const getFileData = (fileName: string, type?: string) => {
+    const extension = type || fileName.split('.').pop()?.toLowerCase();
+
+    const config = {
+        pdf: { icon: "📕", color: "bg-red-50 text-red-600 border-red-100", label: "PDF" },
+        doc: { icon: "📘", color: "bg-blue-50 text-blue-600 border-blue-100", label: "Word" },
+        docx: { icon: "📘", color: "bg-blue-50 text-blue-600 border-blue-100", label: "Word" },
+        xls: { icon: "📗", color: "bg-emerald-50 text-emerald-600 border-emerald-100", label: "Excel" },
+        xlsx: { icon: "📗", color: "bg-emerald-50 text-emerald-600 border-emerald-100", label: "Excel" },
+        zip: { icon: "📦", color: "bg-amber-50 text-amber-600 border-amber-100", label: "ZIP" },
+        link: { icon: "🔗", color: "bg-indigo-50 text-indigo-600 border-indigo-100", label: "Link" }
+    };
+
+    return config[extension as keyof typeof config] || { icon: "📄", color: "bg-slate-50 text-slate-600 border-slate-100", label: "Файл" };
+};
+---
+
+<div class="w-full space-y-4">
+    {title && (
+            <h3 class="text-sm font-black uppercase tracking-[0.15em] text-slate-400 mb-6 flex items-center gap-3">
+                {title}
+                <span class="flex-1 h-px bg-slate-100"></span>
+            </h3>
+    )}
+
+    <div class="grid grid-cols-1 gap-3">
+        {files.map((file) => {
+            const meta = getFileData(file.url, file.type);
+            return (
+                    <a
+                            href={file.url}
+                            target="_blank"
+                            class="group flex items-center justify-between p-4 bg-white border border-slate-100 rounded-2xl hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-0.5 transition-all duration-300"
+                    >
+                        <div class="flex items-center gap-4 min-w-0">
+                            <div class={`w-12 h-12 rounded-xl flex items-center justify-center text-xl border transition-colors ${meta.color}`}>
+                                {meta.icon}
+                            </div>
+
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors">
+                                    {file.name}
+                                </h4>
+                                <div class="flex items-center gap-3 mt-1">
+                                    <span class="text-[10px] font-black uppercase tracking-widest opacity-50">{meta.label}</span>
+                                    {file.size && (
+                                            <span class="text-[10px] font-bold text-slate-400 flex items-center gap-1">
+                                        <span class="w-1 h-1 rounded-full bg-slate-200"></span>
+                                                {file.size}
+                                    </span>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-50 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4" class="hidden" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </div>
+                    </a>
+            );
+        })}
+    </div>
+</div>

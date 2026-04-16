@@ -1,0 +1,96 @@
+---
+// components/layout/Footer.astro
+
+const year = new Date().getFullYear();
+
+const links = [
+    {
+        title: "Навігація",
+        items: [
+            { label: "Головна", href: "/" },
+            { label: "Розклад занять", href: "/schedule" },
+            { label: "Педагогічний склад", href: "/staff" },
+            { label: "Новини та події", href: "/news" }
+        ]
+    },
+    {
+        title: "Студенту",
+        items: [
+            { label: "Професії", href: "/professions" },
+            { label: "Методична робота", href: "/methodical-cabinet" },
+            { label: "Виховна робота", href: "/education" },
+            { label: "Психолог та спорт", href: "/psychology" }
+        ]
+    },
+    {
+        title: "Документи",
+        items: [
+            { label: "Статут закладу", href: "/documents" },
+            { label: "Звіти директора", href: "/reports" },
+            { label: "Публічна інформація", href: "/public" },
+            { label: "Адміністрування", href: "/admin" }
+        ]
+    }
+];
+---
+
+<footer class="bg-[#0f172a] text-slate-400 mt-20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+
+            <div class="lg:col-span-2">
+                <a href="/" class="flex items-center gap-3 group mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/20 group-hover:bg-blue-500 transition-colors">
+                        Т
+                    </div>
+                    <span class="font-bold text-white tracking-tight text-xl">Технікум</span>
+                </a>
+                <p class="text-sm leading-relaxed max-w-xs text-slate-400">
+                    Сучасний освітній простір, що забезпечує якісну професійну підготовку та розвиток майбутніх спеціалістів у самому серці регіону.
+                </p>
+                <div class="mt-6 flex gap-4">
+                    <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all cursor-pointer">FB</div>
+                    <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all cursor-pointer">IG</div>
+                    <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all cursor-pointer">YT</div>
+                </div>
+            </div>
+
+            {links.map((group) => (
+                    <div>
+                        <h3 class="text-white font-bold uppercase tracking-widest text-[11px] mb-6">
+                            {group.title}
+                        </h3>
+                        <ul class="space-y-4">
+                            {group.items.map((item) => (
+                                    <li>
+                                        <a
+                                                href={item.href}
+                                                class="text-sm hover:text-blue-400 transition-colors duration-200 flex items-center group"
+                                        >
+                                            <span class="w-0 group-hover:w-2 h-[1px] bg-blue-400 mr-0 group-hover:mr-2 transition-all"></span>
+                                            {item.label}
+                                        </a>
+                                    </li>
+                            ))}
+                        </ul>
+                    </div>
+            ))}
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xs tracking-wide">
+                © {year} Ліцей сучасної освіти.
+                <span class="hidden sm:inline mx-2 text-slate-700">|</span>
+                Розроблено для майбутнього.
+            </div>
+
+            <div class="flex gap-8 text-xs font-medium">
+                <a href="/privacy" class="hover:text-white transition-colors">Конфіденційність</a>
+                <a href="/terms" class="hover:text-white transition-colors">Правила</a>
+                <a href="/sitemap" class="hover:text-white transition-colors">Мапа сайту</a>
+            </div>
+        </div>
+
+    </div>
+</footer>

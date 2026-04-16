@@ -1,0 +1,57 @@
+---
+// components/ui/Section.astro
+
+export interface Props {
+    title?: string;
+    subtitle?: string;
+    class?: string;
+    padding?: "sm" | "md" | "lg" | "xl";
+    centered?: boolean;
+}
+
+const {
+    title,
+    subtitle,
+    class: className = "",
+    padding = "lg",
+    centered = false
+} = Astro.props;
+
+const paddingMap = {
+    sm: "py-6",
+    md: "py-10",
+    lg: "py-16",
+    xl: "py-24"
+};
+
+const containerAlign = centered ? "text-center" : "";
+
+const base = `w-full ${paddingMap[padding]} ${containerAlign}`;
+const classes = `${base} ${className}`;
+---
+
+<section class={classes}>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {(title || subtitle) && (
+                <div class={`mb-8 ${centered ? "text-center" : ""}`}>
+                    {title && (
+                            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                                {title}
+                            </h2>
+                    )}
+
+                    {subtitle && (
+                            <p class="mt-2 text-gray-600 text-sm sm:text-base max-w-2xl">
+                                {subtitle}
+                            </p>
+                    )}
+                </div>
+        )}
+
+        <div>
+            <slot />
+        </div>
+
+    </div>
+</section>

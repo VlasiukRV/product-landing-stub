@@ -39,12 +39,15 @@ docker build --target prod -t astro-prod:local .
 docker-compose up -d nginx-prod
 ````
 
-| Port  | Site Name          | Source Path                     |
-|-------|------------------|--------------------------------|
-| 8091  | Owl Solution      | /owl-solution                  |
-| 8092  | Dynamic UI        | /dynamic-ui-bridge             |
-| 8093  | Speech Translator | /real-time-speech-translator   |
-| 8094  | Vlasiuk.me        | /vlasiuk-me                    |
-| 8095  | TSB Enterprise    | /tsb-enterprise                |
-| 8096  | Olena Vlasiuk     | /olena-vlasiuk-me              |
-| 8097  | Auto Body Shop    | /auto-body-shop                |
+| Port | Site Name         | Source Path                    |
+|------|-------------------|--------------------------------|
+| 8091 | Owl Solution      | /owl-solution                  |
+| 8092 | Dynamic UI        | /dynamic-ui-bridge             |
+| 8093 | Speech Translator | /real-time-speech-translator   |
+| 8094 | Vlasiuk.me        | /vlasiuk-me                    |
+| 8095 | TSB Enterprise    | /tsb-enterprise                |
+| 8096 | Olena Vlasiuk     | /olena-vlasiuk-me              |
+| 8097 | Auto Body Shop    | /auto-body-shop                |
+| 8098 | Uptaget Co        | /uptarget-co                   |
+| 8099 | Roast Order       | /roast-order                   |
+| 8100 | Quick Test        | /quick-test                   |

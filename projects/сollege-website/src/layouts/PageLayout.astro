@@ -1,0 +1,21 @@
+---
+// src/layouts/PageLayout.astro
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/navigation/Breadcrumbs.astro";
+
+const { title, breadcrumbs } = Astro.props;
+---
+
+<BaseLayout>
+    <Fragment slot="title">{title}</Fragment>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <Breadcrumbs items={breadcrumbs} />
+
+        {title && (
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 border-b pb-4">{title}</h1>
+        )}
+
+        <slot />
+    </div>
+</BaseLayout>
