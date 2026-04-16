@@ -8,7 +8,7 @@ export const staff = [
         email: "director@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Директор ліцею, керівник вищої кваліфікаційної категорії.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/admin/durektor.jpg"
+        image: "/images/converted/durektor.jpg"
     },
     {
         id: "olena-shvets",
@@ -19,7 +19,7 @@ export const staff = [
         email: "shvets.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Організація навчально-виробничого процесу та координація практичної підготовки учнів.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/admin/%D0%A8%D0%B2%D0%B5%D1%86%D1%8C_%D0%9E.%D0%9C.22.jpg"
+        image: "/images/converted/Shvets_O.M.22.jpg"
     },
     {
         id: "valentyna-mikhalchuk",
@@ -30,7 +30,7 @@ export const staff = [
         email: "mikhalchuk.v@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Координація виховного процесу, організація дозвілля учнів та соціально-психологічний супровід.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/admin/%D0%9C%D1%96%D1%85%D0%B0%D0%BB%D1%8C%D1%87%D1%83%D0%BA_%D0%92.%D0%9C.1.JPG"
+        image: "/images/converted/Mikhalchuk_V.M.1.JPG"
     },
     {
         id: "kateryna-sobchuk",
@@ -41,7 +41,7 @@ export const staff = [
         email: "sobchuk.k@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Методичний супровід освітнього процесу, розробка навчальних планів та координація роботи викладачів.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/admin/metodust.jpg"
+        image: "/images/converted/metodust.jpg"
     },
     {
         id: "s-ismailova",
@@ -52,7 +52,7 @@ export const staff = [
         email: "ismailova.s@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Управління фінансовими операціями, бухгалтерський облік та фінансова звітність ліцею.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/admin/buhalter.jpg"
+        image: "/images/converted/buhalter.jpg"
     },
     {
         id: "m-tsykaliuk",
@@ -63,7 +63,7 @@ export const staff = [
         email: "tsykaliuk.m@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Керівництво майстрами виробничого навчання, організація практичної підготовки та матеріально-технічного забезпечення майстерень.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Ped.pracivnuku/%D0%A6%D0%B8%D0%BA%D0%B0%D0%BB%D1%8E%D0%BA_%D0%9C.%D0%92.1.jpg"
+        image: "/images/converted/Tsykaliuk_M.V.1.jpg"
     },
     {
         id: "o-ivasiuk",
@@ -74,7 +74,7 @@ export const staff = [
         email: "ivasiuk.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Забезпечення господарського обслуговування ліцею, контроль за станом приміщень та матеріально-технічне постачання.",
-        image: "http://bpl.kr.ua/images/news/2025/12_%D1%82%D1%80%D0%B0%D0%B2%D0%BD%D1%8F_%D0%9C%D1%96%D0%B6%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D0%B8%D0%B9_%D0%B4%D0%B5%D0%BD%D1%8C_%D0%B7%D0%B0%D1%85%D0%B8%D1%81%D1%82%D1%83_%D1%80%D0%BE%D1%81%D0%BB%D0%B8%D0%BD._/photo_2025-05-14_09-57-18.jpg"
+        image: "/images/converted/photo_2025-05-14_09-57-18.jpg"
     },
     {
         id: "yanina-prodan",
@@ -85,7 +85,7 @@ export const staff = [
         email: "prodan.y@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Спеціаліст з підготовки фахівців швейного напряму, викладач теоретичних основ професії 'Кравець'.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%9F%D1%80%D0%BE%D0%B4%D0%B0%D0%BD_%D0%AF.%D0%91_1.jpg"
+        image: "/images/converted/Prodan_Ia.B_1.jpg"
     },
     {
         id: "oksana-datsiuk",
@@ -96,7 +96,7 @@ export const staff = [
         email: "datsiuk.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач теоретичних дисциплін будівельного напряму, спеціаліст з підготовки штукатурів та лицювальників-плиточників.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%A1%D0%B5%D1%80%D0%B5%D0%B4%D0%B5%D0%BD%D0%BA%D0%BE_%D0%9E.%D0%92111.jpg"
+        image: "/images/converted/Seredenko_O.V111.jpg"
     },
     {
         id: "larysa-rovinska",
@@ -107,7 +107,7 @@ export const staff = [
         email: "rovinska.l@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач теоретичних дисциплін харчового напряму, спеціаліст з підготовки кухарів та кондитерів.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%A0%D0%BE%D0%B2%D1%96%D0%BD%D1%81%D1%8C%D0%BA%D0%B0_%D0%9B.%D0%90.1.jpg"
+        image: "/images/converted/Rovinska_L.A.1.jpg"
     },
     {
         id: "andrii-verba",
@@ -118,7 +118,7 @@ export const staff = [
         email: "verba.a@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач спеціальних дисциплін автотранспортного напряму, спеціаліст з підготовки водіїв категорії 'С', слюсарів та машиністів автомобільних кранів.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%92%D0%B5%D1%80%D0%B1%D0%B0_%D0%90.%D0%A4.1.JPG"
+        image: "/images/converted/Verba_A.F.1.JPG"
     },
     {
         id: "yurii-burlaka",
@@ -129,7 +129,7 @@ export const staff = [
         email: "burlaka.y@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач спеціальних дисциплін зі зварювальних технологій та керівник курсу 'Захист України'.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D1%83%D1%80%D0%BB%D0%B0%D0%BA%D0%B0_%D0%AE.%D0%9F.1.JPG"
+        image: "/images/converted/Burlaka_Iu.P.1.JPG"
     },
     {
         id: "oksana-baranovska",
@@ -140,7 +140,7 @@ export const staff = [
         email: "baranovska.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач природничих дисциплін, спеціаліст із викладання географії та біології.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D0%B0%D1%80%D0%B0%D0%BD%D0%BE%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%9E.%D0%9E.1.JPG"
+        image: "/images/converted/Baranovska_O.O.1.JPG"
     },
     {
         id: "denys-brovarchuk",
@@ -151,7 +151,7 @@ export const staff = [
         email: "brovarchuk.d@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач фізичного виховання, організатор спортивних секцій та заходів з популяризації здорового способу життя.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D1%80%D0%BE%D0%B2%D0%B0%D1%80%D1%87%D1%83%D0%BA_%D0%94.%D0%90.1.JPG"
+        image: "/images/converted/Brovarchuk_D.A.1.JPG"
     },
     {
         id: "anatolii-brovarchuk",
@@ -162,7 +162,7 @@ export const staff = [
         email: "brovarchuk.a@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач фізичного виховання з багаторічним досвідом, фахівець з фізичної підготовки та спортивно-масової роботи.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D1%80%D0%BE%D0%B2%D0%B0%D1%80%D1%87%D1%83%D0%BA_%D0%90.%D0%93.1.JPG"
+        image: "/images/converted/Brovarchuk_A.H.1.JPG"
     },
     {
         id: "oleksandr-bohachuk",
@@ -173,7 +173,7 @@ export const staff = [
         email: "bohachuk.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач гуманітарних дисциплін, спеціаліст з історії та основ громадянського суспільства.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D0%BE%D0%B3%D0%B0%D1%87%D1%83%D0%BA_%D0%9E.%D0%9E._1.jpg"
+        image: "/images/converted/Bohachuk_O.O._1.jpg"
     },
     {
         id: "anastasiia-kondratiuk",
@@ -184,7 +184,7 @@ export const staff = [
         email: "kondratiuk.a@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач історичних дисциплін, спеціаліст з висвітлення історико-культурної спадщини та суспільних процесів.",
-        image: "http://bpl.kr.ua/images/news/2024/1_VERESNJA/Onovlennja_foto/2.jpg"
+        image: "/images/converted/2.jpg"
     },
     {
         id: "valentyna-beznosiuk",
@@ -195,7 +195,7 @@ export const staff = [
         email: "beznosiuk.v@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач інформатики та сучасних технологій, спеціаліст з цифрової грамотності та інформаційно-комунікаційних систем.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D0%B5%D0%B7%D0%BD%D0%B5%D1%81%D1%8E%D0%BA_%D0%92.%D0%86.1.JPG"
+        image: "/images/converted/Beznesiuk_V.I.1.JPG"
     },
     {
         id: "maiia-bilokon",
@@ -206,7 +206,7 @@ export const staff = [
         email: "bilokon.m@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач філологічних дисциплін, спеціаліст із викладання англійської мови та світової літературної спадщини.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%91%D1%96%D0%BB%D0%BE%D0%BA%D0%BE%D0%BD%D1%8C_%D0%9C.%D0%A0.1.JPG"
+        image: "/images/converted/Bilokon_M.R.1.JPG"
     },
     {
         id: "volodymyr-honcharuk",
@@ -217,7 +217,7 @@ export const staff = [
         email: "honcharuk.v@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач філологічних дисциплін, спеціаліст із лінгвістичної підготовки та вивчення світової класичної літератури.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Vukladacyi/2.jpg"
+        image: "/images/converted/2.jpg"
     },
     {
         id: "iryna-mokruzhytska",
@@ -228,7 +228,7 @@ export const staff = [
         email: "mokruzhytska.i@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач філологічних дисциплін, спеціаліст із розвитку мовленнєвої культури та вивчення української літературної спадщини.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%9C%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B8%D1%86%D1%8C%D0%BA%D0%B0_%D0%86.%D0%92.1.jpg"
+        image: "/images/converted/Mokruzhytska_I.V.1.jpg"
     },
     {
         id: "yana-khanaieva",
@@ -239,7 +239,7 @@ export const staff = [
         email: "khanaieva.y@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач природничо-математичних дисциплін, спеціаліст із вивчення фізичних явищ та основ космології.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%A5%D0%B0%D0%BD%D0%B0%D1%94%D0%B2%D0%B0_%D0%AF.%D0%9C._1.jpg"
+        image: "/images/converted/Khanaieva_Ia.M._1.jpg"
     },
     {
         id: "yelyzaveta-zavadska",
@@ -250,7 +250,7 @@ export const staff = [
         email: "zavadska.y@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач математичних дисциплін, спеціаліст із алгебри, геометрії та розвитку логічного мислення у студентів.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/vukladachi/%D0%97%D0%B0%D0%B2%D0%B0%D0%B4%D1%81%D1%8C%D0%BA%D0%B0_%D0%84._%D0%86._1.jpg"
+        image: "/images/converted/Zavadska_Ie._I._1.jpg"
     },
     {
         id: "larysa-vasiuta",
@@ -261,7 +261,7 @@ export const staff = [
         email: "vasiuta.l@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач математичних дисциплін, спеціаліст з методики викладання математики та підготовки учнів до державного оцінювання.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Vukladacyi/1.jpg"
+        image: "/images/converted/1.jpg"
     },
     {
         id: "mykhailo-tsykaliuk",
@@ -272,7 +272,7 @@ export const staff = [
         email: "tsykaliuk.mv@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Викладач технологічної освіти, спеціаліст із формування проєктно-технологічних компетентностей та культури праці.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%A6%D0%B8%D0%BA%D0%B0%D0%BB%D1%8E%D0%BA_%D0%9C.%D0%92.1.JPG"
+        image: "/images/converted/Tsykaliuk_M.V.1.JPG"
     },
     {
         id: "serhii-chernovodskyi",
@@ -283,7 +283,7 @@ export const staff = [
         email: "chernovodskyi.s@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Штукатур; лицювальник-плиточник', фахівець з опоряджувальних робіт та сучасних технологій будівництва.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%A7%D0%BE%D1%80%D0%BD%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%8C%D0%BA%D0%B8%D0%B9_%D0%A1.%D0%9C.1.JPG"
+        image: "/images/converted/Chornovodskyi_S.M.1.JPG"
     },
     {
         id: "vitalii-kovalchuk",
@@ -294,7 +294,7 @@ export const staff = [
         email: "kovalchuk.v@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Штукатур; лицювальник-плиточник', експерт із підготовки фахівців у галузі внутрішнього та зовнішнього оздоблення приміщень.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%9A%D0%BE%D0%B2%D0%B0%D0%BB%D1%8C%D1%87%D1%83%D0%BA_%D0%92.%D0%9E.1.JPG"
+        image: "/images/converted/Kovalchuk_V.O.1.JPG"
     },
     {
         id: "oleksandr-lohoida",
@@ -305,7 +305,7 @@ export const staff = [
         email: "lohoida.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Штукатур; лицювальник-плиточник', спеціаліст із практичної підготовки кваліфікованих робітників будівельного профілю.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Majstru/3.jpg"
+        image: "/images/converted/3.jpg"
     },
     {
         id: "anatolii-drahanets",
@@ -316,7 +316,7 @@ export const staff = [
         email: "drahanets.a@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Слюсар з ремонту колісних транспортних засобів; водій категорії С; машиніст крана автомобільного', експерт з експлуатації та обслуговування автотранспорту і спецтехніки.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%94%D1%80%D0%B0%D0%B3%D0%B0%D0%BD%D0%B5%D1%86%D1%8C_%D0%90.%D0%90.1.JPG"
+        image: "/images/converted/Drahanets_A.A.1.JPG"
     },
     {
         id: "oleksandr-kolesnik",
@@ -327,7 +327,7 @@ export const staff = [
         email: "kolesnik.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Слюсар з ремонту колісних транспортних засобів; водій категорії С; машиніст крана автомобільного', спеціаліст із технічного сервісу та підготовки операторів важкої спецтехніки.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BD%D1%96%D0%BA_%D0%9E.%D0%90.1.jpg"
+        image: "/images/converted/Kolesnik_O.A.1.jpg"
     },
     {
         id: "nadiia-chuprun",
@@ -338,7 +338,7 @@ export const staff = [
         email: "chuprun.n@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кухар-кондитер', експерт із кулінарного мистецтва та технології приготування кондитерських виробів.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%A7%D1%83%D0%BF%D1%80%D1%83%D0%BD_%D0%9D.%D0%A4.1.JPG"
+        image: "/images/converted/Chuprun_N.F.1.JPG"
     },
     {
         id: "maryna-pisetska",
@@ -349,7 +349,7 @@ export const staff = [
         email: "pisetska.m@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кухар-кондитер', спеціаліст із гастрономічного дизайну та сучасних технологій харчової промисловості.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%9F%D1%96%D1%81%D0%B5%D1%86%D1%8C%D0%BA%D0%B0_%D0%9C.%D0%92.1.jpg"
+        image: "/images/converted/Pisetska_M.V.1.jpg"
     },
     {
         id: "oksana-batrak",
@@ -360,7 +360,7 @@ export const staff = [
         email: "batrak.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кухар-кондитер', спеціаліст із технології ресторанного господарства та майстерності оформлення страв.",
-        image: "http://bpl.kr.ua/images/news/2024/1_VERESNJA/Onovlennja_foto/4.jpg"
+        image: "/images/converted/4.jpg"
     },
     {
         id: "iryna-denysenko",
@@ -371,7 +371,7 @@ export const staff = [
         email: "denysenko.i@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кухар-кондитер', фахівець із практичної підготовки кадрів для сфери громадського харчування та кондитерського виробництва.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%94%D0%B5%D0%BD%D0%B8%D1%81%D0%B5%D0%BD%D0%BA%D0%BE_%D0%86.%D0%90.1.JPG"
+        image: "/images/converted/Denysenko_I.A.1.JPG"
     },
     {
         id: "anna-chernovodska",
@@ -382,7 +382,7 @@ export const staff = [
         email: "chernovodska.a@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кухар-кондитер', фахівець із кулінарної майстерності та підготовки кваліфікованих кадрів для ресторанної галузі.",
-        image: "http://bpl.kr.ua/images/news/2024/1_VERESNJA/%D0%A6%D0%B5%D0%BD%D1%82%D1%80_%D0%BA%D0%B0%D1%80%D1%94%D1%80%D0%B8/65.jpg"
+        image: "/images/converted/65.jpg"
     },
     {
         id: "hanna-temitska",
@@ -393,7 +393,7 @@ export const staff = [
         email: "temitska.h@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кравець', спеціаліст із моделювання, конструювання та технології виготовлення одягу.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%A2%D0%B5%D0%BC%D1%96%D1%86%D1%8C%D0%BA%D0%B0_%D0%93.%D0%9C.1.jpg"
+        image: "/images/converted/Temitska_H.M.1.jpg"
     },
     {
         id: "liudmyla-horiachkivska",
@@ -404,7 +404,7 @@ export const staff = [
         email: "horiachkivska.l@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Кравець', спеціаліст із технології швейного виробництва та майстерності пошиття виробів різної складності.",
-        image: "http://bpl.kr.ua/images/pedpracivnuku/maistru/%D0%93%D0%BE%D1%80%D1%8F%D1%87%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0_%D0%9B.%D0%9E.1.jpg"
+        image: "/images/converted/Horiachkivska_L.O.1.jpg"
     },
     {
         id: "serhii-diachok",
@@ -415,7 +415,7 @@ export const staff = [
         email: "diachok.s@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Електрогазозварник', фахівець із технології зварювання металів та підготовки кваліфікованих робітників для промислового сектору.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Majstru/1.jpg"
+        image: "/images/converted/1.jpg"
     },
     {
         id: "oleksandr-kozhukhivskyi",
@@ -426,7 +426,7 @@ export const staff = [
         email: "kozhukhivskyi.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Майстер виробничого навчання з професії 'Електрогазозварник', спеціаліст із дугового та газового зварювання, а також техніки безпеки при виконанні зварювальних робіт.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Majstru/2.jpg"
+        image: "/images/converted/2.jpg"
     },
 
     {
@@ -438,7 +438,7 @@ export const staff = [
         email: "verovenko.y@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Спеціаліст із психологічного супроводу освітнього процесу, соціальної адаптації студентів та надання консультативної допомоги.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Ped.pracivnuku/1.jpg"
+        image: "/images/converted/1.jpg"
     },
     {
         id: "svitlana-drahanets",
@@ -449,7 +449,7 @@ export const staff = [
         email: "drahanets.s@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Спеціаліст із організації змістовного дозвілля здобувачів освіти, розвитку творчих здібностей та координації роботи гуртків художньо-естетичного та технічного напрямків.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Ped.pracivnuku/2.jpg"
+        image: "/images/converted/2.jpg"
     },
     {
         id: "oleksandr-rovinskyi",
@@ -460,7 +460,7 @@ export const staff = [
         email: "rovinskyi.o@example.com",
         phone: "+38 (0XX) XXX-XX-XX",
         bio: "Спеціаліст із виховної роботи та організації гурткової діяльності, спрямованої на розвиток індивідуальних талантів і творчого потенціалу молоді.",
-        image: "http://bpl.kr.ua/images/news/2023/1_veresnja/ONOVLENI_FOTO/Ped.pracivnuku/3.jpg"
+        image: "/images/converted/3.jpg"
     }
 ];
 
