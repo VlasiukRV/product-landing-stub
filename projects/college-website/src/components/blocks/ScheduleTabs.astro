@@ -1,15 +1,14 @@
 ---
 // src/components/blocks/ScheduleTabs.astro
-import ScheduleTable from "./ScheduleTable.astro";
 const { days, schedule } = Astro.props;
 ---
 
 <div class="w-full" id="schedule-container">
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-        <div id="tabs-nav" class="flex flex-wrap gap-2 p-1 bg-slate-100/80 rounded-2xl w-fit">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+        <div id="tabs-nav" class="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl w-fit border border-slate-200/50">
             {days.map((day, index) => (
                     <button
-                            class="px-6 py-2.5 text-sm font-bold rounded-xl transition-all duration-200 data-[active=true]:bg-white data-[active=true]:text-blue-600 data-[active=true]:shadow-sm text-slate-500 hover:text-slate-800"
+                            class="px-6 py-2.5 text-xs font-black uppercase tracking-widest rounded-xl transition-all duration-300 data-[active=true]:bg-white data-[active=true]:text-blue-600 data-[active=true]:shadow-sm text-slate-500 hover:text-slate-800"
                             data-tab-btn={day.key}
                             data-active={index === 0 ? "true" : "false"}
                     >
@@ -20,93 +19,181 @@ const { days, schedule } = Astro.props;
 
         <button
                 id="toggle-view"
-                class="flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-700 hover:bg-slate-50 hover:border-blue-200 transition-all shadow-sm"
+                class="flex items-center gap-3 px-6 py-3 bg-white border-2 border-slate-900 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 hover:text-white transition-all shadow-lg shadow-slate-100"
         >
-            <span id="toggle-icon">📋</span>
-            <span id="toggle-text">Показати весь тиждень</span>
+            <span id="toggle-icon">📅</span>
+            <span id="toggle-text">Весь тиждень</span>
         </button>
     </div>
 
-    <div id="view-tabs" class="block">
-        <div class="relative">
-            {days.map((day, index) => (
-                    <div
-                            data-tab={day.key}
-                            class:list={["transition-all duration-300", index === 0 ? "block opacity-100" : "hidden opacity-0"]}
-                    >
-                        <ScheduleTable
-                                schedule={schedule?.[day.key] || []}
-                                showTeacher={true}
-                                title={day.label}
-                        />
+    <div id="schedule-content">
+        {days.map((day, index) => (
+                <div
+                        data-day-section={day.key}
+                        class:list={[
+                            "space-y-4 transition-all duration-500",
+                            index === 0 ? "block opacity-100" : "hidden opacity-0 translate-y-4"
+                        ]}
+                >
+                    <div class="full-view-header hidden items-center gap-4 mb-8 mt-12">
+                        <h3 class="text-xl font-black uppercase italic text-slate-900">{day.label}</h3>
+                        <div class="h-px flex-1 bg-slate-200"></div>
                     </div>
-            ))}
-        </div>
-    </div>
 
-    <div id="view-full" class="hidden space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        {days.map((day) => (
-                <ScheduleTable
-                        schedule={schedule?.[day.key] || []}
-                        showTeacher={true}
-                        title={day.label}
-                />
+                    <div class="relative space-y-4 pl-4 md:pl-0">
+                        <div class="absolute left-0 md:left-24 top-0 bottom-0 w-px bg-slate-200 hidden md:block"></div>
+
+                        {schedule?.[day.key]?.map((lesson, idx) => {
+                            // Безпечне розбиття часу
+                            const timeParts = lesson.time ? lesson.time.replace('—', '-').split('-') : ["", ""];
+                            const start = timeParts[0]?.trim() || "";
+                            const end = timeParts[1]?.trim() || "";
+
+                            return (
+                                    <div class="relative flex flex-col md:flex-row gap-4 md:gap-12 group lesson-item"
+                                         data-lesson-day={day.key}
+                                         data-start={start}
+                                         data-end={end}
+                                    >
+                                        <div class="md:w-24 shrink-0 pt-1">
+                                            <div class="text-[10px] font-black uppercase text-slate-400 tracking-tighter mb-1">Пара {lesson.number || idx + 1}</div>
+                                            <div class="text-sm font-black text-slate-900 tabular-nums leading-none">
+                                                {start || "08:30"}
+                                            </div>
+                                            <div class="text-[10px] font-bold text-slate-400 mt-1">
+                                                {end || "09:50"}
+                                            </div>
+                                        </div>
+
+                                        <div class="absolute left-[95px] top-3 w-2.5 h-2.5 rounded-full border-2 border-blue-600 bg-white z-10 hidden md:block transition-all duration-500 status-dot">
+                                            <div class="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-0 status-ping pointer-events-none"></div>
+                                        </div>
+
+                                        <div class="flex-1 bg-white border border-slate-100 rounded-3xl p-5 md:p-6 shadow-sm lesson-card transition-all flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                            <div class="space-y-1">
+                                                <div class="flex items-center gap-2 mb-1">
+                                                <span class="text-[9px] font-black uppercase px-2 py-0.5 bg-slate-100 rounded text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors">
+                                                    {lesson.type || "Заняття"}
+                                                </span>
+                                                </div>
+                                                <h4 class="text-base font-black text-slate-800 leading-snug italic">
+                                                    {lesson.subject}
+                                                </h4>
+                                                <p class="text-xs font-bold text-slate-400 flex items-center gap-1">
+                                                    👤 {lesson.teacher}
+                                                </p>
+                                            </div>
+
+                                            <div class="flex items-center gap-4 md:text-right shrink-0 border-t md:border-t-0 pt-4 md:pt-0 border-slate-50">
+                                                <div>
+                                                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Аудиторія</p>
+                                                    <div class="text-lg font-black text-blue-600 leading-none">
+                                                        {lesson.room}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            );
+                        })}
+                    </div>
+                </div>
         ))}
     </div>
 </div>
 
 <script is:inline>
-    const container = document.getElementById('schedule-container');
+    // Ініціалізація елементів
     const toggleBtn = document.getElementById('toggle-view');
     const toggleText = document.getElementById('toggle-text');
     const tabsNav = document.getElementById('tabs-nav');
-    const viewTabs = document.getElementById('view-tabs');
-    const viewFull = document.getElementById('view-full');
+    const daySections = document.querySelectorAll('[data-day-section]');
+    const tabButtons = document.querySelectorAll("[data-tab-btn]");
 
-    const buttons = document.querySelectorAll("[data-tab-btn]");
-    const tabs = document.querySelectorAll("[data-tab]");
+    let isFullView = false;
 
-    // 1. Логіка перемикання табів
-    buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const key = btn.dataset.tabBtn;
+    // Логіка перемикання табів та режимів
+    function updateDisplay(activeKey) {
+        daySections.forEach(section => {
+            const isTarget = section.dataset.daySection === activeKey;
+            const headers = section.querySelectorAll('.full-view-header');
 
-            tabs.forEach((t) => {
-                t.classList.add("hidden", "opacity-0");
-                t.classList.remove("block", "opacity-100");
-            });
-
-            buttons.forEach((b) => b.setAttribute("data-active", "false"));
-            btn.setAttribute("data-active", "true");
-
-            const activeTab = document.querySelector(`[data-tab='${key}']`);
-            if (activeTab) {
-                activeTab.classList.remove("hidden");
-                setTimeout(() => {
-                    activeTab.classList.add("opacity-100", "block");
-                }, 10);
+            if (isFullView) {
+                section.classList.remove('hidden', 'opacity-0', 'translate-y-4');
+                section.classList.add('block', 'opacity-100', 'translate-y-0');
+                headers.forEach(h => { h.classList.remove('hidden'); h.classList.add('flex'); });
+            } else {
+                headers.forEach(h => { h.classList.remove('flex'); h.classList.add('hidden'); });
+                if (isTarget) {
+                    section.classList.remove('hidden');
+                    // Force reflow для анімації
+                    section.offsetHeight;
+                    section.classList.add('block', 'opacity-100', 'translate-y-0');
+                } else {
+                    section.classList.add('hidden', 'opacity-0', 'translate-y-4');
+                    section.classList.remove('block', 'opacity-100', 'translate-y-0');
+                }
             }
+        });
+    }
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (isFullView) return;
+            tabButtons.forEach(b => b.setAttribute('data-active', 'false'));
+            btn.setAttribute('data-active', 'true');
+            updateDisplay(btn.dataset.tabBtn);
         });
     });
 
-    // 2. Логіка перемикання режимів (Таби / Весь список)
-    let isFullView = false;
-
-    toggleBtn.addEventListener("click", () => {
+    toggleBtn?.addEventListener('click', () => {
         isFullView = !isFullView;
-
         if (isFullView) {
-            viewTabs.classList.replace("block", "hidden");
-            viewFull.classList.replace("hidden", "block");
-            tabsNav.classList.add("pointer-events-none", "opacity-30", "grayscale");
-            toggleText.textContent = "Показати окремо по днях";
-            toggleBtn.classList.add("bg-blue-50", "border-blue-200", "text-blue-600");
+            tabsNav?.classList.add('opacity-30', 'pointer-events-none');
+            if (toggleText) toggleText.textContent = "По днях";
+            updateDisplay();
         } else {
-            viewTabs.classList.replace("hidden", "block");
-            viewFull.classList.replace("block", "hidden");
-            tabsNav.classList.remove("pointer-events-none", "opacity-30", "grayscale");
-            toggleText.textContent = "Показати весь тиждень";
-            toggleBtn.classList.remove("bg-blue-50", "border-blue-200", "text-blue-600");
+            tabsNav?.classList.remove('opacity-30', 'pointer-events-none');
+            if (toggleText) toggleText.textContent = "Весь тиждень";
+            const activeBtn = document.querySelector('[data-tab-btn][data-active="true"]');
+            updateDisplay(activeBtn?.dataset.tabBtn);
         }
     });
+
+    // Функція підсвітки активної пари
+    function updateCurrentLesson() {
+        const now = new Date();
+        const daysArray = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+        const currentDayKey = daysArray[now.getDay()];
+        const currentTime = now.getHours().toString().padStart(2, '0') + ':' +
+            now.getMinutes().toString().padStart(2, '0');
+
+        document.querySelectorAll('.lesson-item').forEach(item => {
+            const start = item.dataset.start;
+            const end = item.dataset.end;
+            const day = item.dataset.lessonDay;
+
+            const card = item.querySelector('.lesson-card');
+            const dot = item.querySelector('.status-dot');
+            const ping = item.querySelector('.status-ping');
+
+            if (!card || !dot || !ping) return;
+
+            // Скидання
+            card.classList.remove('border-blue-500', 'shadow-xl', 'shadow-blue-50', 'bg-blue-50/20');
+            dot.classList.remove('bg-blue-600', 'scale-125');
+            ping.classList.add('opacity-0');
+
+            // Перевірка (тільки якщо є дані про час)
+            if (day === currentDayKey && start && end && currentTime >= start && currentTime <= end) {
+                card.classList.add('border-blue-500', 'shadow-xl', 'shadow-blue-50', 'bg-blue-50/20');
+                dot.classList.add('bg-blue-600', 'scale-125');
+                ping.classList.remove('opacity-0');
+            }
+        });
+    }
+
+    // Запуск
+    updateCurrentLesson();
+    setInterval(updateCurrentLesson, 60000);
 </script>

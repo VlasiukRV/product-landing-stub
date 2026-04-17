@@ -13,7 +13,6 @@ import fbNews from "../data/fb-news.json";
 import GridLinks from "../components/blocks/GridLinks.astro";
 
 const links = [
-    { title: "Абітурієнту", href: "/admission" },
     { title: "Викладачі", href: "/staff" },
     { title: "Розклад", href: "/schedule" },
     { title: "Контакти", href: "/contacts" }
@@ -27,12 +26,35 @@ const links = [
     />
 
     <div class="max-w-6xl mx-auto px-4 py-10 space-y-10">
+
         <section class="py-12">
-            <div class="col-span-full">
-                <h2 class="text-3xl font-bold text-slate-800 mb-2">Швидкий доступ</h2>
-                <div class="w-20 h-1.5 bg-blue-600 rounded-full mb-8"></div>
+            <div class="mb-12">
+                <h2 class="text-3xl font-black text-slate-900 uppercase italic">Корисні посилання</h2>
+                <div class="w-20 h-1.5 bg-blue-600 rounded-full mt-2"></div>
             </div>
-            <QuickLinks links={links} />
+            <GridLinks
+                    columns={3}
+                    items={[
+                        {
+                            title: "Абітурієнту",
+                            href: "/admission",
+                            description: "Все про вступну кампанію 2026: професії, умови прийому та необхідні документи.",
+                            icon: "🎓"
+                        },
+                        {
+                            title: "Сторінка директора",
+                            href: "/director",
+                            description: "Вітальне слово керівника, стратегія розвитку ліцею та зворотний зв'язок.",
+                            icon: "💼"
+                        },
+                        {
+                            title: "Методичний кабінет",
+                            href: "/methodical-cabinet",
+                            description: "Цифрова база для педагогів: освітні програми, плани роботи та творчі лабораторії.",
+                            icon: "🏛️"
+                        }
+                    ]}
+            />
         </section>
 
         <section class="py-12">
@@ -80,24 +102,12 @@ const links = [
         </section>
 
         <section class="py-12">
-            <GridLinks
-                    title="Корисні посилання"
-                    columns={3}
-                    items={[
-                        {
-                            title: "Сторінка дирекктора",
-                            href: "/director",
-                            description: "Керівництво та управління",
-                            icon: "👨‍🏫"
-                        },
-                        {
-                            title: "Методичний кабінет",
-                            href: "/methodical-cabinet",
-                            description: "Скоро буде доступно",
-                            icon: "📚"
-                        }
-                    ]}
-            />
+            <div class="mb-12">
+                <h2 class="text-3xl font-black text-slate-900 uppercase italic">Швидкий доступ</h2>
+                <div class="w-20 h-1.5 bg-blue-600 rounded-full mt-2"></div>
+            </div>
+            <QuickLinks links={links} />
         </section>
+
     </div>
 </BaseLayout>

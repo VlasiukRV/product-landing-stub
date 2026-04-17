@@ -13,7 +13,15 @@ const nav = [
         label: "Навчання",
         children: [
             {label: "Професії", href: "/professions"},
-            {label: "Методична робота", href: "/methodical-work"}
+            {label: "Методична робота",
+                children: [
+                    {label: "Освітній простір", href: "/methodical-work"},
+                    {label: "Методичний кабінет", href: "/methodical-cabinet"},
+                    {label: "Методичні комісії", href: "/methodical-commissions"},
+                    {label: "Школи професійної майстерності", href: "/methodical-prof-schools"},
+                    {label: "Творчі лабораторії", href: "/methodical-creative-labs"}
+                ]
+            }
         ]
     },
     {
@@ -26,32 +34,43 @@ const nav = [
             {label: "Розклад", href: "/schedule"}
         ]
     },
-
     {label: "Контакти", href: "/contacts"}
 ];
 ---
 
-<header class="w-full border-b bg-white sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">БПЛ</div>
-            <span class="font-bold text-gray-900">Благовіщенський професійний ліцей</span>
+<header class="w-full border-b border-slate-100 bg-white/80 backdrop-blur-xl sticky top-0 z-[100] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-4 group">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white font-black shadow-lg shadow-blue-200 group-hover:scale-105 transition-transform italic">
+                БПЛ
+            </div>
+            <div class="flex flex-col">
+                <span class="font-black text-slate-900 leading-none uppercase tracking-tighter text-sm md:text-base italic">Благовіщенський</span>
+                <span class="text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em] leading-none mt-1">Професійний ліцей</span>
+            </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-6">
+        <nav class="hidden md:flex items-center gap-2">
             {nav.map(item => (
-                    <NavEntry item={item} />
+                    <div class="px-2">
+                        <NavEntry item={item} />
+                    </div>
             ))}
         </nav>
 
-        <div class="flex items-center gap-3">
-            <a href="/admin" class="hidden sm:inline-flex text-sm px-3 py-1.5 rounded-md border hover:bg-gray-100">Адмінка</a>
-            <button id="menuBtn" class="md:hidden p-2 rounded-md border">☰</button>
+        <div class="flex items-center gap-4">
+            <a href="/admin" class="hidden sm:inline-flex text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-xl border-2 border-slate-100 hover:border-blue-600 hover:text-blue-600 transition-all">
+                Адмін
+            </a>
+
+            <button id="menuBtn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-200 text-slate-900">
+                <span class="text-xl">☰</span>
+            </button>
         </div>
     </div>
 
-    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
-        <div class="px-6 py-4 flex flex-col gap-2">
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white animate-in slide-in-from-top duration-300">
+        <div class="px-6 py-8 flex flex-col gap-4">
             {nav.map(item => (
                     <NavEntry item={item} isMobile={true} />
             ))}
@@ -62,5 +81,28 @@ const nav = [
 <script>
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
+
+    menuBtn?.addEventListener('click', () => {
+        const isHidden = mobileMenu?.classList.toggle('hidden');
+        // Можна додати зміну іконки ☰ на ✕
+        menuBtn.innerHTML = isHidden ? '<span class="text-xl">☰</span>' : '<span class="text-xl">✕</span>';
+    });
+
+    // Скрипт для зміни висоти хедера при скролі (опціонально)
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header?.classList.remove('h-20');
+            header?.classList.add('shadow-lg', 'shadow-slate-200/50');
+        } else {
+            header?.classList.remove('shadow-lg', 'shadow-slate-200/50');
+        }
+    });
 </script>
+
+<style is:global>
+    /* Стилізація NavEntry всередині хедера */
+    header nav .nav-link {
+        @apply text-sm font-bold text-slate-600 hover:text-blue-600 px-3 py-2 rounded-lg transition-colors italic;
+    }
+</style>

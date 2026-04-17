@@ -96,12 +96,12 @@ const atestationYears = [
 
             <aside class="lg:col-span-3 hidden lg:block">
                 <div class="sticky top-24 bg-white p-6 rounded-[2rem] shadow-xl border border-slate-100">
-                    <nav class="space-y-2">
-                        <a href="#digest" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">🗞️ Дайджест</a>
-                        <a href="#treasure" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">💎 Скарбниця</a>
-                        <a href="#plans" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">📅 Плани роботи</a>
-                        <a href="#atestation" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">🎖️ Атестація</a>
-                        <a href="#qualification" class="block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">📈 Кваліфікація</a>
+                    <nav id="scroll-nav" class="space-y-2">
+                        <a href="#digest" class="nav-link block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">🗞️ Дайджест</a>
+                        <a href="#treasure" class="nav-link block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">💎 Скарбниця</a>
+                        <a href="#plans" class="nav-link block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">📅 Плани роботи</a>
+                        <a href="#atestation" class="nav-link block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">🎖️ Атестація</a>
+                        <a href="#qualification" class="nav-link block px-4 py-3 rounded-xl hover:bg-slate-50 font-bold text-slate-700 hover:text-blue-600 transition-all">📈 Кваліфікація</a>
                     </nav>
                 </div>
             </aside>
@@ -304,3 +304,36 @@ const atestationYears = [
         display: none;
     }
 </style>
+
+<script>
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+
+            if (entry.isIntersecting) {
+
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('bg-blue-50', 'text-blue-600');
+                    link.classList.add('text-slate-700');
+                });
+
+                if (navLink) {
+                    navLink.classList.add('bg-blue-50', 'text-blue-600');
+                    navLink.classList.remove('text-slate-700');
+                }
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section[id]').forEach((section) => {
+        observer.observe(section);
+    });
+</script>

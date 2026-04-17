@@ -101,111 +101,179 @@ const commissions = [
 
 <PageLayout breadcrumbs={[{label: "Методична робота", href: "/methodical-work"}, {label: "Склад МК"}]}>
 
-    <section class="max-w-7xl mx-auto px-6 py-16">
-        <div class="mb-16">
-            <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight uppercase italic mb-6">
-                Методичні <span class="text-blue-600">комісії</span>
+    <section class="bg-slate-900 pt-20 pb-48 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-blue-600/10 blur-3xl rounded-full translate-y-1/2"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-black mb-8 uppercase italic tracking-tight leading-tight">
+                Склад методичних <span class="text-blue-500 text-shadow-glow">комісій</span>
             </h1>
-            <p class="text-xl text-slate-600 max-w-3xl">
-                Структурні підрозділи ліцею, що забезпечують професійний розвиток педагогів та впровадження інноваційних технологій у навчання.
+            <p class="text-slate-400 max-w-2xl text-lg leading-relaxed">
+                Професійні об'єднання педагогів ліцею, що працюють над впровадженням цифрових технологій та підвищенням якості освіти.
             </p>
         </div>
+    </section>
 
-        <div class="space-y-24">
-            {commissions.map((comm) => (
-                    <section id={comm.id} class="scroll-mt-24 group">
-                        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b-4 border-slate-100 pb-8">
-                            <div class="max-w-3xl">
-              <span class="inline-block px-4 py-1 bg-blue-50 text-blue-600 rounded-lg text-xs font-black uppercase tracking-widest mb-4">
-                {comm.type}
-              </span>
-                                <h2 class="text-3xl md:text-4xl font-black text-slate-900 uppercase italic leading-tight">
-                                    Методична комісія "{comm.title}"
-                                </h2>
-                            </div>
-                            <div class="bg-slate-900 text-white p-6 rounded-2xl shadow-xl md:min-w-[300px]">
-                                <p class="text-[10px] uppercase text-slate-400 font-bold mb-1">Голова комісії</p>
-                                <p class="text-lg font-black leading-tight italic">{comm.head}</p>
-                            </div>
-                        </div>
+    <div class="max-w-7xl mx-auto px-6 -mt-24 relative z-20 pb-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-                            <div class="lg:col-span-1 space-y-8">
-                                <div class="p-8 bg-blue-600 rounded-[2rem] text-white shadow-lg shadow-blue-200">
-                                    <h3 class="text-xs uppercase font-black tracking-widest mb-4 opacity-80">Методична проблема</h3>
-                                    <p class="text-lg font-bold leading-snug italic">
-                                        «{comm.problem}»
-                                    </p>
+            <aside class="lg:col-span-3 hidden lg:block">
+                <div class="sticky top-24 space-y-4">
+                    <div class="bg-white p-6 rounded-[2.5rem] shadow-xl border border-slate-100">
+                        <p class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-6 px-4">Оберіть комісію:</p>
+                        <nav id="commissions-nav" class="space-y-1">
+                            {commissions.map((comm) => (
+                                    <a
+                                            href={`#${comm.id}`}
+                                            class="nav-link flex items-center gap-3 px-4 py-3 rounded-2xl font-bold text-slate-600 hover:bg-blue-50 hover:text-blue-600 transition-all group"
+                                    >
+                                        <span class="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-blue-600 transition-colors"></span>
+                                        <span class="text-sm italic">{comm.title.split(' ')[0]}...</span>
+                                    </a>
+                            ))}
+                        </nav>
+                    </div>
+
+                    <div class="bg-blue-600 p-8 rounded-[2.5rem] text-white shadow-lg shadow-blue-200 relative overflow-hidden group">
+                        <div class="absolute -right-4 -bottom-4 text-6xl opacity-10 group-hover:scale-110 transition-transform italic font-black">MK</div>
+                        <h4 class="text-xs font-black uppercase tracking-widest mb-2 opacity-80">Потрібна допомога?</h4>
+                        <p class="text-[11px] font-medium leading-relaxed opacity-90 italic">Зверніться до методичного кабінету для отримання консультацій щодо планування.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="lg:col-span-9 space-y-32">
+                {commissions.map((comm) => (
+                        <section id={comm.id} class="scroll-mt-32 group bg-white p-8 md:p-12 rounded-[2.5rem] shadow-soft border border-slate-100">
+                            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b-4 border-slate-100 pb-10">
+                                <div class="max-w-2xl">
+                                    <div class="flex items-center gap-3 mb-4">
+                                    <span class="px-4 py-1.5 bg-slate-900 text-white rounded-xl text-[10px] font-black uppercase tracking-[0.2em]">
+                                        {comm.type}
+                                    </span>
+                                    </div>
+                                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase italic leading-[0.9] tracking-tighter group-hover:text-blue-600 transition-colors">
+                                        {comm.title}
+                                    </h2>
                                 </div>
 
-                                <div>
-                                    <h3 class="font-black text-slate-900 uppercase italic mb-4">Напрями роботи:</h3>
-                                    <ul class="space-y-3">
-                                        {comm.directions.map(dir => (
-                                                <li class="flex gap-3 text-sm text-slate-600 leading-relaxed italic">
-                                                    <span class="text-blue-600 font-black">/</span> {dir}
-                                                </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                                    <h3 class="text-xs uppercase font-black text-slate-400 mb-4">Журнали планування:</h3>
-                                    <div class="flex flex-wrap gap-2">
-                                        {comm.journals.map(year => (
-                                                <a href="#" class="px-4 py-2 bg-white rounded-xl text-xs font-bold border border-slate-200 hover:border-blue-400 hover:text-blue-600 transition-all">
-                                                    {year}
-                                                </a>
-                                        ))}
+                                <div class="bg-white border border-slate-100 p-6 rounded-[2rem] shadow-sm flex items-center gap-4 min-w-[280px]">
+                                    <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-xl shadow-inner">👤</div>
+                                    <div>
+                                        <p class="text-[9px] uppercase text-slate-400 font-black tracking-widest mb-0.5">Голова МК</p>
+                                        <p class="text-sm font-black text-slate-900 italic leading-none">{comm.head}</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="lg:col-span-2">
-                                <h3 class="font-black text-slate-900 uppercase italic mb-6 flex items-center gap-3">
-                                    <span class="w-8 h-1 bg-slate-900 rounded-full"></span>
-                                    Персональний склад та теми
-                                </h3>
+                            <div class="grid grid-cols-1 xl:grid-cols-5 gap-10">
 
-                                <div class="overflow-hidden bg-white border border-slate-100 rounded-[2rem] shadow-sm">
-                                    <table class="w-full text-left border-collapse">
-                                        <thead class="bg-slate-50 border-b border-slate-100">
-                                        <tr>
-                                            <th class="p-5 text-[10px] uppercase font-black text-slate-400 w-12 text-center">№</th>
-                                            <th class="p-5 text-[10px] uppercase font-black text-slate-400">Педагог</th>
-                                            <th class="p-5 text-[10px] uppercase font-black text-slate-400">Індивідуальна проблема</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-slate-50">
-                                        {comm.members.map((member, idx) => (
-                                                <tr class="hover:bg-blue-50/30 transition-colors">
-                                                    <td class="p-5 text-sm font-black text-slate-300 text-center">{idx + 1}</td>
-                                                    <td class="p-5">
-                                                        <p class="font-black text-slate-900 text-sm leading-tight italic">{member.name}</p>
-                                                    </td>
-                                                    <td class="p-5">
-                                                        <p class="text-xs text-slate-500 italic leading-relaxed">{member.task}</p>
-                                                    </td>
-                                                </tr>
-                                        ))}
-                                        </tbody>
-                                    </table>
+                                <div class="xl:col-span-2 space-y-8">
+                                    <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 relative overflow-hidden">
+                                        <div class="absolute top-0 right-0 p-6 text-slate-200/50 text-5xl font-black italic">!</div>
+                                        <h3 class="text-[10px] uppercase font-black tracking-widest text-blue-600 mb-4 flex items-center gap-2">
+                                            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                                            Методична проблема
+                                        </h3>
+                                        <p class="text-lg font-black leading-snug italic text-slate-800">
+                                            «{comm.problem}»
+                                        </p>
+                                    </div>
+
+                                    <div class="px-4">
+                                        <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-3">
+                                            <span class="h-px w-8 bg-slate-200"></span>
+                                            Напрями роботи
+                                        </h3>
+                                        <ul class="space-y-4">
+                                            {comm.directions.map(dir => (
+                                                    <li class="flex gap-4 text-xs font-bold text-slate-500 italic leading-relaxed group/item">
+                                                        <span class="text-blue-500 group-hover/item:translate-x-1 transition-transform">→</span>
+                                                        {dir}
+                                                    </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div class="p-8 bg-blue-50/50 rounded-[2rem] border border-blue-100/50">
+                                        <h3 class="text-[10px] uppercase font-black text-blue-600 mb-4">Документація:</h3>
+                                        <div class="grid grid-cols-1 gap-2">
+                                            {comm.journals.map(year => (
+                                                    <a href="#" class="flex items-center justify-between p-4 bg-white rounded-2xl text-xs font-bold text-slate-700 hover:text-blue-600 hover:shadow-md transition-all">
+                                                        <span>Журнал плани {year}</span>
+                                                        <span class="text-[10px] opacity-30">PDF</span>
+                                                    </a>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="mt-4 text-[10px] text-slate-400 uppercase font-bold text-right italic">
-                                    Всього в комісії: {comm.members.length} чол.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-            ))}
-        </div>
-    </section>
 
+                                <div class="xl:col-span-3">
+                                    <div class="bg-white border border-slate-100 rounded-[2.5rem] shadow-sm overflow-hidden">
+                                        <div class="p-6 border-b border-slate-50 bg-slate-50/50 flex justify-between items-center">
+                                            <h3 class="text-[10px] font-black uppercase tracking-widest text-slate-500">Персональний склад</h3>
+                                            <span class="text-[9px] font-black bg-white px-3 py-1 rounded-full border border-slate-200">{comm.members.length} ПЕДАГОГІВ</span>
+                                        </div>
+                                        <div class="overflow-x-auto">
+                                            <table class="w-full text-left">
+                                                <tbody>
+                                                {comm.members.map((member, idx) => (
+                                                        <tr class="border-b border-slate-50 hover:bg-blue-50/20 transition-all group/row">
+                                                            <td class="p-6 w-12 text-[10px] font-black text-slate-300 italic">{idx + 1}</td>
+                                                            <td class="p-6">
+                                                                <p class="font-black text-slate-900 text-sm italic mb-1">{member.name}</p>
+                                                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Індивідуальна тема:</p>
+                                                                <p class="text-xs text-slate-500 italic leading-relaxed mt-1 group-hover/row:text-slate-700">{member.task}</p>
+                                                            </td>
+                                                        </tr>
+                                                ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                ))}
+            </main>
+        </div>
+    </div>
 </PageLayout>
 
 <style>
-    /* Плавний скрол для навігації по id */
     html {
         scroll-behavior: smooth;
     }
+
+    .nav-link.active {
+        background-color: #eff6ff;
+        color: #2563eb;
+    }
+    .nav-link.active span:first-child {
+        background-color: #2563eb;
+        transform: scale(1.5);
+    }
 </style>
+
+<script is:inline>
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 150)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>

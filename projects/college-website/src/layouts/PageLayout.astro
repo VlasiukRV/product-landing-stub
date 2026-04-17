@@ -9,6 +9,7 @@ const { title, breadcrumbs } = Astro.props;
 <BaseLayout>
     <Fragment slot="title">{title}</Fragment>
 
+    <div class="sticky top-16 z-40 bg-gray-50/80 backdrop-blur-md border-b">
     <div class="max-w-6xl mx-auto px-4 py-8">
         <Breadcrumbs items={breadcrumbs} />
 
@@ -18,4 +19,6 @@ const { title, breadcrumbs } = Astro.props;
 
         <slot />
     </div>
+    </div>
+
 </BaseLayout>
