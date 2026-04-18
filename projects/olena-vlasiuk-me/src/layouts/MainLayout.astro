@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import imageHero from '../assets/ollena-vlasiuk.jpg';
+
 import '../styles/global.css';
 import { ClientRouter } from "astro:transitions";
 
@@ -7,10 +10,13 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname === '/' ? '/' : pathname.replace(/\/$/, "");
+const { pathname } = Astro.url;
+const currentPath = pathname.replace(/\/$/, "") || "/";
 
-const isActive = (path: string) => currentPath === path ? "text-[#c1eb70] border-b-2 border-[#c1eb70]" : "text-white/60 hover:text-white transition-colors";
+const isActive = (path: string) =>
+    currentPath === path
+        ? "text-[#c1eb70] border-b-2 border-[#c1eb70]"
+        : "text-white/60 hover:text-white transition-colors";
 ---
 
 <html lang="uk">
@@ -29,12 +35,15 @@ const isActive = (path: string) => currentPath === path ? "text-[#c1eb70] border
 <body class="bg-[#3e5153] text-white antialiased">
 <div class="flex flex-col lg:flex-row min-h-screen relative">
 
-    <aside class="lg:sticky lg:top-0 lg:h-screen w-full lg:w-[700px] flex flex-col z-50">
+    <aside class="lg:sticky lg:top-0 lg:h-screen w-full lg:w-[700px] lg:min-w-[700px] lg:max-w-[700px] flex flex-col z-50"
+           transition:persist>
         <div class="relative w-full h-[450px] md:h-[650px] lg:h-full lg:flex-1 overflow-hidden">
-            <img
-                    src="/images/ollena-vlasiuk.jpg"
+            <Image
+                    src={imageHero}
                     alt="Olena Vlasiuk"
+                    loading="eager"
                     class="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+                    transition:name="hero-image"
             />
         </div>
 
