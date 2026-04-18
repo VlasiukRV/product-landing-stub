@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from "astro:transitions";
+
 import CartIcon from '../components/vue/CartIcon.vue';
 
 interface Props {
@@ -16,6 +18,7 @@ const bodyClass = pageType === 'home' ? 'bg-home' : 'bg-default';
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{title}</title>
+    <ClientRouter />
 </head>
 <body class={`${bodyClass} min-h-screen`}>
 

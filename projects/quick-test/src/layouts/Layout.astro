@@ -1,4 +1,6 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 const { title = 'TestFlow', description = 'Simple quiz platform' } = Astro.props;
 ---
 
@@ -20,6 +22,8 @@ const { title = 'TestFlow', description = 'Simple quiz platform' } = Astro.props
 
     <!-- Favicon (optional) -->
     <link rel="icon" href="/favicon.svg" />
+
+    <ClientRouter />
 
     <!-- Astro styles -->
     <slot name="head" />
