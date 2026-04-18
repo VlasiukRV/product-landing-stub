@@ -1,5 +1,7 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import QuickLinks from "../components/blocks/QuickLinks.astro";
+import GridLinks from "../components/blocks/GridLinks.astro";
 
 const focusAreas = [
     {
@@ -29,13 +31,13 @@ const focusAreas = [
 ];
 
 const navigationLinks = [
-    { title: "Методичний кабінет", desc: "Документація, положення та плани", href: "/methodical-cabinet", icon: "🏢" },
-    { title: "Склад МК", desc: "Голови та члени методичних комісій", href: "/methodical-commissions", icon: "👥" },
-    { title: "Творчі лабораторії", desc: "Інновації та експериментальні проєкти", href: "/methodical-creative-labs", icon: "🧪" },
-    { title: "Школа голів МК", desc: "Координація роботи підрозділів", href: "/methodical-prof-schools#heads-school", icon: "🎓" },
-    { title: "Школа ППД", desc: "Передовий педагогічний досвід", href: "/methodical-prof-schools#ppd-catalog", icon: "💡" },
-    { title: "Школа молодого педагога", desc: "Адаптація та підтримка нових кадрів", href: "/methodical-prof-schools#young-teacher", icon: "🌱" },
-    { title: "Школа майстра в/н", desc: "Розвиток майстрів виробничого навчання", href: "/methodical-prof-schools#master-school", icon: "🛠️" }
+    { title: "Методичний кабінет", description: "Документація, положення та плани", href: "/methodical-cabinet", icon: "🏢" },
+    { title: "Склад МК", description: "Голови та члени методичних комісій", href: "/methodical-commissions", icon: "👥" },
+    { title: "Творчі лабораторії", description: "Інновації та експериментальні проєкти", href: "/methodical-creative-labs", icon: "🧪" },
+    { title: "Школа голів МК", description: "Координація роботи підрозділів", href: "/methodical-prof-schools#heads-school", icon: "🎓" },
+    { title: "Школа ППД", description: "Передовий педагогічний досвід", href: "/methodical-prof-schools#ppd-catalog", icon: "💡" },
+    { title: "Школа молодого педагога", description: "Адаптація та підтримка нових кадрів", href: "/methodical-prof-schools#young-teacher", icon: "🌱" },
+    { title: "Школа майстра в/н", description: "Розвиток майстрів виробничого навчання", href: "/methodical-prof-schools#master-school", icon: "🛠️" }
 ];
 ---
 
@@ -137,32 +139,17 @@ const navigationLinks = [
         </div>
     </section>
 
-    <section class="bg-white py-24">
+    <section class="py-24">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-black text-slate-900 mb-16 text-center uppercase italic tracking-tight">
                 Структура методичної служби
             </h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {navigationLinks.map((link) => (
-                        <a href={link.href} class="group relative p-8 bg-white border border-slate-100 rounded-[2rem] shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300">
-                            <div class="flex items-center gap-5">
-                                <div class="w-14 h-14 flex items-center justify-center bg-slate-50 group-hover:bg-blue-600 group-hover:text-white rounded-2xl text-2xl transition-all duration-300 shadow-inner">
-                                    {link.icon}
-                                </div>
-                                <div>
-                                    <h3 class="font-black text-slate-900 group-hover:text-blue-600 transition-colors uppercase italic text-sm tracking-wide">
-                                        {link.title}
-                                    </h3>
-                                    <p class="text-xs text-slate-400 mt-1 line-clamp-1">{link.desc}</p>
-                                </div>
-                            </div>
-                            <div class="absolute bottom-4 right-8 opacity-0 group-hover:opacity-100 group-hover:right-6 transition-all">
-                                <span class="text-blue-600">→</span>
-                            </div>
-                        </a>
-                ))}
-            </div>
+                <GridLinks
+                        columns={3}
+                        items={navigationLinks}
+                />
+
         </div>
     </section>
 
