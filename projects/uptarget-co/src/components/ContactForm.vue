@@ -39,7 +39,9 @@
         :disabled="submitting"
         class="button-form-custom group"
     >
-      <span class="relative z-10">{{ submitting ? 'Working on it..' : 'Send' }}</span>
+      <span class="relative z-10">
+        {{ submitting ? 'Working on it..' : submitButtonText }}
+      </span>
     </button>
 
     <div v-if="statusMessage"
@@ -49,8 +51,7 @@
       {{ statusMessage }}
     </div>
 
-    <p class="mt-6 text-xs text-gray-400 text-center leading-relaxed">
-      By clicking "Send", you agree to our privacy policy and terms of service.
+    <p v-if="privacyText" class="mt-6 text-xs text-gray-400 text-center leading-relaxed" v-html="privacyText">
     </p>
 
   </form>
@@ -72,7 +73,12 @@ import { ref, onMounted } from 'vue';
 const props = defineProps({
   apiUrl: { type: String, default: '/api/v1/synapse' },
   formName: { type: String, required: true },
-  initialData: { type: Object, default: () => ({}) }
+  initialData: { type: Object, default: () => ({}) },
+  submitButtonText: { type: String, default: 'Send' },
+  privacyText: {
+    type: String,
+    default: 'By clicking "Send", you agree to our privacy policy and terms of service.'
+  }
 });
 
 const emit = defineEmits(['success']); // Событие для модалки, если нужно закрыть её после успеха

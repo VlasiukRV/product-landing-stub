@@ -14,6 +14,8 @@
       <ContactForm
           :apiUrl="apiUrl"
           formName="page_auth_form"
+          submit-button-text="Get Access"
+          privacy-text="Protected by our privacy policy."
           :initialData="{ page: currentPage }"
           @success="handleSuccess"
       />

@@ -27,6 +27,11 @@ import '../styles/global.css';
 
     <meta name="generator" content={Astro.generator} />
 
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta name="robots" content="index, follow" />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
@@ -40,6 +45,7 @@ import '../styles/global.css';
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
     <ClientRouter />
+    <title={title}>
 
 </head>
 <body class="body bg-white text-black font-sans">
