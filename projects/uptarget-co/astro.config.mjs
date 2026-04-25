@@ -15,9 +15,7 @@ export default defineConfig({
     output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
     integrations: [
         vue(),
-        sitemap({
-            site: 'https://uptarget.co',
-        }),
+        sitemap(),
     ],
     markdown: {
         shikiConfig: { theme: 'dracula' },

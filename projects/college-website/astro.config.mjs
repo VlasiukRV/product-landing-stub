@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -13,7 +14,8 @@ export default defineConfig({
 
     output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
     integrations: [
-        vue()
+        vue(),
+        sitemap(),
     ],
     markdown: {
         shikiConfig: { theme: 'dracula' },

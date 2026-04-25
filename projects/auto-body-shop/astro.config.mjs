@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 const project_dir = '/auto-body-shop'
@@ -14,6 +15,7 @@ export default defineConfig({
     output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
     integrations: [
         vue(),
+        sitemap(),
     ],
     markdown: {
         shikiConfig: { theme: 'dracula' },
