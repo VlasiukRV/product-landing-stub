@@ -58,6 +58,8 @@
 </template>
 
 <style scoped>
+@reference "../styles/global.css";
+
 .button-form-custom {
   @apply w-full h-[62px] flex items-center justify-center;
   @apply bg-orange text-white font-golos font-semibold text-[22px] leading-[34px] uppercase tracking-[1px];

@@ -16,3 +16,6 @@ defineEmits(['increase', 'decrease', 'remove']);
     </div>
   </div>
 </template>
+<style scoped>
+@reference "/src/styles/global.css";
+</style>

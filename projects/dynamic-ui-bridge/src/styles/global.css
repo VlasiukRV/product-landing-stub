@@ -1,30 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&family=Oswald:wght@400;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 2. Tailwind v4 Import */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
+/* 3. Theme Configuration */
+@theme {
+    /* Colors */
+    --color-primary: #ff4d00;
+    --color-dark: #0f0f0f;
+    --color-surface: #1a1a1a;
+    --color-muted: #9ca3af;
+    --color-success: #22c55e;
+
+    /* Max Width (тепер доступно як max-w-container) */
+    --max-width-container: 940px;
+
+    /* Fonts */
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Oswald", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* 4. Custom Components & Layers */
 @layer components {
-    /* Контейнер: фиксируем в самом углу вьюпорта */
+
     .fixed-coming-soon-ribbon {
-        /* Используем fixed, чтобы лента не уезжала при скролле */
         position: fixed !important;
         top: 0 !important;
         right: 0 !important;
-        z-index: 9999 !important; /* Поднимаем максимально высоко */
+        z-index: 9999 !important;
 
         width: 150px;
         height: 150px;
         overflow: hidden;
-        pointer-events: none; /* Пропускает клики сквозь пустые области */
+        pointer-events: none;
     }
 
-    /* Сама полоска с текстом */
     .fixed-coming-soon-ribbon .ribbon-text {
         display: block;
         position: absolute;
 
+        background-color: color-mix(in srgb, var(--color-yellow-300), transparent 5%);
         background-color: rgba(252, 211, 77, 0.95);
+
         @apply text-gray-900 font-bold uppercase text-center py-1.5 shadow-md;
         font-size: 0.85rem;
         letter-spacing: 0.05em;

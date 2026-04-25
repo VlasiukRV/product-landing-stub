@@ -64,3 +64,6 @@ onMounted(() => {
 
   </a>
 </template>
+<style scoped>
+@reference "/src/styles/global.css";
+</style>

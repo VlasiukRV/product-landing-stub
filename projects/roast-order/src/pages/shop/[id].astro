@@ -1,18 +1,18 @@
 ---
-// src/pages/shop/[slug].astro
+// src/pages/shop/[id].astro
 import Layout from '../../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
     const products = await getCollection('products');
     return products.map(product => ({
-        params: { slug: product.slug },
+        params: { id: product.id },
         props: { product },
     }));
 }
 
 const { product } = Astro.props;
-const { Content } = await product.render();
+const { Content, headings } = await render(product);
 ---
 
 <Layout title={product.data.name}>
@@ -54,7 +54,7 @@ const { Content } = await product.render();
                     <button
                             id="add-to-cart-btn"
                             data-product={JSON.stringify({
-                                id: product.slug,
+                                id: product.id,
                                 name: product.data.name,
                                 price: product.data.price,
                                 image: product.data.image

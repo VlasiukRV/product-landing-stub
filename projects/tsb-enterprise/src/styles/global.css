@@ -1,15 +1,17 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@layer base {
+@theme {
 
+    --color-brand-purple: #5f29f5;
 
+    --max-width-container: 940px;
+
+    --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
-@layer components {
-
-
-}
+@layer base {}
+@layer components {}

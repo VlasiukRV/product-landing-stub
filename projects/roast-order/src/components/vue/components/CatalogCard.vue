@@ -12,7 +12,7 @@ defineEmits(['add']);
         {{ product.name }}
       <p class="text-sm text-stone-400 mt-1 mb-4">
         {{ product.description }}
-        <a :href="`/shop/${product.slug}`" class=" text-orange-700 hover:text-orange-400 transition">
+        <a :href="`/shop/${product.id}`" class=" text-orange-700 hover:text-orange-400 transition">
           ... more
         </a>
       </p>
@@ -26,3 +26,6 @@ defineEmits(['add']);
     </div>
   </div>
 </template>
+<style scoped>
+@reference "/src/styles/global.css";
+</style>

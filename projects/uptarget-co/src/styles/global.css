@@ -3,21 +3,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+    /* Кольори */
+    --color-orange: #ff5700;
+    --color-black: #1a1a1c;
+    --color-yellow: #fd0;
+    --color-black-80: #1a1a1ccc;
+    --color-yellow-50: #ffdd0080;
+    --color-voiceitt: #4a7bf7;
+    --color-strategiclear: #c7d7ef;
+    --color-smartrike: #203847;
+
+    --color-green: #71c15c;
+    --color-green-light: #71c15c33;
+
+    --spacing-container: 1200px;
+    --max-width-container: 1200px;
+
+    --font-sans: "Golos Text", ui-sans-serif, system-ui, sans-serif;
+    --font-golos: "Golos Text", ui-sans-serif, system-ui, sans-serif;
+    --font-unbounded: "Unbounded", ui-sans-serif, system-ui, sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+
+    /* Typography (Prose) */
+    --typography-body-font-family: var(--font-golos);
+    --typography-heading-font-family: var(--font-unbounded);
+}
+
+/* Castom Typography */
+@utility prose {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-unbounded);
+    }
+    p, li, blockquote {
+        font-family: var(--font-golos);
+    }
+}
 
 @layer base {
-
     .button-cta {
         @apply bg-yellow text-black font-bold uppercase py-4 px-8 rounded-full transition-all;
     }
-
-}
-
-@layer components {
-
-
 }
 
 @layer utilities {

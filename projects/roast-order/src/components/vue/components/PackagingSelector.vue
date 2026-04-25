@@ -45,6 +45,7 @@ defineEmits(['select']);
 </script>
 
 <style scoped>
+@reference "/src/styles/global.css";
 .animate-in {
   animation-duration: 0.5s;
 }

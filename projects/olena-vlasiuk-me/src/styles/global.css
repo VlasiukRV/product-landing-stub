@@ -1,17 +1,29 @@
+/* 1. Шрифти */
 @import url('https://api.fontshare.com/v2/css?f[]=golos-text@400,500,600,700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 2. Tailwind v4 */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+
+    --color-base-dark: #3e5153;
+    --color-light-blue: #7d9c9fb3;
+    --color-link-green: #c1eb70;
+    --color-s-blue: #a4f1f6;
+
+    --max-width-container: 940px;
+
+    --font-sans: "Golos Text", ui-sans-serif, system-ui, sans-serif;
+}
 
 @layer base {
 
     html {
-        font-family: 'Golos Text', ui-sans-serif, system-ui, sans-serif;
+        font-family: var(--font-sans);
     }
 
     @media print {
-
         a[href^="http"]:after {
             content: " (" attr(href) ")";
             font-size: 0.8em;
@@ -23,10 +35,4 @@
             content: "";
         }
     }
-
-}
-
-@layer components {
-
-
 }

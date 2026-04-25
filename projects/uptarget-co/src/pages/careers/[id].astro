@@ -1,20 +1,23 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Navbar from "../../components/Navbar.astro";
 import Footer from "../../components/Footer.astro";
-import ShareLink from "../../components/ShareLink.astro";
 import ContactForm from '../../components/ContactForm.vue';
 
 export async function getStaticPaths() {
-    const vacancies = await getCollection('careers');
+    const vacancies = await getCollection('careers', ({ data }) => {
+        return data.publish === true;
+    })
+
     return vacancies.map(entry => ({
-        params: { slug: entry.slug }, props: { entry },
+        params: { id: entry.id },
+        props: { entry },
     }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout title={entry.data.title}>
@@ -75,6 +78,8 @@ const { Content } = await entry.render();
 </Layout>
 
 <style is:global>
+    @reference "tailwindcss";
+
     .prose h2 { @apply text-2xl mt-12 mb-6; }
     .prose ul { @apply list-disc pl-5 space-y-2; }
 </style>

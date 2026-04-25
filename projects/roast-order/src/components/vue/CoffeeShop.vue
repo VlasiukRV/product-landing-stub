@@ -380,3 +380,7 @@ context.selectedCategory = selectedCategory;
     </Transition>
   </section>
 </template>
+
+<style scoped>
+@reference "/src/styles/global.css";
+</style>

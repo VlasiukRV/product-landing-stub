@@ -21,3 +21,6 @@ defineEmits(['back', 'pay']);
     </div>
   </div>
 </template>
+<style scoped>
+@reference "/src/styles/global.css";
+</style>

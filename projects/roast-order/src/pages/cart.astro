@@ -5,8 +5,8 @@ import { getCollection } from 'astro:content';
 
 const productsEntries = await getCollection('products');
 const allProducts = productsEntries.map(entry => ({
-    slug: entry.slug,
-    ...entry.data // тут будут name, price, category и т.д.
+    id: entry.id,
+    ...entry.data
 }));
 
 ---

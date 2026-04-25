@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import ProductCard from "../../components/ProductCard.astro";
 
 const allProducts = await getCollection('products');
-const formattedProducts = allProducts.map(p => ({ id: p.slug, ...p.data }));
+const formattedProducts = allProducts.map(p => ({ id: p.id, ...p.data }));
 
 const groups = formattedProducts.reduce((acc, p) => {
     const key = p.category || 'Other';

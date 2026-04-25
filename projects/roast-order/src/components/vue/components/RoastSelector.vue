@@ -24,3 +24,7 @@ defineProps(['selected', 'roasts']);
 defineEmits(['select']);
 
 </script>
+
+<style scoped>
+@reference "/src/styles/global.css";
+</style>

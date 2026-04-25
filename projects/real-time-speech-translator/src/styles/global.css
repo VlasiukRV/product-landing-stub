@@ -1,20 +1,33 @@
-/* 1. Сначала импорты */
+@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@500;800&display=swap');
 
-/* 2. Директивы Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
 
-/* 4. Твои уникальные компоненты */
-@layer components {
-    body {
-        font-family: 'Inter', sans-serif;
-        background-color: #0f172a;
-        color: #94a3b8;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    --color-dark-bg: #0f172a;
+    --color-slate-muted: #94a3b8;
+    --color-header: #f1f5f9;
+    --color-accent-blue: #3b82f6;
+
+    --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    @keyframes pulse-slow {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
     }
+}
 
-    .mono { font-family: 'JetBrains Mono', monospace; }
+@layer base {
+    body {
+        background-color: var(--color-dark-bg);
+        color: var(--color-slate-muted);
+        font-family: var(--font-sans);
+    }
+}
+
+@layer components {
 
     .glass-panel {
         background: rgba(30, 41, 59, 0.5);
@@ -27,24 +40,13 @@
         background: radial-gradient(circle at 50% 40%, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
     }
 
-    /* Текст заголовка */
     .text-header {
-        color: #f1f5f9;
+        color: var(--color-header);
     }
 
-    /* ФІКС: Повертаємо видимість синього слова */
     .text-blue-fix {
-        color: #3b82f6 !important;
-        -webkit-text-fill-color: #3b82f6 !important;
+        color: var(--color-accent-blue) !important;
+        -webkit-text-fill-color: var(--color-accent-blue) !important;
         opacity: 1 !important;
-    }
-
-    .animate-pulse-slow {
-        animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
     }
 }

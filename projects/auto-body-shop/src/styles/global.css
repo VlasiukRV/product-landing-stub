@@ -1,25 +1,53 @@
-@import url('https://api.fontshare.com/v2/css?f[]=golos-text@400,500,600,700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://api.fontshare.com/v2/css?f[]=golos-text@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
 @layer base {
+    :root {
+        /* Перенесені кольори */
+        --color-primary: #ff4d00;
+        --color-dark: #0f0f0f;
+        --color-surface: #1a1a1a;
+        --color-muted: #9ca3af;
+        --color-success: #22c55e;
+
+        --max-width-container: 940px;
+    }
 
     html {
         scroll-behavior: smooth;
+        font-family: 'Golos Text', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        background-color: var(--color-dark);
+        color: white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Oswald', sans-serif;
     }
 
     :target::before {
         content: "";
         display: block;
-        height: 6rem; /* высота header */
+        height: 6rem;
         margin-top: -6rem;
     }
-
 }
 
 @layer components {
+    .container-custom {
+        max-width: var(--max-width-container);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 
-
+@layer utilities {
+    .text-primary { color: var(--color-primary); }
+    .bg-primary { background-color: var(--color-primary); }
+    .bg-surface { background-color: var(--color-surface); }
+    .text-muted { color: var(--color-muted); }
 }

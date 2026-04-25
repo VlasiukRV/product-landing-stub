@@ -1,23 +1,19 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
-const project_dir = 'auto-body-shop'
+const project_dir = '/auto-body-shop'
 
 export default defineConfig({
     site: 'https://auto-body-shop.tsb-enterprise.com/',
 
     base: '/',
     srcDir: './src',
-    outDir: '../../public_html/'+project_dir,
+    outDir: '../../storage/'+project_dir,
 
     output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
     integrations: [
         vue(),
-        tailwind({
-            applyBaseStyles: true,
-            configFile: './tailwind.config.mjs',
-        }),
     ],
     markdown: {
         shikiConfig: { theme: 'dracula' },
@@ -27,6 +23,7 @@ export default defineConfig({
         cacheDir: '../../node_modules/.cache/astro',
     },
     vite: {
+        plugins: [tailwindcss()],
         cacheDir: '../../node_modules/.cache/vite',
     },
     image: {

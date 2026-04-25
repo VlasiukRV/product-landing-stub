@@ -63,7 +63,7 @@ const allVacancies = await getCollection('careers', ({ data }) => {
 
             return (
                 <div class={`group collection-item relative flex min-h-[100px] md:h-[140px] p-0 px-6 md:pl-[42px] justify-between items-center cursor-pointer transition-transform  ${bgColor}`}>
-                    <a href={`/careers/${job.slug}`} class="job-list-link absolute inset-0 z-[6]"></a>
+                    <a href={`/careers/${job.id}`} class="job-list-link absolute inset-0 z-[6]"></a>
 
                     {isHot && (
                             <div class="absolute z-[10]
@@ -109,6 +109,7 @@ const allVacancies = await getCollection('careers', ({ data }) => {
 </section>
 
 <style>
+    @reference "../styles/global.css";
 
     .vacancies {
         isolation: isolate;

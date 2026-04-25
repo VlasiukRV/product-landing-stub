@@ -10,9 +10,9 @@ interface Props {
 const { href, imgSrc, title, description, linkText } = Astro.props;
 ---
 
-<a href={href} class="card">
+<a href={href} class="card group">
     <img src={imgSrc} alt={title} class="card-image">
-    <h2>{title}</h2>
-    <p>{description}</p>
-    <div class="card-link">{linkText} →</div>
+    <h2 class="text-2xl font-bold mb-2 text-text-main">{title}</h2>
+    <p class="text-text-dim text-sm leading-relaxed min-h-[3em]">{description}</p>
+    <div class="mt-5 text-sm font-semibold text-accent">{linkText} →</div>
 </a>

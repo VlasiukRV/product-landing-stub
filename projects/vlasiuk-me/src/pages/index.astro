@@ -4,12 +4,12 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Vlasiuk Family & Ventures">
-    <header>
+    <header class="mb-16 text-center">
         <h1>Vlasiuk</h1>
-        <div class="tagline">FAMILY OFFICE & VENTURE STUDIO</div>
+        <div class="text-text-dim text-lg mt-4 tracking-[0.1em]">FAMILY OFFICE & VENTURE STUDIO</div>
     </header>
 
-    <div class="grid">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         <Card
                 href="https://olena.vlasiuk.me/"
                 imgSrc="/img/olena_vlasiuk.webp"
@@ -27,7 +27,8 @@ import Card from '../components/Card.astro';
         <Card
                 href="https://tsb-enterprise.com/"
                 imgSrc="/img/tsb-Logo.svg"
-                title="Targeted Solutions for Business"
+                title="Targeted Solutions"
+                description="Enterprise-grade digital solutions and consulting."
                 linkText="Launch Site"
         />
         <Card
@@ -39,22 +40,17 @@ import Card from '../components/Card.astro';
         />
     </div>
 
-    <div class="products-mini">
-        <div class="label">Proprietary Ecosystem</div>
-        <div class="product-links">
-            <a href="https://owl-solution.tsb-enterprise.com/">Owl Solution</a>
-            <a href="https://dynamic-ui.tsb-enterprise.com/">Dynamic UI</a>
-            <a href="https://speech-translator.tsb-enterprise.com/">Speech Translator</a>
+    <div class="mt-20 pt-10 border-t border-card-border text-center">
+        <div class="text-text-dim text-[0.75rem] uppercase tracking-[0.2em] font-semibold mb-6">
+            Proprietary Ecosystem
+        </div>
+        <div class="flex justify-center gap-8 flex-wrap">
+            {['Owl Solution', 'Dynamic UI', 'Speech Translator'].map(item => (
+                    <a href={`https://${item.toLowerCase().replace(' ', '-')}.tsb-enterprise.com/`}
+                       class="text-text-dim no-underline text-sm transition-colors hover:text-accent">
+                        {item}
+                    </a>
+            ))}
         </div>
     </div>
 </Layout>
-
-<style>
-    .label {
-        color: var(--text-dim);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        font-weight: 600;
-    }
-</style>

@@ -624,6 +624,8 @@ const content = {
 </template>
 
 <style>
+@reference "../styles/global.css";
+
 .max-w-container {
   max-width: 1200px;
 }

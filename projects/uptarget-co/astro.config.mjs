@@ -1,24 +1,20 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
 
-const project_dir = 'uptarget-co'
+const project_dir = '/uptarget-co'
 
 export default defineConfig({
     site: 'https://uptarget.co',
 
     base: '/',
     srcDir: './src',
-    outDir: '../../public_html/'+project_dir,
+    outDir: '../../storage'+project_dir,
 
     output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
     integrations: [
         vue(),
-        tailwind({
-            applyBaseStyles: true,
-            configFile: './tailwind.config.mjs',
-        }),
         sitemap({
             site: 'https://uptarget.co',
         }),
@@ -31,7 +27,15 @@ export default defineConfig({
         cacheDir: '../../node_modules/.cache/astro',
     },
     vite: {
+        plugins: [tailwindcss()],
         cacheDir: '../../node_modules/.cache/vite',
+        css: {
+            preprocessorOptions: {
+                css: {
+                    additionalData: `@reference "tailwindcss";`
+                }
+            }
+        },
         server: {
             proxy: {
                 '/api': {

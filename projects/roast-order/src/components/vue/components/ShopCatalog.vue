@@ -79,6 +79,7 @@ const activeCategoryData = computed(() => {
 </template>
 
 <style>
+@reference "/src/styles/global.css";
 
 .swiper-pagination-bullet {
   @apply bg-orange-200 opacity-50;
