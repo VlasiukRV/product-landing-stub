@@ -8,12 +8,12 @@ tags: ["AI", "Enterprise", "Monitoring"]
 isFeatured: true
 ---
 
-## О проекте
-**Owl Solution** — это флагманский продукт TSB Enterprise. Мы разработали систему, которая анализирует потоки данных в реальном времени.
+## ABOUT
+**Owl Solution**.
 
-### Технологический стек:
-* **Backend:** Go / Python
-* **Frontend:** React / Tailwind
+### Technology:
+* **Backend:** Python
+* **Frontend:** Vue / Tailwind
 * **Infrastructure:** AWS / Docker
 
-[Тут может быть любой ваш текст из Webflow, Astro отрендерит его в чистый HTML]
+[]
