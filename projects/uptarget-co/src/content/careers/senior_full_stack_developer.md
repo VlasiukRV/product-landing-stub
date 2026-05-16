@@ -29,7 +29,7 @@ The project is a fast-growing AI and AdTech platform building semantic intellige
 - Comfortable spanning two clouds. Knows when to lean on edge compute vs. GCP's data/AI tooling, and how to bridge them (auth, egress, latency).
 
 ### Nice to have:
-* Built or operated RAG systems in production.  
- - Familiarity with current embedding models and their dimension, quality, and cost tradeoffs.  
- - Practical understanding of embeddings, chunking, and retrieval quality.  
- - Adtech, performance marketing, or marketing analytics background. Knows what channels, attribution, and creative testing actually look like in production.
+- Built or operated RAG systems in production.  
+- Familiarity with current embedding models and their dimension, quality, and cost tradeoffs.  
+- Practical understanding of embeddings, chunking, and retrieval quality.  
+- Adtech, performance marketing, or marketing analytics background. Knows what channels, attribution, and creative testing actually look like in production.
