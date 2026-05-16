@@ -6,10 +6,18 @@ import '../styles/global.css';
 import { ClientRouter } from "astro:transitions";
 
 interface Props {
-    title: string;
+    title?: string;
+    description?: string;
+    image?: string;
 }
 
-const { title } = Astro.props;
+const {
+    title = "Olena Vlasiuk, Ph. D. — About Me",
+    description = "Olena Vlasiuk, Ph.D. – Expert in Digital Transformation, Business Strategy, and Academic Research. Shaping future digital ecosystems through innovative solutions.",
+    image = "/images/webclip.png"
+} = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
 const { pathname } = Astro.url;
 const currentPath = pathname.replace(/\/$/, "") || "/";
 
@@ -19,12 +27,51 @@ const isActive = (path: string) =>
         : "text-white/60 hover:text-white transition-colors";
 ---
 
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Olena Vlasiuk",
+        "honorificPrefix": "Dr.",
+        "honorificSuffix": "Ph.D.",
+        "jobTitle": "Expert in Digital Transformation",
+        "knowsAbout": ["Digital Transformation", "Business Strategy", "Information Technology"],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Cherkasy state technological university" },
+        "url": "https://olena.vlasiuk.me",
+        "image": "https://olena.vlasiuk.me/images/olena-portrait.jpg",
+        "sameAs": [
+            "https://linkedin.com/in/olenavlasiuk/",
+            "https://scholar.google.com.ua/citations?user=QtFVwn8AAAAJ",
+            "https://vlasiuk.me",
+            "https://tsb-enterprise.com/",
+            "https://uptarget.co/"
+      ],
+        "description": description
+    })} />
+
     <ClientRouter />
     <style is:global>
         @font-face {
@@ -33,6 +80,7 @@ const isActive = (path: string) =>
         body { font-family: 'Golos Text', sans-serif; }
     </style>
 </head>
+
 <body class="bg-[#3e5153] text-white antialiased">
 <div class="flex flex-col lg:flex-row min-h-screen relative">
 
