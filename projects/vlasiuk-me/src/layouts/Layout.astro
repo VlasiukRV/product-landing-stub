@@ -2,21 +2,81 @@
 import '../styles/global.css';
 
 interface Props {
-    title: string;
+    title?: string;
+    description?: string;
+    image?: string;
 }
 
-const { title } = Astro.props;
+const {
+    title = 'Vlasiuk Family & Ventures',
+    description = 'Private venture studio and family office specializing in digital transformation, software engineering, and innovative technology ecosystems by Dr. Olena & Roman Vlasiuk.',
+    image = '/img/OG-generic.png'
+} = Astro.props
+
+const favicon = '/favicon.png'
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url)
+
 ---
 
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="icon" type="image/png" href={favicon}>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Vlasiuk Family & Ventures",
+        "url": "https://vlasiuk.me",
+        "logo": "https://vlasiuk.me/favicon.png",
+        "sameAs": [
+            "https://tsb-enterprise.com/",
+            "https://uptarget.co/"
+        ],
+        "founder": [
+            {
+                "@type": "Person",
+                "name": "Olena Vlasiuk",
+                "jobTitle": "Ph.D., & Entrepreneur, Digital Transformation Expert",
+                "sameAs": [
+                    "https://olena.vlasiuk.me/",
+                    "https://www.linkedin.com/in/olena-vlasiuk"
+                ]
+            },
+            {
+                "@type": "Person",
+                "name": "Roman Vlasiuk",
+                "jobTitle": "Software Engineer",
+                "sameAs": [
+                    "https://www.linkedin.com/in/romavlasuk",
+                    "https://github.com/VlasiukRV"
+                ]
+            }
+        ]
+    })} />
 </head>
 <body class="antialiased overflow-x-hidden min-h-screen">
 <div class="spotlight" aria-hidden="true"></div>
