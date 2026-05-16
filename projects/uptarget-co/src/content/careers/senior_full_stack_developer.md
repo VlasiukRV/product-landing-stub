@@ -1,27 +1,35 @@
 ---
-title: "Senior Full Stack Engineer (React + Node.js)"
+title: Senior Full Stack Engineer (React + Node.js)
 isHot: false
-publish: false
+publish: true
 ---
 
 📍 Remote | 🕒 Full-time | 🌍 International Team
 
 ### About the Role
-**UPTARGET is looking for a Senior Full-Stack Engineer** to design, build, and scale an innovative web application in the **FinTech industry.**
-The ideal candidate has a strong background in web development, experience with modern frameworks, and a passion for building responsive, high-quality user interfaces.
+**UPTARGET** is looking for a **Senior Full-Stack Engineer** who enjoys building scalable, intelligent platforms from the ground up. This role is ideal for engineers with **deep expertise in TypeScript, Cloudflare, Serverless Architectures, and Data Engineering. Advanced English** is a must-have for this position.  
+If this sounds like your background and interests, here is a more detailed description of the role:  
+  
+The project is a fast-growing AI and AdTech platform building semantic intelligence infrastructure that helps enterprises transform complex marketing and performance data into actionable insights through modern AI, cloud, and data technologies.
 
+### Our Stack  
+ - **TypeScript** everywhere.  
+ - Cloud: a mix of **Cloudflare** (likely the home for Workers-style compute, queues, and the agent runtime) and **GCP** (likely for embeddings via Vertex AI and other data/AI services).  
+ - **AI agents**: leaning toward the **Cloudflare Agents SDK**, but open if you've shipped something better.  
+ - **Vector DB**: open. Could be Cloudflare Vectorize, Vertex AI Vector Search, Turbopuffer, or something else. We'll pick based on retrieval quality, ops cost, and how cleanly it fits the rest.  
+ - Frontend: **React**. Framework (Remix or TanStack Start) TBD.
 ### Requirements:
-* 5+ years of experience in web development.
-* At least 3 years of hands-on experience with TypeScript-based React and Node.js.
-* Deep understanding of software architecture:
-  * **Frontend**: React, state management, UI frameworks.
-  * **Backend**: Node.js, databases, microservices.
-* Strong knowledge of Agile methodologies and project management practices (Scrum, Kanban, or similar).
-* Bachelor’s degree in Computer Science or a related field (preferred).
-* Experience with data or cyber analytics applications is a strong advantage.
+- 5+ years of commercial experience in full-stack development.  
+ - Strong **TypeScript**. Types as a design tool, not a chore.  
+ - Production experience with **serverless** or edge runtimes (**Cloudflare Workers, Vercel, Lambda, Deno Deploy**, anything in the family).  
+ - Have built durable, idempotent ingestion pipelines: queues, retries, backpressure, dedup, schema evolution.  
+ - Background in **ETL**, observability for data pipelines, or eval frameworks for retrieval quality.  
+ - Have shipped at least one agent-style system in production with tool use, state, and multi-step workflows. The specific framework matters less than the experience.  
+ - React fluency with modern patterns.  
+ - Comfortable spanning two clouds. Knows when to lean on edge compute vs. GCP's data/AI tooling, and how to bridge them (auth, egress, latency).
 
-### Responsibilities:
-* Design and develop sophisticated, responsive user interfaces and backend services based on design specifications and UI/UX best practices.
-* Collaborate closely with product, design, and engineering teams to ensure seamless integration and optimal performance.
-* Contribute to and improve development processes, agile workflows, and CI/CD pipelines.
-* Promote the use of modern development tools and best practices, including automated testing, version control, and thorough documentation.
+### Nice to have:
+* Built or operated RAG systems in production.  
+ - Familiarity with current embedding models and their dimension, quality, and cost tradeoffs.  
+ - Practical understanding of embeddings, chunking, and retrieval quality.  
+ - Adtech, performance marketing, or marketing analytics background. Knows what channels, attribution, and creative testing actually look like in production.

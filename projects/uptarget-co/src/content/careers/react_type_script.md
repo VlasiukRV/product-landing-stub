@@ -1,7 +1,7 @@
 ---
-title: "Frontend Developer (React / TypeScript)"
+title: Frontend Developer (React / TypeScript)
 isHot: false
-publish: true
+publish: false
 ---
 
 📍 Remote | 🕒 Full-time | 🌍 International Team
