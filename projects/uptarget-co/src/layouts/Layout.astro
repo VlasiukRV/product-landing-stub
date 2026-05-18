@@ -1,6 +1,6 @@
 ---
 // src/layouts/Layout.astro
-import { ClientRouter } from "astro:transitions";
+import {ClientRouter} from "astro:transitions";
 
 interface Props {
     title?: string
@@ -20,46 +20,106 @@ import '../styles/global.css';
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link href={new URL(favicon, Astro.url)} rel="shortcut icon" type="image/x-icon">
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="sitemap" href="/sitemap-index.xml"/>
+    <meta name="generator" content={Astro.generator}/>
 
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={description}/>
 
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow"/>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content={Astro.url}/>
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:image" content={new URL(image, Astro.url)}/>
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content={Astro.url}/>
+    <meta property="twitter:title" content={title}/>
+    <meta property="twitter:description" content={description}/>
+    <meta property="twitter:image" content={new URL(image, Astro.url)}/>
 
-    <ClientRouter />
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+
+        "name": "Uptarget.co",
+        "url": "https://uptarget.co",
+        "logo": "https://uptarget.co/img/Logo.svg",
+
+        "description": "We are a technology consultancy and software development company that provides top-notch engineers, helping your product to grow.", // Добавьте описание для лендинга
+
+        "applicationCategory": "BusinessApplication",
+        "parentOrganization": {
+            "@type": "Organization",
+            "name": "Targeted Solutions for Business",
+            "url": "https://tsb-enterprise.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "30 N GOULD ST STE N",
+                "addressLocality": "SHERIDAN",
+                "addressRegion": "WY",
+                "postalCode": "82801",
+                "addressCountry": "US"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-484-521-9686",
+                "contactType": "customer service",
+                "email": "info@tsb-enterprise.com"
+            },
+            "founder": {
+                "@type": "Person",
+                "name": "Dr. Olena Vlasiuk",
+                "honorificPrefix": "Dr.",
+                "honorificSuffix": "Ph.D.",
+                "jobTitle": "CEO",
+                "url": "https://olena.vlasiuk.me",
+                "image": "https://olena.vlasiuk.me/images/ollena-vlasiuk.jpg",
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Cherkasy State Technological University"
+                },
+                "sameAs": [
+                    "https://linkedin.com/in/olenavlasiuk/",
+                    "https://scholar.google.com.ua/citations?user=QtFVwn8AAAAJ",
+                    "https://vlasiuk.me",
+                    "https://tsb-enterprise.com/",
+                    "https://uptarget.co/"
+                ]
+            }
+        },
+        "knowsAbout": [
+            "Digital Transformation",
+            "Software Development",
+            "Industrial IoT",
+            "Speech Translation Technology"
+
+        ]
+    })}/>
+
+    <ClientRouter/>
     <title={title}>
 
 </head>
 <body class="body bg-white text-black font-sans">
-<slot name="header" />
+<slot name="header"/>
 
 <main>
-    <slot />
+    <slot/>
 </main>
 
 <div id="modal-root" class="hidden">
-    <slot /> <slot name="modal_form" />
+    <slot/>
+    <slot name="modal_form"/>
 </div>
 
-<slot name="footer" />
+<slot name="footer"/>
 
 <script>
 
