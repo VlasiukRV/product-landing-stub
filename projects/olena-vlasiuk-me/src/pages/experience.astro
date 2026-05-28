@@ -4,6 +4,8 @@ import { experiences } from '../data/experience';
 ---
 
 <MainLayout title="Experience — Olena Vlasiuk">
+
+    {/* Основний контейнер, ідентичний Expertise */}
     <div class="max-w-4xl pb-20">
 
         <h2 class="text-2xl font-semibold mb-4">Professional Experience</h2>
@@ -13,6 +15,7 @@ import { experiences } from '../data/experience';
 
             {experiences.map((item) => (
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+
                         <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-[#3e5153] text-[#a4f1f6] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                             <svg class="fill-current w-3 h-3" viewBox="0 0 12 12">
                                 <path d="M10.434 8.474L6 4.04 1.566 8.474 0 6.908 6 0.908l6 6z" />
