@@ -9,7 +9,7 @@ echo "Starting sync from Google Drive to AWS..."
 # Running rclone copy
 # --copy-links: если есть симлинки
 # --exclude: игнорируем системный мусор
-/usr/local/bin/rclone copy "$SOURCE" "$DEST" \
+/usr/bin/rclone copy "$SOURCE" "$DEST" \
     --progress \
     --exclude ".DS_Store" \
     --exclude "._*"
