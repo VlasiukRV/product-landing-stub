@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-SOURCE="gdrive:TSB_DOCs/TSB_app/uptarget_co"
+SOURCE="gdrive:TSB_DOCs/TSB_app/uptarget_co/careers"
 DEST="/home/ec2-user/product-landing-stub/projects/uptarget-co/src/content/careers"
 
 echo "Starting sync from Google Drive to AWS..."
