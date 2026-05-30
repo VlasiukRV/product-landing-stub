@@ -7,3 +7,8 @@ node_modules/
 projects/*/.astro/
 projects/*/node_modules/
 
+projects/uptarget-co/src/content/careers/*
+
+node_modules
+storage
+.env
