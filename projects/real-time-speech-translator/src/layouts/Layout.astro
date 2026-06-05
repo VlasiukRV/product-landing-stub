@@ -54,15 +54,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://speech-t
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "TSB Speech Translator",
-        "operatingSystem": "Web, iOS, Android, Windows, macOS",
+        "operatingSystem": "Web",
         "applicationCategory": "BusinessApplication, MultimediaApplication",
         "offers": {
             "@type": "Offer",
             "price": "0.00",
             "priceCurrency": "USD"
-  },
+        },
         "description": description,
-        "author": {
+        "provider": {
             "@type": "Organization",
             "name": "Targeted Solutions for Business",
             "url": "https://tsb-enterprise.com"
