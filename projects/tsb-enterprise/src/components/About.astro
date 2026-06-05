@@ -9,13 +9,13 @@ const team = [
         name: "Dr. Olena Vlasiuk",
         role: "CEO",
         image: "/img/team/team-olena.webp",
-        link: "https://olena.vlasiuk.me/",
+        link: "https://olena.vlasiuk.me",
     },
     {
         name: "Roman Vlasiuk",
         role: "CTO",
         image: "/img/team/team-roman.webp",
-        link: "https://www.linkedin.com/in/romavlasuk/",
+        link: "https://www.linkedin.com/in/romavlasuk",
     }
 ];
 ---
@@ -52,6 +52,22 @@ const team = [
                         <p class="text-brand-purple font-semibold uppercase tracking-wider text-sm mt-1">
                             {member.role}
                         </p>
+
+                        {
+                            member.name === "Dr. Olena Vlasiuk" && (
+                                        <p class="mt-3 text-sm text-gray-600">
+                                            Read more about {member.name} academic and professional work{" "}
+                                            <a
+                                                    href={member.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class="text-brand-purple hover:underline"
+                                            >
+                                                here
+                                            </a>.
+                                        </p>
+                            )
+                        }
                     </div>
             ))}
         </div>
