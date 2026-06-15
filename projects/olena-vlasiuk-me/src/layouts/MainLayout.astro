@@ -9,14 +9,19 @@ interface Props {
     title?: string;
     description?: string;
     image?: string;
+    canonical?: string;
 }
 
 const {
     title = "Olena Vlasiuk, Ph. D. — About Me",
     description = "Olena Vlasiuk, Ph.D. – Expert in Digital Transformation, Business Strategy, and Academic Research. Shaping future digital ecosystems through innovative solutions.",
-    image = "/images/webclip.png"
+    image = "/images/webclip.png",
+    canonical
 } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
+const faviconURL = new URL("/images/favicon.png", Astro.site);
+const ogImageURL = new URL(image, Astro.site);
 
 const { pathname } = Astro.url;
 const currentPath = pathname.replace(/\/$/, "") || "/";
@@ -42,14 +47,14 @@ const isActive = (path: string) =>
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={ogImageURL} />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:image" content={ogImageURL} />
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href={faviconURL} />
 
     <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
