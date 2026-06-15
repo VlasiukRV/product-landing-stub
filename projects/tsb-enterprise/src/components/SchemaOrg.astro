@@ -1,0 +1,55 @@
+---
+// src/components/SchemaOrg.astro
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Targeted Solutions for Business",
+    "url": "https://tsb-enterprise.com",
+    "logo": "https://tsb-enterprise.com/img/logo-wite.svg",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "30 N GOULD ST STE N",
+        "addressLocality": "SHERIDAN",
+        "addressRegion": "WY",
+        "postalCode": "82801",
+        "addressCountry": "US"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-484-521-9686",
+        "contactType": "customer service",
+        "email": "info@tsb-enterprise.com"
+    },
+    "founder": [
+        {
+            "@type": "Person",
+            "name": "Dr. Olena Vlasiuk",
+            "honorificPrefix": "Dr.",
+            "honorificSuffix": "Ph.D.",
+            "jobTitle": "CEO",
+            "url": "https://olena.vlasiuk.me",
+            "image": "https://olena.vlasiuk.me/images/olena-vlasiuk.jpg",
+            "sameAs": [
+                "https://linkedin.com/in/olenavlasiuk/",
+                "https://olena.vlasiuk.me/",
+                "https://uptarget.co/"
+            ],
+        }
+    ],
+    "subOrganization": [
+        {
+            "@type": "Organization",
+            "name": "Uptarget.co",
+            "url": "https://uptarget.co"
+        }
+    ],
+    "knowsAbout": [
+        "Digital Transformation",
+        "Software Development",
+        "Industrial IoT",
+        "Speech Translation Technology"
+    ]
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
