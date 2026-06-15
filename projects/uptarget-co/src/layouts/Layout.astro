@@ -1,6 +1,7 @@
 ---
 // src/layouts/Layout.astro
 import {ClientRouter} from "astro:transitions";
+import SchemaOrg from '../components/SchemaOrg.astro';
 
 interface Props {
     title?: string
@@ -9,6 +10,8 @@ interface Props {
 }
 
 const {
+    canonicalURL = new URL(Astro.url.pathname, Astro.site),
+    pageURL = Astro.urlAstro.url,
     title = 'UPTARGET — Your Dedicated Team',
     description = 'We are a technology consultancy and software development company that provides top-notch engineers, helping your product to grow.',
     image = '/img/OG-generic.png'
@@ -23,7 +26,8 @@ import '../styles/global.css';
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link href={new URL(favicon, Astro.url)} rel="shortcut icon" type="image/x-icon">
+    <link rel="canonical" href={canonicalURL} />
+    <link href={new URL(favicon, canonicalURL)} rel="shortcut icon" type="image/x-icon">
     <link rel="sitemap" href="/sitemap-index.xml"/>
     <meta name="generator" content={Astro.generator}/>
 
@@ -33,78 +37,20 @@ import '../styles/global.css';
     <meta name="robots" content="index, follow"/>
 
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content={Astro.url}/>
+    <meta property="og:url" content={canonicalURL}/>
     <meta property="og:title" content={title}/>
     <meta property="og:description" content={description}/>
-    <meta property="og:image" content={new URL(image, Astro.url)}/>
+    <meta property="og:image" content={new URL(image, canonicalURL)}/>
 
     <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:url" content={Astro.url}/>
+    <meta property="twitter:url" content={canonicalURL}/>
     <meta property="twitter:title" content={title}/>
     <meta property="twitter:description" content={description}/>
-    <meta property="twitter:image" content={new URL(image, Astro.url)}/>
+    <meta property="twitter:image" content={new URL(image, canonicalURL)}/>
 
-    <script type="application/ld+json" set:html={JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-
-        "name": "Uptarget.co",
-        "url": "https://uptarget.co",
-        "logo": "https://uptarget.co/img/Logo.svg",
-
-        "description": "We are a technology consultancy and software development company that provides top-notch engineers, helping your product to grow.", // Добавьте описание для лендинга
-
-        "applicationCategory": "BusinessApplication",
-        "parentOrganization": {
-            "@type": "Organization",
-            "name": "Targeted Solutions for Business",
-            "url": "https://tsb-enterprise.com",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "30 N GOULD ST STE N",
-                "addressLocality": "SHERIDAN",
-                "addressRegion": "WY",
-                "postalCode": "82801",
-                "addressCountry": "US"
-            },
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-484-521-9686",
-                "contactType": "customer service",
-                "email": "info@tsb-enterprise.com"
-            },
-            "founder": {
-                "@type": "Person",
-                "name": "Dr. Olena Vlasiuk",
-                "honorificPrefix": "Dr.",
-                "honorificSuffix": "Ph.D.",
-                "jobTitle": "CEO",
-                "url": "https://olena.vlasiuk.me",
-                "image": "https://olena.vlasiuk.me/images/olena-vlasiuk.jpg",
-                "alumniOf": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "Cherkasy State Technological University"
-                },
-                "sameAs": [
-                    "https://linkedin.com/in/olenavlasiuk/",
-                    "https://scholar.google.com.ua/citations?user=QtFVwn8AAAAJ",
-                    "https://olena.vlasiuk.me/",
-                    "https://tsb-enterprise.com/",
-                    "https://uptarget.co/"
-                ]
-            }
-        },
-        "knowsAbout": [
-            "Digital Transformation",
-            "Software Development",
-            "Industrial IoT",
-            "Speech Translation Technology"
-
-        ]
-    })}/>
+    <SchemaOrg /> <ClientRouter/>
 
     <ClientRouter/>
-    <title={title}>
 
 </head>
 <body class="body bg-white text-black font-sans">

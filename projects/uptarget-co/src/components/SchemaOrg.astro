@@ -1,0 +1,59 @@
+---
+// src/components/SchemaOrg.astro
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Uptarget.co",
+    "url": "https://uptarget.co",
+    "logo": "https://uptarget.co/img/Logo.svg",
+    "description": "We are a technology consultancy and software development company that provides top-notch engineers, helping your product to grow.",
+    "applicationCategory": "BusinessApplication",
+    "parentOrganization": {
+        "@type": "Organization",
+        "name": "Targeted Solutions for Business",
+        "url": "https://tsb-enterprise.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N GOULD ST STE N",
+            "addressLocality": "SHERIDAN",
+            "addressRegion": "WY",
+            "postalCode": "82801",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-484-521-9686",
+            "contactType": "customer service",
+            "email": "info@tsb-enterprise.com"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Dr. Olena Vlasiuk",
+            "honorificPrefix": "Dr.",
+            "honorificSuffix": "Ph.D.",
+            "jobTitle": "CEO",
+            "url": "https://olena.vlasiuk.me",
+            "image": "https://olena.vlasiuk.me/images/olena-vlasiuk.jpg",
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Cherkasy State Technological University"
+            },
+            "sameAs": [
+                "https://linkedin.com/in/olenavlasiuk/",
+                "https://scholar.google.com.ua/citations?user=QtFVwn8AAAAJ",
+                "https://olena.vlasiuk.me/",
+                "https://tsb-enterprise.com/",
+                "https://uptarget.co/"
+            ]
+        }
+    },
+    "knowsAbout": [
+        "Digital Transformation",
+        "Software Development",
+        "Industrial IoT",
+        "Speech Translation Technology"
+    ]
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
