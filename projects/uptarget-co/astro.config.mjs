@@ -1,37 +1,18 @@
-import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
-import sitemap from '@astrojs/sitemap';
-import tailwindcss from '@tailwindcss/vite';
+// projects/uptarget-co/astro.config.mjs
 
-const project_dir = '/uptarget-co'
+import { defineConfig } from 'astro/config';
+import { getBaseConfig } from '../base-astro.config.mjs';
+
+const project_dir = '/uptarget-co';
+const baseConfig = getBaseConfig(project_dir, 'https://uptarget.co');
 
 export default defineConfig({
-    site: 'https://uptarget.co',
-
-    base: '/',
-    srcDir: './src',
-    outDir: '../../storage'+project_dir,
-
-    output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
-    integrations: [
-        vue(),
-        sitemap(),
-    ],
-    markdown: {
-        shikiConfig: { theme: 'dracula' },
-    },
-    build: {
-        inlineStylesheets: 'always',
-        cacheDir: '../../node_modules/.cache/astro',
-    },
+    ...baseConfig,
     vite: {
-        plugins: [tailwindcss()],
-        cacheDir: '../../node_modules/.cache/vite',
+        ...baseConfig.vite,
         css: {
             preprocessorOptions: {
-                css: {
-                    additionalData: `@reference "tailwindcss";`
-                }
+                css: { additionalData: `@reference "tailwindcss";` }
             }
         },
         server: {
@@ -40,33 +21,10 @@ export default defineConfig({
                     target: 'http://host.docker.internal:8000',
                     changeOrigin: true,
                     secure: false,
-
                     rewrite: (path) => path,
-                    headers: {
-                        'X-Client-ID': 'client_uptarget_co'
-                    },
-                    configure: (proxy, options) => {
-                        proxy.on('error', (err, req, res) => {
-                            console.log('--- PROXY ERROR ---', err);
-                        });
-                        proxy.on('proxyReq', (proxyReq, req, res) => {
-                            console.log('--> Sending Request to Synapse:', req.method, req.url);
-                        });
-                        proxy.on('proxyRes', (proxyRes, req, res) => {
-                            console.log('<-- Received Response from Synapse:', proxyRes.statusCode);
-                        });
-                    }
+                    headers: { 'X-Client-ID': 'client_uptarget_co' }
                 }
             }
         }
-    },
-    image: {
-        domains: [],
-        service: {
-            entrypoint: 'astro/assets/services/sharp',
-        },
-    },
-    devToolbar: {
-        enabled: false
     }
 });
