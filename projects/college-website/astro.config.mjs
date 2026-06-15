@@ -1,40 +1,11 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import vue from '@astrojs/vue';
-import tailwindcss from '@tailwindcss/vite';
+// projects/college-website/astro.config.mjs
 
-const project_dir = '/college-website'
+import { defineConfig } from 'astro/config';
+import { getBaseConfig } from '../base-astro.config.mjs';
+
+const project_dir = '/college-website';
+const baseConfig = getBaseConfig(project_dir, 'https://college-website.tsb-enterprise.com');
 
 export default defineConfig({
-    site: 'https://college-website.tsb-enterprise.com/',
-
-    base: '/',
-    srcDir: './src',
-    outDir: '../../storage'+project_dir,
-
-    output: 'static', //'static' 'hybrid' оставит работающими API-эндпоинты
-    integrations: [
-        vue(),
-        sitemap(),
-    ],
-    markdown: {
-        shikiConfig: { theme: 'dracula' },
-    },
-    build: {
-        inlineStylesheets: 'always',
-        cacheDir: '../../node_modules/.cache/astro',
-    },
-    vite: {
-        plugins: [tailwindcss()],
-        cacheDir: '../../node_modules/.cache/vite',
-    },
-    image: {
-        domains: [],
-        service: {
-            entrypoint: 'astro/assets/services/sharp',
-        },
-    },
-    devToolbar: {
-        enabled: false
-    }
+    ...baseConfig
 });
